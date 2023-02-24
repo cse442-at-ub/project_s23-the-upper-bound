@@ -11,9 +11,10 @@ function HomeScreen({navigation}){
     <View style={styles.container}>
         <ImageBackground source={require("./assets/path_icon.png")} style={styles.logo}>
         <ImageBackground source={require("./assets/BlueTri.png")} style={styles.welcomeUp}></ImageBackground>
-      <Pressable style={styles.loginBtn} title= 'LOGIN' onPress={()=>navigation.navigate('login')}>
+        <Pressable style={styles.loginBtn} title='LOGIN' onPress={() => navigation.navigate('login')}>
           <Text style={styles.buttons}>LOGIN</Text>
-        </Pressable><Pressable style={styles.signupBtn} title='SIGNUP' onPress={() => navigation.navigate('signup')}>
+        </Pressable>
+        <Pressable style={styles.signupBtn} title='SIGNUP' onPress={() => navigation.navigate('signup')}>
           <Text style={styles.buttons}>SIGNUP</Text>
         </Pressable>  
         <ImageBackground source={require("./assets/WelBot.png")} style={styles.welcomeDown}></ImageBackground> 
@@ -26,6 +27,7 @@ function HomeScreen({navigation}){
 function LoginScreen({navigation}){
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
+  
   return (
   <View style = {styles.container}>
     <Text style={styles.welbak}>
@@ -77,7 +79,7 @@ function App(){
         <Stack.Screen name= 'login' component ={LoginScreen}>
         </Stack.Screen>
         <Stack.Screen name= 'signup' component ={SignupScreen}></Stack.Screen>
-       </Stack.Navigator>
+        </Stack.Navigator>
     </NavigationContainer>
 
   );
@@ -158,7 +160,7 @@ const styles = StyleSheet.create({
     justifyContent:'center'
     
   },
- 
+
 
 
 });
