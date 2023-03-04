@@ -57,7 +57,11 @@ export default function App() {
 					component={LoginScreen}
 				></Stack.Screen>
 
-				<Stack.Screen name="signup" component={SignupScreen}></Stack.Screen>
+				<Stack.Screen 
+					name="signup" 
+					options={{ headerShown: false }}
+					component={SignupScreen}
+				></Stack.Screen>
 
 				{/* Create a route for the maps screen */}
 				<Stack.Screen
