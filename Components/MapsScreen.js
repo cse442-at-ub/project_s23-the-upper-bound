@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import MapView, { AnimatedRegion } from "react-native-maps";
 import * as Location from "expo-location";
-
+import { Marker } from 'react-native-maps';
 
 
 
@@ -10,6 +10,16 @@ import * as Location from "expo-location";
 
 export default function MapsScreen({ navigation }) {
 	const [location, setLocation] = useState({});
+
+	// Various printer locations across campus
+	const PrinterLocations = [
+		{latitude : 43.000555, longitude : -78.787997},
+		{latitude : 42.953372, longitude : -78.818261},
+		{latitude : 42.953411, longitude : -78.818249},
+		{latitude : 42.953405, longitude : -78.818236},
+		{latitude : 42.953585, longitude : -78.817192},
+		{latitude : 42.998614, longitude : -78.7945269}
+	];
 
 	// Used to ask for user for location permissions
 	// If permission has been granted, continuously update their location while the map is rendered
@@ -34,6 +44,8 @@ export default function MapsScreen({ navigation }) {
 
 	console.log("Location of user: ", location);
 
+	PrinterLocations.map((marker, index) => console.log("Creating marker #" + index, "at location: ", marker))
+
 	return (
 		// Renders the map 
 		<MapView
@@ -48,7 +60,19 @@ export default function MapsScreen({ navigation }) {
 				latitudeDelta: 0.00522,
 				longitudeDelta: 0.00421,
 			}}
-		/>
+		>
+	
+		{PrinterLocations.map((marker, index) => (
+		// Places a marker for each object in PrinterLocations
+			<Marker
+				key={index}
+				coordinate={marker}
+				//image={{uri:'../assets/map-printer.png'}}
+				image={require('../assets/map-printer.png')}
+			/>
+		))}
+			
+		</MapView>
 	);
 }
 
