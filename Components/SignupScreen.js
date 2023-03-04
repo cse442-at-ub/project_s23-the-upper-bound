@@ -1,19 +1,100 @@
 import { StatusBar } from "expo-status-bar";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View, TextInput, ImageBackground } from "react-native";
 import React, { useEffect, useState } from "react";
 
 
 
 
-
-
 export default function SignupScreen({ navigation }) {
+
+	const [user, setUser] = useState("");
+	const [password, setPassword] = useState("");
+	const [confirm, confirmPassword] = useState("");
+	const [errorText, setErrorText] = useState("");
+
+	function onPressLogin() {
+		if (password === confirm) {
+			if (errorText !== "") {
+				setErrorText("");
+			}
+
+			console.log("Passwords match");
+		} else {
+			setErrorText("Passwords do not match, please try again");
+			console.log("Passwords do not match, please try again");
+		}
+	}
+
+	console.log("Current username: ", user);
+	console.log("Current password: ", password);
+
+
 	return (
 		<View style={styles.container}>
-			<Text style={styles.welbak}>
-				{"To\n"}
-				{"Be Added...\n"}
+
+			<ImageBackground
+				source={require("../assets/some_tri.png")}
+				style={styles.welcomeUp}
+			></ImageBackground>
+
+			{/* Main Text */}
+			<Text 
+				style={styles.welbak}>{"Create an\n account"}
 			</Text>
+
+			{/* Username Text Field */}
+			<View style={styles.usrPass}>
+				<TextInput
+					style={styles.userTxt}
+					placeholder="Username"
+					placeholderTextColor="gray"
+					onChangeText={(user) => setUser(user)}
+				></TextInput>
+
+			</View>
+
+			{/* Password Text Field */}
+			<View style={styles.usrPass}>
+				<TextInput
+					style={styles.userTxt}
+					placeholder="Password"
+					placeholderTextColor="gray"
+					onChangeText={(password) => setPassword(password)}
+				></TextInput>
+			</View>
+
+			{/* Confirm Password Text Field */}
+			<View style={styles.usrPass}>
+				<TextInput
+					style={styles.userTxt}
+					placeholder="Confirm Password"
+					placeholderTextColor="gray"
+					onChangeText={(confirm) => confirmPassword(confirm)}
+				></TextInput>
+			</View>
+
+			{/* Signup button */}
+			<Pressable style={styles.signupBtn} title="ENTER" onPress={onPressLogin}>
+				<Text style={styles.buttons}>Sign Up</Text>
+			</Pressable>
+
+			<Text 
+				style={styles.smallText}>{"Already have an account?\n\t\tlog in here"}
+			</Text>
+
+			{/* Error Message */}
+				<Text style={{ paddingTop: 8, paddingBottom: 10, color: "red" }}>
+				{errorText}
+			</Text>
+
+			<ImageBackground
+				source={require("../assets/WelBot.png")}
+				style={styles.welcomeDown}
+			></ImageBackground>
+
+
+
+
 		</View>
 	);
 }
@@ -25,15 +106,47 @@ const styles = StyleSheet.create({
 		backgroundColor: "#1E1E1E",
 		alignItems: "center",
 	},
+	logo: {
+		width: 300,
+		height: 300,
+		marginBottom: 500,
+		alignItems: "center",
+	},
 
+	loginBtn: {
+		width: "70%",
+		borderRadius: 20,
+		height: 50,
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "#393939",
+		paddingHorizontal: 0,
+		marginTop: 100,
+	},
+
+	signupBtn: {
+		width: "70%",
+		borderRadius: 7,
+		height: 50,
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "#3265CB",
+		borderColor: "#FFFFFF",
+		elevation: 3,
+		marginTop: 20,
+	},
+	buttons: {
+		fontSize: 15,
+		color: "white",
+	},
 	userTxt: {
 		color: "#FFFFFF",
 		marginLeft: 10,
-		fontSize: 20,
+		fontSize: 15,
 	},
 	usrPass: {
 		backgroundColor: "#1E1E1E",
-		borderBottomColor: "#393939",
+		borderBottomColor: "#F9F6EE",
 		borderBottomWidth: 2,
 		borderRadius: 5,
 		width: "70%",
@@ -42,4 +155,26 @@ const styles = StyleSheet.create({
 		alignContent: "center",
 		justifyContent: "center",
 	},
+	welbak: {
+		fontSize: 25,
+		color: "white",
+		marginTop: -300,
+		marginBottom: 40,
+		justifyContent: "center",
+	},
+	welcomeDown: {
+		marginTop: -40,
+		height: 400,
+		width: 400,
+	},
+	welcomeUp: {
+		height: 400,
+		width: 400,
+	},
+	smallText:{
+		marginTop: 15,
+		fontSize: 12,
+		color: "white",
+		justifyContent: "center",
+	}
 });
