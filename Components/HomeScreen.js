@@ -1,5 +1,11 @@
 import { StatusBar } from "expo-status-bar";
-import { Pressable, StyleSheet, Text, View, ImageBackground } from "react-native";
+import {
+	Pressable,
+	StyleSheet,
+	Text,
+	View,
+	ImageBackground,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 
 
@@ -8,25 +14,25 @@ import React, { useEffect, useState } from "react";
 
 
 export default function HomeScreen({ navigation }) {
+	function onPressMapButton(content) {
+		switch (content) {
+			case "buildings":
+				navigation.navigate("maps", { content: content });
+				break;
 
+			case "food":
+				console.log("content to pass: ", content);
+				navigation.navigate("maps", { content: content });
+				break;
 
-    function onPressMapButton(content) {
+			case "printers":
+				console.log("content to pass: ", content);
+				navigation.navigate("maps", { content: content });
+				break;
 
-        switch (content) {
-
-            case "buildings":
-                navigation.navigate("maps", {content: content})
-                break;
-            
-            case "printers":
-                console.log("content to pass: ", content)
-                navigation.navigate("maps", {content: content})
-                break;
-            
-            default:
-                break
-        }
-    }
+			default:
+		}
+	}
 
 	return (
 		<View style={styles.container}>
@@ -37,56 +43,69 @@ export default function HomeScreen({ navigation }) {
 				<ImageBackground
 					source={require("../assets/BlueTri.png")}
 					style={styles.welcomeUp}
-                ></ImageBackground>
-                
-                <View style={styles.topButtonRow}>
-                    <Pressable
-                        style={styles.buildingsButton}
-                        title="Buildings"
-                        onPress={() => onPressMapButton("buildings")}
-                    >
-                        <Text style={styles.buttons}>Buildings</Text>
-                    </Pressable>
-                </View>
+				></ImageBackground>
 
-                <View style= {styles.secondButtonRow}>
-                    <Pressable
-                        style={styles.mapButtons}
-                        title="Tunnels"
-                        onPress={() => onPressMapButton("tunnels")}
-                    >
-                        <Text style={styles.buttons}>Tunnels</Text>
-                    </Pressable>
+				<View style={styles.topButtonRow}>
+					<Pressable
+						style={styles.buildingsButton}
+						title="Buildings"
+						onPress={() => onPressMapButton("buildings")}
+					>
+						<Text style={styles.buttons}>🏫</Text>
+					</Pressable>
+				</View>
+				<Text style={styles.underButtonText}>Buildings</Text>
 
-                    
-                    <Pressable
-                        style={styles.mapButtons}
-                        title="Blue Lights"
-                        onPress={() => onPressMapButton("blue Lights")}
-                    >
-                        <Text style={styles.buttons}>Blue Lights</Text>
-                    </Pressable>
-                </View>
+				<View style={styles.secondButtonRow}>
+					<View style={styles.buttonAndTextView}>
+						<Pressable
+							style={styles.mapButtons}
+							title="Tunnels"
+							onPress={() => onPressMapButton("tunnels")}
+						>
+							<Text style={styles.buttons}>🌉</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Tunnels</Text>
+					</View>
 
-                <View style= {styles.thirdButtonRow}>
-                    <Pressable
-                        style={styles.closerMapButtons}
-                        title="Food"
-                        onPress={() => onPressMapButton("food")}
-                    >
-                        <Text style={styles.buttons}>Food</Text>
-                    </Pressable>
+					<View style={styles.buttonAndTextView}>
+						<Pressable
+							style={styles.mapButtons}
+							title="Blue Lights"
+							onPress={() => onPressMapButton("blue Lights")}
+						>
+							<Text style={styles.buttons}>🚔</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Blue Lights</Text>
+					</View>
+				</View>
 
+				<View style={styles.underButtonTextRow}></View>
 
-                    <Pressable
-                        style={styles.closerMapButtons}
-                        title="printers"
-                        onPress={() => onPressMapButton("printers")}
-                    >
-                        <Text style={styles.buttons}>Printers</Text>
-                    </Pressable>
-                </View>
-				
+				<View style={styles.thirdButtonRow}>
+					<View style={styles.buttonAndTextViewRow3}>
+						<Pressable
+							style={styles.closerMapButtons}
+							title="Food"
+							onPress={() => onPressMapButton("food")}
+						>
+							<Text style={styles.buttons}>🍔</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Food</Text>
+					</View>
+
+					<View style={styles.buttonAndTextViewRow3}>
+						<Pressable
+							style={styles.closerMapButtons}
+							title="printers"
+							onPress={() => onPressMapButton("printers")}
+						>
+							<Text style={styles.buttons}>🖨</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Printers</Text>
+					</View>
+				</View>
+
 				<ImageBackground
 					source={require("../assets/WelBot.png")}
 					style={styles.welcomeDown}
@@ -110,74 +129,94 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 
-    topButtonRow: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginTop: 100
-    },
+	topButtonRow: {
+		flexDirection: "row",
+		alignItems: "center",
+		marginTop: 100,
+	},
 
 	buildingsButton: {
 		borderRadius: 100,
-        height: 80,
-        width: 80,
+		height: 80,
+		width: 80,
 		alignItems: "center",
 		justifyContent: "center",
 		backgroundColor: "#3265CB",
 		paddingHorizontal: 0,
-    },
-    
-    secondButtonRow: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        marginTop: 10,
+	},
 
-    },
+	secondButtonRow: {
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "space-between",
+		marginTop: 10,
+	},
 
-    thirdButtonRow: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        marginTop: 10,
-    },
+	buttonAndTextView: {
+		marginLeft: 25.5,
+		marginRight: 25.5,
+		alignItems: "center",
+		justifyContent: "center",
+	},
 
-    mapButtons: {
+	thirdButtonRow: {
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "space-between",
+		marginTop: 10,
+	},
+
+	buttonAndTextViewRow3: {
+		marginLeft: 10,
+		marginRight: 10,
+		alignItems: "center",
+		justifyContent: "center",
+	},
+
+	mapButtons: {
 		borderRadius: 100,
-        height: 80,
-        width: 80,
+		height: 80,
+		width: 80,
 		alignItems: "center",
 		justifyContent: "center",
-        backgroundColor: "#3265CB",
-        marginLeft:25,
-        marginRight:25
-    },
-    
-    closerMapButtons: {
-        marginLeft:10,
-        marginRight: 10,
-        borderRadius: 100,
-        height: 80,
-        width: 80,
-		alignItems: "center",
-		justifyContent: "center",
-        backgroundColor: "#3265CB",
-    },
-	
-    
-    
+		backgroundColor: "#3265CB",
+	},
 
+	closerMapButtons: {
+		borderRadius: 100,
+		height: 80,
+		width: 80,
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "#3265CB",
+	},
 
 	buttons: {
-		fontSize: 18,
+		fontSize: 50,
 		color: "white",
 	},
+
+	underButtonText: {
+		fontSize: 12,
+		color: "#d9d9d9",
+		marginTop: 5,
+	},
+
+	underButtonTextRow: {
+		flexDirection: "row",
+		fontSize: 12,
+		color: "#d9d9d9",
+		alignItems: "center",
+		justifyContent: "space-between",
+	},
+
 	welcomeUp: {
 		height: 200,
 		width: 150,
 		marginLeft: 250,
 	},
 	welcomeDown: {
-		marginTop: 30,
+		marginBottom: 0,
 		height: 400,
 		width: 400,
 	},
