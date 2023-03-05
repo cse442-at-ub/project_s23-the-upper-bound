@@ -19,6 +19,8 @@ import MapsScreen from "./Components/MapsScreen.js";
 import WelcomeScreen from "./Components/WelcomeScreen.js";
 import LoginScreen from "./Components/LoginScreen";
 import SignupScreen from "./Components/SignupScreen";
+
+import HomeScreen from "./Components/HomeScreen.js";
 //////////////////////////////////////////////////////////////////////////// END OF IMPORTS
 
 
@@ -32,6 +34,7 @@ export default function App() {
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [mapContent, setMapContent] = useState("");
 
 	return (
 
@@ -58,6 +61,17 @@ export default function App() {
 				></Stack.Screen>
 
 				<Stack.Screen name="signup" component={SignupScreen}></Stack.Screen>
+
+				{/* Create a route for the home screen */}
+				<Stack.Screen
+					name="home"
+					component={HomeScreen}
+					options={{ headerShown: false }}
+
+						
+
+						
+				></Stack.Screen>
 
 				{/* Create a route for the maps screen */}
 				<Stack.Screen

@@ -8,8 +8,10 @@ import { Marker } from 'react-native-maps';
 
 
 
-export default function MapsScreen({ navigation }) {
+export default function MapsScreen(content,{ navigation }) {
 	const [location, setLocation] = useState({});
+	var contentToLoad = [{}]
+
 
 	// Various printer locations across campus
 	const PrinterLocations = [
@@ -20,6 +22,14 @@ export default function MapsScreen({ navigation }) {
 		{latitude : 42.953585, longitude : -78.817192},
 		{latitude : 42.998614, longitude : -78.7945269}
 	];
+
+
+	if ( content.route.params["content"] === "printers") {
+		contentToLoad = PrinterLocations
+	}
+	
+	
+	console.log("markers",contentToLoad, content.route.params["content"])
 
 	// Used to ask for user for location permissions
 	// If permission has been granted, continuously update their location while the map is rendered
@@ -61,15 +71,17 @@ export default function MapsScreen({ navigation }) {
 				longitudeDelta: 0.00421,
 			}}
 		>
-	
-		{PrinterLocations.map((marker, index) => (
-		// Places a marker for each object in PrinterLocations
-			<Marker
-				key={index}
-				coordinate={marker}
-				//image={{uri:'../assets/map-printer.png'}}
-				image={require('../assets/map-printer.png')}
-			/>
+			{ contentToLoad != [{}] &&
+				
+					contentToLoad.map((marker, index) => (
+						// Places a marker for each object in PrinterLocations
+						<Marker
+							key={index}
+							coordinate={marker}
+							//image={{uri:'../assets/map-printer.png'}}
+							image={require('../assets/map-printer.png')}
+						/>
+		
 		))}
 			
 		</MapView>
