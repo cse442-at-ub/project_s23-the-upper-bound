@@ -39,22 +39,53 @@ export default function HomeScreen({ navigation }) {
 					style={styles.welcomeUp}
                 ></ImageBackground>
                 
-				<Pressable
-					style={styles.mapButton}
-					title="buildings"
-					onPress={() => onPressMapButton("buildings")}
-				>
-					<Text style={styles.buttons}>Buildings</Text>
-                </Pressable>
-                
-                <Pressable
-					style={styles.mapButton}
-					title="printers"
-					onPress={() => onPressMapButton("printers")}
-				>
-					<Text style={styles.buttons}>Printers</Text>
-                </Pressable>
+                <View style={styles.topButtonRow}>
+                    <Pressable
+                        style={styles.buildingsButton}
+                        title="Buildings"
+                        onPress={() => onPressMapButton("buildings")}
+                    >
+                        <Text style={styles.buttons}>Buildings</Text>
+                    </Pressable>
+                </View>
 
+                <View style= {styles.secondButtonRow}>
+                    <Pressable
+                        style={styles.mapButtons}
+                        title="Tunnels"
+                        onPress={() => onPressMapButton("tunnels")}
+                    >
+                        <Text style={styles.buttons}>Tunnels</Text>
+                    </Pressable>
+
+                    
+                    <Pressable
+                        style={styles.mapButtons}
+                        title="Blue Lights"
+                        onPress={() => onPressMapButton("blue Lights")}
+                    >
+                        <Text style={styles.buttons}>Blue Lights</Text>
+                    </Pressable>
+                </View>
+
+                <View style= {styles.thirdButtonRow}>
+                    <Pressable
+                        style={styles.closerMapButtons}
+                        title="Food"
+                        onPress={() => onPressMapButton("food")}
+                    >
+                        <Text style={styles.buttons}>Food</Text>
+                    </Pressable>
+
+
+                    <Pressable
+                        style={styles.closerMapButtons}
+                        title="printers"
+                        onPress={() => onPressMapButton("printers")}
+                    >
+                        <Text style={styles.buttons}>Printers</Text>
+                    </Pressable>
+                </View>
 				
 				<ImageBackground
 					source={require("../assets/WelBot.png")}
@@ -79,7 +110,13 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 
-	mapButton: {
+    topButtonRow: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginTop: 100
+    },
+
+	buildingsButton: {
 		borderRadius: 100,
         height: 80,
         width: 80,
@@ -87,12 +124,51 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		backgroundColor: "#3265CB",
 		paddingHorizontal: 0,
-		marginTop: 100,
-	},
+    },
+    
+    secondButtonRow: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginTop: 10,
 
+    },
+
+    thirdButtonRow: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginTop: 10,
+    },
+
+    mapButtons: {
+		borderRadius: 100,
+        height: 80,
+        width: 80,
+		alignItems: "center",
+		justifyContent: "center",
+        backgroundColor: "#3265CB",
+        marginLeft:25,
+        marginRight:25
+    },
+    
+    closerMapButtons: {
+        marginLeft:10,
+        marginRight: 10,
+        borderRadius: 100,
+        height: 80,
+        width: 80,
+		alignItems: "center",
+		justifyContent: "center",
+        backgroundColor: "#3265CB",
+    },
 	
+    
+    
+
+
 	buttons: {
-		fontSize: 20,
+		fontSize: 18,
 		color: "white",
 	},
 	welcomeUp: {
