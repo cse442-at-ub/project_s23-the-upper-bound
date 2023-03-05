@@ -72,6 +72,17 @@ export default function LoginScreen({ navigation }) {
 			>
 				<Text style={styles.buttons}>TEMP MAPS</Text>
 			</Pressable>
+			{/* Temporary Event Button (Since there is no home screen yet) */}
+			<Pressable
+			style={styles.signupBtn}
+			title="EVENTS"
+			onPress={()=> navigation.navigate("events")}
+			>
+				<Text style={styles.buttons}>Temp Events</Text>
+			</Pressable>
+			
+				
+			
 		</View>
 	);
 }
