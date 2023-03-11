@@ -17,6 +17,8 @@ export default function LoginScreen({ navigation }) {
 			if (errorText !== "") {
 				setErrorText("");
 			}
+			navigation.navigate("home")
+
 
 			console.log("Correct username and password");
 		} else {
@@ -64,24 +66,6 @@ export default function LoginScreen({ navigation }) {
 				<Text style={styles.buttons}>Login</Text>
 			</Pressable>
 
-			{/* Temporary Map Button (Used because we don't have a home screen yet) */}
-			<Pressable
-				style={styles.signupBtn}
-				title="MAPS"
-				onPress={() => navigation.navigate("maps")}
-			>
-				<Text style={styles.buttons}>TEMP MAPS</Text>
-			</Pressable>
-			{/* Temporary Event Button (Since there is no home screen yet) */}
-			<Pressable
-			style={styles.signupBtn}
-			title="EVENTS"
-			onPress={()=> navigation.navigate("events")}
-			>
-				<Text style={styles.buttons}>Temp Events</Text>
-			</Pressable>
-			
-				
 			
 		</View>
 	);
@@ -149,3 +133,4 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 });
+

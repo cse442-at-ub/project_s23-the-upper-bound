@@ -85,8 +85,9 @@ const styles = StyleSheet.create({
     welcomeUp: {
 		height: 200,
 		width: 300,
-		marginLeft: 100,
+		marginLeft: -100,
         justifyContent:"center",
+        transform: [{ scaleX: -1 }]
 	},
 
     logo: {
