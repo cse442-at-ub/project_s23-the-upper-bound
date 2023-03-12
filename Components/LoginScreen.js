@@ -15,6 +15,7 @@ export default function LoginScreen({ navigation }) {
 	const [user, setUser] = useState("");
 	const [password, setPassword] = useState("");
 	const [errorText, setErrorText] = useState("");
+	const [error, setError] = useState("");
 
 	function onPressLogin() {
 		fetchPerson();
@@ -42,6 +43,8 @@ export default function LoginScreen({ navigation }) {
 
 
 		}
+		setError("User does not exist\nPlease sign up first!");
+		navigation.navigate("signup")
 		console.log("user does not exist")
 	}
 
@@ -57,7 +60,7 @@ export default function LoginScreen({ navigation }) {
 			></ImageBackground>
 
 			{/* Main Text */}
-			<Text style={styles.welbak}>{"Welcome\n\t\t Back"}</Text>
+			<Text style={styles.welbak}>{"Welcome\n\tBack"}</Text>
 
 			{/* Error Message */}
 			<Text style={{ paddingTop: 8, paddingBottom: 10, color: "red" }}>
@@ -94,8 +97,13 @@ export default function LoginScreen({ navigation }) {
 				style={styles.smallText}>{"Need an account?"}
 			</Text>
 			<Pressable style={styles.signupButton} title="GoToLogin" onPress={() =>navigation.navigate("signup")}>
-				<Text style={styles.signupSmall}> {"\t Sign up here"}</Text>
+				<Text style={styles.signupSmall}> {"Sign up here"}</Text>
 			</Pressable>
+
+			<Text style={{ paddingTop: 8, paddingBottom: 10, color: "red" }}>
+				{error}
+			</Text>
+
 			<ImageBackground
 				source={require("../assets/WelBot.png")}
 				style={styles.welcomeDown}
