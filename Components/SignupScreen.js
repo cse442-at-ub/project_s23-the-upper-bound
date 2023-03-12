@@ -19,8 +19,12 @@ export default function SignupScreen({ navigation }) {
 	const [password, setPassword] = useState("");
 	const [confirm, confirmPassword] = useState("");
 	const [errorText, setErrorText] = useState("");
+	const [errorReuse, setErrorReuse] = useState("");
+
 
 	function onPressLogin() {
+
+
 		if (password === confirm) {
 			if (errorText !== "") {
 				setErrorText("");
@@ -36,6 +40,19 @@ export default function SignupScreen({ navigation }) {
 		}
 	}
 	async function addPerson() {
+
+		let query = new Parse.Query('Person');
+		// looping through the users
+		let queryResult = await query.find();
+		var i=0
+		for(i=0; i<queryResult.length;i++){
+			var currentP=queryResult[i];
+			if(currentP.get('username')==user){
+				setErrorReuse("You already have an account!\nPlease sign in");
+				navigation.navigate("login")
+				return;
+			}
+		}
 		try {
 		  //create a new Parse Object instance
 		  const newPerson = new Parse.Object('Person');
@@ -104,12 +121,17 @@ export default function SignupScreen({ navigation }) {
 				style={styles.smallText}>{"Already have an account?"}
 			</Text>
 			<Pressable style={styles.loginButton} title="GoToLogin" onPress={() =>navigation.navigate("login")} >
-				<Text style={styles.loginSmall}> {"\t\t\tLog in here" }</Text>
+				<Text style={styles.loginSmall}> {"Log in here" }</Text>
 			</Pressable>
 
 			{/* Error Message */}
-				<Text style={{ paddingTop: 8, paddingBottom: 10, color: "red" }}>
+			<Text style={{ paddingTop: 8, paddingBottom: 10, color: "red" }}>
 				{errorText}
+			</Text>
+			
+			{/* Error Message */}
+			<Text style={{ paddingTop: 8, paddingBottom: 10, color: "red" }}>
+				{errorReuse}
 			</Text>
 
 			<ImageBackground
@@ -206,7 +228,6 @@ const styles = StyleSheet.create({
 		justifyContent:"center",
 		color:"blue",
 		height:17, 
-		width:100,
 		alignContent:"center",
 
 	},
