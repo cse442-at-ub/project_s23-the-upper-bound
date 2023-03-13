@@ -1,8 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { Pressable, StyleSheet, Text, View, TextInput, ImageBackground } from "react-native";
 import React, { useEffect, useState } from "react";
-
-
+import Parse from 'parse/react-native.js';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+Parse.setAsyncStorage(AsyncStorage);
+Parse.initialize('WBMZQx3eCRpiyvHoLvRcLC46lyV6yLXTmpG2jY3Z','MSnW5CM6O6sRFHsexOxs7ZpIgpE3GXD846xz9uEg');
+Parse.serverURL = 'https://parseapi.back4app.com/';
+import { NavigationContainer } from "@react-navigation/native";
 
 
 
@@ -13,16 +17,32 @@ export default function LoginScreen({ navigation }) {
 	const [errorText, setErrorText] = useState("");
 
 	function onPressLogin() {
-		if (user === "Username" && password === "Password") {
-			if (errorText !== "") {
-				setErrorText("");
+		fetchPerson();
+		console.log("Correct username and password");
+		
+	}
+	async function fetchPerson() {
+		//create your Parse Query using the Person Class you've created
+		let query = new Parse.Query('Person');
+		//run the query to retrieve all objects on Person class, optionally you can add your filters
+		let queryResult = await query.find();
+		var i=0
+		for(i=0; i<queryResult.length;i++){
+			var currentP=queryResult[i];
+			if(currentP.get('username')==user){
+				if(currentP.get('password')==password){
+					navigation.navigate("home");
+					return;
+				}
+				else{
+					console.log("incorrect password");
+					return;
+				}
 			}
 
-			console.log("Correct username and password");
-		} else {
-			setErrorText("Incorrect username and password combination");
-			console.log("Incorrect username and password combination");
+
 		}
+		console.log("user does not exist")
 	}
 
 	console.log("Current username: ", user);
@@ -37,7 +57,7 @@ export default function LoginScreen({ navigation }) {
 			></ImageBackground>
 
 			{/* Main Text */}
-			<Text style={styles.welbak}>{"Welcome\n\t Back"}</Text>
+			<Text style={styles.welbak}>{"Welcome\n\t\t Back"}</Text>
 
 			{/* Error Message */}
 			<Text style={{ paddingTop: 8, paddingBottom: 10, color: "red" }}>
@@ -71,9 +91,11 @@ export default function LoginScreen({ navigation }) {
 			</Pressable>
 
 			<Text 
-				style={styles.smallText}>{"Need an Account?\n    Sign up here"}
+				style={styles.smallText}>{"Need an account?"}
 			</Text>
-
+			<Pressable style={styles.signupButton} title="GoToLogin" onPress={() =>navigation.navigate("signup")}>
+				<Text style={styles.signupSmall}> {"\t Sign up here"}</Text>
+			</Pressable>
 			<ImageBackground
 				source={require("../assets/WelBot.png")}
 				style={styles.welcomeDown}
@@ -154,12 +176,24 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	welcomeDown: {
-		marginTop: -40,
+		marginTop: 0,
 		height: 400,
 		width: 400,
 	},
 	welcomeUp: {
 		height: 400,
 		width: 400,
+	},
+	signupButton:{
+		justifyContent:"center",
+		//color:"blue",
+		height:20, 
+		width:100,
+		
+		//alignContent:"center",
+	},
+	signupSmall:{
+		fontSize: 12,
+		color:"#3265CB",
 	},
 });

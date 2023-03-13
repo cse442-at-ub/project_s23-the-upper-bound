@@ -1,12 +1,20 @@
 import { StatusBar } from "expo-status-bar";
 import { Pressable, StyleSheet, Text, View, TextInput, ImageBackground } from "react-native";
 import React, { useEffect, useState } from "react";
+import Parse from "parse/react-native.js";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { NavigationContainer } from "@react-navigation/native";
+
+Parse.setAsyncStorage(AsyncStorage);
+//You need to copy BOTH the the Application ID and the Javascript Key from: Dashboard->App Settings->Security & Keys 
+Parse.initialize('WBMZQx3eCRpiyvHoLvRcLC46lyV6yLXTmpG2jY3Z','MSnW5CM6O6sRFHsexOxs7ZpIgpE3GXD846xz9uEg');
+Parse.serverURL = 'https://parseapi.back4app.com/';
 
 
 
 
 export default function SignupScreen({ navigation }) {
-
+	const [person, setPerson] = useState(new Parse.Object('Person'));
 	const [user, setUser] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirm, confirmPassword] = useState("");
@@ -19,11 +27,27 @@ export default function SignupScreen({ navigation }) {
 			}
 
 			console.log("Passwords match");
+			addPerson();
+			navigation.navigate("home");
+			
 		} else {
 			setErrorText("Passwords do not match, please try again");
 			console.log("Passwords do not match, please try again");
 		}
 	}
+	async function addPerson() {
+		try {
+		  //create a new Parse Object instance
+		  const newPerson = new Parse.Object('Person');
+		  //define the attributes you want for your Object
+		  newPerson.set('username', user);
+		  newPerson.set('password', password);
+		  //save it on Back4App Data Store
+		  await newPerson.save();
+		} catch (error) {
+		  console.log('Error saving new person: ', error);
+		}
+	  }
 
 	console.log("Current username: ", user);
 	console.log("Current password: ", password);
@@ -41,7 +65,6 @@ export default function SignupScreen({ navigation }) {
 			<Text 
 				style={styles.welbak}>{"Create an\n account"}
 			</Text>
-
 			{/* Username Text Field */}
 			<View style={styles.usrPass}>
 				<TextInput
@@ -50,7 +73,6 @@ export default function SignupScreen({ navigation }) {
 					placeholderTextColor="gray"
 					onChangeText={(user) => setUser(user)}
 				></TextInput>
-
 			</View>
 
 			{/* Password Text Field */}
@@ -79,8 +101,11 @@ export default function SignupScreen({ navigation }) {
 			</Pressable>
 
 			<Text 
-				style={styles.smallText}>{"Already have an account?\n\t\tlog in here"}
+				style={styles.smallText}>{"Already have an account?"}
 			</Text>
+			<Pressable style={styles.loginButton} title="GoToLogin" onPress={() =>navigation.navigate("login")} >
+				<Text style={styles.loginSmall}> {"\t\t\tLog in here" }</Text>
+			</Pressable>
 
 			{/* Error Message */}
 				<Text style={{ paddingTop: 8, paddingBottom: 10, color: "red" }}>
@@ -176,5 +201,17 @@ const styles = StyleSheet.create({
 		fontSize: 12,
 		color: "white",
 		justifyContent: "center",
-	}
+	},
+	loginButton:{
+		justifyContent:"center",
+		color:"blue",
+		height:17, 
+		width:100,
+		alignContent:"center",
+
+	},
+	loginSmall:{
+		fontSize: 12,
+		color:"#3265CB",
+	},
 });
