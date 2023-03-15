@@ -64,7 +64,6 @@ export const baldyHall = {
 
 
 export const lockwoodMarker = { latitude: 43.000263294346695, longitude: -78.78601186555086 }
-
 export const lockwood = {
     coordinates: [
         { name1: '1', latitude: 42.99987146302601, longitude: -78.78636386699738 },
@@ -78,9 +77,7 @@ export const lockwood = {
     ]
 }
 
-/*
-42.99964411181855, -78.78825312312418
-*/
+
 export const parkHallMarker = { latitude: 42.99973473466013, longitude: -78.78793079406394 }
 export const parkHall = {
     coordinates: [
@@ -118,5 +115,35 @@ export const parkHall = {
 
 
         
+    ]
+}
+
+/*
+42.999827917147904, -78.78685768056916
+*/
+export const jacobsManagementMarker = { latitude: 42.99954946189821, longitude: -78.78692107107386 }
+export const jacobsManagement = {
+    coordinates: [
+        { name1: '1', latitude: 42.99937291243715, longitude: -78.78719767387562 },
+        { name2: '2', latitude: 42.99937291243919, longitude: -78.78696465696896 },
+        { name3: '3', latitude: 42.999359671209305, longitude: -78.7869653275212 },
+        { name4: '4', latitude: 42.999360652041254, longitude: -78.7868835201459 },
+        { name5: '5', latitude: 42.99937340285505, longitude: -78.7868835201459 },
+        { name6: '6', latitude: 42.9993738932709, longitude: -78.78654927334948 },
+        { name7: '7', latitude: 42.99948325591052, longitude: -78.78655061445397 },
+        { name8: '8', latitude: 42.99948325591052, longitude: -78.78650032303547 },
+        { name9: '9', latitude: 42.99958771421698, longitude: -78.78650099358661 },
+        { name10: '10', latitude: 42.9995872238028, longitude: -78.78643527946645 },
+        { name11: '11', latitude: 42.99959556084293, longitude: -78.7864158334513 },
+        { name12: '12', latitude: 42.99960438829594, longitude: -78.78641382179455 },
+        { name13: '13', latitude: 42.999627437750604, longitude: -78.78641382179455 },
+        { name14: '14', latitude: 42.999627437750604, longitude: -78.78649965248212 },
+        { name15: '15', latitude: 42.999710808047666, longitude: -78.78649965248214 },
+        { name16: '16', latitude: 42.99971031763449, longitude: -78.78670148870935 },
+        { name17: '17', latitude: 42.999794569106115, longitude: -78.78685097504668 },
+        { name18: '18', latitude: 42.99980535818024, longitude: -78.78686505664386 },
+        { name19: '19', latitude: 42.99980682941749, longitude: -78.78687511492757 },
+        { name20: '20', latitude: 42.999827917147904, longitude: -78.78685768056916 },
+
     ]
 }
