@@ -4,7 +4,10 @@ import MapView, {PROVIDER_GOOGLE,} from "react-native-maps";
 import * as Location from "expo-location";
 import { Marker, Polygon } from "react-native-maps";
 import { mapStyle } from "../Constants/MapConstants";
-import { baldyHall, baldyHallMarker, oBrianHall, oBrianHallMarker } from "../Constants/TunnelConstants";
+import {
+	baldyHall, baldyHallMarker, oBrianHall, oBrianHallMarker,
+	lockwood, lockwoodMarker, parkHallMarker, parkHall
+} from "../Constants/TunnelConstants";
 
 
 
@@ -102,6 +105,26 @@ export default function TunnelsScreen(content, { navigation }) {
 					onPress={() => setPrompt("Tapped on Baldy Hall")}
 				></Polygon>
 
+				{/* Lockwood Library */}
+				<Marker coordinate={lockwoodMarker} onPress={() => setPrompt("Tapped on Lockwood Library")}>
+					<Text style={styles.markerStyle}>{"Lockwood\n Library"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={lockwood.coordinates}
+					tappable={true}
+					onPress={() => setPrompt("Tapped on Lockwood Library")}
+				></Polygon>
+
+				{/* Park Hall */}
+				<Marker coordinate={parkHallMarker} onPress={() => setPrompt("Tapped on Park Hall")}>
+					<Text style={styles.markerStyle}>{"Park Hall"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={parkHall.coordinates}
+					tappable={true}
+					onPress={() => setPrompt("Tapped on Park Hall")}
+				></Polygon>
+
 				{contentToLoad != [{}] &&
 					contentToLoad.map((marker, index) => (
 						// Places a marker for each object in PrinterLocations
@@ -148,5 +171,6 @@ const styles = StyleSheet.create({
 	markerStyle: {
 		fontSize: 12,
 		color: "white",
+		textAlign: "center"
 	},
 });
