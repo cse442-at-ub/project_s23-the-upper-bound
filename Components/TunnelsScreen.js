@@ -4,7 +4,7 @@ import MapView, { PROVIDER_GOOGLE, AnimatedRegion, Callout } from "react-native-
 import * as Location from "expo-location";
 import { Marker, Polygon } from "react-native-maps";
 import { mapStyle } from "../Constants/MapConstants";
-
+import { baldyHall, oBrianHall } from "../Constants/TunnelConstants";
 
 
 
@@ -61,14 +61,7 @@ export default function TunnelsScreen(content, { navigation }) {
         longitudeDelta: 0.0021
         };
 
-    state = {
-        coordinates: [
-            { name1: '1', latitude: 43.0003223, longitude: -78.7883613 },
-            { name2: '2', latitude: 43.000298, longitude: -78.787578 },
-            { name3: '3', latitude: 43.000691, longitude: -78.788004 }
-
-        ]
-    }
+    
 
 	console.log("Location of user: ", location);
 
@@ -99,9 +92,19 @@ export default function TunnelsScreen(content, { navigation }) {
   console.log("pressed this poly");
 }}>
 
-            <Polygon coordinates={state.coordinates}>
+				<Polygon coordinates={oBrianHall.coordinates}>
+					
             
-            </Polygon>
+				</Polygon>
+				
+				<Polygon coordinates={baldyHall.coordinates}
+					tappable={true}
+							onPress={() => console.log("pressed polygon")}
+							>
+					
+            
+				</Polygon>
+
             </Pressable>
 			{contentToLoad != [{}] &&
 				contentToLoad.map((marker, index) => (
