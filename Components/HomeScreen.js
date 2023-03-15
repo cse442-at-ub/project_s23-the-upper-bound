@@ -30,6 +30,10 @@ export default function HomeScreen({ navigation }) {
 				navigation.navigate("maps", { content: content });
 				break;
 
+			case "tunnels":
+				console.log("content to pass: ", content);
+				navigation.navigate("tunnels", { content: content });
+				break;
 		default:
 		}
 	}

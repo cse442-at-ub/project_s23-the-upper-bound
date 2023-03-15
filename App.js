@@ -16,6 +16,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import MapsScreen from "./Components/MapsScreen.js";
+import TunnelsScreen from "./Components/TunnelsScreen.js";
 import WelcomeScreen from "./Components/WelcomeScreen.js";
 import LoginScreen from "./Components/LoginScreen";
 import SignupScreen from "./Components/SignupScreen";
@@ -97,7 +98,27 @@ export default function App() {
 				></Stack.Screen>
 
 
-				
+				<Stack.Screen
+					name="tunnels"
+					component={TunnelsScreen}
+					options={{
+						title: "Tunnels",
+						headerStyle: {
+							backgroundColor: "#3265CB",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "normal",
+						},
+						headerRight: () => (
+							<Button
+								onPress={() => alert("This is a button!")}
+								title="Info"
+								color="#fff"
+							/>
+						),
+					}}
+				></Stack.Screen>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
