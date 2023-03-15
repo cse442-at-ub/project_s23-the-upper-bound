@@ -1,3 +1,5 @@
+// , -78.78796225134273
+export const oBrianHallMarker = { latitude: 43.000418729480515, longitude: -78.78794125293997 }
 export const oBrianHall = {
     coordinates: [
         { name1: '1', latitude: 43.0002830210053, longitude: -78.7885140026653 },
@@ -33,6 +35,7 @@ export const oBrianHall = {
     ]
 }
 
+export const baldyHallMarker = {latitude: 43.00038508308743, longitude: -78.78697356307548}
 export const baldyHall = {
     coordinates: [
     /*
