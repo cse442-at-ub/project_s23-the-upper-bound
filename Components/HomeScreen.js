@@ -30,7 +30,7 @@ export default function HomeScreen({ navigation }) {
 				navigation.navigate("maps", { content: content });
 				break;
 
-			default:
+		default:
 		}
 	}
 

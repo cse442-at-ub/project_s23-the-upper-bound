@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
-import MapView, { AnimatedRegion, Callout } from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE, AnimatedRegion, Callout } from "react-native-maps";
 import * as Location from "expo-location";
 import { Marker } from "react-native-maps";
-
+import { mapStyle } from "../Constants/MapConstants";
 
 
 
@@ -11,6 +11,7 @@ import { Marker } from "react-native-maps";
 
 export default function MapsScreen(content, { navigation }) {
 	const [location, setLocation] = useState({});
+	
 	var contentToLoad = [{}];
 
 	// Various printer locations across campus
@@ -300,8 +301,10 @@ export default function MapsScreen(content, { navigation }) {
 	return (
 		// Renders the map
 		<MapView
+			provider={PROVIDER_GOOGLE}
 			userInterfaceStyle={"dark"}
 			style={styles.container}
+			customMapStyle={mapStyle}
 			showsUserLocation={true}
 			// This is the location the map will load to
 			initialRegion={{
