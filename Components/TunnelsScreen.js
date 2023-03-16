@@ -127,13 +127,13 @@ export default function TunnelsScreen(content, { navigation }) {
 
 				{/* Jacobs Management Building */}
 				<Marker coordinate={jacobsManagementMarker} onPress={() => setPrompt("Tapped on Jacobs Management Center")}>
-									<Text style={styles.markerStyle}>{"Jacobs\nManagement\nCenter"}</Text>
-								</Marker>
-								<Polygon
-									coordinates={jacobsManagement.coordinates}
-									tappable={true}
-									onPress={() => setPrompt("Tapped on Park Hall")}
-								></Polygon>
+					<Text style={styles.markerStyle}>{"Jacobs\nManagement\nCenter"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={jacobsManagement.coordinates}
+					tappable={true}
+					onPress={() => setPrompt("Tapped on Jacobs Management Center")}
+				></Polygon>
 
 
 

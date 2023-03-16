@@ -119,7 +119,6 @@ export const parkHall = {
 }
 
 /*
-42.999827917147904, -78.78685768056916
 */
 export const jacobsManagementMarker = { latitude: 42.99954946189821, longitude: -78.78692107107386 }
 export const jacobsManagement = {
@@ -144,6 +143,22 @@ export const jacobsManagement = {
         { name18: '18', latitude: 42.99980535818024, longitude: -78.78686505664386 },
         { name19: '19', latitude: 42.99980682941749, longitude: -78.78687511492757 },
         { name20: '20', latitude: 42.999827917147904, longitude: -78.78685768056916 },
+        { name21: '21', latitude: 42.99985461784947, longitude: -78.7868997278212 },
+        { name22: '22', latitude: 42.99986344526525, longitude: -78.78694197261272 },
+        { name23: '23', latitude: 42.99986638773718, longitude: -78.78694063150857 },
+        { name24: '24', latitude: 42.99990071656424, longitude: -78.78704255545155 },
+        { name25: '25', latitude: 42.999923275496414, longitude: -78.7871337505574 },
+        { name26: '26', latitude: 42.999932102902584, longitude: -78.78719007694689 },
+        { name27: '27', latitude: 42.999947305654274, longitude: -78.7872363450519 },
+        { name28: '28', latitude: 42.99973593802587, longitude: -78.78737313771194 },
+        { name29: '29', latitude: 42.99972711059176, longitude: -78.78735100948781 },
+        { name30: '30', latitude: 42.99972760100481, longitude: -78.78735100948781 },
+        { name31: '31', latitude: 42.999441689534024, longitude: -78.78735033893568 },
+        { name32: '32', latitude: 42.99944119911870, longitude: -78.78727322542733 },
+        { name33: '33', latitude: 42.99940687003647, longitude: -78.78727188432283 },
+        { name34: '34', latitude: 42.99940637962087, longitude: -78.78719812357569 },
 
     ]
 }
+
+// 42.99940637962087, -78.78719812357569
