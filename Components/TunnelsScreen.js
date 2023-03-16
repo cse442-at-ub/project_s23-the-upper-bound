@@ -6,7 +6,7 @@ import { Marker, Polygon } from "react-native-maps";
 import { mapStyle } from "../Constants/MapConstants";
 import {
 	baldyHall, baldyHallMarker, oBrianHall, oBrianHallMarker,
-	lockwood, lockwoodMarker, parkHallMarker, parkHall, jacobsManagementMarker, jacobsManagement, clemensHallMarker, clemensHall
+	lockwood, lockwoodMarker, parkHallMarker, parkHall, jacobsManagementMarker, jacobsManagement, clemensHallMarker, clemensHall, bairdHallMarker, bairdHall
 } from "../Constants/TunnelConstants";
 
 
@@ -127,7 +127,15 @@ export default function TunnelsScreen(content, { navigation }) {
 					onPress={() => setPrompt("Tapped on Clemens Hall")}
 				></Polygon>
 
-
+				{/* Clemens Hall */}
+				<Marker coordinate={bairdHallMarker} onPress={() => setPrompt("Tapped on Baird Hall")}>
+					<Text style={styles.markerStyle}>{"Baird Hall"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={bairdHall.coordinates}
+					tappable={true}
+					onPress={() => setPrompt("Tapped on Baird Hall")}
+				></Polygon>
 
 
 				{/* Park Hall */}
