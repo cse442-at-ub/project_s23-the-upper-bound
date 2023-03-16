@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Pressable, StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import MapView, {PROVIDER_GOOGLE,} from "react-native-maps";
 import * as Location from "expo-location";
 import { Marker, Polygon } from "react-native-maps";
 import { mapStyle } from "../Constants/MapConstants";
 import {
 	baldyHall, baldyHallMarker, oBrianHall, oBrianHallMarker,
-	lockwood, lockwoodMarker, parkHallMarker, parkHall, jacobsManagementMarker, jacobsManagement, clemensHallMarker, clemensHall, bairdHallMarker, bairdHall
+	lockwood, lockwoodMarker, parkHallMarker, parkHall,
+	jacobsManagementMarker, jacobsManagement, clemensHallMarker, clemensHall,
+	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker
 } from "../Constants/TunnelConstants";
 
 
@@ -19,8 +21,6 @@ export default function TunnelsScreen(content, { navigation }) {
 	const [prompt, setPrompt] = useState("");
 
 	var contentToLoad = [{}];
-
-	const tunnelLocations = [];
 
 	// Should be in a useEffect but I can't get it to work :(
 	switch (content.route.params["content"]) {
@@ -64,6 +64,7 @@ export default function TunnelsScreen(content, { navigation }) {
 		longitudeDelta: 0.0021,
 	};
 
+	// Output current coordinates for testing
 	console.log("Location of user: ", location);
 
 	return (
@@ -77,7 +78,7 @@ export default function TunnelsScreen(content, { navigation }) {
 				showsIndoors={false}
 				loadingEnabled={true}
 				showsCompass={true}
-				// This is the location the map will load to
+				// This is the location the map will first load to
 				initialRegion={{
 					latitude: 43.000288,
 					longitude: -78.786316,
@@ -85,6 +86,8 @@ export default function TunnelsScreen(content, { navigation }) {
 					longitudeDelta: 0.00421,
 				}}
 			>
+				{/* #####/////////                     Polygon Content Starts Here                     /////////#####  */}
+
 				{/* O'Brian Hall */}
 				<Marker coordinate={oBrianHallMarker} onPress={() => setPrompt("Tapped on O'Brian Hall")}>
 					<Text style={styles.markerStyle}>{"O'Brian Hall"}</Text>
@@ -95,7 +98,9 @@ export default function TunnelsScreen(content, { navigation }) {
 					onPress={() => setPrompt("Tapped on O'Brian Hall")}
 				></Polygon>
 
-				{/* Baldy Hall*/}
+				
+
+				{/* Baldy Hall */}
 				<Marker coordinate={baldyHallMarker} onPress={() => setPrompt("Tapped on Baldy Hall")}>
 					<Text style={styles.markerStyle}>{"Baldy Hall"}</Text>
 				</Marker>
@@ -104,6 +109,8 @@ export default function TunnelsScreen(content, { navigation }) {
 					tappable={true}
 					onPress={() => setPrompt("Tapped on Baldy Hall")}
 				></Polygon>
+
+				
 
 				{/* Lockwood Library */}
 				<Marker coordinate={lockwoodMarker} onPress={() => setPrompt("Tapped on Lockwood Library")}>
@@ -116,7 +123,7 @@ export default function TunnelsScreen(content, { navigation }) {
 				></Polygon>
 
 				
-
+				
 				{/* Clemens Hall */}
 				<Marker coordinate={clemensHallMarker} onPress={() => setPrompt("Tapped on Clemens Hall")}>
 					<Text style={styles.markerStyle}>{"Clemens Hall"}</Text>
@@ -127,7 +134,9 @@ export default function TunnelsScreen(content, { navigation }) {
 					onPress={() => setPrompt("Tapped on Clemens Hall")}
 				></Polygon>
 
-				{/* Clemens Hall */}
+				
+				
+				{/* Baird Hall */}
 				<Marker coordinate={bairdHallMarker} onPress={() => setPrompt("Tapped on Baird Hall")}>
 					<Text style={styles.markerStyle}>{"Baird Hall"}</Text>
 				</Marker>
@@ -137,7 +146,20 @@ export default function TunnelsScreen(content, { navigation }) {
 					onPress={() => setPrompt("Tapped on Baird Hall")}
 				></Polygon>
 
+				
+				
+				{/* Slee Hall */}
+				<Marker coordinate={sleeHallMarker} onPress={() => setPrompt("Tapped on Slee Hall")}>
+					<Text style={styles.markerStyle}>{"Slee Hall"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={sleeHall.coordinates}
+					tappable={true}
+					onPress={() => setPrompt("Tapped on Slee Hall")}
+				></Polygon>
 
+				
+				
 				{/* Park Hall */}
 				<Marker coordinate={parkHallMarker} onPress={() => setPrompt("Tapped on Park Hall")}>
 					<Text style={styles.markerStyle}>{"Park Hall"}</Text>
@@ -147,6 +169,8 @@ export default function TunnelsScreen(content, { navigation }) {
 					tappable={true}
 					onPress={() => setPrompt("Tapped on Park Hall")}
 				></Polygon>
+
+				
 
 				{/* Jacobs Management Building */}
 				<Marker coordinate={jacobsManagementMarker} onPress={() => setPrompt("Tapped on Jacobs Management Center")}>
@@ -160,6 +184,7 @@ export default function TunnelsScreen(content, { navigation }) {
 
 
 
+				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
 
 				{contentToLoad != [{}] &&
 					contentToLoad.map((marker, index) => (
@@ -180,6 +205,12 @@ export default function TunnelsScreen(content, { navigation }) {
 		</View>
 	);
 }
+
+
+
+
+
+
 
 // Everything below is used to style this screen
 const styles = StyleSheet.create({

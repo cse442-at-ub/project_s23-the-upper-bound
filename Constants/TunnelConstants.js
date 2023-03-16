@@ -1,4 +1,5 @@
-// , -78.78796225134273
+// All coordinates for markers and polygons go in this file
+
 export const oBrianHallMarker = { latitude: 43.000418729480515, longitude: -78.78794125293997 }
 export const oBrianHall = {
     coordinates: [
@@ -38,10 +39,6 @@ export const oBrianHall = {
 export const baldyHallMarker = {latitude: 43.00038508308743, longitude: -78.78697356307548}
 export const baldyHall = {
     coordinates: [
-    /*
-    43.00023653175734, -78.78754089272778
-    */
-    
         { name2: '2', latitude: 43.0002373636981, longitude: -78.78733628695616 },
         { name3: '3', latitude: 43.00021578569968, longitude: -78.78733561640395 },
         { name4: '4', latitude: 43.000215295290545, longitude: -78.78733494585173 },
@@ -58,10 +55,8 @@ export const baldyHall = {
         { name15: '15', latitude:  43.00055704651122, longitude: -78.78664992131324 },
         { name16: '16', latitude:  43.00055607767068, longitude: -78.78733091064697 },
         { name17: '17', latitude:  43.00033634634228, longitude: -78.78733628695616 },
-
     ]
 }
-
 
 export const lockwoodMarker = { latitude: 43.000263294346695, longitude: -78.78601186555086 }
 export const lockwood = {
@@ -76,7 +71,6 @@ export const lockwood = {
         { name8: '8', latitude: 43.00059288830368, longitude: -78.78636624224235 },
     ]
 }
-
 
 export const parkHallMarker = { latitude: 42.99973473466013, longitude: -78.78793079406394 }
 export const parkHall = {
@@ -112,14 +106,9 @@ export const parkHall = {
         { name29: '29', latitude: 42.99969756688901, longitude: -78.78829201515448 },
         { name30: '30', latitude: 42.99964411181855, longitude: -78.78829201515448 },
         { name31: '31', latitude: 42.99964411181855, longitude: -78.78825312312418 },
-
-
-        
     ]
 }
 
-/*
-*/
 export const jacobsManagementMarker = { latitude: 42.99954946189821, longitude: -78.78692107107386 }
 export const jacobsManagement = {
     coordinates: [
@@ -157,7 +146,6 @@ export const jacobsManagement = {
         { name32: '32', latitude: 42.99944119911870, longitude: -78.78727322542733 },
         { name33: '33', latitude: 42.99940687003647, longitude: -78.78727188432283 },
         { name34: '34', latitude: 42.99940637962087, longitude: -78.78719812357569 },
-
     ]
 }
 
@@ -197,7 +185,6 @@ export const clemensHall = {
     ]
 }
 
-
 export const bairdHallMarker = { latitude: 43.00005463835832, longitude: -78.78443540552821 }
 export const bairdHall = {
     coordinates: [
@@ -233,5 +220,15 @@ export const bairdHall = {
         { name30: '30', latitude: 43.00009041910942, longitude: -78.78464837235128 },
         { name31: '31', latitude: 43.00008894787894, longitude: -78.78482673925126 },
         { name32: '32', latitude: 43.000038945222374, longitude: -78.78489305743425 },
+    ]
+}
+
+export const sleeHallMarker = { latitude: 43.00041724383989, longitude: -78.78397159516753 }
+export const sleeHall = {
+    coordinates: [
+        { name1: '1', latitude: 43.00029169938052, longitude: -78.78426049690647 },
+        { name2: '2', latitude: 43.00029218978905, longitude: -78.78367454052227 },
+        { name3: '3', latitude: 43.000580549334565, longitude: -78.78367856383502 },
+        { name4: '4', latitude:  43.00057829186586, longitude: -78.78424162400297 },
     ]
 }
