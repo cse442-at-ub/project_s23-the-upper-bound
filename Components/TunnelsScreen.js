@@ -76,8 +76,10 @@ export default function TunnelsScreen(content, { navigation }) {
 				style={styles.mapViewStyle}
 				customMapStyle={mapStyle}
 				showsIndoors={false}
+				minZoomLevel={17} // Locks the zoom out so that the buildings don't disappear on certain phones.
 				loadingEnabled={true}
 				showsCompass={true}
+
 				// This is the location the map will first load to
 				initialRegion={{
 					latitude: 43.000288,
@@ -95,6 +97,8 @@ export default function TunnelsScreen(content, { navigation }) {
 				<Polygon
 					coordinates={oBrianHall.coordinates}
 					tappable={true}
+					strokeWidth={0} // To remove the outline of the polygon. You'll find this on every other polygon.
+					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on O'Brian Hall")}
 				></Polygon>
 
@@ -107,6 +111,8 @@ export default function TunnelsScreen(content, { navigation }) {
 				<Polygon
 					coordinates={baldyHall.coordinates}
 					tappable={true}
+					strokeWidth={0}
+					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Baldy Hall")}
 				></Polygon>
 
@@ -119,6 +125,8 @@ export default function TunnelsScreen(content, { navigation }) {
 				<Polygon
 					coordinates={lockwood.coordinates}
 					tappable={true}
+					strokeWidth={0}
+					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Lockwood Library")}
 				></Polygon>
 
@@ -131,6 +139,8 @@ export default function TunnelsScreen(content, { navigation }) {
 				<Polygon
 					coordinates={clemensHall.coordinates}
 					tappable={true}
+					strokeWidth={0}
+					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Clemens Hall")}
 				></Polygon>
 
@@ -143,6 +153,7 @@ export default function TunnelsScreen(content, { navigation }) {
 				<Polygon
 					coordinates={bairdHall.coordinates}
 					tappable={true}
+					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Baird Hall")}
 				></Polygon>
 
@@ -155,6 +166,8 @@ export default function TunnelsScreen(content, { navigation }) {
 				<Polygon
 					coordinates={sleeHall.coordinates}
 					tappable={true}
+					strokeWidth={0}
+					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Slee Hall")}
 				></Polygon>
 
@@ -167,6 +180,8 @@ export default function TunnelsScreen(content, { navigation }) {
 				<Polygon
 					coordinates={parkHall.coordinates}
 					tappable={true}
+					strokeWidth={0}
+					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Park Hall")}
 				></Polygon>
 
@@ -179,14 +194,16 @@ export default function TunnelsScreen(content, { navigation }) {
 				<Polygon
 					coordinates={jacobsManagement.coordinates}
 					tappable={true}
+					strokeWidth={0}
+					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Jacobs Management Center")}
 				></Polygon>
 
 
 
 				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
-
-				{contentToLoad != [{}] &&
+				
+				{/*contentToLoad != [{}] &&
 					contentToLoad.map((marker, index) => (
 						// Places a marker for each object in PrinterLocations
 						<Marker
@@ -196,7 +213,8 @@ export default function TunnelsScreen(content, { navigation }) {
 							//image={{uri:'../assets/map-printer.png'}}
 							//image={require("../assets/map-printer.png")}
 						></Marker>
-					))}
+					))*/}
+				
 			</MapView>
 
 			<View style={styles.promptViewStyle}>
