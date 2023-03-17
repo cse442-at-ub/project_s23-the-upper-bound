@@ -19,14 +19,14 @@ export default function AppScreen({navigation}){
             title="Wepa Printing"
             onPress={() => Linking.openURL('https://www.buffalo.edu/ubit/services/print-anywhere.html')}
             >
-            <Text style={styles.buttons}>Wepa Printing</Text>
+            <Text style={styles.buttons}>Printing App</Text>
              </Pressable>
              <Pressable
             style={styles.signupBtn}
             title="GET App"
             onPress={() => Linking.openURL('https://myubcard.com/card/manage-account')}
             >
-            <Text style={styles.buttons}>GET App</Text>
+            <Text style={styles.buttons}>Food App</Text>
              </Pressable>
 
              <Pressable
@@ -34,7 +34,7 @@ export default function AppScreen({navigation}){
             title="UB Rewards"
             onPress={() => Linking.openURL('https://ubbulls.com/sports/2021/8/3/student-mobile-tickets')}
             >
-            <Text style={styles.buttons}>UB Rewards</Text>
+            <Text style={styles.buttons}>Rewards App</Text>
              </Pressable>
 
              <Pressable
@@ -42,7 +42,7 @@ export default function AppScreen({navigation}){
             title="Navigate"
             onPress={() => Linking.openURL('https://www.buffalo.edu/studentsuccess/succeed/navigate.html')}
             >
-            <Text style={styles.buttons}>UB Navigate</Text>
+            <Text style={styles.buttons}>Advising App</Text>
              </Pressable>
 
              <ImageBackground
