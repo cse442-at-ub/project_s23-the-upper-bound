@@ -36,6 +36,7 @@ export default function LoginScreen({ navigation }) {
 					return;
 				}
 				else{
+					setError("Incorrect Password\nPlease try again")
 					console.log("incorrect password");
 					return;
 				}
@@ -44,7 +45,7 @@ export default function LoginScreen({ navigation }) {
 
 		}
 		setError("User does not exist\nPlease sign up first!");
-		navigation.navigate("signup")
+		//navigation.navigate("signup")
 		console.log("user does not exist")
 	}
 

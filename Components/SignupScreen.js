@@ -30,10 +30,12 @@ export default function SignupScreen({ navigation }) {
 
 			console.log("Passwords match");
 			addPerson();
-			if (errorReuse == ""){
+			if (errorReuse != ""){
 				console.log(errorReuse)
-				navigation.navigate("home");
+				
+				
 			}
+			
 			
 		} 
 		else {
@@ -66,6 +68,7 @@ export default function SignupScreen({ navigation }) {
 		} catch (error) {
 		  console.log('Error saving new person: ', error);
 		}
+		navigation.navigate("home");
 	  }
 
 	console.log("Current username: ", user);
