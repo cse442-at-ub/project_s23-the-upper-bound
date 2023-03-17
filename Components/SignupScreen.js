@@ -21,9 +21,7 @@ export default function SignupScreen({ navigation }) {
 	const [errorText, setErrorText] = useState("");
 	const [errorReuse, setErrorReuse] = useState("");
 
-
 	function onPressLogin() {
-
 
 		if (password === confirm) {
 			if (errorText !== "") {
@@ -32,9 +30,13 @@ export default function SignupScreen({ navigation }) {
 
 			console.log("Passwords match");
 			addPerson();
-			navigation.navigate("home");
+			if (errorReuse == ""){
+				console.log(errorReuse)
+				navigation.navigate("home");
+			}
 			
-		} else {
+		} 
+		else {
 			setErrorText("Passwords do not match, please try again");
 			console.log("Passwords do not match, please try again");
 		}
@@ -49,7 +51,7 @@ export default function SignupScreen({ navigation }) {
 			var currentP=queryResult[i];
 			if(currentP.get('username')==user){
 				setErrorReuse("You already have an account!\nPlease sign in");
-				navigation.navigate("login")
+
 				return;
 			}
 		}
