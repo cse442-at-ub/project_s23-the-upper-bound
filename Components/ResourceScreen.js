@@ -41,17 +41,17 @@ export default function ResourceScreen({ navigation }) {
           )
         }
       >
-        <Text style={styles.buttonTXT}>Medical</Text>
+        <Text style={styles.buttonTXT}>Medical Resources</Text>
       </Pressable>
 
       <Pressable
         style={styles.CLbuttons}
-        title="MEDICAL"
+        title="housing"
         onPress={() =>
           Linking.openURL("https://www.buffalo.edu/campusliving.html")
         }
       >
-        <Text style={styles.buttonTXT}>Campus Living</Text>
+        <Text style={styles.buttonTXT}>Housing Resources</Text>
       </Pressable>
 
       <Pressable
@@ -59,14 +59,14 @@ export default function ResourceScreen({ navigation }) {
         title="writing"
         onPress={() => Linking.openURL("https://www.buffalo.edu/writing.html")}
       >
-        <Text style={styles.buttonTXT}>Writing Center</Text>
+        <Text style={styles.buttonTXT}>Writing Resources</Text>
       </Pressable>
       <Pressable
         style={styles.CRbuttons}
         title="career"
         onPress={() => Linking.openURL("https://www.buffalo.edu/career.html")}
       >
-        <Text style={styles.buttonTXT}>Career Center</Text>
+        <Text style={styles.buttonTXT}>Career Resources</Text>
       </Pressable>
 
       <Pressable
@@ -74,7 +74,7 @@ export default function ResourceScreen({ navigation }) {
         title="career"
         onPress={() => Linking.openURL("https://advising.buffalo.edu/")}
       >
-        <Text style={styles.buttonTXT}>Academic Advisment</Text>
+        <Text style={styles.buttonTXT}>Academic Advising</Text>
       </Pressable>
 
       <Pressable
