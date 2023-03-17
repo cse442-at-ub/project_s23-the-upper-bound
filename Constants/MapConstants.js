@@ -62,6 +62,15 @@ export const mapStyle = [
       ]
     },
     {
+      "featureType": "landscape.man_made",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "visibility": "shown"
+        }
+      ]
+    },
+    {
       "featureType": "landscape.natural",
       "elementType": "geometry",
       "stylers": [
