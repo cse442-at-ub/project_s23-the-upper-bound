@@ -105,32 +105,28 @@ export default function HomeScreen({ navigation }) {
 						<Text style={styles.underButtonText}>Printers</Text>
 					</View>
 				</View>
-				<View style={styles.fourthButtonRow}>
-					<View style={styles.fourthButtonRow}>
-							<Pressable
-								style={styles.newMapButtons}
-								title="Event"
-								onPress={() => navigation.navigate("events")}
-							>
-								<Text style={styles.buttons}>📃</Text>
-							</Pressable>
-							<Text style={styles.underButtonText}>Events</Text>
-							
-						
+				<View style={styles.thirdButtonRow}>
+					<View style={styles.buttonAndTextViewRow3}>
+						<Pressable
+							style={styles.closerMapButtons}
+							title="Food"
+							onPress={() => navigation.navigate("events")}
+						>
+							<Text style={styles.buttons}>📰</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Events</Text>
 					</View>
 
-						<View style={styles.buttonAndTextViewRow4}>
-							<Pressable
-								style={styles.newMapButtons}
-								title="Apps"
-								onPress={() => navigation.navigate("apps")}
-							>
-								<Text style={styles.buttons}>📱</Text>
-							</Pressable>
-							<Text style={styles.underButtonText}>Apps</Text>
-							
-						</View>
-
+					<View style={styles.buttonAndTextViewRow3}>
+						<Pressable
+							style={styles.closerMapButtons}
+							title="Apps"
+							onPress={() => navigation.navigate("apps")}
+						>
+							<Text style={styles.buttons}>📱</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Apps</Text>
+					</View>
 				</View>
 
 				<ImageBackground
