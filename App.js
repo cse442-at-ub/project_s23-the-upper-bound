@@ -20,6 +20,7 @@ import WelcomeScreen from "./Components/WelcomeScreen.js";
 import LoginScreen from "./Components/LoginScreen";
 import SignupScreen from "./Components/SignupScreen";
 import EventScreen from "./Components/EventScreen";
+import AppScreen from "./Components/AppScreen";
 
 import HomeScreen from "./Components/HomeScreen.js";
 //////////////////////////////////////////////////////////////////////////// END OF IMPORTS
@@ -89,6 +90,12 @@ export default function App() {
 				component={EventScreen}
 				options={{headerShown:false}}
 				></Stack.Screen>
+				<Stack.Screen
+				name="apps"
+				component={AppScreen}
+				options={{headerShown:false}}
+				></Stack.Screen>
+				
 				<Stack.Screen
 					name="home"
 					component={HomeScreen}
