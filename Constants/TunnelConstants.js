@@ -55,7 +55,7 @@ export const baldyHall = {
     ]
 }
 
-export const lockwoodMarker = { latitude: 43.000263294346695, longitude: -78.78601186555086 }
+export const lockwoodMarker = { latitude: 43.00017045422133, longitude: -78.78606709130476 }
 export const lockwood = {
     coordinates: [
         { name1: '1', latitude: 42.99987146302601, longitude: -78.78636386699738 },
@@ -238,14 +238,38 @@ export const studentUnion = {
         { name3: '3', latitude: 43.00150447752806, longitude: -78.78624567549076},
         { name4: '4', latitude: 43.00149820654292, longitude: -78.7860770397344},
         { name5: '5', latitude: 43.00146476127794, longitude: -78.78594270277594},
-        { name6: '6', latitude: 43.00117211443289, longitude: -78.78577978348588},
-        { name7: '7', latitude: 43.00115121103349, longitude: -78.78573405175534},
-        { name8: '8', latitude: 43.001155391713944, longitude: -78.78566545415953},
-        { name9: '9', latitude: 43.00084183989061, longitude: -78.78567117062585},
-        { name10: '10', latitude: 43.000852291643845, longitude: -78.78680017272359},
-        { name11: '11', latitude: 43.00122437290032, longitude: -78.7867915980241},
-        { name12: '12', latitude: 43.00123482458846, longitude: -78.78656865583771},
-        { name13: '13', latitude: 43.001257818296146, longitude: -78.78657437230405},
-        { name14: '14', latitude: 43.001257818296146, longitude: -78.78664868636616},
+        { name6: '6', latitude: 43.00137069637605, longitude: -78.78580550759014},
+        { name7: '7', latitude: 43.00117211443289, longitude: -78.78577978348588},
+        { name8: '8', latitude: 43.00115121103349, longitude: -78.78573405175534},
+        { name9: '9', latitude: 43.001155391713944, longitude: -78.78566545415953},
+        { name10: '10', latitude: 43.00084183989061, longitude: -78.78567117062585},
+        { name11: '11', latitude: 43.000852291643845, longitude: -78.78680017272359},
+        { name12: '12', latitude: 43.00122437290032, longitude: -78.7867915980241},
+        { name13: '13', latitude: 43.00123482458846, longitude: -78.78656865583771},
+        { name14: '14', latitude: 43.001257818296146, longitude: -78.78657437230405},
+        { name15: '15', latitude: 43.001257818296146, longitude: -78.78664868636616},
+    ]
+}
+
+export const bellHallMarker = { latitude: 43.00143131599758, longitude: -78.78709742901394 }
+export const bellHall = {
+    coordinates: [
+        { name1: '1', latitude: 43.0016737938881, longitude: -78.78683447156332 },
+        { name2: '2', latitude: 43.001606903531126, longitude: -78.78683732979648 },
+        { name3: '3', latitude: 43.001613174507405, longitude: -78.78680017276398 },
+        { name4: '4', latitude: 43.001629897101765, longitude: -78.78680017276398 }, 
+        { name5: '5', latitude: 43.00162571645359, longitude: -78.78676873219923 }, 
+        { name6: '6', latitude: 43.00160622962056, longitude: -78.78676310951562 },
+        { name7: '7', latitude: 43.00156232083155, longitude: -78.7867011335311 },
+        { name8: '8', latitude: 43.00154532387253, longitude: -78.78673405827526 },
+        { name9: '9', latitude: 43.00144050918804, longitude: -78.78673018477595 },
+        { name10: '10', latitude: 43.00144050918804, longitude: -78.7867456787732 },
+        { name11: '11', latitude: 43.00137677044112, longitude: -78.7867456787732 },
+        { name12: '12', latitude: 43.00137677044112, longitude: -78.78734413441686 },
+        { name13: '13', latitude: 43.0014419256039, longitude: -78.78734607116651 },
+        { name14: '14', latitude: 43.00144050918804, longitude: -78.7873635019134 },
+        { name15: '15', latitude: 43.0016076460326, longitude: -78.78736543866306 },
+        { name16: '16', latitude: 43.00160622962059, longitude: -78.78734800791615 },
+        { name17: '17', latitude: 43.00167705018191, longitude: -78.78735188141546 },
     ]
 }

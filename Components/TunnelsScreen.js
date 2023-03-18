@@ -8,7 +8,8 @@ import {
 	baldyHall, baldyHallMarker, oBrianHall, oBrianHallMarker,
 	lockwood, lockwoodMarker, parkHallMarker, parkHall,
 	jacobsManagementMarker, jacobsManagement, clemensHallMarker, clemensHall,
-	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker, studentUnionMarker, studentUnion
+	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker, studentUnionMarker, studentUnion,
+	bellHall, bellHallMarker
 } from "../Constants/TunnelConstants";
 
 
@@ -140,7 +141,6 @@ export default function TunnelsScreen(content, { navigation }) {
 					coordinates={clemensHall.coordinates}
 					tappable={true}
 					strokeWidth={0}
-					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Clemens Hall")}
 				></Polygon>
 
@@ -153,7 +153,6 @@ export default function TunnelsScreen(content, { navigation }) {
 				<Polygon
 					coordinates={bairdHall.coordinates}
 					tappable={true}
-					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Baird Hall")}
 				></Polygon>
 
@@ -167,7 +166,6 @@ export default function TunnelsScreen(content, { navigation }) {
 					coordinates={sleeHall.coordinates}
 					tappable={true}
 					strokeWidth={0}
-					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Slee Hall")}
 				></Polygon>
 
@@ -181,7 +179,6 @@ export default function TunnelsScreen(content, { navigation }) {
 					coordinates={parkHall.coordinates}
 					tappable={true}
 					strokeWidth={0}
-					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Park Hall")}
 				></Polygon>
 
@@ -195,7 +192,6 @@ export default function TunnelsScreen(content, { navigation }) {
 					coordinates={jacobsManagement.coordinates}
 					tappable={true}
 					strokeWidth={0}
-					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Jacobs Management Center")}
 				></Polygon>
 
@@ -207,8 +203,18 @@ export default function TunnelsScreen(content, { navigation }) {
 					coordinates={studentUnion.coordinates}
 					tappable={true}
 					strokeWidth={0}
-					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Student Union")}
+				></Polygon>
+
+				{/* Bell Hall */}
+				<Marker coordinate={bellHallMarker} onPress={() => setPrompt("Tapped on Bell Hall")}>
+					<Text style={styles.markerStyle}>{"Bell\nHall"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={bellHall.coordinates}
+					tappable={true}
+					strokeWidth={0}
+					onPress={() => setPrompt("Tapped on Bell Hall")}
 				></Polygon>
 
 
