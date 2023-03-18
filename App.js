@@ -125,7 +125,8 @@ export default function App() {
 							/>
 						),
 					}}
-          
+				/>
+				
 				<Stack.Screen
 					name="events"
 					component={EventScreen}
