@@ -479,8 +479,29 @@ export const fronczakHall = {
 
     ]
 }
+
+export const computingCenterMarker = { latitude: 43.00121098263028, longitude: -78.79185520110968 }
+export const computingCenter = {
+    coordinates: [
+    
+        { name1: '1', latitude: 43.001297293180414, longitude: -78.79222266371391 },
+        { name2: '2', latitude: 43.00115850967778, longitude: -78.79222199320024 },
+        { name3: '3', latitude: 43.001157528874536, longitude: -78.79218712448598 },
+        { name4: '4', latitude: 43.00109966145562, longitude: -78.79218645393378 },
+        { name5: '5', latitude: 43.00110064225971, longitude: -78.79158115926583 },
+        { name6: '6', latitude: 43.001385565210015, longitude: -78.79158115926583 },
+        { name7: '7', latitude: 43.00138458441041, longitude: -78.7920797888854 },
+        { name8: '8', latitude: 43.0013017067863, longitude: -78.7920797888854 },
+    ]
+}
 /*
 
+43., -78.
+43., -78.
+43., -78.
+43., -78.
+43., -78.
+43., -78.
 43., -78.
 */
 
