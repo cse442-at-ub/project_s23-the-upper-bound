@@ -520,8 +520,32 @@ export const nortonHall = {
 
     ]
 }
+
+export const talbertHallMarker = { latitude: 43.000687338717796, longitude: -78.79041288638787 }
+export const talbertHall = {
+    coordinates: [
+    
+        { name1: '1', latitude: 43.000928617689645, longitude: -78.79063685084084 },
+        { name2: '2', latitude: 43.000510792524615, longitude: -78.79063685084084 },
+
+        { name3: '3', latitude: 43.000514715778785, longitude: -78.79017416978535 },
+
+        { name4: '4', latitude: 43.000676549794804, longitude: -78.79017685199436 },
+
+        { name5: '5', latitude: 43.00067949222756, longitude: -78.78995523447465 },
+        { name6: '6', latitude: 43.00104445576158, longitude: -78.78995992834034 },
+        { name7: '7', latitude: 43.00104347495653, longitude: -78.79013896579225 },
+        { name8: '8', latitude: 43.0009198933935, longitude: -78.79013829524 },
+        { name9: '9', latitude: 43.0009198933935, longitude: -78.79006587559653 },
+        { name10: '10', latitude: 43.00076786811223, longitude: -78.79006520504436 },
+        { name11: '11', latitude: 43.000766887302596, longitude: -78.7902891694971 },
+        { name12: '12', latitude: 43.00093019186473, longitude: -78.7902891694971 },
+    ]
+}
+
 /*
-43., -78.
+
+
 */
 
 

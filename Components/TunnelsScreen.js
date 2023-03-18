@@ -15,7 +15,7 @@ import {
 	hochstetter, hochstetterMarker, mathBuilding, mathBuildingMarker,
 	nscMarker, nsc, fronczakHallMarker, fronczakHall,
 	computingCenterMarker, computingCenter, capenHall, cqpenHallMarker,
-	nortonHall, nortonHallMarker,
+	nortonHall, nortonHallMarker, talbertHallMarker, talbertHall,
 } from "../Constants/TunnelConstants";
 
 
@@ -343,6 +343,17 @@ export default function TunnelsScreen(content, { navigation }) {
 					tappable={true}
 					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Norton Hall")}
+				></Polygon>
+
+				{/* Talbert Hall */}
+				<Marker coordinate={talbertHallMarker} onPress={() => setPrompt("Tapped on Talbert Hall")}>
+					<Text style={styles.markerStyle}>{"Talbert\nHall"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={talbertHall.coordinates}
+					tappable={true}
+					strokeWidth={0}
+					onPress={() => setPrompt("Tapped on Talbert Hall")}
 				></Polygon>
 				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
 				
