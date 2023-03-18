@@ -340,6 +340,43 @@ export const bonnerHall = {
         { name14: '14', latitude: 43.0015358485466, longitude: -78.7885133161229 },
         { name15: '15', latitude: 43.00150299183133, longitude: -78.7885133161229 },
         { name16: '16', latitude: 43.00150250143246, longitude: -78.78849588176575 },
+    ]
+}
+
+export const cookeHallMarker = { latitude: 42.9999025464899, longitude: -78.79143008127382 }
+export const cookeHall = {
+    coordinates: [
+        { name1: '1', latitude: 42.999649493559275, longitude: -78.79151658251008 },
+        { name2: '2', latitude: 42.999649493559275, longitude: -78.79134223893873 },
+        { name3: '3', latitude: 42.99975542281909, longitude: -78.7913469328011 },
+        { name4: '4', latitude: 42.9998844012563, longitude: -78.79117191866064 },
+        { nameOops: 'oops1', latitude: 42.99988633938249, longitude: -78.7910956329216 },
+        { nameOops2: 'oops2', latitude: 43.00002461303801, longitude: -78.79109752797726 },
+
+
+        { name5: '5', latitude: 43.00002563969106, longitude: -78.79117370101372 },
+        { name6: '6', latitude: 43.00015118469365, longitude: -78.79135206791088 },
+        { name7: '7', latitude: 43.00027035412669, longitude: -78.79135475011972 },
+        { name8: '8', latitude: 43.00026937330928, longitude: -78.79152503310345 },
+        { name9: '9', latitude: 43.000161483297624, longitude: -78.79153442083421 },
+        { name10: '10', latitude: 43.000045746528066, longitude: -78.79168931839635 },
+        { name11: '11', latitude: 43.00004452636777, longitude: -78.79184741088031 },
+        { name12: '12', latitude: 42.99991603867877, longitude: -78.79184741087978 },
+        { name13: '13', latitude: 42.9999160386788, longitude: -78.79174079307491 },
+        { name14: '14', latitude: 42.99975590610153, longitude: -78.79152037971176 },
 
     ]
 }
+/*
+9, 
+, 
+, 
+, 
+, 
+, 
+8, 
+, 
+
+*/
+// 
+

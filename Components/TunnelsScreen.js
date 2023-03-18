@@ -11,7 +11,7 @@ import {
 	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker,
 	studentUnionMarker, studentUnion, bellHall, bellHallMarker,
 	furnasHall, furnasHallMarker, jarvisHallMarker, jarvisHall,
-	bonnerHall, bonnerHallMarker
+	bonnerHall, bonnerHallMarker, cookeHall, cookeHallMarker
 } from "../Constants/TunnelConstants";
 
 
@@ -241,7 +241,7 @@ export default function TunnelsScreen(content, { navigation }) {
 					onPress={() => setPrompt("Tapped on Jarvis Hall")}
 				></Polygon>
 
-				{/* Jarvis Hall */}
+				{/* Bonner Hall */}
 				<Marker coordinate={bonnerHallMarker} onPress={() => setPrompt("Tapped on Bonner Hall")}>
 					<Text style={styles.markerStyle}>{"Bonner\nHall"}</Text>
 				</Marker>
@@ -252,19 +252,22 @@ export default function TunnelsScreen(content, { navigation }) {
 					onPress={() => setPrompt("Tapped on Bonner Hall")}
 				></Polygon>
 
+				{/* Cooke Hall */}
+				<Marker coordinate={cookeHallMarker} onPress={() => setPrompt("Tapped on Cooke Hall")}>
+					<Text style={styles.markerStyle}>{"Cooke\nHall"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={cookeHall.coordinates}
+					tappable={true}
+					strokeWidth={0}
+					onPress={() => setPrompt("Tapped on Cooke Hall")}
+				></Polygon>
+
+				
+
 				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
 				
-				{/*contentToLoad != [{}] &&
-					contentToLoad.map((marker, index) => (
-						// Places a marker for each object in PrinterLocations
-						<Marker
-							key={index}
-							coordinate={marker}
-							title={marker.title}
-							//image={{uri:'../assets/map-printer.png'}}
-							//image={require("../assets/map-printer.png")}
-						></Marker>
-					))*/}
+				
 				
 			</MapView>
 
