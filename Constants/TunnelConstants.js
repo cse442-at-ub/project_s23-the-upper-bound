@@ -466,12 +466,22 @@ export const nsc = {
     ]
 }
 
+
+export const fronczakHallMarker = { latitude: 43.00125217631633, longitude: -78.79083864395457 }
+export const fronczakHall = {
+    coordinates: [
+    
+        { name1: '1', latitude: 43.00138516357646, longitude: -78.79151371917129 },
+        { name2: '2', latitude: 43.001101745168214, longitude: -78.79151166752828 },
+        { name3: '3', latitude: 43.001104687580565, longitude: -78.79026969756809 },
+        { name4: '4', latitude: 43.001389120108854, longitude: -78.79027103867249 },
+        { name5: '4', latitude: 43.001386177710145, longitude: -78.79151383669395 },
+
+    ]
+}
 /*
 
-
-
-
-
+43., -78.
 */
 
 
