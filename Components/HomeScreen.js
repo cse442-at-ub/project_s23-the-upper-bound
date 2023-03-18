@@ -105,7 +105,7 @@ export default function HomeScreen({ navigation }) {
 						<Text style={styles.underButtonText}>Printers</Text>
 					</View>
 				</View>
-				<View style={styles.thirdButtonRow}>
+					<View style={styles.thirdButtonRow}>
 					<View style={styles.buttonAndTextViewRow3}>
 						<Pressable
 							style={styles.closerMapButtons}
@@ -126,6 +126,16 @@ export default function HomeScreen({ navigation }) {
 							<Text style={styles.buttons}>📱</Text>
 						</Pressable>
 						<Text style={styles.underButtonText}>Apps</Text>
+					</View>
+					<View style={styles.buttonAndTextViewRow3}>
+						<Pressable
+							style={styles.closerMapButtons}
+							title="Resource"
+							onPress={() => navigation.navigate("resources")}
+						>
+							<Text style={styles.buttons}>📖</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Resources</Text>
 					</View>
 				</View>
 

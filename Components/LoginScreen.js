@@ -1,8 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { Pressable, StyleSheet, Text, View, TextInput } from "react-native";
+import { Pressable, StyleSheet, Text, View, TextInput, ImageBackground } from "react-native";
 import React, { useEffect, useState } from "react";
-
-
+import Parse from 'parse/react-native.js';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+Parse.setAsyncStorage(AsyncStorage);
+Parse.initialize('WBMZQx3eCRpiyvHoLvRcLC46lyV6yLXTmpG2jY3Z','MSnW5CM6O6sRFHsexOxs7ZpIgpE3GXD846xz9uEg');
+Parse.serverURL = 'https://parseapi.back4app.com/';
+import { NavigationContainer } from "@react-navigation/native";
 
 
 
@@ -11,20 +15,40 @@ export default function LoginScreen({ navigation }) {
 	const [user, setUser] = useState("");
 	const [password, setPassword] = useState("");
 	const [errorText, setErrorText] = useState("");
+	const [error, setError] = useState("");
 
 	function onPressLogin() {
-		if (user === "Username" && password === "Password") {
-			if (errorText !== "") {
-				setErrorText("");
+		fetchPerson();
+		console.log("Correct username and password");
+		
+	}
+	async function fetchPerson() {
+		//create your Parse Query using the Person Class you've created
+		let query = new Parse.Query('Person');
+		//run the query to retrieve all objects on Person class, optionally you can add your filters
+		let queryResult = await query.find();
+		var i=0
+		for(i=0; i<queryResult.length;i++){
+			var currentP=queryResult[i];
+			if(currentP.get('username')==user){
+				if(currentP.get('password')==password){
+					navigation.navigate("home");
+					return;
+				}
+				else{
+					setError("Incorrect Password\nPlease try again")
+					console.log("incorrect password");
+					return;
+				}
 			}
 			navigation.navigate("home")
 
 
-			console.log("Correct username and password");
-		} else {
-			setErrorText("Incorrect username and password combination");
-			console.log("Incorrect username and password combination");
+
 		}
+		setError("User does not exist\nPlease sign up first!");
+		//navigation.navigate("signup")
+		console.log("user does not exist")
 	}
 
 	console.log("Current username: ", user);
@@ -32,8 +56,14 @@ export default function LoginScreen({ navigation }) {
 
 	return (
 		<View style={styles.container}>
+
+			<ImageBackground
+				source={require("../assets/some_tri.png")}
+				style={styles.welcomeUp}
+			></ImageBackground>
+
 			{/* Main Text */}
-			<Text style={styles.welbak}>{"Welcome back"}</Text>
+			<Text style={styles.welbak}>{"Welcome\n\tBack"}</Text>
 
 			{/* Error Message */}
 			<Text style={{ paddingTop: 8, paddingBottom: 10, color: "red" }}>
@@ -49,9 +79,9 @@ export default function LoginScreen({ navigation }) {
 					onChangeText={(user) => setUser(user)}
 				></TextInput>
 
-				{/* Password Text Field */}
 			</View>
 
+			{/* Password Text Field */}
 			<View style={styles.usrPass}>
 				<TextInput
 					style={styles.userTxt}
@@ -66,7 +96,21 @@ export default function LoginScreen({ navigation }) {
 				<Text style={styles.buttons}>Login</Text>
 			</Pressable>
 
-			
+			<Text 
+				style={styles.smallText}>{"Need an account?"}
+			</Text>
+			<Pressable style={styles.signupButton} title="GoToLogin" onPress={() =>navigation.navigate("signup")}>
+				<Text style={styles.signupSmall}> {"Sign up here"}</Text>
+			</Pressable>
+
+			<Text style={{ paddingTop: 8, paddingBottom: 10, color: "red" }}>
+				{error}
+			</Text>
+
+			<ImageBackground
+				source={require("../assets/WelBot.png")}
+				style={styles.welcomeDown}
+			></ImageBackground>
 		</View>
 	);
 }
@@ -87,22 +131,24 @@ const styles = StyleSheet.create({
 
 	loginBtn: {
 		width: "70%",
-		borderRadius: 20,
+		borderRadius: 7,
 		height: 50,
 		alignItems: "center",
 		justifyContent: "center",
 		backgroundColor: "#393939",
-		paddingHorizontal: 0,
-		marginTop: 100,
+		borderColor: "#FFFFFF",
+		elevation: 3,
+		marginTop: 20,
 	},
 
 	signupBtn: {
 		width: "70%",
-		borderRadius: 20,
+		borderRadius: 7,
 		height: 50,
 		alignItems: "center",
 		justifyContent: "center",
 		backgroundColor: "#3265CB",
+		borderColor: "#FFFFFF",
 		elevation: 3,
 		marginTop: 20,
 	},
@@ -113,11 +159,17 @@ const styles = StyleSheet.create({
 	userTxt: {
 		color: "#FFFFFF",
 		marginLeft: 10,
-		fontSize: 20,
+		fontSize: 15,
+	},
+	smallText:{
+		marginTop: 15,
+		fontSize: 12,
+		color: "white",
+		justifyContent: "center",
 	},
 	usrPass: {
 		backgroundColor: "#1E1E1E",
-		borderBottomColor: "#393939",
+		borderBottomColor: "#F9F6EE",
 		borderBottomWidth: 2,
 		borderRadius: 5,
 		width: "70%",
@@ -127,10 +179,32 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	welbak: {
-		fontSize: 36,
+		fontSize: 25,
 		color: "white",
-		marginTop: 200,
+		marginTop: -225,
+		marginBottom: 10,
 		justifyContent: "center",
+	},
+	welcomeDown: {
+		marginTop: 0,
+		height: 400,
+		width: 400,
+	},
+	welcomeUp: {
+		height: 400,
+		width: 400,
+	},
+	signupButton:{
+		justifyContent:"center",
+		//color:"blue",
+		height:20, 
+		width:100,
+		
+		//alignContent:"center",
+	},
+	signupSmall:{
+		fontSize: 12,
+		color:"#3265CB",
 	},
 });
 

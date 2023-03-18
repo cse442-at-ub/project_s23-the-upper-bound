@@ -19,7 +19,7 @@ export default function EventScreen({navigation}){
             title="Check out CSE Events"
             onPress={() => Linking.openURL('https://engineering.buffalo.edu/computer-science-engineering/news-and-events/events.html')}
             >
-                <Text style={styles.buttons}>Check out what CSE is up to!</Text>
+                <Text style={styles.buttons}>Computer Science events!</Text>
              </Pressable>
              <Pressable
             style={styles.signupBtn}
@@ -42,7 +42,7 @@ export default function EventScreen({navigation}){
             title="Student life events"
             onPress={() => Linking.openURL('https://buffalo.campuslabs.com/engage/events')}
             >
-            <Text style={styles.buttons}>UB club events!</Text>
+            <Text style={styles.buttons}>Club activities!</Text>
              </Pressable>
 
              <ImageBackground
