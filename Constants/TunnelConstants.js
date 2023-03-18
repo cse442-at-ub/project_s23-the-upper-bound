@@ -295,3 +295,27 @@ export const furnasHall = {
         { name16: '16', latitude: 43.001928714160414, longitude: -78.78741538061924 },
     ]
 }
+
+export const jarvisHallMarker = { latitude: 43.00224905406168, longitude: -78.78710654193615 }
+export const jarvisHall = {
+    coordinates: [
+        { name1: '1', latitude: 43.00249186548167, longitude: -78.7873512532381 },
+        { name2: '2', latitude: 43.00249186548167, longitude: -78.78682946280989 },
+        { name3: '3', latitude: 43.00245742522875, longitude: -78.78682569536998 },
+        { name4: '4', latitude: 43.00245742522875, longitude: -78.78678802097083 },
+        { name5: '5', latitude: 43.00236788048055, longitude: -78.78678990468813 },
+        { name6: '6', latitude: 43.002373390930366, longitude: -78.78682381164738},
+        { name7: '7', latitude: 43.00232084502766, longitude: -78.78682771039306 },
+        { name8: '8', latitude: 43.00232084502766, longitude: -78.78681309001313 },
+        { name9: '9', latitude: 43.002149004806654, longitude: -78.78681413432952 },
+        { name10: '10', latitude: 43.002149768542004, longitude: -78.7867817606311 },
+        { name11: '11', latitude: 43.00211921911964, longitude: -78.78678489356967 },
+        { name12: '12', latitude: 43.002118455383886, longitude: -78.78693631893319 },
+        { name13: '13', latitude: 43.0021406037169, longitude: -78.78693631893319 },
+        { name14: '14', latitude: 43.0021428949233, longitude: -78.78736657582816 },
+        { name15: '15', latitude: 43.00231779009355, longitude: -78.78736866445387 },
+        { name16: '16', latitude: 43.002321608759836, longitude: -78.78735508838679 },
+        { name17: '17', latitude: 43.0023681964694, longitude: -78.78735404407392},
+        { name18: '18', latitude: 43.00236972393654, longitude: -78.78735508839489 },
+    ]
+}
