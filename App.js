@@ -1,167 +1,150 @@
-import { StatusBar } from 'expo-status-bar';
-import { Pressable, StyleSheet, Text, View, Image, TextInput, Button, TouchableOpacity, ImageBackground } from 'react-native';
-import React, {useState} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { StatusBar } from "expo-status-bar";
+import {
+	Pressable,
+	StyleSheet,
+	Text,
+	View,
+	Image,
+	TextInput,
+	Button,
+	TouchableOpacity,
+	ImageBackground,
+} from "react-native";
+
+import React, { useEffect, useState } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import MapsScreen from "./Components/MapsScreen.js";
+import TunnelsScreen from "./Components/TunnelsScreen.js";
+import WelcomeScreen from "./Components/WelcomeScreen.js";
+import LoginScreen from "./Components/LoginScreen";
+import SignupScreen from "./Components/SignupScreen";
+import EventScreen from "./Components/EventScreen";
+import AppScreen from "./Components/AppScreen";
+
+import HomeScreen from "./Components/HomeScreen.js";
+import ResourceScreen from "./Components/ResourceScreen.js";
+
+//////////////////////////////////////////////////////////////////////////// END OF IMPORTS
 
 
 
-function HomeScreen({navigation}){
-  return(
-    <View style={styles.container}>
-        <ImageBackground source={require("./assets/path_icon.png")} style={styles.logo}>
-        <ImageBackground source={require("./assets/BlueTri.png")} style={styles.welcomeUp}></ImageBackground>
-        <Pressable style={styles.loginBtn} title='LOGIN' onPress={() => navigation.navigate('login')}>
-          <Text style={styles.buttons}>LOGIN</Text>
-        </Pressable>
-        <Pressable style={styles.signupBtn} title='SIGNUP' onPress={() => navigation.navigate('signup')}>
-          <Text style={styles.buttons}>SIGNUP</Text>
-        </Pressable>  
-        <ImageBackground source={require("./assets/WelBot.png")} style={styles.welcomeDown}></ImageBackground> 
-        </ImageBackground> 
-        </View>
-    
-  )
-};
-
-function LoginScreen({navigation}){
-  const [user, setUser] = useState('');
-  const [password, setPassword] = useState('');
-  
-  return (
-  <View style = {styles.container}>
-    <Text style={styles.welbak}>
-      {'Welcome\n'}
-      {'    Back\n'}
-    </Text>
-    <View style={styles.usrPass}>
-      <TextInput style={styles.userTxt}
-      placeholder='Username'
-      placeholderTextColor='white'
-      onChangeText={(user)=>setUser(user)}
-      ></TextInput>   
-    </View>
-    <View style= {styles.usrPass}>
-    <TextInput style={styles.userTxt}
-      placeholder='Password'
-      placeholderTextColor='white'
-      onChangeText={(password)=>setPassword(password)}
-      ></TextInput>
-    </View>
-    <Pressable style={styles.loginBtn} title='ENTER' onPress={(navigation.navigate('login'))}>
-    <Text style={styles.buttons}>Login</Text>
-    </Pressable>
-    
-    
-  </View>
-  )
-};
-
-function SignupScreen({navigation}){
-  return(
-  <View style = {styles.container}
-  
-
-
-  ></View>
-  );
-};
-const Stack = createNativeStackNavigator();
-
-function App(){
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  return(
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Welcome' screenOptions={{headerShown: false}}>
-        <Stack.Screen name ='Welcome' component={HomeScreen}>
-        </Stack.Screen>
-        <Stack.Screen name= 'login' component ={LoginScreen}>
-        </Stack.Screen>
-        <Stack.Screen name= 'signup' component ={SignupScreen}></Stack.Screen>
-        </Stack.Navigator>
-    </NavigationContainer>
-
-  );
-
-};
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#1E1E1E',
-    alignItems:'center'
-    
-  },
-  logo:{
-    width:300, 
-    height:300,
-    marginBottom: 500,
-    alignItems:'center'
-  },
-  
-  loginBtn: {
-    width: "70%",
-    borderRadius: 20,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#393939",
-    paddingHorizontal: 0,
-    marginTop: 100
-  },
-
-  signupBtn: {
-    width: "70%",
-    borderRadius: 20,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#3265CB",
-    elevation: 3,
-    marginTop:20
-  },
-  buttons:{
-    fontSize:20,
-    color: 'white',
-  },
-  welcomeUp:{   
-    height:200,
-      width:150,
-    marginLeft:250,
-  },
-  welcomeDown:{
-    marginTop:30,
-    height:400,
-    width:400,
-  },
-  userTxt:{
-    color: '#FFFFFF',
-    marginLeft:10,
-    fontSize:20,
-  },
-  usrPass:{
-    backgroundColor:'#1E1E1E',
-    borderBottomColor: '#393939',
-    borderBottomWidth:2,
-    borderRadius:5,
-    width:"70%",
-    height:50,
-    marginBottom:30,
-    alignContent:'center',
-    justifyContent:'center',
-
-  },
-  welbak:{
-    fontSize:36,
-    color: 'white',
-    marginTop: 200,
-    justifyContent:'center'
-    
-  },
 
 
 
-});
-export default App;
+export default function App() {
+
+	const Stack = createNativeStackNavigator();
+
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [mapContent, setMapContent] = useState("");
+
+	return (
+
+		// NavigationContainer contains all screens that we wish to use as a stack 
+		// (Meaning you can swipe right from the edge of the screen to go pop the current screen. This is not what we want for the entire app but it works for now)
+		// If you make a new screen, write and save your screen as a separate .js file in the Components folder and follow other screen formats and import it above
+		<NavigationContainer>
+			<Stack.Navigator
+				initialRouteName="Welcome"
+				screenOptions={{ headerShown: true }}
+			>
+				{/* Create a route to the welcome screen */}
+				<Stack.Screen
+					name="Welcome"
+					component={WelcomeScreen}
+					options={{ headerShown: false }}
+				/>
+
+				{/* Create a route to the login screen */}
+				<Stack.Screen
+					name="login"
+					options={{ headerShown: false }}
+					component={LoginScreen}
+				></Stack.Screen>
+
+				<Stack.Screen 
+					name="signup" 
+					options={{ headerShown: false }}
+					component={SignupScreen}
+				></Stack.Screen>
+
+				{/* Create a route for the home screen */}
+				<Stack.Screen
+					name="home"
+					component={HomeScreen}
+					options={{ headerShown: false }}
+
+						
+
+						
+				></Stack.Screen>
+
+				{/* Create a route for the maps screen */}
+				<Stack.Screen
+					name="maps"
+					component={MapsScreen}
+					options={{
+						title: "Map",
+						headerStyle: {
+							backgroundColor: "#3265CB",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "normal",
+						},
+						headerRight: () => (
+							<Button
+								onPress={() => alert("This is a button!")}
+								title="Info"
+								color="#fff"
+							/>
+						),
+					}}
+				></Stack.Screen>
+
+				<Stack.Screen
+					name="tunnels"
+					component={TunnelsScreen}
+					options={{
+						title: "Tunnels",
+						headerStyle: {
+							backgroundColor: "#3265CB",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "normal",
+						},
+						headerRight: () => (
+							<Button
+								onPress={() => alert("This is a button!")}
+								title="Info"
+								color="#fff"
+							/>
+						),
+					}}
+				/>
+				
+				<Stack.Screen
+					name="events"
+					component={EventScreen}
+					options={{headerShown:false}}
+				></Stack.Screen>
+
+				<Stack.Screen
+				name="apps"
+				component={AppScreen}
+				options={{headerShown:false}}
+				></Stack.Screen>
+
+				<Stack.Screen
+					name="resources"
+					component={ResourceScreen}
+					options={{ headerShown: false }}	
+				></Stack.Screen>
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
+}
