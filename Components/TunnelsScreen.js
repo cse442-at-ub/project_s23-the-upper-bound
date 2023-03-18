@@ -8,7 +8,7 @@ import {
 	baldyHall, baldyHallMarker, oBrianHall, oBrianHallMarker,
 	lockwood, lockwoodMarker, parkHallMarker, parkHall,
 	jacobsManagementMarker, jacobsManagement, clemensHallMarker, clemensHall,
-	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker
+	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker, studentUnionMarker, studentUnion
 } from "../Constants/TunnelConstants";
 
 
@@ -197,6 +197,18 @@ export default function TunnelsScreen(content, { navigation }) {
 					strokeWidth={0}
 					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Jacobs Management Center")}
+				></Polygon>
+
+				{/* Student Union */}
+				<Marker coordinate={studentUnionMarker} onPress={() => setPrompt("Tapped on Student Union")}>
+					<Text style={styles.markerStyle}>{"Student\nUnion"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={studentUnion.coordinates}
+					tappable={true}
+					strokeWidth={0}
+					//fillColor='#868f9e'
+					onPress={() => setPrompt("Tapped on Student Union")}
 				></Polygon>
 
 

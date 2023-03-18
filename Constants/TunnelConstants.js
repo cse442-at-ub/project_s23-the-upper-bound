@@ -229,3 +229,23 @@ export const sleeHall = {
         { name4: '4', latitude:  43.00057829186586, longitude: -78.78424162400297 },
     ]
 }
+
+export const studentUnionMarker = { latitude: 43.00106341667829, longitude: -78.78621423492602 }
+export const studentUnion = {
+    coordinates: [
+        { name1: '1', latitude: 43.001558826039265, longitude: -78.786645828133 },
+        { name2: '2', latitude: 43.00155673571279, longitude: -78.78623995902446 },
+        { name3: '3', latitude: 43.00150447752806, longitude: -78.78624567549076},
+        { name4: '4', latitude: 43.00149820654292, longitude: -78.7860770397344},
+        { name5: '5', latitude: 43.00146476127794, longitude: -78.78594270277594},
+        { name6: '6', latitude: 43.00117211443289, longitude: -78.78577978348588},
+        { name7: '7', latitude: 43.00115121103349, longitude: -78.78573405175534},
+        { name8: '8', latitude: 43.001155391713944, longitude: -78.78566545415953},
+        { name9: '9', latitude: 43.00084183989061, longitude: -78.78567117062585},
+        { name10: '10', latitude: 43.000852291643845, longitude: -78.78680017272359},
+        { name11: '11', latitude: 43.00122437290032, longitude: -78.7867915980241},
+        { name12: '12', latitude: 43.00123482458846, longitude: -78.78656865583771},
+        { name13: '13', latitude: 43.001257818296146, longitude: -78.78657437230405},
+        { name14: '14', latitude: 43.001257818296146, longitude: -78.78664868636616},
+    ]
+}
