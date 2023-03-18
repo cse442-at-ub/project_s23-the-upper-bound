@@ -11,7 +11,8 @@ import {
 	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker,
 	studentUnionMarker, studentUnion, bellHall, bellHallMarker,
 	furnasHall, furnasHallMarker, jarvisHallMarker, jarvisHall,
-	bonnerHall, bonnerHallMarker, cookeHall, cookeHallMarker
+	bonnerHall, bonnerHallMarker, cookeHall, cookeHallMarker,
+	hochstetter, hochstetterMarker
 } from "../Constants/TunnelConstants";
 
 
@@ -263,7 +264,16 @@ export default function TunnelsScreen(content, { navigation }) {
 					onPress={() => setPrompt("Tapped on Cooke Hall")}
 				></Polygon>
 
-				
+				{/* Hochstetter Hall */}
+				<Marker coordinate={hochstetterMarker} onPress={() => setPrompt("Tapped on Hochstetter Hall")}>
+					<Text style={styles.markerStyle}>{"Hochstetter\nHall"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={hochstetter.coordinates}
+					tappable={true}
+					strokeWidth={0}
+					onPress={() => setPrompt("Tapped on Hochstetter Hall")}
+				></Polygon>
 
 				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
 				
