@@ -43,8 +43,6 @@ export default function LoginScreen({ navigation }) {
 			}
 			navigation.navigate("home")
 
-
-
 		}
 		setError("User does not exist\nPlease sign up first!");
 		//navigation.navigate("signup")
@@ -95,6 +93,7 @@ export default function LoginScreen({ navigation }) {
 			<Pressable style={styles.loginBtn} title="ENTER" onPress={onPressLogin}>
 				<Text style={styles.buttons}>Login</Text>
 			</Pressable>
+
 
 			<Text 
 				style={styles.smallText}>{"Need an account?"}

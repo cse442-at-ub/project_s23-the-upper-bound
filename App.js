@@ -16,6 +16,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import MapsScreen from "./Components/MapsScreen.js";
+import TunnelsScreen from "./Components/TunnelsScreen.js";
 import WelcomeScreen from "./Components/WelcomeScreen.js";
 import LoginScreen from "./Components/LoginScreen";
 import SignupScreen from "./Components/SignupScreen";
@@ -38,6 +39,7 @@ export default function App() {
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [mapContent, setMapContent] = useState("");
 
 	return (
 
@@ -69,6 +71,17 @@ export default function App() {
 					component={SignupScreen}
 				></Stack.Screen>
 
+				{/* Create a route for the home screen */}
+				<Stack.Screen
+					name="home"
+					component={HomeScreen}
+					options={{ headerShown: false }}
+
+						
+
+						
+				></Stack.Screen>
+
 				{/* Create a route for the maps screen */}
 				<Stack.Screen
 					name="maps"
@@ -93,6 +106,27 @@ export default function App() {
 				></Stack.Screen>
 
 				<Stack.Screen
+					name="tunnels"
+					component={TunnelsScreen}
+					options={{
+						title: "Tunnels",
+						headerStyle: {
+							backgroundColor: "#3265CB",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "normal",
+						},
+						headerRight: () => (
+							<Button
+								onPress={() => alert("This is a button!")}
+								title="Info"
+								color="#fff"
+							/>
+						),
+					}}
+          
+				<Stack.Screen
 					name="events"
 					component={EventScreen}
 					options={{headerShown:false}}
@@ -103,17 +137,11 @@ export default function App() {
 				component={AppScreen}
 				options={{headerShown:false}}
 				></Stack.Screen>
-				
-				<Stack.Screen
-					name="home"
-					component={HomeScreen}
-					options={{ headerShown: false }}				
-				></Stack.Screen>
 
 				<Stack.Screen
 					name="resources"
 					component={ResourceScreen}
-					options={{ headerShown: false }}				
+					options={{ headerShown: false }}	
 				></Stack.Screen>
 			</Stack.Navigator>
 		</NavigationContainer>

@@ -1,3 +1,4 @@
+
 import { StatusBar } from "expo-status-bar";
 import {
 	Pressable,
@@ -14,6 +15,7 @@ import React, { useEffect, useState } from "react";
 
 
 export default function HomeScreen({ navigation }) {
+	const hide = false
 	function onPressMapButton(content) {
 		switch (content) {
 			case "buildings":
@@ -30,7 +32,11 @@ export default function HomeScreen({ navigation }) {
 				navigation.navigate("maps", { content: content });
 				break;
 
-			default:
+			case "tunnels":
+				console.log("content to pass: ", content);
+				navigation.navigate("tunnels", { content: content });
+				break;
+		default:
 		}
 	}
 
@@ -68,17 +74,23 @@ export default function HomeScreen({ navigation }) {
 						<Text style={styles.underButtonText}>Tunnels</Text>
 					</View>
 
-					<View style={styles.buttonAndTextView}>
-						<Pressable
-							style={styles.mapButtons}
-							title="Blue Lights"
-							onPress={() => onPressMapButton("blue Lights")}
-						>
-							<Text style={styles.buttons}>🚔</Text>
-						</Pressable>
-						<Text style={styles.underButtonText}>Blue Lights</Text>
-					</View>
+					{ hide && 
+						<View style={styles.buttonAndTextView}>
+							<Pressable
+								style={styles.mapButtons}
+								title="Blue Lights"
+								onPress={() => onPressMapButton("blue Lights")}
+							>
+								<Text style={styles.buttons}>🚔</Text>
+							</Pressable>
+							<Text style={styles.underButtonText}>Blue Lights</Text>
+						</View>
+					}
 				</View>
+
+
+
+
 
 				<View style={styles.underButtonTextRow}></View>
 
@@ -105,6 +117,7 @@ export default function HomeScreen({ navigation }) {
 						<Text style={styles.underButtonText}>Printers</Text>
 					</View>
 				</View>
+
 					<View style={styles.thirdButtonRow}>
 					<View style={styles.buttonAndTextViewRow3}>
 						<Pressable
@@ -262,12 +275,7 @@ const styles = StyleSheet.create({
 		height: 400,
 		width: 400,
 	},
-    thirdButtonRow: {
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-between",
-		marginTop: 10,
-	},
+
 	buttonAndTextViewRow4: {
 		marginLeft: 10,
 		marginRight: 10,
