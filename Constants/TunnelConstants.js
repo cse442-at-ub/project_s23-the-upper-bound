@@ -494,15 +494,22 @@ export const computingCenter = {
         { name8: '8', latitude: 43.0013017067863, longitude: -78.7920797888854 },
     ]
 }
+
+export const cqpenHallMarker = { latitude: 43.000908536331565, longitude: -78.78957363368741 }
+export const capenHall = {
+    coordinates: [
+    
+        { name1: '1', latitude: 43.00125788646901, longitude: -78.789961566923 },
+        { name2: '2', latitude: 43.00051482386915, longitude: -78.78995352029656 },
+        { name3: '3', latitude: 43.000519746192545, longitude: -78.78916093392057 },
+        { name4: '4', latitude: 43.00126368868716, longitude: -78.78916093392057 },
+    ]
+}
 /*
 
 43., -78.
-43., -78.
-43., -78.
-43., -78.
-43., -78.
-43., -78.
-43., -78.
+
+
 */
 
 
