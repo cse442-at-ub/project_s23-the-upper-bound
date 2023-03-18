@@ -14,6 +14,7 @@ import React, { useEffect, useState } from "react";
 
 
 export default function HomeScreen({ navigation }) {
+	const hide = false
 	function onPressMapButton(content) {
 		switch (content) {
 			case "buildings":
@@ -72,17 +73,20 @@ export default function HomeScreen({ navigation }) {
 						<Text style={styles.underButtonText}>Tunnels</Text>
 					</View>
 
-					<View style={styles.buttonAndTextView}>
-						<Pressable
-							style={styles.mapButtons}
-							title="Blue Lights"
-							onPress={() => onPressMapButton("blue Lights")}
-						>
-							<Text style={styles.buttons}>🚔</Text>
-						</Pressable>
-						<Text style={styles.underButtonText}>Blue Lights</Text>
-					</View>
+					{ hide && 
+						<View style={styles.buttonAndTextView}>
+							<Pressable
+								style={styles.mapButtons}
+								title="Blue Lights"
+								onPress={() => onPressMapButton("blue Lights")}
+							>
+								<Text style={styles.buttons}>🚔</Text>
+							</Pressable>
+							<Text style={styles.underButtonText}>Blue Lights</Text>
+						</View>
+					}
 				</View>
+					
 
 				<View style={styles.underButtonTextRow}></View>
 
