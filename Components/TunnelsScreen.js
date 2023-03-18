@@ -9,7 +9,7 @@ import {
 	lockwood, lockwoodMarker, parkHallMarker, parkHall,
 	jacobsManagementMarker, jacobsManagement, clemensHallMarker, clemensHall,
 	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker, studentUnionMarker, studentUnion,
-	bellHall, bellHallMarker
+	bellHall, bellHallMarker, furnasHall, furnasHallMarker
 } from "../Constants/TunnelConstants";
 
 
@@ -215,6 +215,17 @@ export default function TunnelsScreen(content, { navigation }) {
 					tappable={true}
 					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Bell Hall")}
+				></Polygon>
+
+				{/* Furnas Hall */}
+				<Marker coordinate={furnasHallMarker} onPress={() => setPrompt("Tapped on Furnas Hall")}>
+					<Text style={styles.markerStyle}>{"Furnas\nHall"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={furnasHall.coordinates}
+					tappable={true}
+					strokeWidth={0}
+					onPress={() => setPrompt("Tapped on Furnas Hall")}
 				></Polygon>
 
 
