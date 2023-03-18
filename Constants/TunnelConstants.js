@@ -505,11 +505,23 @@ export const capenHall = {
         { name4: '4', latitude: 43.00126368868716, longitude: -78.78916093392057 },
     ]
 }
+
+
+export const nortonHallMarker = { latitude: 43.00104774362031, longitude: -78.7885562099285 }
+export const nortonHall = {
+    coordinates: [
+    
+        { name1: '1', latitude: 43.001265058720605, longitude: -78.78883937896329 },
+        { name2: '2', latitude: 43.00092808529299, longitude: -78.78884340227681 },
+        { name3: '3', latitude: 43.000932008523115, longitude: -78.78826519025044 },
+        { name4: '4', latitude: 43.00110659189249, longitude: -78.78826519025044 },
+        { name5: '5', latitude: 43.00110659189249, longitude: -78.78815656078535 },
+        { name6: '6', latitude: 43.00126744354969, longitude: -78.78815119636721 },
+
+    ]
+}
 /*
-
 43., -78.
-
-
 */
 
 
