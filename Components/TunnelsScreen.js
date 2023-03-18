@@ -102,9 +102,11 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"O'Brian Hall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={oBrianHall.coordinates}
 					tappable={true}
-					strokeWidth={0} // To remove the outline of the polygon. You'll find this on every other polygon.
+					//strokeWidth={0} // To remove the outline of the polygon. You'll find this on every other polygon.
 					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on O'Brian Hall")}
 				></Polygon>
@@ -116,10 +118,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Baldy Hall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={baldyHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
-					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Baldy Hall")}
 				></Polygon>
 
@@ -130,10 +132,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Lockwood\n Library"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={lockwood.coordinates}
 					tappable={true}
-					strokeWidth={0}
-					//fillColor='#868f9e'
 					onPress={() => setPrompt("Tapped on Lockwood Library")}
 				></Polygon>
 
@@ -144,9 +146,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Clemens Hall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={clemensHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Clemens Hall")}
 				></Polygon>
 
@@ -157,6 +160,8 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Baird Hall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={bairdHall.coordinates}
 					tappable={true}
 					onPress={() => setPrompt("Tapped on Baird Hall")}
@@ -169,9 +174,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Slee Hall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={sleeHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Slee Hall")}
 				></Polygon>
 
@@ -182,9 +188,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Park Hall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={parkHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Park Hall")}
 				></Polygon>
 
@@ -195,9 +202,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Jacobs\nManagement\nCenter"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={jacobsManagement.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Jacobs Management Center")}
 				></Polygon>
 
@@ -206,9 +214,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Student\nUnion"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={studentUnion.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Student Union")}
 				></Polygon>
 
@@ -217,9 +226,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Bell\nHall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={bellHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Bell Hall")}
 				></Polygon>
 
@@ -228,9 +238,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Furnas\nHall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={furnasHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Furnas Hall")}
 				></Polygon>
 
@@ -239,9 +250,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Jarvis\nHall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={jarvisHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Jarvis Hall")}
 				></Polygon>
 
@@ -250,9 +262,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Bonner\nHall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={bonnerHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Bonner Hall")}
 				></Polygon>
 
@@ -263,7 +276,8 @@ export default function TunnelsScreen(content, { navigation }) {
 				<Polygon
 					coordinates={cookeHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					onPress={() => setPrompt("Tapped on Cooke Hall")}
 				></Polygon>
 
@@ -272,9 +286,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Hochstetter\nHall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={hochstetter.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Hochstetter Hall")}
 				></Polygon>
 
@@ -283,9 +298,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Mathematics\nBuilding"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={mathBuilding.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Mathematics Building")}
 				></Polygon>
 
@@ -294,9 +310,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Natural Science\nComplex"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={nsc.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Natural Science Complex")}
 				></Polygon>
 
@@ -305,9 +322,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Fronczak Hall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={fronczakHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Fronczak Hall")}
 				></Polygon>
 
@@ -317,9 +335,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Computing\nCenter"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={computingCenter.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Computing Center")}
 				></Polygon>
 
@@ -328,9 +347,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Capen\nHall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={capenHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Capen Hall")}
 				></Polygon>
 
@@ -339,9 +359,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Norton\nHall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={nortonHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Norton Hall")}
 				></Polygon>
 
@@ -350,9 +371,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Talbert\nHall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={talbertHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Talbert Hall")}
 				></Polygon>
 
@@ -361,9 +383,10 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"Knox\nHall"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={knoxHall.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on Knox Hall")}
 				></Polygon>
 
@@ -372,12 +395,13 @@ export default function TunnelsScreen(content, { navigation }) {
 					<Text style={styles.markerStyle}>{"UB\nCommons"}</Text>
 				</Marker>
 				<Polygon
+					strokeColor="black"
+					fillColor="rgba(0, 0, 255, 0.3)"
 					coordinates={commons.coordinates}
 					tappable={true}
-					strokeWidth={0}
 					onPress={() => setPrompt("Tapped on UB Commons")}
 				></Polygon>
-				
+
 				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
 				
 				
