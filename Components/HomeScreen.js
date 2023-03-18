@@ -105,7 +105,7 @@ export default function HomeScreen({ navigation }) {
 						<Text style={styles.underButtonText}>Printers</Text>
 					</View>
 				</View>
-                <View style={styles.thirdButtonRow}>
+					<View style={styles.thirdButtonRow}>
 					<View style={styles.buttonAndTextViewRow3}>
 						<Pressable
 							style={styles.closerMapButtons}
@@ -117,6 +117,16 @@ export default function HomeScreen({ navigation }) {
 						<Text style={styles.underButtonText}>Events</Text>
 					</View>
 
+					<View style={styles.buttonAndTextViewRow3}>
+						<Pressable
+							style={styles.closerMapButtons}
+							title="Apps"
+							onPress={() => navigation.navigate("apps")}
+						>
+							<Text style={styles.buttons}>📱</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Apps</Text>
+					</View>
 					<View style={styles.buttonAndTextViewRow3}>
 						<Pressable
 							style={styles.closerMapButtons}
@@ -214,6 +224,15 @@ const styles = StyleSheet.create({
 		backgroundColor: "#3265CB",
 	},
 
+	newMapButtons: {
+		borderRadius: 100,
+		height: 80,
+		width: 80,
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "#3265CB",
+	},
+
 	buttons: {
 		fontSize: 50,
 		color: "white",
@@ -244,6 +263,18 @@ const styles = StyleSheet.create({
 		width: 400,
 	},
     thirdButtonRow: {
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "space-between",
+		marginTop: 10,
+	},
+	buttonAndTextViewRow4: {
+		marginLeft: 10,
+		marginRight: 10,
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	fourthButtonRow: {
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "space-between",
