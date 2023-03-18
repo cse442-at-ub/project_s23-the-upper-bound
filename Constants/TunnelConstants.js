@@ -402,19 +402,76 @@ export const mathBuilding = {
         { name6: '6', latitude: 43.00134996927754, longitude: -78.79265383205669 },
         { name7: '7', latitude: 43.0013019100501, longitude: -78.79265316150449 },
         { name8: '8', latitude: 43.00130141964961, longitude: -78.7930910562346 },
+    ]
+}
+
+export const nscMarker = { latitude: 43.0007124815651, longitude: -78.79190551776566 }
+export const nsc = {
+    coordinates: [
+    
+        { name1: '1', latitude: 43.000492779650244, longitude: -78.79261630314448 },
+        { name2: '2', latitude: 43.00049130842944, longitude: -78.7918993611499 },
+        { name3: '3', latitude: 43.00055849414373, longitude: -78.79189802004551 },
+        { name4: '4', latitude: 43.00056339820759, longitude: -78.79183297647744 },
+        { name5: '5', latitude: 43.0005496668278, longitude: -78.79182425929888 },
+        { name6: '6', latitude: 43.00054770520187, longitude: -78.79179073168899 },
+        { name7: '7', latitude: 43.000508963076484, longitude: -78.79176055683347 },
+        { name8: '8', latitude: 43.00055015723396, longitude: -78.7916646678656 },
+        { name9: '9', latitude: 43.00051141511044, longitude: -78.79163315191234 },
+        { name10: '10', latitude: 43.00055162845337, longitude: -78.79153860404467 },
+        { name11: '11', latitude: 43.00051288633078, longitude: -78.79150708808793 },
+        { name12: '12', latitude: 43.00055162845337, longitude: -78.79141656353173 },
+        { name13: '13', latitude: 43.000508963076484, longitude: -78.79138102426526 },
+        { name14: '14', latitude: 43.00055113804703, longitude: -78.79128312363551 },
+        { name15: '15', latitude: 43.00051239592416, longitude: -78.79125227823236 },
+        { name16: '16', latitude: 43.000551628453515, longitude: -78.79115705981091 },
+        { name17: '17', latitude: 43.00055113804721, longitude: -78.79097003587516 },
+        { name18: '18', latitude: 43.00065265210147, longitude: -78.79096936532298 },
+        { name19: '19', latitude: 43.00065216169581, longitude: -78.79092779108673 },
+        { name20: '20', latitude: 43.00066000818585, longitude: -78.79092712053892 },
+        { name21: '21', latitude: 43.00066000818585, longitude: -78.79092712053892 },
+        { name22: '22', latitude: 43.00065951778024, longitude: -78.79088621685325 },
+        { name23: '23', latitude: 43.00066785467485, longitude: -78.79088688740545 },
+        { name24: '24', latitude: 43.00066739585994, longitude: -78.7908409246778 },
+        { name25: '25', latitude: 43.00071104193718, longitude: -78.7908409246778 },
+        { name26: '26', latitude: 43.000742499819495, longitude: -78.79085096240654 },
+        { name27: '27', latitude: 43.00074593265396, longitude: -78.79084224522795 },
+        { name28: '28', latitude: 43.00096563366246, longitude: -78.79090594768896 },
+        { name29: '29', latitude: 43.000952895192555, longitude: -78.79099579480155 },
+        { name30: '30', latitude: 43.00094946236966, longitude: -78.79104742732076 },
+        { name31: '31', latitude: 43.00094946236969, longitude: -78.79161968820868 },
+        { name32: '32', latitude: 43.00095583761292, longitude: -78.79168137902084 },
+        { name33: '33', latitude: 43.000972020917516, longitude: -78.79177123301531 },
+        { name34: '34', latitude: 43.00079249492601, longitude: -78.79184615091322 },
+        { name35: '35', latitude: 43.00079347573508, longitude: -78.79186559692694 },
+        { name36: '36', latitude: 43.000813582317505, longitude: -78.79186425582255 },
+        { name37: '37', latitude: 43.00081456312625, longitude: -78.79189040735827 },
+        { name38: '38', latitude: 43.00088027727558, longitude: -78.79188303128407 },
+        { name39: '39', latitude: 43.000932750463754, longitude: -78.79188437238848 },
+        { name40: '40', latitude: 43.00093471806014, longitude: -78.79211190258778 },
+        { name41: '41', latitude: 43.00099356644237, longitude: -78.79211391424448 },
+        { name42: '42', latitude: 43.00099431367715, longitude: -78.79249272546268 },
+        { name43: '43', latitude: 43.00093742691129, longitude: -78.79249339601488 },
+        { name44: '44', latitude: 43.000936936507976, longitude: -78.79263957640467 },
+        { name45: '45', latitude: 43.000805998663175, longitude: -78.79264024695686 },
+        { name46: '46', latitude: 43.0008069794721, longitude: -78.79270931383994 },
+        { name47: '47', latitude: 43.000799133000825, longitude: -78.79270797273554 },
+        { name48: '48', latitude: 43.0007863824829, longitude: -78.79272339543608 },
+        { name49: '49', latitude: 43.00077510317639, longitude: -78.79270797273554 },
+        { name50: '50', latitude: 43.000589729925835, longitude: -78.79270931384 },
+        { name51: '51', latitude: 43.00058923951967, longitude: -78.79263823530708 },
+        { name52: '52', latitude: 43.00056717123849, longitude: -78.79263823530708 },
+        { name53: '53', latitude: 43.000566190425815, longitude: -78.79261610708456 },
 
     ]
 }
 
 /*
-, 
-, 
-, 
-, 
-, 
-43.00134996927754, 
-, 
-, 
+
+
+
+
+
 */
 
 

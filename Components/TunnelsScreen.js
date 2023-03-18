@@ -12,7 +12,7 @@ import {
 	studentUnionMarker, studentUnion, bellHall, bellHallMarker,
 	furnasHall, furnasHallMarker, jarvisHallMarker, jarvisHall,
 	bonnerHall, bonnerHallMarker, cookeHall, cookeHallMarker,
-	hochstetter, hochstetterMarker, mathBuilding, mathBuildingMarker
+	hochstetter, hochstetterMarker, mathBuilding, mathBuildingMarker, nscMarker, nsc
 } from "../Constants/TunnelConstants";
 
 
@@ -286,6 +286,16 @@ export default function TunnelsScreen(content, { navigation }) {
 					onPress={() => setPrompt("Tapped on Mathematics Building")}
 				></Polygon>
 
+				{/* NSC */}
+				<Marker coordinate={nscMarker} onPress={() => setPrompt("Tapped on Natural Science Complex")}>
+					<Text style={styles.markerStyle}>{"Natural Science\nComplex"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={nsc.coordinates}
+					tappable={true}
+					strokeWidth={0}
+					onPress={() => setPrompt("Tapped on Natural Science Complex")}
+				></Polygon>
 				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
 				
 				
