@@ -129,8 +129,6 @@ export default function HomeScreen({ navigation }) {
 					</View>
 				</View>
 
-				
-
 				<ImageBackground
 					source={require("../assets/WelBot.png")}
 					style={styles.welcomeDown}
