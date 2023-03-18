@@ -8,8 +8,10 @@ import {
 	baldyHall, baldyHallMarker, oBrianHall, oBrianHallMarker,
 	lockwood, lockwoodMarker, parkHallMarker, parkHall,
 	jacobsManagementMarker, jacobsManagement, clemensHallMarker, clemensHall,
-	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker, studentUnionMarker, studentUnion,
-	bellHall, bellHallMarker, furnasHall, furnasHallMarker, jarvisHallMarker, jarvisHall
+	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker,
+	studentUnionMarker, studentUnion, bellHall, bellHallMarker,
+	furnasHall, furnasHallMarker, jarvisHallMarker, jarvisHall,
+	bonnerHall, bonnerHallMarker
 } from "../Constants/TunnelConstants";
 
 
@@ -239,7 +241,16 @@ export default function TunnelsScreen(content, { navigation }) {
 					onPress={() => setPrompt("Tapped on Jarvis Hall")}
 				></Polygon>
 
-
+				{/* Jarvis Hall */}
+				<Marker coordinate={bonnerHallMarker} onPress={() => setPrompt("Tapped on Bonner Hall")}>
+					<Text style={styles.markerStyle}>{"Bonner\nHall"}</Text>
+				</Marker>
+				<Polygon
+					coordinates={bonnerHall.coordinates}
+					tappable={true}
+					strokeWidth={0}
+					onPress={() => setPrompt("Tapped on Bonner Hall")}
+				></Polygon>
 
 				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
 				

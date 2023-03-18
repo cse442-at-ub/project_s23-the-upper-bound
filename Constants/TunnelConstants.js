@@ -319,3 +319,27 @@ export const jarvisHall = {
         { name18: '18', latitude: 43.00236972393654, longitude: -78.78735508839489 },
     ]
 }
+
+
+export const bonnerHallMarker = { latitude: 43.00150243545611, longitude: -78.78816731590203 }
+export const bonnerHall = {
+    coordinates: [
+        { name1: '1', latitude: 43.001371008417955, longitude: -78.78849454538431 },
+        { name2: '2', latitude: 43.00137506123526, longitude: -78.78781906072662 },
+        { name3: '3', latitude: 43.00150740241007, longitude: -78.78782041115912 },
+        { name4: '4', latitude: 43.00150641479041, longitude: -78.78780015467154 },
+        { name5: '5', latitude: 43.00153900623056, longitude: -78.78779880423903 },
+        { name6: '6', latitude: 43.00153999384968, longitude: -78.78782581288912 },
+        { name7: '7', latitude: 43.001671594240015, longitude: -78.78783000044601 },
+        { name8: '8', latitude: 43.00166915795172, longitude: -78.78835205710611 },
+        { name9: '9', latitude: 43.00156960717035, longitude: -78.78835205710611 },
+        { name10: '10', latitude: 43.00156960717035, longitude: -78.78838424361159 },
+        { name11: '11', latitude: 43.00164405879356, longitude: -78.78838571659378 },
+        { name12: '12', latitude: 43.00164324574714, longitude: -78.78849856397456 },
+        { name13: '13', latitude: 43.0015358485466, longitude: -78.78849789342236 },
+        { name14: '14', latitude: 43.0015358485466, longitude: -78.7885133161229 },
+        { name15: '15', latitude: 43.00150299183133, longitude: -78.7885133161229 },
+        { name16: '16', latitude: 43.00150250143246, longitude: -78.78849588176575 },
+
+    ]
+}
