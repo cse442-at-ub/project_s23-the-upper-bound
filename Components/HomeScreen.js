@@ -112,9 +112,20 @@ export default function HomeScreen({ navigation }) {
 							title="Food"
 							onPress={() => navigation.navigate("events")}
 						>
-							<Text style={styles.buttons}>📃</Text>
+							<Text style={styles.buttons}>📰</Text>
 						</Pressable>
 						<Text style={styles.underButtonText}>Events</Text>
+					</View>
+
+					<View style={styles.buttonAndTextViewRow3}>
+						<Pressable
+							style={styles.closerMapButtons}
+							title="Resource"
+							onPress={() => navigation.navigate("resources")}
+						>
+							<Text style={styles.buttons}>📖</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Resources</Text>
 					</View>
 				</View>
 

@@ -19,7 +19,11 @@ import MapsScreen from "./Components/MapsScreen.js";
 import WelcomeScreen from "./Components/WelcomeScreen.js";
 import LoginScreen from "./Components/LoginScreen";
 import SignupScreen from "./Components/SignupScreen";
+import EventScreen from "./Components/EventScreen";
+
 import HomeScreen from "./Components/HomeScreen.js";
+import ResourceScreen from "./Components/ResourceScreen.js";
+
 //////////////////////////////////////////////////////////////////////////// END OF IMPORTS
 
 
@@ -86,12 +90,23 @@ export default function App() {
 						),
 					}}
 				></Stack.Screen>
+
+				<Stack.Screen
+					name="events"
+					component={EventScreen}
+					options={{headerShown:false}}
+				></Stack.Screen>
+
 				<Stack.Screen
 					name="home"
 					component={HomeScreen}
-					options={{ headerShown: false }}
-		
-						
+					options={{ headerShown: false }}				
+				></Stack.Screen>
+
+				<Stack.Screen
+					name="resources"
+					component={ResourceScreen}
+					options={{ headerShown: false }}				
 				></Stack.Screen>
 			</Stack.Navigator>
 		</NavigationContainer>

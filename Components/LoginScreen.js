@@ -41,6 +41,8 @@ export default function LoginScreen({ navigation }) {
 					return;
 				}
 			}
+			navigation.navigate("home")
+
 
 
 		}
@@ -109,7 +111,6 @@ export default function LoginScreen({ navigation }) {
 				source={require("../assets/WelBot.png")}
 				style={styles.welcomeDown}
 			></ImageBackground>
-
 		</View>
 	);
 }
@@ -206,3 +207,4 @@ const styles = StyleSheet.create({
 		color:"#3265CB",
 	},
 });
+
