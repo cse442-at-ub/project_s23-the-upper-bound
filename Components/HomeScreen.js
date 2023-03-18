@@ -1,3 +1,4 @@
+
 import { StatusBar } from "expo-status-bar";
 import {
 	Pressable,
@@ -86,7 +87,10 @@ export default function HomeScreen({ navigation }) {
 						</View>
 					}
 				</View>
-					
+
+
+
+
 
 				<View style={styles.underButtonTextRow}></View>
 
@@ -111,6 +115,40 @@ export default function HomeScreen({ navigation }) {
 							<Text style={styles.buttons}>🖨</Text>
 						</Pressable>
 						<Text style={styles.underButtonText}>Printers</Text>
+					</View>
+				</View>
+
+					<View style={styles.thirdButtonRow}>
+					<View style={styles.buttonAndTextViewRow3}>
+						<Pressable
+							style={styles.closerMapButtons}
+							title="Food"
+							onPress={() => navigation.navigate("events")}
+						>
+							<Text style={styles.buttons}>📰</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Events</Text>
+					</View>
+
+					<View style={styles.buttonAndTextViewRow3}>
+						<Pressable
+							style={styles.closerMapButtons}
+							title="Apps"
+							onPress={() => navigation.navigate("apps")}
+						>
+							<Text style={styles.buttons}>📱</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Apps</Text>
+					</View>
+					<View style={styles.buttonAndTextViewRow3}>
+						<Pressable
+							style={styles.closerMapButtons}
+							title="Resource"
+							onPress={() => navigation.navigate("resources")}
+						>
+							<Text style={styles.buttons}>📖</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Resources</Text>
 					</View>
 				</View>
 
@@ -199,6 +237,15 @@ const styles = StyleSheet.create({
 		backgroundColor: "#3265CB",
 	},
 
+	newMapButtons: {
+		borderRadius: 100,
+		height: 80,
+		width: 80,
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "#3265CB",
+	},
+
 	buttons: {
 		fontSize: 50,
 		color: "white",
@@ -227,5 +274,18 @@ const styles = StyleSheet.create({
 		marginBottom: 0,
 		height: 400,
 		width: 400,
+	},
+
+	buttonAndTextViewRow4: {
+		marginLeft: 10,
+		marginRight: 10,
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	fourthButtonRow: {
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "space-between",
+		marginTop: 10,
 	},
 });

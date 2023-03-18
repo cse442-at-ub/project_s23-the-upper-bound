@@ -20,8 +20,12 @@ import TunnelsScreen from "./Components/TunnelsScreen.js";
 import WelcomeScreen from "./Components/WelcomeScreen.js";
 import LoginScreen from "./Components/LoginScreen";
 import SignupScreen from "./Components/SignupScreen";
+import EventScreen from "./Components/EventScreen";
+import AppScreen from "./Components/AppScreen";
 
 import HomeScreen from "./Components/HomeScreen.js";
+import ResourceScreen from "./Components/ResourceScreen.js";
+
 //////////////////////////////////////////////////////////////////////////// END OF IMPORTS
 
 
@@ -61,7 +65,11 @@ export default function App() {
 					component={LoginScreen}
 				></Stack.Screen>
 
-				<Stack.Screen name="signup" component={SignupScreen}></Stack.Screen>
+				<Stack.Screen 
+					name="signup" 
+					options={{ headerShown: false }}
+					component={SignupScreen}
+				></Stack.Screen>
 
 				{/* Create a route for the home screen */}
 				<Stack.Screen
@@ -97,7 +105,6 @@ export default function App() {
 					}}
 				></Stack.Screen>
 
-
 				<Stack.Screen
 					name="tunnels"
 					component={TunnelsScreen}
@@ -118,6 +125,23 @@ export default function App() {
 							/>
 						),
 					}}
+          
+				<Stack.Screen
+					name="events"
+					component={EventScreen}
+					options={{headerShown:false}}
+				></Stack.Screen>
+
+				<Stack.Screen
+				name="apps"
+				component={AppScreen}
+				options={{headerShown:false}}
+				></Stack.Screen>
+
+				<Stack.Screen
+					name="resources"
+					component={ResourceScreen}
+					options={{ headerShown: false }}	
 				></Stack.Screen>
 			</Stack.Navigator>
 		</NavigationContainer>
