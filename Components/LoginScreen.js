@@ -23,16 +23,27 @@ export default function LoginScreen({ navigation }) {
 		
 	}
 	async function fetchPerson() {
+		if (user==""){
+			setError("Please enter a username")
+			return;
+		}
+		if(password==""){
+			setError("Please enter a password")
+			return;
+		}
 		//create your Parse Query using the Person Class you've created
 		let query = new Parse.Query('Person');
 		//run the query to retrieve all objects on Person class, optionally you can add your filters
 		let queryResult = await query.find();
 		var i=0
+		var found=false
 		for(i=0; i<queryResult.length;i++){
 			var currentP=queryResult[i];
+			
 			if(currentP.get('username')==user){
 				if(currentP.get('password')==password){
 					navigation.navigate("home");
+					found=true
 					return;
 				}
 				else{
@@ -41,10 +52,12 @@ export default function LoginScreen({ navigation }) {
 					return;
 				}
 			}
-			navigation.navigate("home")
+			//navigation.navigate("home")
 
 		}
+		if(found==false){
 		setError("User does not exist\nPlease sign up first!");
+		}
 		//navigation.navigate("signup")
 		console.log("user does not exist")
 	}

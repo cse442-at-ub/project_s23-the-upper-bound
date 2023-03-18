@@ -45,6 +45,15 @@ export default function SignupScreen({ navigation }) {
 	}
 	async function addPerson() {
 
+		if (user==""){
+			setErrorReuse("Please enter a username")
+			return;
+		}
+		if(password==""){
+			setErrorReuse("Please enter a password")
+			return;
+		}
+
 		let query = new Parse.Query('Person');
 		// looping through the users
 		let queryResult = await query.find();
