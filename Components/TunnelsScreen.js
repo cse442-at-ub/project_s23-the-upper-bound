@@ -1,31 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
-import MapView, {PROVIDER_GOOGLE,} from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import * as Location from "expo-location";
 import { Marker, Polygon } from "react-native-maps";
 import { mapStyle } from "../Constants/MapConstants";
 import {
-	baldyHall, baldyHallMarker, oBrianHall, oBrianHallMarker,
-	lockwood, lockwoodMarker, parkHallMarker, parkHall,
-	jacobsManagementMarker, jacobsManagement, clemensHallMarker, clemensHall,
-	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker,
-	studentUnionMarker, studentUnion, bellHall, bellHallMarker,
-	furnasHall, furnasHallMarker, jarvisHallMarker, jarvisHall,
-	bonnerHall, bonnerHallMarker, cookeHall, cookeHallMarker,
-	hochstetter, hochstetterMarker, mathBuilding, mathBuildingMarker,
-	nscMarker, nsc, fronczakHallMarker, fronczakHall,
-	computingCenterMarker, computingCenter, capenHall, cqpenHallMarker,
-	nortonHall, nortonHallMarker, talbertHallMarker, talbertHall, knoxHallMarker, knoxHall, commonsMarker, commons,
+	baldyHall, baldyHallMarker, oBrianHall, oBrianHallMarker, lockwood, lockwoodMarker,
+	parkHallMarker, parkHall, jacobsManagementMarker, jacobsManagement, clemensHallMarker, clemensHall,
+	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker, studentUnionMarker, studentUnion,
+	bellHall, bellHallMarker, furnasHall, furnasHallMarker, jarvisHallMarker, jarvisHall,
+	bonnerHall, bonnerHallMarker, cookeHall, cookeHallMarker, hochstetter, hochstetterMarker,
+	mathBuilding, mathBuildingMarker, nscMarker, nsc, fronczakHallMarker, fronczakHall,
+	computingCenterMarker, computingCenter, capenHall, capenHallMarker, nortonHall, nortonHallMarker,
+	talbertHallMarker,talbertHall,knoxHallMarker,knoxHall,commonsMarker,commons,
 } from "../Constants/TunnelConstants";
 
-
-
-
-
-
 export default function TunnelsScreen(content, { navigation }) {
+	// Use states -----------------------------------------------------------------------------
 	const [location, setLocation] = useState({});
 	const [prompt, setPrompt] = useState("");
+	const [building1, setBuilding1] = useState("");
+	const [building2, setBuilding2] = useState("");
 
 	var contentToLoad = [{}];
 
@@ -34,10 +29,13 @@ export default function TunnelsScreen(content, { navigation }) {
 		case "tunnels":
 			console.log("tunnels prop passed successfully");
 			break;
-
 		default:
 			console.log("error in content selection");
 	}
+
+	// Use effects -----------------------------------------------------------------------------
+
+	// Used for testing building selection
 
 	// Used to ask for user for location permissions
 	// If permission has been granted, continuously update their location while the map is rendered
@@ -74,6 +72,75 @@ export default function TunnelsScreen(content, { navigation }) {
 	// Output current coordinates for testing
 	console.log("Location of user: ", location);
 
+	function onTapPolygon(polygon) {
+		// Deselect Building 1
+		if (building1 == polygon && building2 == "") {
+			setBuilding1("");
+			setPrompt("Deselected " + polygon + ".\nPlease select a building as a starting point.");
+		}
+
+		// Deselect Building 2
+		else if (building2 == polygon) {
+			setBuilding2("");
+			setPrompt("Deselected " + polygon + ".\nPlease select a destination building.");
+		}
+
+		// No building is saved yet, so save first building
+		else if (building1 == "" && building2 == "") {
+			setBuilding1(polygon);
+			setPrompt("Starting at " + polygon + ".\nPlease select the destination building.");
+		}
+
+		// First building is saved, so save the 2nd building
+		else if (building1 != "" && building2 == "") {
+			setBuilding2(polygon);
+			setPrompt(polygon + " selected as the destination building.\nTap Start to begin navigation.");
+		}
+
+		console.log("Building 1:", building1, "Building 2:", building2);
+	}
+
+	const unselectedColor = "#00308F";
+	const selectedColor = "#F6C324";
+
+	const selectedFillClemens =
+		building1 == "Clemens Hall" || building2 == "Clemens Hall" ? selectedColor : unselectedColor;
+	const selectedFillBaird = building1 == "Baird Hall" || building2 == "Baird Hall" ? selectedColor : unselectedColor;
+	const selectedFillOBrian =
+		building1 == "O'Brian Hall" || building2 == "O'Brian Hall" ? selectedColor : unselectedColor;
+	const selectedFillBaldy = building1 == "Baldy Hall" || building2 == "Baldy Hall" ? selectedColor : unselectedColor;
+	const selectedFillLockwood =
+		building1 == "Lockwood Library" || building2 == "Lockwood Library" ? selectedColor : unselectedColor;
+	const selectedFillSlee = building1 == "Slee Hall" || building2 == "Slee Hall" ? selectedColor : unselectedColor;
+	const selectedFillPark = building1 == "Park Hall" || building2 == "Park Hall" ? selectedColor : unselectedColor;
+	const selectedFillJacobs =
+		building1 == "Jacobs Management Building" || building2 == "Jacobs Management Building"
+			? selectedColor
+			: unselectedColor;
+	const selectedFillUnion =
+		building1 == "Student Union" || building2 == "Student Union" ? selectedColor : unselectedColor;
+	const selectedFillBell = building1 == "Bell Hall" || building2 == "Bell Hall" ? selectedColor : unselectedColor;
+	const selectedFillFurnas = building1 == "Furnas Hall" || building2 == "Furnas Hall" ? selectedColor : unselectedColor;
+	const selectedFillJarvis = building1 == "Jarvis Hall" || building2 == "Jarvis Hall" ? selectedColor : unselectedColor;
+	const selectedFillBonner = building1 == "Bonner Hall" || building2 == "Bonner Hall" ? selectedColor : unselectedColor;
+	const selectedFillCooke = building1 == "Cooke Hall" || building2 == "Cooke Hall" ? selectedColor : unselectedColor;
+	const selectedFillHochstetter =
+		building1 == "Hochstetter Hall" || building2 == "Hochstetter Hall" ? selectedColor : unselectedColor;
+	const selectedFillMath =
+		building1 == "Mathematics Building" || building2 == "Mathematics Building" ? selectedColor : unselectedColor;
+	const selectedFillNSC =
+		building1 == "Natural Science Complex" || building2 == "Natural Science Complex" ? selectedColor : unselectedColor;
+	const selectedFillFronczak =
+		building1 == "Fronczak Hall" || building2 == "Fronczak Hall" ? selectedColor : unselectedColor;
+	const selectedFillComputing =
+		building1 == "Computing Center" || building2 == "Computing Center" ? selectedColor : unselectedColor;
+	const selectedFillCapen = building1 == "Capen Hall" || building2 == "Capen Hall" ? selectedColor : unselectedColor;
+	const selectedFillNorton = building1 == "Norton Hall" || building2 == "Norton Hall" ? selectedColor : unselectedColor;
+	const selectedFillTalbert =
+		building1 == "Talbert Hall" || building2 == "Talbert Hall" ? selectedColor : unselectedColor;
+	const selectedFillKnox = building1 == "Knox Hall" || building2 == "Knox Hall" ? selectedColor : unselectedColor;
+	const selectedFillCommons = building1 == "UB Commons" || building2 == "UB Commons" ? selectedColor : unselectedColor;
+
 	return (
 		<View style={styles.container}>
 			<MapView
@@ -86,7 +153,6 @@ export default function TunnelsScreen(content, { navigation }) {
 				minZoomLevel={17} // Locks the zoom out so that the buildings don't disappear on certain phones.
 				loadingEnabled={true}
 				showsCompass={true}
-
 				// This is the location the map will first load to
 				initialRegion={{
 					latitude: 43.000288,
@@ -98,314 +164,464 @@ export default function TunnelsScreen(content, { navigation }) {
 				{/* #####/////////                     Polygon Content Starts Here                     /////////#####  */}
 
 				{/* O'Brian Hall */}
-				<Marker coordinate={oBrianHallMarker} onPress={() => setPrompt("Tapped on O'Brian Hall")}>
+				<Marker
+					coordinate={oBrianHallMarker}
+					onPress={() => {
+						onTapPolygon("O'Brian Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"O'Brian Hall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillOBrian}
 					coordinates={oBrianHall.coordinates}
 					tappable={true}
 					//strokeWidth={0} // To remove the outline of the polygon. You'll find this on every other polygon.
 					//fillColor='#868f9e'
-					onPress={() => setPrompt("Tapped on O'Brian Hall")}
+					onPress={() => {
+						onTapPolygon("O'Brian Hall");
+					}}
 				></Polygon>
 
-				
-
 				{/* Baldy Hall */}
-				<Marker coordinate={baldyHallMarker} onPress={() => setPrompt("Tapped on Baldy Hall")}>
+				<Marker
+					coordinate={baldyHallMarker}
+					onPress={() => {
+						onTapPolygon("Baldy Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Baldy Hall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillBaldy}
 					coordinates={baldyHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Baldy Hall")}
+					onPress={() => {
+						onTapPolygon("Baldy Hall");
+					}}
 				></Polygon>
 
-				
-
 				{/* Lockwood Library */}
-				<Marker coordinate={lockwoodMarker} onPress={() => setPrompt("Tapped on Lockwood Library")}>
+				<Marker
+					coordinate={lockwoodMarker}
+					onPress={() => {
+						onTapPolygon("Lockwood Library");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Lockwood\n Library"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillLockwood}
 					coordinates={lockwood.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Lockwood Library")}
+					onPress={() => {
+						onTapPolygon("Lockwood Library");
+					}}
 				></Polygon>
 
-				
-				
 				{/* Clemens Hall */}
-				<Marker coordinate={clemensHallMarker} onPress={() => setPrompt("Tapped on Clemens Hall")}>
+				<Marker
+					coordinate={clemensHallMarker}
+					onPress={() => {
+						onTapPolygon("Clemens Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Clemens Hall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillClemens}
 					coordinates={clemensHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Clemens Hall")}
+					onPress={() => {
+						onTapPolygon("Clemens Hall");
+					}}
 				></Polygon>
 
-				
-				
 				{/* Baird Hall */}
-				<Marker coordinate={bairdHallMarker} onPress={() => setPrompt("Tapped on Baird Hall")}>
+				<Marker
+					coordinate={bairdHallMarker}
+					onPress={() => {
+						onTapPolygon("Baird Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Baird Hall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillBaird}
 					coordinates={bairdHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Baird Hall")}
+					onPress={() => {
+						onTapPolygon("Baird Hall");
+					}}
 				></Polygon>
 
-				
-				
 				{/* Slee Hall */}
-				<Marker coordinate={sleeHallMarker} onPress={() => setPrompt("Tapped on Slee Hall")}>
+				<Marker
+					coordinate={sleeHallMarker}
+					onPress={() => {
+						onTapPolygon("Slee Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Slee Hall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillSlee}
 					coordinates={sleeHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Slee Hall")}
+					onPress={() => {
+						onTapPolygon("Slee Hall");
+					}}
 				></Polygon>
 
-				
-				
 				{/* Park Hall */}
-				<Marker coordinate={parkHallMarker} onPress={() => setPrompt("Tapped on Park Hall")}>
+				<Marker
+					coordinate={parkHallMarker}
+					onPress={() => {
+						onTapPolygon("Park Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Park Hall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillPark}
 					coordinates={parkHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Park Hall")}
+					onPress={() => {
+						onTapPolygon("Park Hall");
+					}}
 				></Polygon>
 
-				
-
 				{/* Jacobs Management Building */}
-				<Marker coordinate={jacobsManagementMarker} onPress={() => setPrompt("Tapped on Jacobs Management Center")}>
+				<Marker
+					coordinate={jacobsManagementMarker}
+					onPress={() => {
+						onTapPolygon("Jacobs Management Building");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Jacobs\nManagement\nCenter"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillJacobs}
 					coordinates={jacobsManagement.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Jacobs Management Center")}
+					onPress={() => {
+						onTapPolygon("Jacobs Management Building");
+					}}
 				></Polygon>
 
 				{/* Student Union */}
-				<Marker coordinate={studentUnionMarker} onPress={() => setPrompt("Tapped on Student Union")}>
+				<Marker
+					coordinate={studentUnionMarker}
+					onPress={() => {
+						onTapPolygon("Student Union");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Student\nUnion"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillUnion}
 					coordinates={studentUnion.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Student Union")}
+					onPress={() => {
+						onTapPolygon("Student Union");
+					}}
 				></Polygon>
 
 				{/* Bell Hall */}
-				<Marker coordinate={bellHallMarker} onPress={() => setPrompt("Tapped on Bell Hall")}>
+				<Marker
+					coordinate={bellHallMarker}
+					onPress={() => {
+						onTapPolygon("Bell Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Bell\nHall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillBell}
 					coordinates={bellHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Bell Hall")}
+					onPress={() => {
+						onTapPolygon("Bell Hall");
+					}}
 				></Polygon>
 
 				{/* Furnas Hall */}
-				<Marker coordinate={furnasHallMarker} onPress={() => setPrompt("Tapped on Furnas Hall")}>
+				<Marker
+					coordinate={furnasHallMarker}
+					onPress={() => {
+						onTapPolygon("Furnas Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Furnas\nHall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillFurnas}
 					coordinates={furnasHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Furnas Hall")}
+					onPress={() => {
+						onTapPolygon("Furnas Hall");
+					}}
 				></Polygon>
 
 				{/* Jarvis Hall */}
-				<Marker coordinate={jarvisHallMarker} onPress={() => setPrompt("Tapped on Jarvis Hall")}>
+				<Marker
+					coordinate={jarvisHallMarker}
+					onPress={() => {
+						onTapPolygon("Jarvis Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Jarvis\nHall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillJarvis}
 					coordinates={jarvisHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Jarvis Hall")}
+					onPress={() => {
+						onTapPolygon("Jarvis Hall");
+					}}
 				></Polygon>
 
 				{/* Bonner Hall */}
-				<Marker coordinate={bonnerHallMarker} onPress={() => setPrompt("Tapped on Bonner Hall")}>
+				<Marker
+					coordinate={bonnerHallMarker}
+					onPress={() => {
+						onTapPolygon("Bonner Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Bonner\nHall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillBonner}
 					coordinates={bonnerHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Bonner Hall")}
+					onPress={() => {
+						onTapPolygon("Bonner Hall");
+					}}
 				></Polygon>
 
 				{/* Cooke Hall */}
-				<Marker coordinate={cookeHallMarker} onPress={() => setPrompt("Tapped on Cooke Hall")}>
+				<Marker
+					coordinate={cookeHallMarker}
+					onPress={() => {
+						onTapPolygon("Cooke Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Cooke\nHall"}</Text>
 				</Marker>
 				<Polygon
 					coordinates={cookeHall.coordinates}
 					tappable={true}
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
-					onPress={() => setPrompt("Tapped on Cooke Hall")}
+					fillColor={selectedFillCooke}
+					onPress={() => {
+						onTapPolygon("Cooke Hall");
+					}}
 				></Polygon>
 
 				{/* Hochstetter Hall */}
-				<Marker coordinate={hochstetterMarker} onPress={() => setPrompt("Tapped on Hochstetter Hall")}>
+				<Marker
+					coordinate={hochstetterMarker}
+					onPress={() => {
+						onTapPolygon("Hochstetter Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Hochstetter\nHall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillHochstetter}
 					coordinates={hochstetter.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Hochstetter Hall")}
+					onPress={() => {
+						onTapPolygon("Hochstetter Hall");
+					}}
 				></Polygon>
 
 				{/* Math Building */}
-				<Marker coordinate={mathBuildingMarker} onPress={() => setPrompt("Tapped on Mathematics Building")}>
+				<Marker
+					coordinate={mathBuildingMarker}
+					onPress={() => {
+						onTapPolygon("Mathematics Building");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Mathematics\nBuilding"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillMath}
 					coordinates={mathBuilding.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Mathematics Building")}
+					onPress={() => {
+						onTapPolygon("Mathematics Building");
+					}}
 				></Polygon>
 
 				{/* NSC */}
-				<Marker coordinate={nscMarker} onPress={() => setPrompt("Tapped on Natural Science Complex")}>
+				<Marker
+					coordinate={nscMarker}
+					onPress={() => {
+						onTapPolygon("Natural Science Complex");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Natural Science\nComplex"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillNSC}
 					coordinates={nsc.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Natural Science Complex")}
+					onPress={() => {
+						onTapPolygon("Natural Science Complex");
+					}}
 				></Polygon>
 
 				{/* Fronczak Hall */}
-				<Marker coordinate={fronczakHallMarker} onPress={() => setPrompt("Tapped on Fronczak Hall")}>
+				<Marker
+					coordinate={fronczakHallMarker}
+					onPress={() => {
+						onTapPolygon("Fronczak Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Fronczak Hall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillFronczak}
 					coordinates={fronczakHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Fronczak Hall")}
+					onPress={() => {
+						onTapPolygon("Fronczak Hall");
+					}}
 				></Polygon>
 
-
 				{/* Computing Center */}
-				<Marker coordinate={computingCenterMarker} onPress={() => setPrompt("Tapped on Computing Center")}>
+				<Marker
+					coordinate={computingCenterMarker}
+					onPress={() => {
+						onTapPolygon("Computing Center");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Computing\nCenter"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillComputing}
 					coordinates={computingCenter.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Computing Center")}
+					onPress={() => {
+						onTapPolygon("Computing Center");
+					}}
 				></Polygon>
 
 				{/* Capen Hall */}
-				<Marker coordinate={cqpenHallMarker} onPress={() => setPrompt("Tapped on Capen Hall")}>
+				<Marker
+					coordinate={capenHallMarker}
+					onPress={() => {
+						onTapPolygon("Capen Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Capen\nHall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillCapen}
 					coordinates={capenHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Capen Hall")}
+					onPress={() => {
+						onTapPolygon("Capen Hall");
+					}}
 				></Polygon>
 
 				{/* Norton Hall */}
-				<Marker coordinate={nortonHallMarker} onPress={() => setPrompt("Tapped on Norton Hall")}>
+				<Marker
+					coordinate={nortonHallMarker}
+					onPress={() => {
+						onTapPolygon("Norton Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Norton\nHall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillNorton}
 					coordinates={nortonHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Norton Hall")}
+					onPress={() => {
+						onTapPolygon("Norton Hall");
+					}}
 				></Polygon>
 
 				{/* Talbert Hall */}
-				<Marker coordinate={talbertHallMarker} onPress={() => setPrompt("Tapped on Talbert Hall")}>
+				<Marker
+					coordinate={talbertHallMarker}
+					onPress={() => {
+						onTapPolygon("Talbert Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Talbert\nHall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillTalbert}
 					coordinates={talbertHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Talbert Hall")}
+					onPress={() => {
+						onTapPolygon("Talbert Hall");
+					}}
 				></Polygon>
 
 				{/* Knox Hall */}
-				<Marker coordinate={knoxHallMarker} onPress={() => setPrompt("Tapped on Knox Hall")}>
+				<Marker
+					coordinate={knoxHallMarker}
+					onPress={() => {
+						onTapPolygon("Knox Hall");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"Knox\nHall"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillKnox}
 					coordinates={knoxHall.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on Knox Hall")}
+					onPress={() => {
+						onTapPolygon("Knox Hall");
+					}}
 				></Polygon>
 
 				{/* UB Commons */}
-				<Marker coordinate={commonsMarker} onPress={() => setPrompt("Tapped on UB Commons")}>
+				<Marker
+					coordinate={commonsMarker}
+					onPress={() => {
+						onTapPolygon("UB Commons");
+					}}
+				>
 					<Text style={styles.markerStyle}>{"UB\nCommons"}</Text>
 				</Marker>
 				<Polygon
 					strokeColor="black"
-					fillColor="rgba(0, 0, 255, 0.3)"
+					fillColor={selectedFillCommons}
 					coordinates={commons.coordinates}
 					tappable={true}
-					onPress={() => setPrompt("Tapped on UB Commons")}
+					onPress={() => {
+						onTapPolygon("UB Commons");
+					}}
 				></Polygon>
 
 				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
-				
-				
-				
 			</MapView>
 
 			<View style={styles.promptViewStyle}>
@@ -414,12 +630,6 @@ export default function TunnelsScreen(content, { navigation }) {
 		</View>
 	);
 }
-
-
-
-
-
-
 
 // Everything below is used to style this screen
 const styles = StyleSheet.create({
@@ -447,6 +657,6 @@ const styles = StyleSheet.create({
 	markerStyle: {
 		fontSize: 12,
 		color: "white",
-		textAlign: "center"
+		textAlign: "center",
 	},
 });
