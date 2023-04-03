@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Pre } from "@expo/html-elements";
-import Mexican from "./tacos"
 import { NavigationContainer } from "@react-navigation/native";
 
 export default function DiningInfo({navigation}) {
@@ -19,6 +18,7 @@ export default function DiningInfo({navigation}) {
         style={styles.welcomeUp}
       ></ImageBackground>
       <Text style={styles.userTxt}>Dining Information</Text>
+      <View>
         <Pressable 
         style={styles.taco}
         title="tacos"
@@ -26,6 +26,15 @@ export default function DiningInfo({navigation}) {
         >
         <Text style={styles.buttonTXT}>Mexican</Text>
         </Pressable>
+        <Pressable 
+        style={styles.american}
+        title="american"
+        onPress={() => navigation.navigate("american")}
+        >
+        <Text style={styles.buttonTXT}>American</Text>
+        </Pressable>
+
+        </View>
 
 
     </View>
@@ -70,16 +79,28 @@ const styles = StyleSheet.create({
     backgroundColor: "#3265CB",
     borderRadius: 30,
   },
+  american:{
+    height: 100,
+    width: 100,
+    justifyContent: "center",
+    alignItems: "center",
+    top: 0,
+    left: -80,
+    backgroundColor: "#3265CB",
+    borderRadius: 30,
+  },
+
+  //planned styles to add
   smoothies:{},
   chicken:{},
   burgers:{},
-  american:{},
+  
   greek:{},
   indian:{},
   pasta:{},
   noodles:{},
   chinese:{},
-  sandwhiches:{},
+  sandwiches:{},
   salads:{},
   buttonTXT: {
     fontSize: 20,
