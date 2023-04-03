@@ -36,129 +36,140 @@ export default function HomeScreen({ navigation }) {
 				console.log("content to pass: ", content);
 				navigation.navigate("tunnels", { content: content });
 				break;
+	
 		default:
 		}
 	}
 
 	return (
-		<View style={styles.container}>
-			<ImageBackground
-				source={require("../assets/path_icon.png")}
-				style={styles.logo}
-			>
-				<ImageBackground
-					source={require("../assets/BlueTri.png")}
-					style={styles.welcomeUp}
-				></ImageBackground>
+    <View style={styles.container}>
+      <ImageBackground
+        source={require("../assets/path_icon.png")}
+        style={styles.logo}
+      >
+        <ImageBackground
+          source={require("../assets/BlueTri.png")}
+          style={styles.welcomeUp}
+        ></ImageBackground>
 
-				<View style={styles.topButtonRow}>
-					<Pressable
-						style={styles.buildingsButton}
-						title="Buildings"
-						onPress={() => onPressMapButton("buildings")}
-					>
-						<Text style={styles.buttons}>🏫</Text>
-					</Pressable>
-				</View>
-				<Text style={styles.underButtonText}>Buildings</Text>
+        <View style={styles.topButtonRow}>
+          <View style={styles.buttonAndTextView}>
+            <Pressable
+              style={styles.buildingsButton}
+              title="Buildings"
+              onPress={() => onPressMapButton("buildings")}
+            >
+              <Text style={styles.buttons}>🏫</Text>
+            </Pressable>
+            <Text style={styles.underButtonText}>{"Buildings"}</Text>
+          </View>
 
-				<View style={styles.secondButtonRow}>
-					<View style={styles.buttonAndTextView}>
-						<Pressable
-							style={styles.mapButtons}
-							title="Tunnels"
-							onPress={() => onPressMapButton("tunnels")}
-						>
-							<Text style={styles.buttons}>🌉</Text>
-						</Pressable>
-						<Text style={styles.underButtonText}>Tunnels</Text>
-					</View>
+          <View>
+            <Pressable
+              style={styles.DiningButton}
+              title="Dining Information"
+              onPress={() => navigation.navigate("dining")}
+            >
+              <Text style={styles.buttons}>🍽️</Text>
+              
+            </Pressable>
+			<Text style={styles.underButtonText}>{"   Dining Info"}</Text>
+          </View>
+        </View>
 
-					{ hide && 
-						<View style={styles.buttonAndTextView}>
-							<Pressable
-								style={styles.mapButtons}
-								title="Blue Lights"
-								onPress={() => onPressMapButton("blue Lights")}
-							>
-								<Text style={styles.buttons}>🚔</Text>
-							</Pressable>
-							<Text style={styles.underButtonText}>Blue Lights</Text>
-						</View>
-					}
-				</View>
+        <View style={styles.secondButtonRow}>
+          <View style={styles.buttonAndTextView}>
+            <Pressable
+              style={styles.mapButtons}
+              title="Tunnels"
+              onPress={() => onPressMapButton("tunnels")}
+            >
+              <Text style={styles.buttons}>🌉</Text>
+            </Pressable>
+            <Text style={styles.underButtonText}>Tunnels</Text>
+          </View>
 
+          {hide && (
+            <View style={styles.buttonAndTextView}>
+              <Pressable
+                style={styles.mapButtons}
+                title="Blue Lights"
+                onPress={() => onPressMapButton("blue Lights")}
+              >
+                <Text style={styles.buttons}>🚔</Text>
+              </Pressable>
+              <Text style={styles.underButtonText}>Blue Lights</Text>
+            </View>
+          )}
+        </View>
 
+        <View style={styles.underButtonTextRow}></View>
 
+        <View style={styles.thirdButtonRow}>
+          <View style={styles.buttonAndTextViewRow3}>
+            <Pressable
+              style={styles.closerMapButtons}
+              title="Food"
+              onPress={() => onPressMapButton("food")}
+            >
+              <Text style={styles.buttons}>🍔</Text>
+            </Pressable>
+            <Text style={styles.underButtonText}>Food</Text>
+          </View>
 
+          <View style={styles.buttonAndTextViewRow3}>
+            <Pressable
+              style={styles.closerMapButtons}
+              title="printers"
+              onPress={() => onPressMapButton("printers")}
+            >
+              <Text style={styles.buttons}>🖨</Text>
+            </Pressable>
+            <Text style={styles.underButtonText}>Printers</Text>
+          </View>
+        </View>
 
-				<View style={styles.underButtonTextRow}></View>
+        <View style={styles.thirdButtonRow}>
+          <View style={styles.buttonAndTextViewRow3}>
+            <Pressable
+              style={styles.closerMapButtons}
+              title="Food"
+              onPress={() => navigation.navigate("events")}
+            >
+              <Text style={styles.buttons}>📰</Text>
+            </Pressable>
+            <Text style={styles.underButtonText}>Events</Text>
+          </View>
 
-				<View style={styles.thirdButtonRow}>
-					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable
-							style={styles.closerMapButtons}
-							title="Food"
-							onPress={() => onPressMapButton("food")}
-						>
-							<Text style={styles.buttons}>🍔</Text>
-						</Pressable>
-						<Text style={styles.underButtonText}>Food</Text>
-					</View>
+          <View style={styles.buttonAndTextViewRow3}>
+            <Pressable
+              style={styles.closerMapButtons}
+              title="Apps"
+              onPress={() => navigation.navigate("apps")}
+            >
+              <Text style={styles.buttons}>📱</Text>
+            </Pressable>
+            <Text style={styles.underButtonText}>Apps</Text>
+          </View>
+          <View style={styles.buttonAndTextViewRow3}>
+            <Pressable
+              style={styles.closerMapButtons}
+              title="Resource"
+              onPress={() => navigation.navigate("resources")}
+            >
+              <Text style={styles.buttons}>📖</Text>
+            </Pressable>
+            <Text style={styles.underButtonText}>Resources</Text>
+          </View>
+        </View>
 
-					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable
-							style={styles.closerMapButtons}
-							title="printers"
-							onPress={() => onPressMapButton("printers")}
-						>
-							<Text style={styles.buttons}>🖨</Text>
-						</Pressable>
-						<Text style={styles.underButtonText}>Printers</Text>
-					</View>
-				</View>
-
-					<View style={styles.thirdButtonRow}>
-					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable
-							style={styles.closerMapButtons}
-							title="Food"
-							onPress={() => navigation.navigate("events")}
-						>
-							<Text style={styles.buttons}>📰</Text>
-						</Pressable>
-						<Text style={styles.underButtonText}>Events</Text>
-					</View>
-
-					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable
-							style={styles.closerMapButtons}
-							title="Apps"
-							onPress={() => navigation.navigate("apps")}
-						>
-							<Text style={styles.buttons}>📱</Text>
-						</Pressable>
-						<Text style={styles.underButtonText}>Apps</Text>
-					</View>
-					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable
-							style={styles.closerMapButtons}
-							title="Resource"
-							onPress={() => navigation.navigate("resources")}
-						>
-							<Text style={styles.buttons}>📖</Text>
-						</Pressable>
-						<Text style={styles.underButtonText}>Resources</Text>
-					</View>
-				</View>
-
-				<ImageBackground
-					source={require("../assets/WelBot.png")}
-					style={styles.welcomeDown}
-				></ImageBackground>
-			</ImageBackground>
-		</View>
-	);
+        <ImageBackground
+          source={require("../assets/WelBot.png")}
+          style={styles.welcomeDown}
+        ></ImageBackground>
+      </ImageBackground>
+    </View>
+  );
 }
 
 // Everything below is used to style this screen
@@ -249,6 +260,8 @@ const styles = StyleSheet.create({
 	buttons: {
 		fontSize: 50,
 		color: "white",
+		alignContent:"center",
+		justifyContent:"center",
 	},
 
 	underButtonText: {
@@ -287,5 +300,14 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		justifyContent: "space-between",
 		marginTop: 10,
+	},
+	DiningButton:{
+		borderRadius: 100,
+		height: 80,
+		width: 80,
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "#3265CB",
+
 	},
 });

@@ -22,6 +22,8 @@ import LoginScreen from "./Components/LoginScreen";
 import SignupScreen from "./Components/SignupScreen";
 import EventScreen from "./Components/EventScreen";
 import AppScreen from "./Components/AppScreen";
+import DiningInfo from "./Components/DiningInformation.js"
+import Mexican from "./Components/tacos.js";
 
 import HomeScreen from "./Components/HomeScreen.js";
 import ResourceScreen from "./Components/ResourceScreen.js";
@@ -130,6 +132,16 @@ export default function App() {
 				<Stack.Screen
 					name="events"
 					component={EventScreen}
+					options={{headerShown:false}}
+				></Stack.Screen>
+				<Stack.Screen
+					name="mexican"
+					component={Mexican}
+					options={{headerShown:false}}
+				></Stack.Screen>
+				<Stack.Screen
+					name="dining"
+					component={DiningInfo}
 					options={{headerShown:false}}
 				></Stack.Screen>
 
