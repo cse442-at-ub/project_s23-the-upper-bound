@@ -1,47 +1,112 @@
 // GRAPH DEFINITIONS START 
 // CENTER TREE --------------------------------------------------------------
-let baldy = {
+let jarvisNodes = {
 	nodes: [
 		{
-			building: "Baldy Hall",
+			building: "Jarvis Hall",
 			number: 0,
+			floor: 2,
 			tree: "center",
-			lat: 1.2,
-			long: 3.4,
-		},
+			transition: false,
+			latitude: 43.002167664036634,
+			longitude: -78.7868925926461
+		}
+	]
+}
 
-		{
-			building: "Baldy Hall",
-			number: 1,
-			tree: "center",
-			lat: 1.1,
-			long: 2.2,
-		},
-	],
-};
-
-let lockwood = {
+let furnasNodes = {
 	nodes: [
 		{
-			building: "Lockwood",
+			building: "Furnas Hall",
 			number: 0,
+			floor: 2,
 			tree: "center",
-			lat: 1.2,
-			long: 3.4,
+			transition: false,
+			latitude: 43.00187808303488,
+			longitude: -78.78677291594136
 		},
-
 		{
-			building: "Lockwood",
+			building: "Furnas Hall",
 			number: 1,
+			floor: 2,
 			tree: "center",
-			lat: 0.0,
-			long: -9.9,
+			transition: false,
+			latitude: 43.00188200620176,
+			longitude: -78.78684667668549
 		},
-	],
-};
+		{
+			building: "Furnas Hall",
+			number: 2,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00201048977993,
+			longitude: -78.78685874662789
+		}
+	]
+}
+
+let bellNodes = {
+	nodes: [
+		{
+			building: "Bell Hall",
+			number: 0,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00159564567005,
+			longitude: -78.78678255274367
+		},
+		{
+			building: "Bell Hall",
+			number: 1,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00159258079641,
+			longitude: -78.78731605949713
+		},
+		{
+			building: "Bell Hall",
+			number: 2,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00157394566385,
+			longitude: -78.78730667176606
+		},
+		{
+			building: "Bell Hall",
+			number: 3,
+			floor: 3,
+			tree: "center",
+			transition: false,
+			latitude: 43.00157394566385,
+			longitude: -78.78730667176606
+		},
+		{
+			building: "Bell Hall",
+			number: 4,
+			floor: 3,
+			tree: "center",
+			transition: false,
+			latitude: 43.00159258079641,
+			longitude: -78.78731605949713
+		},
+		{
+			building: "Bell Hall",
+			number: 5,
+			floor: 3,
+			tree: "center",
+			transition: false,
+			latitude: 43.00159846557398,
+			longitude: -78.78678229993056
+		}
+	]
+}
 
 
-// ALGO STARTS ----------------------------------------------------------
+// ClASS DEFINITIONS START ----------------------------------------------------------
 class Queue {
 	constructor() {
 		this.items = {};
@@ -93,8 +158,6 @@ class Graph {
 		// Add an edge from n to w
 		this.adjList.get(n).push([w, directions]);
 
-		// Add an edge from w to n
-		this.adjList.get(w).push([n, directions]);
 	}
 
 	outputGraph() {
@@ -112,7 +175,7 @@ class Graph {
 		}
 	}
 
-	bfs(startingNode, endNode) {
+	findPath(startingNode, endNode) {
 		const visited = new Map();
 		const priors = new Map();
 
@@ -167,6 +230,7 @@ class Graph {
 	}
 }
 
+// Not finished, but will probably be one of the last steps
 function GiveUserPath(path) {
 	for (var i; i < path.length; i++) {
 		for (var j; i < path.length; i++) {}
@@ -174,30 +238,67 @@ function GiveUserPath(path) {
 }
 
 // Using the above implemented graph class
-var g = new Graph(4);
+var centerGraph = new Graph(10)
 
-
-
-// adding vertices
-
-for (var i = 0; i < lockwood.nodes.length; i++) {
-	g.addNode(lockwood.nodes[i]);
+// These loops are adding nodes to graph
+// This should be handled by a function.
+for (var i = 0; i < jarvisNodes.nodes.length; i++) {
+	centerGraph.addNode(jarvisNodes.nodes[i]);
 }
 
-for (var i = 0; i < baldy.nodes.length; i++) {
-	g.addNode(baldy.nodes[i]);
+for (var i = 0; i < furnasNodes.nodes.length; i++) {
+	centerGraph.addNode(furnasNodes.nodes[i]);
 }
 
-// adding edges
-g.addEdge(lockwood.nodes[0], lockwood.nodes[1], "go up");
-g.addEdge(lockwood.nodes[0], baldy.nodes[0], "go down");
-g.addEdge(lockwood.nodes[1], baldy.nodes[1], "go left");
+for (var i = 0; i < bellNodes.nodes.length; i++) {
+	centerGraph.addNode(bellNodes.nodes[i]);
+}
+
+// Adding Edges to the direct Center Tree
+// This is really ugly right now and should be in a function, but this out here for testing and works just fine for now
+centerGraph.addEdge(jarvisNodes.nodes[0], furnasNodes.nodes[2], "Travel through Furnas-Jarvis tunnel.");
+centerGraph.addEdge(furnasNodes.nodes[2], jarvisNodes.nodes[0], "Travel through Furnas-Jarvis tunnel.");
+
+
+centerGraph.addEdge(furnasNodes.nodes[2], furnasNodes.nodes[1], "Go straight down the hall. At the end of it, you will see a short hall on your left.");
+centerGraph.addEdge(furnasNodes.nodes[1], furnasNodes.nodes[2], "Turn right and go straight down to the entrance of the Furnas-Jarvis tunnel");
+
+
+centerGraph.addEdge(furnasNodes.nodes[1], furnasNodes.nodes[0], "Take the short hall on your left. You will reach the Bell-Furnas tunnel.");
+centerGraph.addEdge(furnasNodes.nodes[0], furnasNodes.nodes[1], "Take the short hall on your left.");
+
+
+centerGraph.addEdge(furnasNodes.nodes[0], bellNodes.nodes[5], "Travel through Bell-Furnas Tunnel.");
+centerGraph.addEdge(bellNodes.nodes[5], furnasNodes.nodes[0], "Travel through Bell-Furnas Tunnel.");
+
+
+centerGraph.addEdge(bellNodes.nodes[5], bellNodes.nodes[4], "Turn right and go all the way down the hall. Room 342 will be on the right.");
+centerGraph.addEdge(bellNodes.nodes[4], bellNodes.nodes[5], "Turn right and go all the way down the hall. The entrance to the Bell-Furnace tunnel will be on the left.");
+
+
+centerGraph.addEdge(bellNodes.nodes[4], bellNodes.nodes[3], "Turn left and enter the elevator on the left.");
+centerGraph.addEdge(bellNodes.nodes[3], bellNodes.nodes[4], "Exit the elevator and make a right. Stop in front of room 342 at the end of the hall.");
+
+
+centerGraph.addEdge(bellNodes.nodes[3], bellNodes.nodes[2], "Take the elevator down to the 2nd floor.");
+centerGraph.addEdge(bellNodes.nodes[2], bellNodes.nodes[3], "Take the elevator up to the 3rd floor.");
+
+
+centerGraph.addEdge(bellNodes.nodes[2], bellNodes.nodes[1], "Exit the elevator and go right. You should reach the entrance of room 201.");
+centerGraph.addEdge(bellNodes.nodes[1], bellNodes.nodes[2], "Turn left and enter the elevator on the left.");
+
+
+centerGraph.addEdge(bellNodes.nodes[1], bellNodes.nodes[0], "Go all the way down the long hall on your right until you find signs to Student Union on the right.");
+centerGraph.addEdge(bellNodes.nodes[0], bellNodes.nodes[1], "Pivot slightly left and go down the long hall straight ahead. Stop at the end in front of room 201.");
+
 
 console.log("#########################################");
-
-path = g.bfs(lockwood.nodes[0], baldy.nodes[1]);
+path = centerGraph.findPath(jarvisNodes.nodes[0], bellNodes.nodes[0]);
 console.log("Paths", path);
 
-//path2 = g.bfs(baldy.nodes[1], lockwood.nodes[0]);
-//console.log("Paths 2",path2)
-//console.log(g.adjList.get(lockwood.nodes[0])[1])
+path2 = centerGraph.findPath(bellNodes.nodes[0], jarvisNodes.nodes[0]);
+console.log("Path from bell 0 to jarvis 0", path2);
+
+
+
+
