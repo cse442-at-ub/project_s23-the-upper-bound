@@ -1,4 +1,4 @@
-// GRAPH DEFINITIONS START 
+// GRAPH DEFINITIONS START
 // CENTER TREE --------------------------------------------------------------
 export let jarvisNodes = {
 	nodes: [
@@ -9,10 +9,10 @@ export let jarvisNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.002167664036634,
-			longitude: -78.7868925926461
-		}
-	]
-}
+			longitude: -78.7868925926461,
+		},
+	],
+};
 
 export let furnasNodes = {
 	nodes: [
@@ -23,7 +23,7 @@ export let furnasNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00187808303488,
-			longitude: -78.78677291594136
+			longitude: -78.78677291594136,
 		},
 		{
 			building: "Furnas Hall",
@@ -32,7 +32,7 @@ export let furnasNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00188200620176,
-			longitude: -78.78684667668549
+			longitude: -78.78684667668549,
 		},
 		{
 			building: "Furnas Hall",
@@ -41,10 +41,10 @@ export let furnasNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00201048977993,
-			longitude: -78.78685874662789
-		}
-	]
-}
+			longitude: -78.78685874662789,
+		},
+	],
+};
 
 export let bellNodes = {
 	nodes: [
@@ -55,7 +55,7 @@ export let bellNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00159564567005,
-			longitude: -78.78678255274367
+			longitude: -78.78678255274367,
 		},
 		{
 			building: "Bell Hall",
@@ -64,7 +64,7 @@ export let bellNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00159258079641,
-			longitude: -78.78731605949713
+			longitude: -78.78731605949713,
 		},
 		{
 			building: "Bell Hall",
@@ -73,7 +73,7 @@ export let bellNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00157394566385,
-			longitude: -78.78730667176606
+			longitude: -78.78730667176606,
 		},
 		{
 			building: "Bell Hall",
@@ -82,7 +82,7 @@ export let bellNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00157394566385,
-			longitude: -78.78730667176606
+			longitude: -78.78730667176606,
 		},
 		{
 			building: "Bell Hall",
@@ -91,7 +91,7 @@ export let bellNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00159258079641,
-			longitude: -78.78731605949713
+			longitude: -78.78731605949713,
 		},
 		{
 			building: "Bell Hall",
@@ -100,12 +100,137 @@ export let bellNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00159846557398,
-			longitude: -78.78678229993056
-		}
-	]
-}
+			longitude: -78.78678229993056,
+		},
+	],
+};
 
+export let studentUnionNodes = {
+	nodes: [
+		{
+			building: "Student Union",
+			number: 0,
+			floor: 3,
+			tree: "center",
+			transition: false,
+			latitude: 43.00086043807542,
+			longitude: -78.7861008154162,
+		},
+		{
+			building: "Student Union",
+			number: 1,
+			floor: 3,
+			tree: "center",
+			transition: false,
+			latitude: 43.000966897552374,
+			longitude: -78.78609789342877,
+		},
+		{
+			building: "Student Union",
+			number: 2,
+			floor: 3,
+			tree: "center",
+			transition: false,
+			latitude: 43.00096493594164,
+			longitude: -78.78604693146022,
+		},
+		{
+			building: "Student Union",
+			number: 3,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00096493594164,
+			longitude: -78.78604693146022,
+		},
+		{
+			building: "Student Union",
+			number: 4,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00105811246979,
+			longitude: -78.78609789342877,
+		},
+		{
+			building: "Student Union",
+			number: 5,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.001269696220575,
+			longitude: -78.78610630405433,
+		},
+		{
+			building: "Student Union",
+			number: 6,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.001446175702895,
+			longitude: -78.7858770662204,
+		},
+		{
+			building: "Student Union",
+			number: 7,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00124518956232,
+			longitude: -78.78642967971606,
+		},
+		{
+			building: "Student Union",
+			number: 8,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00130501844598,
+			longitude: -78.78653093310119,
+		},
+		{
+			building: "Student Union",
+			number: 9,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.001469792773925,
+			longitude: -78.7865329447644,
+		},
+		{
+			building: "Student Union",
+			number: 10,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00147960075578,
+			longitude: -78.78664559753724,
+		},
+		// {
+		// 	building: "Student Union",
+		// 	number: 11,
+		// 	floor: 1,
+		// 	tree: "center",
+		// 	transition: true,
+		// 	latitude: 43.00096493594164,
+		// 	longitude: -78.78604693146022,
+		// },
+	],
+};
 
+export let ubCommonsNodes = {
+	nodes: [
+		{
+			building: "UB Commons",
+			number: 0,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.001693358515304,
+			longitude: -78.78557146007448,
+		},
+	],
+};
 
 // ClASS DEFINITIONS START ----------------------------------------------------------
 export class Queue {
@@ -158,7 +283,6 @@ export class Graph {
 	addEdge(n, w, directions) {
 		// Add an edge from n to w
 		this.adjList.get(n).push([w, directions]);
-
 	}
 
 	outputGraph() {
@@ -211,9 +335,9 @@ export class Graph {
 
 				if (!visited.get(neigh)) {
 					visited.set(neigh, true);
-					
+
 					priors.set(neigh, [getQueueElement, get_List[i][1]]);
-					
+
 					q.enqueue(neigh);
 				}
 			}
@@ -240,58 +364,100 @@ function GiveUserPath(path) {
 
 export function CreatePath(building1, building2) {
 	var ret = [undefined, undefined];
+	console.log(building1, building2)
 
 	switch (building1) {
 		case "Jarvis Hall":
-			ret[0] = jarvisNodes.nodes[0]
+			ret[0] = jarvisNodes.nodes[0];
 
-			if (building2 === "Furnas Hall") {
-				console.log("HERERERERERREE")
-				ret[1] = furnasNodes.nodes[2]
-			}
-			else if (building2 == "Bell Hall") {
-				ret[1] = bellNodes.nodes[5]
+			if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[2];
+			} else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[5];
+			} else if (building2 == "Student Union") {
+				ret[1] = studentUnionNodes.nodes[10];
+			} else if (building2 == "UB Commons") {
+				ret[1] = ubCommonsNodes.nodes[0];
 			}
 			break;
-		
+
 		case "Furnas Hall":
 			if (building2 == "Jarvis Hall") {
-				ret[0] = furnasNodes.nodes[2]
-				ret[1] = jarvisNodes.nodes[0]
-			}
-			else {
-				ret[0] = furnasNodes.nodes[0]
+				ret[0] = furnasNodes.nodes[2];
+				ret[1] = jarvisNodes.nodes[0];
+			} else {
+				ret[0] = furnasNodes.nodes[0];
 
 				if (building2 == "Bell Hall") {
-					ret[1] = bellNodes.nodes[5]
+					ret[1] = bellNodes.nodes[5];
+				} else if (building2 == "Student Union") {
+					ret[1] = studentUnionNodes.nodes[10];
+				} else if (building2 == "UB Commons") {
+					ret[1] = ubCommonsNodes.nodes[0];
 				}
 			}
 			break;
-		
+
 		case "Bell Hall":
 			if (building2 == "Jarvis Hall" || building2 == "Furnas Hall") {
-				ret[0] = bellNodes.nodes[5]
-			}
-			else {
-				ret[0] = bellNodes.nodes[5]
+				ret[0] = bellNodes.nodes[5];
+			} else {
+				ret[0] = bellNodes.nodes[0];
 			}
 
 			if (building2 == "Jarvis Hall") {
-					ret[1] = jarvisNodes.nodes[0]
+				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0];
+			} else if (building2 == "Student Union") {
+				ret[1] = studentUnionNodes.nodes[10];
 			}
-			
-			else if (building2 == "Furnas Hall") {
-				ret[1] = furnasNodes.nodes[0]
+			else if (building2 == "UB Commons") {
+				ret[1] = ubCommonsNodes.nodes[0];
 			}
 
 			break;
+
+		case "Student Union":
+			if (building2 == "Jarvis Hall" || building2 == "Furnas Hall" || building2 == "Bell Hall") {
+				ret[0] = studentUnionNodes.nodes[10];
+			} else if (building2 == "UB Commons") {
+				ret[0] = studentUnionNodes.nodes[6];
+			} else {
+			}
+
+			if (building2 == "Jarvis Hall") {
+				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0];
+			} else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[0];
+			} else if (building2 == "UB Commons") {
+				ret[1] = ubCommonsNodes.nodes[0];
+			}
+			break;
+
+		case "UB Commons":
+			ret[0] = ubCommonsNodes.nodes[0];
+
+			if (building2 == "Jarvis Hall") {
+				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0];
+			} else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[0];
+			} else if (building2 == "Student Union") {
+				ret[1] = studentUnionNodes.nodes[6];
+			}
+			break;
+
 		default:
 	}
-	return centerGraph.findPath( ret[0], ret[1]);
+	return centerGraph.findPath(ret[0], ret[1]);
 }
 
 // Using the above implemented graph class
-export var centerGraph = new Graph(10)
+export var centerGraph = new Graph(21);
 
 export function loadCenterGraphNodes() {
 	// These loops are adding nodes to graph
@@ -307,6 +473,14 @@ export function loadCenterGraphNodes() {
 	for (var i = 0; i < bellNodes.nodes.length; i++) {
 		centerGraph.addNode(bellNodes.nodes[i]);
 	}
+
+	for (var i = 0; i < studentUnionNodes.nodes.length; i++) {
+		centerGraph.addNode(studentUnionNodes.nodes[i]);
+	}
+
+	for (var i = 0; i < ubCommonsNodes.nodes.length; i++) {
+		centerGraph.addNode(ubCommonsNodes.nodes[i]);
+	}
 }
 
 export function loadCenterGraphEdges() {
@@ -315,54 +489,200 @@ export function loadCenterGraphEdges() {
 	centerGraph.addEdge(jarvisNodes.nodes[0], furnasNodes.nodes[2], "Travel through Furnas-Jarvis tunnel.");
 	centerGraph.addEdge(furnasNodes.nodes[2], jarvisNodes.nodes[0], "Travel through Furnas-Jarvis tunnel.");
 
+	centerGraph.addEdge(
+		furnasNodes.nodes[2],
+		furnasNodes.nodes[1],
+		"Go straight down the hall. At the end of it, you will see a short hall on your left."
+	);
+	centerGraph.addEdge(
+		furnasNodes.nodes[1],
+		furnasNodes.nodes[2],
+		"Turn right and go straight down to the entrance of the Furnas-Jarvis tunnel"
+	);
 
-	centerGraph.addEdge(furnasNodes.nodes[2], furnasNodes.nodes[1], "Go straight down the hall. At the end of it, you will see a short hall on your left.");
-	centerGraph.addEdge(furnasNodes.nodes[1], furnasNodes.nodes[2], "Turn right and go straight down to the entrance of the Furnas-Jarvis tunnel");
-
-
-	centerGraph.addEdge(furnasNodes.nodes[1], furnasNodes.nodes[0], "Take the short hall on your left. You will reach the Bell-Furnas tunnel.");
+	centerGraph.addEdge(
+		furnasNodes.nodes[1],
+		furnasNodes.nodes[0],
+		"Take the short hall on your left. You will reach the Bell-Furnas tunnel."
+	);
 	centerGraph.addEdge(furnasNodes.nodes[0], furnasNodes.nodes[1], "Take the short hall on your left.");
-
 
 	centerGraph.addEdge(furnasNodes.nodes[0], bellNodes.nodes[5], "Travel through Bell-Furnas Tunnel.");
 	centerGraph.addEdge(bellNodes.nodes[5], furnasNodes.nodes[0], "Travel through Bell-Furnas Tunnel.");
 
-
-	centerGraph.addEdge(bellNodes.nodes[5], bellNodes.nodes[4], "Turn right and go all the way down the hall. Room 342 will be on the right.");
-	centerGraph.addEdge(bellNodes.nodes[4], bellNodes.nodes[5], "Turn right and go all the way down the hall. The entrance to the Bell-Furnace tunnel will be on the left.");
-
+	centerGraph.addEdge(
+		bellNodes.nodes[5],
+		bellNodes.nodes[4],
+		"Turn right and go all the way down the hall. Room 342 will be on the right."
+	);
+	centerGraph.addEdge(
+		bellNodes.nodes[4],
+		bellNodes.nodes[5],
+		"Turn right and go all the way down the hall. The entrance to the Bell-Furnace tunnel will be on the left."
+	);
 
 	centerGraph.addEdge(bellNodes.nodes[4], bellNodes.nodes[3], "Turn left and enter the elevator on the left.");
-	centerGraph.addEdge(bellNodes.nodes[3], bellNodes.nodes[4], "Exit the elevator and make a right. Stop in front of room 342 at the end of the hall.");
+	centerGraph.addEdge(
+		bellNodes.nodes[3],
+		bellNodes.nodes[4],
+		"Exit the elevator and make a right. Stop in front of room 342 at the end of the hall."
+	);
 
 	centerGraph.addEdge(bellNodes.nodes[3], bellNodes.nodes[2], "Take the elevator down to the 2nd floor.");
 	centerGraph.addEdge(bellNodes.nodes[2], bellNodes.nodes[3], "Take the elevator up to the 3rd floor.");
 
-
-	centerGraph.addEdge(bellNodes.nodes[2], bellNodes.nodes[1], "Exit the elevator and go right. You should reach the entrance of room 201.");
+	centerGraph.addEdge(
+		bellNodes.nodes[2],
+		bellNodes.nodes[1],
+		"Exit the elevator and go right. You should reach the entrance of room 201."
+	);
 	centerGraph.addEdge(bellNodes.nodes[1], bellNodes.nodes[2], "Turn left and enter the elevator on the left.");
 
+	centerGraph.addEdge(
+		bellNodes.nodes[1],
+		bellNodes.nodes[0],
+		"Go all the way down the long hall on your right until you find signs to Student Union on the right."
+	);
+	centerGraph.addEdge(
+		bellNodes.nodes[0],
+		bellNodes.nodes[1],
+		"Pivot slightly left and go down the long hall straight ahead. Stop at the end in front of room 201."
+	);
 
-	centerGraph.addEdge(bellNodes.nodes[1], bellNodes.nodes[0], "Go all the way down the long hall on your right until you find signs to Student Union on the right.");
-	centerGraph.addEdge(bellNodes.nodes[0], bellNodes.nodes[1], "Pivot slightly left and go down the long hall straight ahead. Stop at the end in front of room 201.");
+	centerGraph.addEdge(
+		bellNodes.nodes[0],
+		studentUnionNodes.nodes[10],
+		"Travel through the Student Union and Bell Hall tunnel."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[10],
+		bellNodes.nodes[0],
+		"Travel through the Student Union and Bell Hall tunnel."
+	);
+
+	centerGraph.addEdge(studentUnionNodes.nodes[0], studentUnionNodes.nodes[1], "Take the ramp or go down the steps.");
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[1],
+		studentUnionNodes.nodes[0],
+		"Go up the ramp or go up the steps to the Lockwood-Student Union tunnel entrance."
+	);
+
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[1],
+		studentUnionNodes.nodes[2],
+		"Turn right and take the elevator on the right near the beginning of the hall."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[2],
+		studentUnionNodes.nodes[1],
+		"Exit the elevator and go left to reach the end of the hall."
+	);
+
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[2],
+		studentUnionNodes.nodes[3],
+		"Take the elevator down to the 2nd floor."
+	);
+	centerGraph.addEdge(studentUnionNodes.nodes[3], studentUnionNodes.nodes[2], "Take the elevator up to the 3rd floor.");
+
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[3],
+		studentUnionNodes.nodes[4],
+		"Moving slightly diagonally to the left, continue to until there are double doors on your left."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[4],
+		studentUnionNodes.nodes[3],
+		"Moving slightly diagonally to the left, enter the elevator ahead."
+	);
+
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[4],
+		studentUnionNodes.nodes[5],
+		"Continue straight down the hall until reaching a fork with a bridge to UB Commons on the right and another hall on the left."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[5],
+		studentUnionNodes.nodes[4],
+		"If coming from UB Commons, take the hall on the left until double doors are on your right. Otherwise, turn right and continue until the same double doors are on the right."
+	);
+
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[5],
+		studentUnionNodes.nodes[6],
+		"Take the bridge on the right to reach the Student Union and UB Commons tunnel entrance."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[6],
+		studentUnionNodes.nodes[5],
+		"Cross the bridge to reach a fork at the end."
+	);
+
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[5],
+		studentUnionNodes.nodes[7],
+		"Take the hall on the left and continue until finding ramp entrance C290 is on the left."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[7],
+		studentUnionNodes.nodes[5],
+		"Take the hall on the left to reach a fork. At the end, a bridge to UB Commons will be on the left. A hall will be on the right."
+	);
+
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[7],
+		studentUnionNodes.nodes[8],
+		"Going diagonally to the right, approach the double doors to the left of the Pistachio's entrance."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[8],
+		studentUnionNodes.nodes[7],
+		"Going diagonally to the left, approach ramp entrance C290."
+	);
+
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[8],
+		studentUnionNodes.nodes[9],
+		"Go down the hall ahead and stop before the Tiffin room entrance."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[9],
+		studentUnionNodes.nodes[8],
+		"Turn right and continue until passing through the double doors. Pistachio's will be on your left."
+	);
+
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[9],
+		studentUnionNodes.nodes[10],
+		"Turn left and reach the entrance to the Student Union and Bell Hall tunnel."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[10],
+		studentUnionNodes.nodes[9],
+		"Go straight down to the end of the short hall. At the end, the Tiffin room will be on the left."
+	);
+
+	centerGraph.addEdge(
+		ubCommonsNodes.nodes[0],
+		studentUnionNodes.nodes[6],
+		"Travel through the Student Union and UB Commons tunnel."
+	);
+
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[6],
+		ubCommonsNodes.nodes[0],
+		"Travel through the Student Union and UB Commons tunnel."
+	);
 }
-
-
 
 export function calculatePathLine(path) {
-
 	var ret = {
-		coordinates:[]
+		coordinates: [],
+	};
+
+	for (var i = 0; i < path.length; i++) {
+		ret.coordinates.push({ latitude: path[i][0].latitude, longitude: path[i][0].longitude });
 	}
 
-	for (var i = 0; i < path.length; i++){
-		ret.coordinates.push({latitude: path[i][0].latitude,longitude: path[i][0].longitude});
-	}
-
-	return ret
+	return ret;
 }
-
-
-
-
-

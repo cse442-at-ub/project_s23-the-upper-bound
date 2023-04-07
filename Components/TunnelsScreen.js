@@ -15,7 +15,7 @@ import {
 	talbertHallMarker,talbertHall,knoxHallMarker,knoxHall,commonsMarker,commons,
 } from "../Constants/TunnelConstants";
 import {
-	jarvisNodes, furnasNodes, bellNodes,
+	jarvisNodes, furnasNodes, bellNodes, ubCommonsNodes, studentUnionNodes,
 	Queue, Graph,
 	CreatePath, centerGraph, loadCenterGraphNodes, loadCenterGraphEdges, calculatePathLine
 } from "../Constants/PathFindingAlgo";
@@ -92,6 +92,7 @@ export default function TunnelsScreen(content, { navigation }) {
 
 
 			loadCenterGraphNodes()
+			console.log(centerGraph)
 			loadCenterGraphEdges()
 
 			var resultPath = CreatePath(building1, polygon)
