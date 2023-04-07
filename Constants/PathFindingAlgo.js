@@ -1,6 +1,6 @@
 // GRAPH DEFINITIONS START 
 // CENTER TREE --------------------------------------------------------------
-let jarvisNodes = {
+export let jarvisNodes = {
 	nodes: [
 		{
 			building: "Jarvis Hall",
@@ -14,7 +14,7 @@ let jarvisNodes = {
 	]
 }
 
-let furnasNodes = {
+export let furnasNodes = {
 	nodes: [
 		{
 			building: "Furnas Hall",
@@ -46,7 +46,7 @@ let furnasNodes = {
 	]
 }
 
-let bellNodes = {
+export let bellNodes = {
 	nodes: [
 		{
 			building: "Bell Hall",
@@ -106,8 +106,9 @@ let bellNodes = {
 }
 
 
+
 // ClASS DEFINITIONS START ----------------------------------------------------------
-class Queue {
+export class Queue {
 	constructor() {
 		this.items = {};
 		this.frontIndex = 0;
@@ -143,7 +144,7 @@ class Queue {
 	}
 }
 
-class Graph {
+export class Graph {
 	constructor(nodeCount) {
 		this.nodeCount = nodeCount;
 		this.adjList = new Map();
@@ -237,67 +238,130 @@ function GiveUserPath(path) {
 	}
 }
 
+export function CreatePath(building1, building2) {
+	var ret = [undefined, undefined];
+
+	switch (building1) {
+		case "Jarvis Hall":
+			ret[0] = jarvisNodes.nodes[0]
+
+			if (building2 === "Furnas Hall") {
+				console.log("HERERERERERREE")
+				ret[1] = furnasNodes.nodes[2]
+			}
+			else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[5]
+			}
+			break;
+		
+		case "Furnas Hall":
+			if (building2 == "Jarvis Hall") {
+				ret[0] = furnasNodes.nodes[2]
+				ret[1] = jarvisNodes.nodes[0]
+			}
+			else {
+				ret[0] = furnasNodes.nodes[0]
+
+				if (building2 == "Bell Hall") {
+					ret[1] = bellNodes.nodes[5]
+				}
+			}
+			break;
+		
+		case "Bell Hall":
+			if (building2 == "Jarvis Hall" || building2 == "Furnas Hall") {
+				ret[0] = bellNodes.nodes[5]
+			}
+			else {
+				ret[0] = bellNodes.nodes[5]
+			}
+
+			if (building2 == "Jarvis Hall") {
+					ret[1] = jarvisNodes.nodes[0]
+			}
+			
+			else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0]
+			}
+
+			break;
+		default:
+	}
+	return centerGraph.findPath( ret[0], ret[1]);
+}
+
 // Using the above implemented graph class
-var centerGraph = new Graph(10)
+export var centerGraph = new Graph(10)
 
-// These loops are adding nodes to graph
-// This should be handled by a function.
-for (var i = 0; i < jarvisNodes.nodes.length; i++) {
-	centerGraph.addNode(jarvisNodes.nodes[i]);
+export function loadCenterGraphNodes() {
+	// These loops are adding nodes to graph
+	// This should be handled by a function.
+	for (var i = 0; i < jarvisNodes.nodes.length; i++) {
+		centerGraph.addNode(jarvisNodes.nodes[i]);
+	}
+
+	for (var i = 0; i < furnasNodes.nodes.length; i++) {
+		centerGraph.addNode(furnasNodes.nodes[i]);
+	}
+
+	for (var i = 0; i < bellNodes.nodes.length; i++) {
+		centerGraph.addNode(bellNodes.nodes[i]);
+	}
 }
 
-for (var i = 0; i < furnasNodes.nodes.length; i++) {
-	centerGraph.addNode(furnasNodes.nodes[i]);
+export function loadCenterGraphEdges() {
+	// Adding Edges to the direct Center Tree
+	// This is really ugly right now and should be in a function, but this out here for testing
+	centerGraph.addEdge(jarvisNodes.nodes[0], furnasNodes.nodes[2], "Travel through Furnas-Jarvis tunnel.");
+	centerGraph.addEdge(furnasNodes.nodes[2], jarvisNodes.nodes[0], "Travel through Furnas-Jarvis tunnel.");
+
+
+	centerGraph.addEdge(furnasNodes.nodes[2], furnasNodes.nodes[1], "Go straight down the hall. At the end of it, you will see a short hall on your left.");
+	centerGraph.addEdge(furnasNodes.nodes[1], furnasNodes.nodes[2], "Turn right and go straight down to the entrance of the Furnas-Jarvis tunnel");
+
+
+	centerGraph.addEdge(furnasNodes.nodes[1], furnasNodes.nodes[0], "Take the short hall on your left. You will reach the Bell-Furnas tunnel.");
+	centerGraph.addEdge(furnasNodes.nodes[0], furnasNodes.nodes[1], "Take the short hall on your left.");
+
+
+	centerGraph.addEdge(furnasNodes.nodes[0], bellNodes.nodes[5], "Travel through Bell-Furnas Tunnel.");
+	centerGraph.addEdge(bellNodes.nodes[5], furnasNodes.nodes[0], "Travel through Bell-Furnas Tunnel.");
+
+
+	centerGraph.addEdge(bellNodes.nodes[5], bellNodes.nodes[4], "Turn right and go all the way down the hall. Room 342 will be on the right.");
+	centerGraph.addEdge(bellNodes.nodes[4], bellNodes.nodes[5], "Turn right and go all the way down the hall. The entrance to the Bell-Furnace tunnel will be on the left.");
+
+
+	centerGraph.addEdge(bellNodes.nodes[4], bellNodes.nodes[3], "Turn left and enter the elevator on the left.");
+	centerGraph.addEdge(bellNodes.nodes[3], bellNodes.nodes[4], "Exit the elevator and make a right. Stop in front of room 342 at the end of the hall.");
+
+	centerGraph.addEdge(bellNodes.nodes[3], bellNodes.nodes[2], "Take the elevator down to the 2nd floor.");
+	centerGraph.addEdge(bellNodes.nodes[2], bellNodes.nodes[3], "Take the elevator up to the 3rd floor.");
+
+
+	centerGraph.addEdge(bellNodes.nodes[2], bellNodes.nodes[1], "Exit the elevator and go right. You should reach the entrance of room 201.");
+	centerGraph.addEdge(bellNodes.nodes[1], bellNodes.nodes[2], "Turn left and enter the elevator on the left.");
+
+
+	centerGraph.addEdge(bellNodes.nodes[1], bellNodes.nodes[0], "Go all the way down the long hall on your right until you find signs to Student Union on the right.");
+	centerGraph.addEdge(bellNodes.nodes[0], bellNodes.nodes[1], "Pivot slightly left and go down the long hall straight ahead. Stop at the end in front of room 201.");
 }
 
-for (var i = 0; i < bellNodes.nodes.length; i++) {
-	centerGraph.addNode(bellNodes.nodes[i]);
+
+
+export function calculatePathLine(path) {
+
+	var ret = {
+		coordinates:[]
+	}
+
+	for (var i = 0; i < path.length; i++){
+		ret.coordinates.push({latitude: path[i][0].latitude,longitude: path[i][0].longitude});
+	}
+
+	return ret
 }
 
-// Adding Edges to the direct Center Tree
-// This is really ugly right now and should be in a function, but this out here for testing and works just fine for now
-centerGraph.addEdge(jarvisNodes.nodes[0], furnasNodes.nodes[2], "Travel through Furnas-Jarvis tunnel.");
-centerGraph.addEdge(furnasNodes.nodes[2], jarvisNodes.nodes[0], "Travel through Furnas-Jarvis tunnel.");
-
-
-centerGraph.addEdge(furnasNodes.nodes[2], furnasNodes.nodes[1], "Go straight down the hall. At the end of it, you will see a short hall on your left.");
-centerGraph.addEdge(furnasNodes.nodes[1], furnasNodes.nodes[2], "Turn right and go straight down to the entrance of the Furnas-Jarvis tunnel");
-
-
-centerGraph.addEdge(furnasNodes.nodes[1], furnasNodes.nodes[0], "Take the short hall on your left. You will reach the Bell-Furnas tunnel.");
-centerGraph.addEdge(furnasNodes.nodes[0], furnasNodes.nodes[1], "Take the short hall on your left.");
-
-
-centerGraph.addEdge(furnasNodes.nodes[0], bellNodes.nodes[5], "Travel through Bell-Furnas Tunnel.");
-centerGraph.addEdge(bellNodes.nodes[5], furnasNodes.nodes[0], "Travel through Bell-Furnas Tunnel.");
-
-
-centerGraph.addEdge(bellNodes.nodes[5], bellNodes.nodes[4], "Turn right and go all the way down the hall. Room 342 will be on the right.");
-centerGraph.addEdge(bellNodes.nodes[4], bellNodes.nodes[5], "Turn right and go all the way down the hall. The entrance to the Bell-Furnace tunnel will be on the left.");
-
-
-centerGraph.addEdge(bellNodes.nodes[4], bellNodes.nodes[3], "Turn left and enter the elevator on the left.");
-centerGraph.addEdge(bellNodes.nodes[3], bellNodes.nodes[4], "Exit the elevator and make a right. Stop in front of room 342 at the end of the hall.");
-
-
-centerGraph.addEdge(bellNodes.nodes[3], bellNodes.nodes[2], "Take the elevator down to the 2nd floor.");
-centerGraph.addEdge(bellNodes.nodes[2], bellNodes.nodes[3], "Take the elevator up to the 3rd floor.");
-
-
-centerGraph.addEdge(bellNodes.nodes[2], bellNodes.nodes[1], "Exit the elevator and go right. You should reach the entrance of room 201.");
-centerGraph.addEdge(bellNodes.nodes[1], bellNodes.nodes[2], "Turn left and enter the elevator on the left.");
-
-
-centerGraph.addEdge(bellNodes.nodes[1], bellNodes.nodes[0], "Go all the way down the long hall on your right until you find signs to Student Union on the right.");
-centerGraph.addEdge(bellNodes.nodes[0], bellNodes.nodes[1], "Pivot slightly left and go down the long hall straight ahead. Stop at the end in front of room 201.");
-
-
-console.log("#########################################");
-path = centerGraph.findPath(jarvisNodes.nodes[0], bellNodes.nodes[0]);
-console.log("Paths", path);
-
-path2 = centerGraph.findPath(bellNodes.nodes[0], jarvisNodes.nodes[0]);
-console.log("Path from bell 0 to jarvis 0", path2);
 
 
 

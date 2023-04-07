@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import * as Location from "expo-location";
-import { Marker, Polygon } from "react-native-maps";
+import { Marker, Polygon, Polyline } from "react-native-maps";
 import { mapStyle } from "../Constants/MapConstants";
 import {
 	baldyHall, baldyHallMarker, oBrianHall, oBrianHallMarker, lockwood, lockwoodMarker,
@@ -14,6 +14,11 @@ import {
 	computingCenterMarker, computingCenter, capenHall, capenHallMarker, nortonHall, nortonHallMarker,
 	talbertHallMarker,talbertHall,knoxHallMarker,knoxHall,commonsMarker,commons,
 } from "../Constants/TunnelConstants";
+import {
+	jarvisNodes, furnasNodes, bellNodes,
+	Queue, Graph,
+	CreatePath, centerGraph, loadCenterGraphNodes, loadCenterGraphEdges, calculatePathLine
+} from "../Constants/PathFindingAlgo";
 
 export default function TunnelsScreen(content, { navigation }) {
 	// Use states -----------------------------------------------------------------------------
@@ -21,21 +26,11 @@ export default function TunnelsScreen(content, { navigation }) {
 	const [prompt, setPrompt] = useState("");
 	const [building1, setBuilding1] = useState("");
 	const [building2, setBuilding2] = useState("");
-
-	var contentToLoad = [{}];
-
-	// Should be in a useEffect but I can't get it to work :(
-	switch (content.route.params["content"]) {
-		case "tunnels":
-			console.log("tunnels prop passed successfully");
-			break;
-		default:
-			console.log("error in content selection");
-	}
+	const[pathLine, setPathLine] = useState([])
+	const [showPathLine, setShowPathLine] = useState(false)
 
 	// Use effects -----------------------------------------------------------------------------
 
-	// Used for testing building selection
 
 	// Used to ask for user for location permissions
 	// If permission has been granted, continuously update their location while the map is rendered
@@ -46,18 +41,14 @@ export default function TunnelsScreen(content, { navigation }) {
 
 			// Error checking
 			if (status == "granted") {
-				console.log("Permission successful!");
 			} else {
 				console.log("Permission NOT granted!");
 			}
 
 			// Save current location
 			const loc = await Location.getCurrentPositionAsync();
-			console.log(loc);
-			console.log(loc.coords.latitude);
 			currentLocation.latitude = loc.coords.latitude;
 			currentLocation.longitude = loc.coords.longitude;
-			console.log(currentLocation);
 			setLocation(loc);
 		})();
 	}, []);
@@ -69,38 +60,50 @@ export default function TunnelsScreen(content, { navigation }) {
 		longitudeDelta: 0.0021,
 	};
 
-	// Output current coordinates for testing
-	console.log("Location of user: ", location);
-
 	function onTapPolygon(polygon) {
 		// Deselect Building 1
 		if (building1 == polygon && building2 == "") {
 			setBuilding1("");
 			setPrompt("Deselected " + polygon + ".\nPlease select a building as a starting point.");
+			setShowPathLine(false)
+
 		}
 
 		// Deselect Building 2
 		else if (building2 == polygon) {
 			setBuilding2("");
 			setPrompt("Deselected " + polygon + ".\nPlease select a destination building.");
+			setShowPathLine(false)
+
 		}
 
 		// No building is saved yet, so save first building
 		else if (building1 == "" && building2 == "") {
 			setBuilding1(polygon);
 			setPrompt("Starting at " + polygon + ".\nPlease select the destination building.");
+			setShowPathLine(false)
+
 		}
 
 		// First building is saved, so save the 2nd building
 		else if (building1 != "" && building2 == "") {
 			setBuilding2(polygon);
 			setPrompt(polygon + " selected as the destination building.\nTap Start to begin navigation.");
-		}
 
-		console.log("Building 1:", building1, "Building 2:", building2);
+
+			loadCenterGraphNodes()
+			loadCenterGraphEdges()
+
+			var resultPath = CreatePath(building1, polygon)
+
+			setPathLine( calculatePathLine(resultPath))
+
+
+			setShowPathLine(true)
+		}
 	}
 
-	const unselectedColor = "#00308F";
+	const unselectedColor = "#00308f";
 	const selectedColor = "#F6C324";
 
 	const selectedFillClemens =
@@ -163,9 +166,23 @@ export default function TunnelsScreen(content, { navigation }) {
 			>
 				{/* #####/////////                     Polygon Content Starts Here                     /////////#####  */}
 
-				{/* O'Brian Hall */}
+				{(showPathLine && pathLine !== undefined) && 
+					
+					<Polyline
+						coordinates={pathLine.coordinates}
+						strokeColor="#8f0000"
+						strokeWidth={2}
+					></Polyline>
+					
+				}
 				<Marker
-					coordinate={oBrianHallMarker}
+					coordinate={pathLine.coordinates != undefined ? pathLine.coordinates[pathLine.coordinates.length - 1]: {latitude:0.0, longitude:0.0}}
+					opacity={building2 != "" ? 1.0 : 0.0}
+				></Marker>
+				{/* O'Brian Hall */}
+				
+				<Marker
+					coordinate= {oBrianHallMarker}
 					onPress={() => {
 						onTapPolygon("O'Brian Hall");
 					}}
