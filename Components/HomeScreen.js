@@ -36,6 +36,11 @@ export default function HomeScreen({ navigation }) {
 				console.log("content to pass: ", content);
 				navigation.navigate("tunnels", { content: content });
 				break;
+
+			case "blue Lights":
+				console.log("content to pass: ", content);
+				navigation.navigate("maps", { content: content });
+				break;
 		default:
 		}
 	}
@@ -74,7 +79,7 @@ export default function HomeScreen({ navigation }) {
 						<Text style={styles.underButtonText}>Tunnels</Text>
 					</View>
 
-					{ hide && 
+					
 						<View style={styles.buttonAndTextView}>
 							<Pressable
 								style={styles.mapButtons}
@@ -85,7 +90,7 @@ export default function HomeScreen({ navigation }) {
 							</Pressable>
 							<Text style={styles.underButtonText}>Blue Lights</Text>
 						</View>
-					}
+					
 				</View>
 
 
