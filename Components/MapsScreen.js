@@ -95,6 +95,10 @@ export default function MapsScreen(content, { navigation }) {
 	const toggleModal19 = () => {
 	  setModalVisible19(!isModalVisible19);
 	};
+	const [isModalVisible20, setModalVisible20] = useState(true);
+	const toggleModal20 = () => {
+	  setModalVisible20(!isModalVisible20);
+	};
 	
 	var contentToLoad = [{}];
 
@@ -334,7 +338,194 @@ export default function MapsScreen(content, { navigation }) {
 	];
 
 	//
-	const blueLightLocations = [];
+	const blueLightLocations = [	{
+		title: "Park Hall on Talbert Way",
+		latitude: 43.000090378254946,
+		longitude: -78.78753675191092,
+	},
+	{
+		title: "Park Hall between Jacobs A & B parking lot",
+		latitude: 42.998849471126995,
+		longitude: -78.78758533050615,
+	},
+	{
+		title: "Baird Lot in the Northeast Corner",
+		latitude: 42.99890282501945,
+		longitude: -78.78427832845986,
+	},
+	{
+		title: "Bus stop East of Alumni Arena Entrance 11 (facing Stadium)",
+		latitude: 42.999914173673716,
+		longitude: -78.78244997294453,
+	},
+	{
+		title: "Lake LaSalle Parking lot",
+		latitude: 43.001283037755556,
+		longitude: -78.7802010370165,
+	},
+	{
+		title: "Coventry Loop at Alumni",
+		latitude: 43.00001468768577,
+		longitude: -78.78337936831363,
+	},
+	{
+		title: "Slee Lot B (south)",
+		latitude: 42.999761461870804,
+		longitude: -78.78318683032339,
+	},
+	{
+		title: "Quad area Southwest of Student Activities Center (Student Union)",
+		latitude: 43.00082673206815,
+		longitude:  -78.78684999258255,
+	},
+	{
+		title: "Beane Center",
+		latitude: 42.99412425278977,
+		longitude:  -78.79775353468898,
+	},
+	{
+		title: "Bus Stop South of Bissell Hall",
+		latitude: 42.99903823341985,
+		longitude:  -78.78046375480442,
+	},
+	{
+		title: "Special Events lot East",
+		latitude: 42.997981158954765,
+		longitude:  -78.78519532774293,
+	},
+	{
+		title: "Special Events lot West",
+		latitude: 42.997735267922906,
+		longitude: -78.7828320481735,
+	},
+	{
+		title: "Flint Loop",
+		latitude: 43.0001340845628,
+		longitude: -78.78948510147926,
+	},
+	{
+		title: "CFA rear between building and lake",
+		latitude: 43.00157833044345,
+		longitude: -78.78258967211862,
+	},
+	{
+		title: "Center for Tomorrow Lot (2 speaker locations)",
+		latitude: 42.992715205566725,
+		longitude: -78.79301959437088,
+	},
+	{
+		title: "Flint Road at Audobon Parkway (2 speaker locations)",
+		latitude: 42.992355303668724,
+		longitude: -78.79209961981223,
+	},
+	{
+		title: "Bus Stop across from Child Care",
+		latitude: 43.002078519882446,
+		longitude: -78.77929825719254,
+	},
+	{
+		title: "Clemens North facing the Commons",
+		latitude: 43.000675361554045,
+		longitude: -78.78469085975361,
+	},
+	{
+		title: "Student Union",
+		latitude: 43.001367692744104,
+		longitude: -78.78556339294134,
+	},
+	{
+		title: "Hochstetter at Talbert Way",
+		latitude: 42.999504717910824,
+		longitude: -78.79073792285398,
+	},
+	{
+		title: "Lee Bookstore Lot (2 speaker locations)",
+		latitude: 43.002336493170674,
+		longitude: -78.78574630736085,
+	},
+	{
+		title: "Lee Entrance at Jarvis Lot (2 speaker locations)",
+		latitude: 43.00447602437512,
+		longitude: -78.786073523101,
+	},
+	{
+		title: "Jarvis A and B (2 speaker locations)",
+		latitude: 43.00344467664682,
+		longitude: -78.7876891887213,
+	},
+	{
+		title: "Hamilton loop at Ketter Hall (2 speaker locations)",
+		latitude: 43.00223955324486,
+		longitude: -78.7892707256273,
+	},
+	{
+		title: "Lockwood Library/Hall on Talbert Way",
+		latitude: 42.999957041096664,
+		longitude: -78.78548369590067,
+	},
+	{
+		title: "Talbert Way West side",
+		latitude: 43.00021466182786,
+		longitude: -78.79258828398643,
+	},
+	{
+		title: "Rensch Loop",
+		latitude: 43.00021466182786,
+		longitude: -78.79258828398643,
+	},
+	{
+		title: "Audobon at Hamilton Road (2 speaker locations)",
+		latitude: 43.00752894612842,
+		longitude: -78.78629617806615,
+	},
+	{
+		title: "Fargo Parking Lot (2 speaker locations)",
+		latitude: 43.006895859787804,
+		longitude:  -78.78777151536933,
+	},
+	{
+		title: "Audobon at Lee entrance",
+		latitude: 43.00360848945634, 
+		longitude:  -78.78602456024407,
+	},
+	{
+		title: "South of Fargo Hall at Lake LaSalle",
+		latitude: 43.0072002452058,
+		longitude:  -78.78457872767414, 
+	},
+	{
+		title: "Red Jacket Lot",
+		latitude: 43.00883110535041,
+		longitude:  -78.78749433489799, 
+	},
+	{
+		title: "Richmond B Parking Lot Berm",
+		latitude: 43.01001513788589,
+		longitude:  -78.7864932140113, 
+	},
+	{
+		title: "Spaulding (Old Richmond)",
+		latitude: 43.01001513788589,
+		longitude:  -78.7864932140113, 
+	},
+	{
+		title: "Spaulding Parking Lot Berm (2 speaker locations)",
+		latitude: 43.009648806800875,
+		longitude: -78.78300817767717,
+	},
+	{
+		title: "Richmond Lot at Ellicott (2 speaker locations)",
+		latitude: 43.01018047135453,
+		longitude: -78.7852141629572,
+	},
+	{
+		title: "Wilkeson near Kanazawa Island",
+		latitude: 43.00846077985067,
+		longitude: -78.78308436966589,
+	},
+	
+	
+];
 
 	// Should be in a useEffect but I can't get it to work :(
 	switch (content.route.params["content"]) {
@@ -348,6 +539,9 @@ export default function MapsScreen(content, { navigation }) {
 
 		case "printers":
 			contentToLoad = PrinterLocations;
+			break;
+		case "blue Lights":
+			contentToLoad = blueLightLocations;
 			break;
 
 		default:
@@ -410,6 +604,21 @@ export default function MapsScreen(content, { navigation }) {
 						//image={require("../assets/map-printer.png")}
 					></Marker>
 				))}
+
+
+			{contentToLoad == blueLightLocations &&
+				contentToLoad.map((marker, index) => (
+
+				// Places a marker for each object in PrinterLocations
+				<Marker
+					key={index}
+					coordinate={marker}
+					title={marker.title}
+					//image={{uri:'../assets/map-printer.png'}}
+					//image={require("../assets/map-printer.png")}
+				></Marker>
+			))
+			}
 
 			{contentToLoad == foodLocations &&
 				<View style={{ flex: 1 }} >
@@ -803,11 +1012,6 @@ export default function MapsScreen(content, { navigation }) {
 					</Modal>
 
 				</View>
-
-
-
-
-			
 			}
 
 
