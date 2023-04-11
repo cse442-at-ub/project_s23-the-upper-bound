@@ -5,34 +5,83 @@ import * as Location from "expo-location";
 import { Marker, Polygon, Polyline } from "react-native-maps";
 import { mapStyle } from "../Constants/MapConstants";
 import {
-	baldyHall, baldyHallMarker, oBrianHall, oBrianHallMarker, lockwood, lockwoodMarker,
-	parkHallMarker, parkHall, jacobsManagementMarker, jacobsManagement, clemensHallMarker, clemensHall,
-	bairdHallMarker, bairdHall, sleeHall, sleeHallMarker, studentUnionMarker, studentUnion,
-	bellHall, bellHallMarker, furnasHall, furnasHallMarker, jarvisHallMarker, jarvisHall,
-	bonnerHall, bonnerHallMarker, cookeHall, cookeHallMarker, hochstetter, hochstetterMarker,
-	mathBuilding, mathBuildingMarker, nscMarker, nsc, fronczakHallMarker, fronczakHall,
-	computingCenterMarker, computingCenter, capenHall, capenHallMarker, nortonHall, nortonHallMarker,
-	talbertHallMarker,talbertHall,knoxHallMarker,knoxHall,commonsMarker,commons,
+	baldyHall,
+	baldyHallMarker,
+	oBrianHall,
+	oBrianHallMarker,
+	lockwood,
+	lockwoodMarker,
+	parkHallMarker,
+	parkHall,
+	jacobsManagementMarker,
+	jacobsManagement,
+	clemensHallMarker,
+	clemensHall,
+	bairdHallMarker,
+	bairdHall,
+	sleeHall,
+	sleeHallMarker,
+	studentUnionMarker,
+	studentUnion,
+	bellHall,
+	bellHallMarker,
+	furnasHall,
+	furnasHallMarker,
+	jarvisHallMarker,
+	jarvisHall,
+	bonnerHall,
+	bonnerHallMarker,
+	cookeHall,
+	cookeHallMarker,
+	hochstetter,
+	hochstetterMarker,
+	mathBuilding,
+	mathBuildingMarker,
+	nscMarker,
+	nsc,
+	fronczakHallMarker,
+	fronczakHall,
+	computingCenterMarker,
+	computingCenter,
+	capenHall,
+	capenHallMarker,
+	nortonHall,
+	nortonHallMarker,
+	talbertHallMarker,
+	talbertHall,
+	knoxHallMarker,
+	knoxHall,
+	commonsMarker,
+	commons,
 } from "../Constants/TunnelConstants";
 import {
-	jarvisNodes, furnasNodes, bellNodes, ubCommonsNodes, studentUnionNodes,
-	Queue, Graph,
-	CreatePath, centerGraph, loadCenterGraphNodes, loadCenterGraphEdges, calculatePathLine
+	jarvisNodes,
+	furnasNodes,
+	bellNodes,
+	ubCommonsNodes,
+	studentUnionNodes,
+	Queue,
+	Graph,
+	CreatePath,
+	centerGraph,
+	loadCenterGraphNodes,
+	loadCenterGraphEdges,
+	calculatePathLine,
 } from "../Constants/PathFindingAlgo";
 
 export default function TunnelsScreen(content, { navigation }) {
 	// Use states -----------------------------------------------------------------------------
 	const [location, setLocation] = useState({});
-	const [prompt, setPrompt] = useState("");
+	const [prompt, setPrompt] = useState(
+		"Please select a building a starting point. Then select a destination building."
+	);
 	const [building1, setBuilding1] = useState("");
 	const [building2, setBuilding2] = useState("");
-	const[pathLine, setPathLine] = useState([])
-	const [showPathLine, setShowPathLine] = useState(false)
-	const [navigating, setNavigating] = useState(false)
-
+	const [pathLine, setPathLine] = useState([]);
+	const [showPathLine, setShowPathLine] = useState(false);
+	const [navigating, setNavigating] = useState(false);
 
 	// Use effects -----------------------------------------------------------------------------
-
 
 	// Used to ask for user for location permissions
 	// If permission has been granted, continuously update their location while the map is rendered
@@ -55,8 +104,6 @@ export default function TunnelsScreen(content, { navigation }) {
 		})();
 	}, []);
 
-	
-
 	var currentLocation = {
 		latitude: 0.0,
 		longitude: 0.0,
@@ -69,11 +116,9 @@ export default function TunnelsScreen(content, { navigation }) {
 		if (building1 == polygon && building2 == "") {
 			setBuilding1("");
 			setPrompt("Deselected " + polygon + ".\nPlease select a building as a starting point.");
-			fadeInText()
+			fadeInText();
 
-
-			setShowPathLine(false)
-
+			setShowPathLine(false);
 		}
 
 		// Deselect Building 2
@@ -81,42 +126,40 @@ export default function TunnelsScreen(content, { navigation }) {
 			setBuilding2("");
 
 			setPrompt("Deselected " + polygon + ".\nPlease select a destination building.");
-			fadeInText()
-			setShowPathLine(false)
-			fadeOut()
-
+			fadeInText();
+			setShowPathLine(false);
+			fadeOutStartButton();
 		}
 
 		// No building is saved yet, so save first building
 		else if (building1 == "" && building2 == "") {
+			slideFromBottom();
+
 			setBuilding1(polygon);
 
 			setPrompt("Starting at " + polygon + ".\nPlease select the destination building.");
-			fadeInText()
+			fadeInText();
 
-
-			setShowPathLine(false)
-
+			setShowPathLine(false);
 		}
 
 		// First building is saved, so save the 2nd building
 		else if (building1 != "" && building2 == "") {
 			setBuilding2(polygon);
 
-			setPrompt(polygon + " selected as the destination building.\nTap Start to begin navigation.");
-			fadeInText()
+			setPrompt("Your path is from " + building1 + " to " + polygon + ".\nTap Start to begin navigation.");
+			fadeInText();
 
-			loadCenterGraphNodes()
-			console.log(centerGraph)
-			loadCenterGraphEdges()
+			loadCenterGraphNodes();
+			console.log(centerGraph);
+			loadCenterGraphEdges();
 
-			var resultPath = CreatePath(building1, polygon)
+			var resultPath = CreatePath(building1, polygon);
 
-			setPathLine( calculatePathLine(resultPath))
+			setPathLine(calculatePathLine(resultPath));
 
-
-			setShowPathLine(true)
-			fadeIn()
+			setShowPathLine(true);
+			fadeInStartButton();
 		}
 	}
 
@@ -163,54 +206,55 @@ export default function TunnelsScreen(content, { navigation }) {
 
 	const fadeAnim = useRef(new Animated.Value(0)).current;
 	const fadeAnimText = useRef(new Animated.Value(1)).current;
+	const bounceValue = useRef(new Animated.Value(700)).current;
 
-	const delay = ms => new Promise(
-		resolve => setTimeout(resolve, ms)
-	  );
+	const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-	const fadeIn = () => {
-		// Will change fadeAnim value to 1 in 5 seconds
+	const fadeInStartButton = () => {
 		Animated.timing(fadeAnim, {
-		toValue: 1,
-		duration: 300,
-		useNativeDriver: true,
+			toValue: 1,
+			duration: 300,
+			useNativeDriver: true,
 		}).start();
 	};
 
-	const fadeOut = () => {
-		// Will change fadeAnim value to 0 in 3 seconds
+	const fadeOutStartButton = () => {
 		Animated.timing(fadeAnim, {
 			toValue: 0,
 			duration: 300,
 			useNativeDriver: true,
 		}).start();
-	}
+	};
 
 	const fadeInText = async () => {
-		fadeOutText()
-		await delay(300);		// Will change fadeAnim value to 1 in 5 seconds
+		fadeOutText();
+		await delay(300);
 		Animated.timing(fadeAnimText, {
-		toValue: 1,
-		duration: 300,
-		useNativeDriver: true,
+			toValue: 1,
+			duration: 300,
+			useNativeDriver: true,
 		}).start();
-
-		
 	};
 
 	const fadeOutText = () => {
-		// Will change fadeAnim value to 0 in 3 seconds
 		Animated.timing(fadeAnimText, {
 			toValue: 0,
 			duration: 400,
 			useNativeDriver: true,
 		}).start();
-	}
-		
-		
+	};
 
-	
-	
+	const slideFromBottom = () => {
+		Animated.spring(bounceValue, {
+			toValue: 0,
+			velocity: 3,
+			tension: 2,
+			friction: 8,
+			useNativeDriver: true,
+		}).start();
+	};
+	slideFromBottom()
+
 	return (
 		<View style={styles.container}>
 			<MapView
@@ -233,23 +277,21 @@ export default function TunnelsScreen(content, { navigation }) {
 			>
 				{/* #####/////////                     Polygon Content Starts Here                     /////////#####  */}
 
-				{(showPathLine && pathLine !== undefined) && 
-					
-					<Polyline
-						coordinates={pathLine.coordinates}
-						strokeColor="#8f0000"
-						strokeWidth={2}
-					></Polyline>
-					
-				}
+				{showPathLine && pathLine !== undefined && (
+					<Polyline coordinates={pathLine.coordinates} strokeColor="#8f0000" strokeWidth={2}></Polyline>
+				)}
 				<Marker
-					coordinate={pathLine.coordinates != undefined ? pathLine.coordinates[pathLine.coordinates.length - 1]: {latitude:0.0, longitude:0.0}}
+					coordinate={
+						pathLine.coordinates != undefined
+							? pathLine.coordinates[pathLine.coordinates.length - 1]
+							: { latitude: 0.0, longitude: 0.0 }
+					}
 					opacity={building2 != "" ? 1.0 : 0.0}
 				></Marker>
 				{/* O'Brian Hall */}
-				
+
 				<Marker
-					coordinate= {oBrianHallMarker}
+					coordinate={oBrianHallMarker}
 					onPress={() => {
 						onTapPolygon("O'Brian Hall");
 					}}
@@ -707,43 +749,37 @@ export default function TunnelsScreen(content, { navigation }) {
 
 				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
 			</MapView>
-
-			<View style={styles.promptViewStyle}>
+			<Animated.View style={[styles.promptViewStyle, { transform: [{ translateY: bounceValue }] }]}>
 				<View style={styles.item}>
-					
-				
-
 					<View style={styles.promptTextArea}>
-					<Animated.View style={[styles.promptText,{
-		
-	opacity: fadeAnimText, }]}>
-						<Text style={styles.promptText}>
-							{prompt}
-							</Text>
-
-							</Animated.View>
-
-						</View>
-
+						<Animated.View
+							style={[
+								styles.promptText,
+								{
+									opacity: fadeAnimText,
+								},
+							]}
+						>
+							<Text style={styles.promptText}>{prompt}</Text>
+						</Animated.View>
+					</View>
 				</View>
 				<View style={styles.promptButtonArea}>
-
-				<Animated.View style={[styles.fadingContainer,{opacity: fadeAnim, }]}>
-						<TouchableOpacity style={styles.loginBtn}
+					<Animated.View style={[styles.fadingContainer, { opacity: fadeAnim }]}>
+						<TouchableOpacity
+							style={styles.startButton}
 							title="Start"
 							disabled={building2 != "" ? false : true}
 							onPress={() => {
-								setNavigating(true)
+								setNavigating(true);
 								console.log("pressed start");
-							}}						>
-								
-								<Text style={styles.buttons}>Start</Text></TouchableOpacity>
+							}}
+						>
+							<Text style={styles.buttons}>Start</Text>
+						</TouchableOpacity>
 					</Animated.View>
-
-					
-
 				</View>
-			</View>
+			</Animated.View>
 		</View>
 	);
 }
@@ -764,41 +800,38 @@ const styles = StyleSheet.create({
 	promptViewStyle: {
 		position: "absolute",
 		flex: 1,
-		flexDirection: 'row',
-		flexWrap: 'wrap',
-		alignItems: 'flex-start',
+		flexDirection: "row",
+		flexWrap: "wrap",
+		alignItems: "flex-start",
 		marginBottom: 0,
-		height: 100,
-		width:"94%",
+		height: 120,
+		width: "94%",
 		backgroundColor: "#1E1E1E",
-		bottom: "15%",
+		bottom: "14.5%",
 		gap: 0,
 		borderRadius: 30,
-		justifyContent: "flex-end"
+		justifyContent: "flex-end",
 	},
-	
+
 	promptTextArea: {
 		flex: 1,
-		minWidth: '75%',
-		flexDirection: 'row',
-		flexWrap: 'wrap',
-		alignItems: 'flex-start',
+		minWidth: "75%",
+		flexDirection: "row",
+		flexWrap: "wrap",
+		alignItems: "flex-start",
 		color: "white",
-		opacity:1
-		
-		//backgroundColor: "blue",
+		opacity: 1,
 
+		//backgroundColor: "blue",
 	},
 	promptButtonArea: {
 		flex: 1,
-		height:"100%",
-		minWidth: '25%',
-		flexDirection: 'row',
-		flexWrap: 'wrap',
-		justifyContent: 'flex-end',
+		height: "100%",
+		minWidth: "25%",
+		flexDirection: "row",
+		flexWrap: "wrap",
+		justifyContent: "flex-end",
 		//backgroundColor: "red",
-		
-
 	},
 	promptText: {
 		flex: 1,
@@ -806,7 +839,6 @@ const styles = StyleSheet.create({
 		paddingTop: 13,
 		paddingLeft: 10,
 		color: "white",
-		
 	},
 	markerStyle: {
 		fontSize: 12,
@@ -816,12 +848,11 @@ const styles = StyleSheet.create({
 	buttons: {
 		fontSize: 20,
 		color: "white",
-
 	},
-	loginBtn: {
+	startButton: {
 		marginRight: 8,
-		color:"green",
-		marginTop: "45%",
+		color: "green",
+		marginTop: "50%",
 		width: 70,
 		borderRadius: 30,
 		height: 30,
@@ -829,6 +860,5 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		backgroundColor: "green",
 		borderColor: "#FFFFFF",
-	
 	},
 });
