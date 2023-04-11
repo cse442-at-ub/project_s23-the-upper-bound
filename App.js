@@ -117,13 +117,13 @@ export default function App() {
 						headerTitleStyle: {
 							fontWeight: "normal",
 						},
-						headerRight: () => (
-							<Button
-								onPress={() => alert("This is a button!")}
-								title="Info"
-								color="#fff"
-							/>
-						),
+						// headerRight: () => (
+						// 	<Button
+						// 		onPress={() => alert("This is a button!")}
+						// 		title="Info"
+						// 		color="#fff"
+						// 	/>
+						// ),
 					}}
 				/>
 				

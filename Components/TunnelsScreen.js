@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import React, { useEffect, useState, useRef } from "react";
+import { StyleSheet, View, Text, TouchableOpacity, Animated, Button } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import * as Location from "expo-location";
 import { Marker, Polygon, Polyline } from "react-native-maps";
@@ -28,6 +28,8 @@ export default function TunnelsScreen(content, { navigation }) {
 	const [building2, setBuilding2] = useState("");
 	const[pathLine, setPathLine] = useState([])
 	const [showPathLine, setShowPathLine] = useState(false)
+	const [navigating, setNavigating] = useState(false)
+
 
 	// Use effects -----------------------------------------------------------------------------
 
@@ -53,6 +55,8 @@ export default function TunnelsScreen(content, { navigation }) {
 		})();
 	}, []);
 
+	
+
 	var currentLocation = {
 		latitude: 0.0,
 		longitude: 0.0,
@@ -65,6 +69,9 @@ export default function TunnelsScreen(content, { navigation }) {
 		if (building1 == polygon && building2 == "") {
 			setBuilding1("");
 			setPrompt("Deselected " + polygon + ".\nPlease select a building as a starting point.");
+			fadeInText()
+
+
 			setShowPathLine(false)
 
 		}
@@ -72,15 +79,22 @@ export default function TunnelsScreen(content, { navigation }) {
 		// Deselect Building 2
 		else if (building2 == polygon) {
 			setBuilding2("");
+
 			setPrompt("Deselected " + polygon + ".\nPlease select a destination building.");
+			fadeInText()
 			setShowPathLine(false)
+			fadeOut()
 
 		}
 
 		// No building is saved yet, so save first building
 		else if (building1 == "" && building2 == "") {
 			setBuilding1(polygon);
+
 			setPrompt("Starting at " + polygon + ".\nPlease select the destination building.");
+			fadeInText()
+
+
 			setShowPathLine(false)
 
 		}
@@ -88,8 +102,9 @@ export default function TunnelsScreen(content, { navigation }) {
 		// First building is saved, so save the 2nd building
 		else if (building1 != "" && building2 == "") {
 			setBuilding2(polygon);
-			setPrompt(polygon + " selected as the destination building.\nTap Start to begin navigation.");
 
+			setPrompt(polygon + " selected as the destination building.\nTap Start to begin navigation.");
+			fadeInText()
 
 			loadCenterGraphNodes()
 			console.log(centerGraph)
@@ -101,6 +116,7 @@ export default function TunnelsScreen(content, { navigation }) {
 
 
 			setShowPathLine(true)
+			fadeIn()
 		}
 	}
 
@@ -145,6 +161,56 @@ export default function TunnelsScreen(content, { navigation }) {
 	const selectedFillKnox = building1 == "Knox Hall" || building2 == "Knox Hall" ? selectedColor : unselectedColor;
 	const selectedFillCommons = building1 == "UB Commons" || building2 == "UB Commons" ? selectedColor : unselectedColor;
 
+	const fadeAnim = useRef(new Animated.Value(0)).current;
+	const fadeAnimText = useRef(new Animated.Value(1)).current;
+
+	const delay = ms => new Promise(
+		resolve => setTimeout(resolve, ms)
+	  );
+
+	const fadeIn = () => {
+		// Will change fadeAnim value to 1 in 5 seconds
+		Animated.timing(fadeAnim, {
+		toValue: 1,
+		duration: 300,
+		useNativeDriver: true,
+		}).start();
+	};
+
+	const fadeOut = () => {
+		// Will change fadeAnim value to 0 in 3 seconds
+		Animated.timing(fadeAnim, {
+			toValue: 0,
+			duration: 300,
+			useNativeDriver: true,
+		}).start();
+	}
+
+	const fadeInText = async () => {
+		fadeOutText()
+		await delay(300);		// Will change fadeAnim value to 1 in 5 seconds
+		Animated.timing(fadeAnimText, {
+		toValue: 1,
+		duration: 300,
+		useNativeDriver: true,
+		}).start();
+
+		
+	};
+
+	const fadeOutText = () => {
+		// Will change fadeAnim value to 0 in 3 seconds
+		Animated.timing(fadeAnimText, {
+			toValue: 0,
+			duration: 400,
+			useNativeDriver: true,
+		}).start();
+	}
+		
+		
+
+	
+	
 	return (
 		<View style={styles.container}>
 			<MapView
@@ -643,7 +709,40 @@ export default function TunnelsScreen(content, { navigation }) {
 			</MapView>
 
 			<View style={styles.promptViewStyle}>
-				<Text style={styles.promptText}>{prompt}</Text>
+				<View style={styles.item}>
+					
+				
+
+					<View style={styles.promptTextArea}>
+					<Animated.View style={[styles.promptText,{
+		
+	opacity: fadeAnimText, }]}>
+						<Text style={styles.promptText}>
+							{prompt}
+							</Text>
+
+							</Animated.View>
+
+						</View>
+
+				</View>
+				<View style={styles.promptButtonArea}>
+
+				<Animated.View style={[styles.fadingContainer,{opacity: fadeAnim, }]}>
+						<TouchableOpacity style={styles.loginBtn}
+							title="Start"
+							disabled={building2 != "" ? false : true}
+							onPress={() => {
+								setNavigating(true)
+								console.log("pressed start");
+							}}						>
+								
+								<Text style={styles.buttons}>Start</Text></TouchableOpacity>
+					</Animated.View>
+
+					
+
+				</View>
 			</View>
 		</View>
 	);
@@ -659,22 +758,77 @@ const styles = StyleSheet.create({
 
 	mapViewStyle: {
 		width: "100%",
-		height: "80%",
+		height: "100%",
 	},
 
 	promptViewStyle: {
-		width: "100%",
-		height: "20%",
+		position: "absolute",
+		flex: 1,
+		flexDirection: 'row',
+		flexWrap: 'wrap',
+		alignItems: 'flex-start',
+		marginBottom: 0,
+		height: 100,
+		width:"94%",
 		backgroundColor: "#1E1E1E",
-		color: "white",
+		bottom: "15%",
+		gap: 0,
+		borderRadius: 30,
+		justifyContent: "flex-end"
 	},
-
-	promptText: {
+	
+	promptTextArea: {
+		flex: 1,
+		minWidth: '75%',
+		flexDirection: 'row',
+		flexWrap: 'wrap',
+		alignItems: 'flex-start',
 		color: "white",
+		opacity:1
+		
+		//backgroundColor: "blue",
+
+	},
+	promptButtonArea: {
+		flex: 1,
+		height:"100%",
+		minWidth: '25%',
+		flexDirection: 'row',
+		flexWrap: 'wrap',
+		justifyContent: 'flex-end',
+		//backgroundColor: "red",
+		
+
+	},
+	promptText: {
+		flex: 1,
+		alignSelf: "flex-start",
+		paddingTop: 13,
+		paddingLeft: 10,
+		color: "white",
+		
 	},
 	markerStyle: {
 		fontSize: 12,
 		color: "white",
 		textAlign: "center",
+	},
+	buttons: {
+		fontSize: 20,
+		color: "white",
+
+	},
+	loginBtn: {
+		marginRight: 8,
+		color:"green",
+		marginTop: "45%",
+		width: 70,
+		borderRadius: 30,
+		height: 30,
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "green",
+		borderColor: "#FFFFFF",
+	
 	},
 });
