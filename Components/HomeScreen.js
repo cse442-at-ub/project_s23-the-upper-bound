@@ -52,6 +52,7 @@ export default function HomeScreen({ navigation }) {
 				></ImageBackground>
 
 				<View style={styles.topButtonRow}>
+					
 					<Pressable
 						style={styles.buildingsButton}
 						title="Buildings"
