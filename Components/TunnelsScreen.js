@@ -205,14 +205,14 @@ export default function TunnelsScreen(content, { navigation }) {
 	const selectedFillCommons = building1 == "UB Commons" || building2 == "UB Commons" ? selectedColor : unselectedColor;
 
 	const fadeAnim = useRef(new Animated.Value(0)).current;
-	const fadeAnimText = useRef(new Animated.Value(1)).current;
-	const bounceValue = useRef(new Animated.Value(700)).current;
+	const fadeAnimText = useRef(new Animated.Value(1.1)).current;
+	const bounceValue = useRef(new Animated.Value(699.99)).current;
 
 	const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 	const fadeInStartButton = () => {
 		Animated.timing(fadeAnim, {
-			toValue: 1,
+			toValue: 1.1,
 			duration: 300,
 			useNativeDriver: true,
 		}).start();
@@ -220,7 +220,7 @@ export default function TunnelsScreen(content, { navigation }) {
 
 	const fadeOutStartButton = () => {
 		Animated.timing(fadeAnim, {
-			toValue: 0,
+			toValue: 0.0,
 			duration: 300,
 			useNativeDriver: true,
 		}).start();
@@ -230,7 +230,7 @@ export default function TunnelsScreen(content, { navigation }) {
 		fadeOutText();
 		await delay(300);
 		Animated.timing(fadeAnimText, {
-			toValue: 1,
+			toValue: 1.1,
 			duration: 300,
 			useNativeDriver: true,
 		}).start();
@@ -238,7 +238,7 @@ export default function TunnelsScreen(content, { navigation }) {
 
 	const fadeOutText = () => {
 		Animated.timing(fadeAnimText, {
-			toValue: 0,
+			toValue: 0.0,
 			duration: 400,
 			useNativeDriver: true,
 		}).start();
@@ -246,15 +246,16 @@ export default function TunnelsScreen(content, { navigation }) {
 
 	const slideFromBottom = () => {
 		Animated.spring(bounceValue, {
-			toValue: 0,
-			velocity: 3,
-			tension: 2,
-			friction: 8,
+			toValue: 0.0,
+			velocity: 3.0,
+			tension: 2.0,
+			friction: 8.0,
 			useNativeDriver: true,
 		}).start();
 	};
-	slideFromBottom()
-
+	useEffect(() => {
+		slideFromBottom();
+	}, []);
 	return (
 		<View style={styles.container}>
 			<MapView
@@ -749,7 +750,7 @@ export default function TunnelsScreen(content, { navigation }) {
 
 				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
 			</MapView>
-			<Animated.View style={[styles.promptViewStyle, { transform: [{ translateY: bounceValue }] }]}>
+			<Animated.View testID="promptbox" style={[styles.promptViewStyle, { transform: [{ translateY: bounceValue }] }]}>
 				<View style={styles.item}>
 					<View style={styles.promptTextArea}>
 						<Animated.View
@@ -765,7 +766,7 @@ export default function TunnelsScreen(content, { navigation }) {
 					</View>
 				</View>
 				<View style={styles.promptButtonArea}>
-					<Animated.View style={[styles.fadingContainer, { opacity: fadeAnim }]}>
+					<Animated.View testID="startbutton" style={[styles.fadingContainer, { opacity: fadeAnim }]}>
 						<TouchableOpacity
 							style={styles.startButton}
 							title="Start"
@@ -851,14 +852,14 @@ const styles = StyleSheet.create({
 	},
 	startButton: {
 		marginRight: 8,
-		color: "green",
+		color: "#841584",
 		marginTop: "50%",
 		width: 70,
 		borderRadius: 30,
 		height: 30,
 		alignItems: "center",
 		justifyContent: "center",
-		backgroundColor: "green",
-		borderColor: "#FFFFFF",
+		backgroundColor: "#841584",
+		padding: 0,
 	},
 });
