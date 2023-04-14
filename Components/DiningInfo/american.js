@@ -65,6 +65,32 @@ export default function American() {
               {"Location: Commons\n"}
             </Text>
           </View>
+          <View>
+        <Text style={styles.Name}>
+          {"Fowl Play"}      
+          </Text>
+          </View>
+          <View>
+            <Text style={styles.Text}>
+              {"Options: Fried Chickem, French Fries\n"}
+              {"Meat: Chicken\n"}
+              {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
+              {"Location: Student Union - Union Marketplace\n"}
+            </Text>
+          </View>
+          <View>
+        <Text style={styles.Name}>
+          {"Tim Hortons"}      
+          </Text>
+          </View>
+          <View>
+            <Text style={styles.Text}>
+              {"Options: Sandwhiches, soups, baked goods\n"}
+              {"Meats: Ham, Turkey, Bacon, Sausage\n"}
+              {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
+              {"Location: Student Union\n"}
+            </Text>
+          </View>
   
       </View>
     );
