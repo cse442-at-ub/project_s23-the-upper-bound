@@ -495,7 +495,7 @@ export const computingCenter = {
     ]
 }
 
-export const cqpenHallMarker = { latitude: 43.000908536331565, longitude: -78.78957363368741 }
+export const capenHallMarker = { latitude: 43.000908536331565, longitude: -78.78957363368741 }
 export const capenHall = {
     coordinates: [
     
