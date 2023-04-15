@@ -37,7 +37,6 @@ import ResourceScreen from "./Components/ResourceScreen.js";
 
 
 export default function App() {
-
 	const Stack = createNativeStackNavigator();
 
 	const [email, setEmail] = useState("");
@@ -45,121 +44,68 @@ export default function App() {
 	const [mapContent, setMapContent] = useState("");
 
 	return (
-    // NavigationContainer contains all screens that we wish to use as a stack
-    // (Meaning you can swipe right from the edge of the screen to go pop the current screen. This is not what we want for the entire app but it works for now)
-    // If you make a new screen, write and save your screen as a separate .js file in the Components folder and follow other screen formats and import it above
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Welcome"
-        screenOptions={{ headerShown: true }}
-      >
-        {/* Create a route to the welcome screen */}
-        <Stack.Screen
-          name="Welcome"
-          component={WelcomeScreen}
-          options={{ headerShown: false }}
-        />
+		// NavigationContainer contains all screens that we wish to use as a stack
+		// (Meaning you can swipe right from the edge of the screen to go pop the current screen. This is not what we want for the entire app but it works for now)
+		// If you make a new screen, write and save your screen as a separate .js file in the Components folder and follow other screen formats and import it above
+		<NavigationContainer>
+			<Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: true }}>
+				{/* Create a route to the welcome screen */}
+				<Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false }} />
 
-        {/* Create a route to the login screen */}
-        <Stack.Screen
-          name="login"
-          options={{ headerShown: false }}
-          component={LoginScreen}
-        ></Stack.Screen>
+				{/* Create a route to the login screen */}
+				<Stack.Screen name="login" options={{ headerShown: false }} component={LoginScreen}></Stack.Screen>
 
-        <Stack.Screen
-          name="signup"
-          options={{ headerShown: false }}
-          component={SignupScreen}
-        ></Stack.Screen>
+				<Stack.Screen name="signup" options={{ headerShown: false }} component={SignupScreen}></Stack.Screen>
 
-        {/* Create a route for the home screen */}
-        <Stack.Screen
-          name="home"
-          component={HomeScreen}
-          options={{ headerShown: false }}
-        ></Stack.Screen>
+				{/* Create a route for the home screen */}
+				<Stack.Screen name="home" component={HomeScreen} options={{ headerShown: false }}></Stack.Screen>
 
-        {/* Create a route for the maps screen */}
-        <Stack.Screen
-          name="maps"
-          component={MapsScreen}
-          options={{
-            title: "Map",
-            headerStyle: {
-              backgroundColor: "#3265CB",
-            },
-            headerTintColor: "#fff",
-            headerTitleStyle: {
-              fontWeight: "normal",
-            },
-            headerRight: () => (
-              <Button
-                onPress={() => alert("This is a button!")}
-                title="Info"
-                color="#fff"
-              />
-            ),
-          }}
-        ></Stack.Screen>
+				{/* Create a route for the maps screen */}
+				<Stack.Screen
+					name="maps"
+					component={MapsScreen}
+					options={{
+						title: "Map",
+						headerStyle: {
+							backgroundColor: "#3265CB",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "normal",
+						},
+						headerRight: () => <Button onPress={() => alert("This is a button!")} title="Info" color="#fff" />,
+					}}
+				></Stack.Screen>
 
-        <Stack.Screen
-          name="tunnels"
-          component={TunnelsScreen}
-          options={{
-            title: "Tunnels",
-            headerStyle: {
-              backgroundColor: "#3265CB",
-            },
-            headerTintColor: "#fff",
-            headerTitleStyle: {
-              fontWeight: "normal",
-            },
-            headerRight: () => (
-              <Button
-                onPress={() => alert("This is a button!")}
-                title="Info"
-                color="#fff"
-              />
-            ),
-          }}
-        />
+				<Stack.Screen
+					name="tunnels"
+					component={TunnelsScreen}
+					options={{
+						title: "Tunnels",
+						headerStyle: {
+							backgroundColor: "#3265CB",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "normal",
+						},
+						// headerRight: () => (
+						// 	<Button
+						// 		onPress={() => alert("This is a button!")}
+						// 		title="Info"
+						// 		color="#fff"
+						// 	/>
+						// ),
+					}}
+				/>
 
-        <Stack.Screen
-          name="events"
-          component={EventScreen}
-          options={{ headerShown: false }}
-        ></Stack.Screen>
-        <Stack.Screen
-          name="mexican"
-          component={Mexican}
-          options={{ headerShown: false }}
-        ></Stack.Screen>
-
-        <Stack.Screen
-          name="american"
-          component={American}
-          options={{ headerShown: false }}
-        ></Stack.Screen>
-
-        <Stack.Screen
-          name="dining"
-          component={DiningInfo}
-          options={{ headerShown: false }}
-        ></Stack.Screen>
-
-        <Stack.Screen
-          name="apps"
-          component={AppScreen}
-          options={{ headerShown: false }}
-        ></Stack.Screen>
-
-        <Stack.Screen
-          name="resources"
-          component={ResourceScreen}
-          options={{ headerShown: false }}
-        ></Stack.Screen>
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+				<Stack.Screen name="events" component={EventScreen} options={{ headerShown: false }}></Stack.Screen>
+				<Stack.Screen name="mexican" component={Mexican} options={{ headerShown: false }}></Stack.Screen>
+				<Stack.Screen name="american" component={American} options={{ headerShown: false }}></Stack.Screen>
+				<Stack.Screen name="dining" component={DiningInfo} options={{ headerShown: false }}></Stack.Screen>
+				<Stack.Screen name="apps" component={AppScreen} options={{ headerShown: false }}></Stack.Screen>
+				<Stack.Screen name="resources" component={ResourceScreen} options={{ headerShown: false }}></Stack.Screen>
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
 }

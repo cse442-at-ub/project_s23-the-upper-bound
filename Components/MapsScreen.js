@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { ImageBackground, StyleSheet, View } from "react-native";
 import MapView, { PROVIDER_GOOGLE, AnimatedRegion, Callout } from "react-native-maps";
 import * as Location from "expo-location";
 import { Marker } from "react-native-maps";
 import { mapStyle } from "../Constants/MapConstants";
+import Modal from "react-native-modal";
+import { Button, Text, Image} from "react-native";
 
 
 
@@ -11,6 +13,88 @@ import { mapStyle } from "../Constants/MapConstants";
 
 export default function MapsScreen(content, { navigation }) {
 	const [location, setLocation] = useState({});
+
+	// sorry there are so many of these :( i need one per modal 
+	const [isModalVisible, setModalVisible] = useState(false);
+	const toggleModal = () => {
+	  setModalVisible(!isModalVisible);
+	};
+	const [isModalVisible1, setModalVisible1] = useState(false);
+	const toggleModal1 = () => {
+	  setModalVisible1(!isModalVisible1);
+	};
+	const [isModalVisible2, setModalVisible2] = useState(false);
+	const toggleModal2 = () => {
+	  setModalVisible2(!isModalVisible2);
+	};
+	const [isModalVisible3, setModalVisible3] = useState(false);
+	const toggleModal3 = () => {
+	  setModalVisible3(!isModalVisible3);
+	};
+	const [isModalVisible4, setModalVisible4] = useState(false);
+	const toggleModal4 = () => {
+	  setModalVisible4(!isModalVisible4);
+	};
+	const [isModalVisible5, setModalVisible5] = useState(false);
+	const toggleModal5 = () => {
+	  setModalVisible5(!isModalVisible5);
+	};
+	const [isModalVisible6, setModalVisible6] = useState(false);
+	const toggleModal6 = () => {
+	  setModalVisible6(!isModalVisible6);
+	};
+	const [isModalVisible7, setModalVisible7] = useState(false);
+	const toggleModal7 = () => {
+	  setModalVisible7(!isModalVisible7);
+	};
+	const [isModalVisible8, setModalVisible8] = useState(false);
+	const toggleModal8 = () => {
+	  setModalVisible8(!isModalVisible8);
+	};
+	const [isModalVisible9, setModalVisible9] = useState(false);
+	const toggleModal9 = () => {
+	  setModalVisible9(!isModalVisible9);
+	};
+	const [isModalVisible10, setModalVisible10] = useState(false);
+	const toggleModal10 = () => {
+	  setModalVisible10(!isModalVisible10);
+	};
+	const [isModalVisible11, setModalVisible11] = useState(false);
+	const toggleModal11 = () => {
+	  setModalVisible11(!isModalVisible11);
+	};
+	const [isModalVisible12, setModalVisible12] = useState(false);
+	const toggleModal12 = () => {
+	  setModalVisible12(!isModalVisible12);
+	};
+	const [isModalVisible13, setModalVisible13] = useState(false);
+	const toggleModal13 = () => {
+	  setModalVisible13(!isModalVisible13);
+	};
+	const [isModalVisible14, setModalVisible14] = useState(false);
+	const toggleModal14 = () => {
+	  setModalVisible14(!isModalVisible14);
+	};
+	const [isModalVisible15, setModalVisible15] = useState(false);
+	const toggleModal15 = () => {
+	  setModalVisible15(!isModalVisible15);
+	};
+	const [isModalVisible16, setModalVisible16] = useState(false);
+	const toggleModal16 = () => {
+	  setModalVisible16(!isModalVisible16);
+	};
+	const [isModalVisible17, setModalVisible17] = useState(false);
+	const toggleModal17 = () => {
+	  setModalVisible17(!isModalVisible17);
+	};
+	const [isModalVisible18, setModalVisible18] = useState(false);
+	const toggleModal18 = () => {
+	  setModalVisible18(!isModalVisible18);
+	};
+	const [isModalVisible19, setModalVisible19] = useState(false);
+	const toggleModal19 = () => {
+	  setModalVisible19(!isModalVisible19);
+	};
 	
 	var contentToLoad = [{}];
 
@@ -247,7 +331,6 @@ export default function MapsScreen(content, { navigation }) {
 		{ title: "Wrap it Up", latitude: 43.009009, longitude: -78.785465 },
 		{ title: "Sizzles", latitude: 43.009018, longitude: -78.785546 },
 		{ title: "Perks", latitude: 43.009077, longitude: -78.785167 },
-		{ title: "Jamba", latitude: 43.001136, longitude: -78.786533 },
 	];
 
 	//
@@ -314,8 +397,10 @@ export default function MapsScreen(content, { navigation }) {
 				longitudeDelta: 0.00421,
 			}}
 		>
-			{contentToLoad != [{}] &&
+			
+			{(contentToLoad == buildingLocations || contentToLoad == PrinterLocations) &&
 				contentToLoad.map((marker, index) => (
+
 					// Places a marker for each object in PrinterLocations
 					<Marker
 						key={index}
@@ -325,6 +410,407 @@ export default function MapsScreen(content, { navigation }) {
 						//image={require("../assets/map-printer.png")}
 					></Marker>
 				))}
+
+			{contentToLoad == foodLocations &&
+				<View style={{ flex: 1 }} >
+
+					{/* marker for tim hortons at SU */}
+					
+					<Marker
+						key={6}
+						coordinate={{latitude: 43.001519, longitude: -78.786464}}
+						title={"Tim Horton's at Student Union"}
+						onPress = {toggleModal}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 150}} source={require('../DiningLocationImages/tim_hortons_at_student_union.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >7:00am - 8:00pm</Text>
+							<Text style = {styles.boldText} >Saturday - Sunday </Text>
+							<Text style = {styles.plainText} >8:00am - 6:00pm</Text>
+							
+          					<Button title = "close" onPress={toggleModal}></Button>
+       					 </View>
+					</Modal>
+
+					{/* marker for tim hortons at alfiero */}
+					<Marker
+						key={5}
+						coordinate={{latitude: 42.999694, longitude: -78.78667}}
+						title={"Tim Horton's at the Alfiero Center"}
+						onPress = {toggleModal1}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible1} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 150}} source={require('../DiningLocationImages/tim_hortons_at_student_union.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >7:00am - 8:00pm</Text>
+							<Text style = {styles.boldText} >Saturday - Sunday </Text>
+							<Text style = {styles.plainText} >7:00am - 5:00pm</Text>
+							
+          					<Button title = "close" onPress={toggleModal1}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for teddys */}
+					<Marker
+						key={1}
+						coordinate={{latitude: 43.00248, longitude: -78.79447}}
+						title={"Teddy's"}
+						onPress = {toggleModal2}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible2} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 140}} source={require('../DiningLocationImages/teddys.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Sunday</Text>
+							<Text style = {styles.plainText} >4:00pm - 10:00pm</Text>	
+          					<Button title = "close" onPress={toggleModal2}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for the cellar */}
+					<Marker
+						key={2}
+						coordinate={{latitude: 43.00242, longitude: -78.79453}}
+						title={"The Cellar"}
+						onPress = {toggleModal3}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible3} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 140}} source={require('../DiningLocationImages/the_cellar.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >8:00am - 3:00pm</Text>	
+          					<Button title = "close" onPress={toggleModal3}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for governor's dining center */}
+					<Marker
+						key={3}
+						coordinate={{latitude: 43.002366, longitude: -78.794417}}
+						title={"Governor's Dining Center"}
+						onPress = {toggleModal4}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible4} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 140}} source={require('../DiningLocationImages/governors_dining_center.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >4:30pm - 9:00pm</Text>
+							<Text style = {styles.boldText} >Saturday - Sunday </Text>
+							<Text style = {styles.plainText} >10:00am - 9:00pm</Text>
+          					<Button title = "close" onPress={toggleModal4}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for capen cafe */}
+					<Marker
+						key={4}
+						coordinate={{latitude: 43.001209, longitude: -78.789798}}
+						title={"Capen Café"}
+						onPress = {toggleModal5}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible5} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 140}} source={require('../DiningLocationImages/capen_caf.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >8:00am - 6:00pm</Text>
+          					<Button title = "close" onPress={toggleModal5}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for union marketplace */}
+					<Marker
+						key={7}
+						coordinate={{latitude: 43.001367, longitude: -78.786561}}
+						title={"Union Marketplace & Eatery"}
+						onPress = {toggleModal6}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible6} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 140}} source={require('../DiningLocationImages/union_marketplace__eatery.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >10:30am - 8:00pm</Text>
+          					<Button title = "close" onPress={toggleModal6}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for moe's */}
+					<Marker
+						key={8}
+						coordinate={{latitude: 43.001418, longitude: -78.786459}}
+						title={"Moe's at Student Union"}
+						onPress = {toggleModal7}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible7} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 300}} source={require('../DiningLocationImages/moes_at_student_union.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							  <Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >10:30am - 8:00pm</Text>
+							<Text style = {styles.boldText} >Saturday - Sunday </Text>
+							<Text style = {styles.plainText} >11:00am - 4:00pm</Text>
+          					<Button title = "close" onPress={toggleModal7}></Button>
+       					 </View>
+					</Modal>	
+
+					{/* dining location for champa sushi */}
+					<Marker
+						key={9}
+						coordinate={{latitude: 43.001228, longitude: -78.786426}}
+						title={"Champa Sushi"}
+						onPress = {toggleModal8}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible8} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 100}} source={require('../DiningLocationImages/champa_sushi.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >10:30am - 7:00pm</Text>
+							<Text style = {styles.boldText} >Saturday - Sunday </Text>
+							<Text style = {styles.plainText} >10:30am - 4:00pm</Text>
+          					<Button title = "close" onPress={toggleModal8}></Button>
+       					 </View>
+					</Modal>		
+
+					{/* dining location for pistachios */}	
+					<Marker
+						key={10}
+						coordinate={{latitude: 43.001166, longitude: -78.786501}}
+						title={"Pistachio's"}
+						onPress = {toggleModal9}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible9} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 100}} source={require('../DiningLocationImages/pistachios.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							  <Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >11:00am - 6:00pm</Text>
+          					<Button title = "close" onPress={toggleModal9}></Button>
+       					 </View>
+					</Modal>	
+
+					{/* dining location for jamba */}
+					<Marker
+						key={11}
+						coordinate={{latitude: 43.001136, longitude: -78.786533}}
+						title={"Jamba"}
+						onPress = {toggleModal10}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible10} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 100}} source={require('../DiningLocationImages/jamba.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >08:30am - 8:00pm</Text>
+							<Text style = {styles.boldText} >Saturday - Sunday </Text>
+							<Text style = {styles.plainText} >11:00am - 4:00pm</Text>
+          					<Button title = "close" onPress={toggleModal10}></Button>
+       					 </View>
+					</Modal>	
+
+					{/* dining location for starbucks */}
+					<Marker
+						key={12}
+						coordinate={{latitude: 43.00169, longitude: -78.785573}}
+						title={"Starbuck's Coffee"}
+						onPress = {toggleModal11}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible11} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 150, height: 150}} source={require('../DiningLocationImages/starbucks_coffee.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Thursday</Text>
+							<Text style = {styles.plainText} >05:30am - 9:00pm</Text>
+							<Text style = {styles.boldText} >Friday</Text>
+							<Text style = {styles.plainText} >05:30am - 8:30pm</Text>
+							<Text style = {styles.boldText} >Saturday - Sunday </Text>
+							<Text style = {styles.plainText} >06:00am - 8:30pm</Text>
+          					<Button title = "close" onPress={toggleModal11}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for young chow */}
+					<Marker
+						key={13}
+						coordinate={{latitude: 43.0017535, longitude: -78.785147}}
+						title={"Young Chow"}
+						onPress = {toggleModal12}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible12} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 150}} source={require('../DiningLocationImages/young_chow.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >10:30am - 8:30pm</Text>
+							<Text style = {styles.boldText} >Saturday - Sunday </Text>
+							<Text style = {styles.plainText} >12:00pm - 9:00pm</Text>
+          					<Button title = "close" onPress={toggleModal12}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for poke factory */}
+					<Marker
+						key={14}
+						coordinate={{latitude: 43.0015035, longitude: -78.785147}}
+						title={"Poke Factory"}
+						onPress = {toggleModal13}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible13} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 200, height: 200}} source={require('../DiningLocationImages/poke_factory.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >10:00am - 8:00pm</Text>
+          					<Button title = "close" onPress={toggleModal13}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for ABP */}
+					<Marker
+						key={15}
+						coordinate={{latitude: 43.007004, longitude: -78.785406}}
+						title={"Au Bon Pain"}
+						onPress = {toggleModal14}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible14} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 100}} source={require('../DiningLocationImages/au_bon_pain.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >08:00am - 8:30pm</Text>
+							<Text style = {styles.boldText} >Saturday - Sunday </Text>
+							<Text style = {styles.plainText} >10:30pm - 8:30pm</Text>
+          					<Button title = "close" onPress={toggleModal14}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for guac and roll */}
+					<Marker
+						key={16}
+						coordinate={{latitude: 43.008896, longitude: -78.785675}}
+						title={"Guac And Roll"}
+						onPress = {toggleModal15}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible15} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 100}} source={require('../DiningLocationImages/guac_and_roll.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >11:00am - 8:30pm</Text>
+          					<Button title = "close" onPress={toggleModal15}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for C3 */}
+					<Marker
+						key={17}
+						coordinate={{latitude: 43.00898, longitude: -78.786147}}
+						title={"Crossroads Culinary Center"}
+						onPress = {toggleModal16}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible16} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 200, height: 200}} source={require('../DiningLocationImages/c3.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >08:00am - 10:30pm</Text>
+							<Text style = {styles.plainText} >5:00pm - 9:00pm</Text>
+							<Text style = {styles.boldText} >Saturday - Sunday</Text>
+							<Text style = {styles.plainText} >10:00am - 9:00pm</Text>
+          					<Button title = "close" onPress={toggleModal16}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for wrap it up */}
+					<Marker
+						key={18}
+						coordinate={{latitude: 43.009009, longitude: -78.785465}}
+						title={"Wrap it Up"}
+						onPress = {toggleModal17}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible17} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 200, height: 200}} source={require('../DiningLocationImages/wrap_it_up.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >7:00am - 3:00pm</Text>
+          					<Button title = "close" onPress={toggleModal17}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining location for perks */}
+					<Marker
+						key={19}
+						coordinate={{latitude: 43.009077, longitude: -78.785167}}
+						title={"Perks"}
+						onPress = {toggleModal18}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible18} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 200, height: 200}} source={require('../DiningLocationImages/perks.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >8:00am - 8:00pm</Text>
+							<Text style = {styles.boldText} >Saturday - Sunday</Text>
+							<Text style = {styles.plainText} >11:30am - 5:30pm</Text>
+          					<Button title = "close" onPress={toggleModal18}></Button>
+       					 </View>
+					</Modal>
+
+					{/* dining locations for sizzles */}
+					<Marker
+						key={20}
+						coordinate={{latitude: 43.009018, longitude: -78.785546}}
+						title={"Sizzles"}
+						onPress = {toggleModal19}
+					></Marker>
+
+					<Modal isVisible = {isModalVisible19} >
+						<View style = {styles.modalView} >
+							<ImageBackground style = {{width: 300, height: 100}} source={require('../DiningLocationImages/sizzles.png')}/>
+          					<Text style = {styles.bigBoldText} >Regular Business Hours:</Text>
+							<Text style = {styles.boldText} >Monday - Friday</Text>
+							<Text style = {styles.plainText} >10:00am - 10:30pm</Text>
+          					<Button title = "close" onPress={toggleModal19}></Button>
+       					 </View>
+					</Modal>
+
+				</View>
+
+
+
+
+			
+			}
+
+
 		</MapView>
 	);
 }
@@ -336,4 +822,33 @@ const styles = StyleSheet.create({
 		backgroundColor: "#1E1E1E",
 		alignItems: "center",
 	},
+	modalView: {
+		margin: 20,
+		backgroundColor: 'white',
+		borderRadius: 20,
+		padding: 35,
+		alignItems: 'center',
+		shadowColor: '#000',
+		shadowOffset: {
+		  width: 0,
+		  height: 2,
+		},
+	},
+	bigBoldText: {
+		marginTop: 10,
+		fontWeight: 'bold',
+		marginBottom: 10
+
+	},
+
+	boldText: {
+		fontWeight: 'bold',
+	},
+
+	plainText: {
+		marginBottom: 10
+
+	}
+
 });
+
