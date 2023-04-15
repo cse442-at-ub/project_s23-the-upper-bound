@@ -94,9 +94,9 @@ export let talbertNodes = {
             longitude: -78.7900737,
         },
         {
-            building: "Talbert Hall", //this is talbert end of nsc tunnel
+            building: "Talbert Hall", //this is talbert end of capen tunnel
             number: 1,
-            floor: 1,
+            floor: 2,
             tree: "left",
             transition: false,
             latitude: 43.00006224,
@@ -109,9 +109,9 @@ export let talbertNodes = {
 export let fronczakNodes = {
     nodes: [
         {
-            building: "Fronczak Hall", //this is talbert end of capen tunnel
+            building: "Fronczak Hall", //this is fronz end of nsc tunnel
             number: 0,
-            floor: 2,
+            floor: 1,
             tree: "left",
             transition: false,
             latitude: 43.0010756,
@@ -125,7 +125,7 @@ export let capenNodes = {
         {
             building: "Capen Hall", //this is capen end of talbert tunnel
             number: 0,
-            floor: 1,
+            floor: 2,
             tree: "left",
             transition: false,
             latitude: 43.00006889,
@@ -161,7 +161,7 @@ export let knoxNodes={
         {
             building: "Knox Hall", //this is knox end of union tunnel
             number: 0,
-            floor: 1,
+            floor: 0,
             tree: "left",
             transition: false,
             latitude: 43.0010242,
