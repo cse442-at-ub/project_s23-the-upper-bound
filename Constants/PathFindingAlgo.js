@@ -343,7 +343,7 @@ export class Graph {
 			}
 		}
 
-		var path = [[endNode, "Arrive"]];
+		var path = [[endNode, "You have arrived."]];
 		var current = endNode;
 
 		while (priors.get(current)[0] !== -1) {

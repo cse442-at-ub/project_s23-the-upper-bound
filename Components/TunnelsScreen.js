@@ -4,7 +4,6 @@ import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import * as Location from "expo-location";
 import { Marker, Polygon, Polyline } from "react-native-maps";
 import { mapStyle } from "../Constants/MapConstants";
-import * as Animatable from "react-native-animatable";
 
 import {
 	baldyHall,
@@ -75,17 +74,17 @@ export default function TunnelsScreen(content, { navigation }) {
 	// Use states -----------------------------------------------------------------------------
 	const [location, setLocation] = useState({});
 	const [prompt, setPrompt] = useState(
-		"Please select a building a starting point. Then select a destination building."
+		"Please select a building as a starting point. Then select a destination building."
 	);
 	const [building1, setBuilding1] = useState("");
 	const [building2, setBuilding2] = useState("");
 	const [pathLine, setPathLine] = useState([]);
 	const [showPathLine, setShowPathLine] = useState(false);
 	const [navigating, setNavigating] = useState(false);
-	const [finalPath, setFinalPath] = useState();
+	const [finalPath, setFinalPath] = useState([]);
 	const [current, setCurrent] = useState(0);
-	const [currentPathLine, setCurrentPathLine] = useState([])
-	const [showCurrentPathLine, setShowCurrentPathLine] = useState(false)
+	const [currentPathLine, setCurrentPathLine] = useState([]);
+	const [showCurrentPathLine, setShowCurrentPathLine] = useState(false);
 
 	// Use effects -----------------------------------------------------------------------------
 
@@ -118,33 +117,58 @@ export default function TunnelsScreen(content, { navigation }) {
 	};
 
 	function onTapStart() {
-
-		setPathLine([])
-		setShowPathLine(false)
-		setShowCurrentPathLine(true)
+		if (current == finalPath.length) {
+			console.log("should be over");
+			return;
+		}
+		console.log("in start");
+		setPathLine([]);
+		setShowPathLine(false);
+		setShowCurrentPathLine(true);
 		var next = current + 1;
 
 		if (next != finalPath.length) {
-
 			var tempPathLine = {
 				coordinates: [
 					{ latitude: finalPath[current][0].latitude, longitude: finalPath[current][0].longitude },
-					{ latitude: finalPath[current + 1][0].latitude, longitude: finalPath[current + 1][0].longitude }
+					{ latitude: finalPath[current + 1][0].latitude, longitude: finalPath[current + 1][0].longitude },
 				],
 			};
+			console.log(tempPathLine);
+			setCurrentPathLine(tempPathLine);
 
-			console.log(tempPathLine)
-			setCurrentPathLine(tempPathLine)
-
+			// Done navigating
+		} else if (next == finalPath.length) {
+			setShowCurrentPathLine(false);
 		}
-		
+
 		setPrompt(finalPath[current][1]);
+		fadeInText();
 
 		setCurrent(next);
-		if (next == finalPath.length) {
-			console.log("here");
-			setCurrent(0);
+	}
+
+	function stopNavigating(button) {
+		fadeOutExitNavButton();
+		setPathLine([]);
+		setFinalPath([]);
+		setBuilding1("");
+		setBuilding2("");
+		setCurrentPathLine([]);
+		setShowPathLine(false);
+		setShowCurrentPathLine(false);
+		fadeOutStartButton();
+		setNavigating(false);
+		if (button == "Cancel") {
+			setPrompt(
+				"Canceled Navigation.\nPlease select a building as a starting point. Then select a destination building."
+			);
+		} else if (button == "Done") {
+			setPrompt("Please select a building as a starting point. Then select a destination building.");
 		}
+		fadeInText();
+
+		setCurrent(0);
 	}
 
 	function onTapPolygon(polygon) {
@@ -152,29 +176,34 @@ export default function TunnelsScreen(content, { navigation }) {
 		if (building1 == polygon && building2 == "") {
 			setBuilding1("");
 			setPrompt("Deselected " + polygon + ".\nPlease select a building as a starting point.");
-			//fadeInText();
+			fadeInText();
+			setNavigating(false);
 
 			setShowPathLine(false);
 		}
 
 		// Deselect Building 2
 		else if (building2 == polygon) {
-			setBuilding2("");
+			if (!navigating) {
+				setBuilding2("");
+				setNavigating(false);
 
-			setPrompt("Deselected " + polygon + ".\nPlease select a destination building.");
-			//fadeInText();
-			setShowPathLine(false);
-			//fadeOutStartButton();
+				setPrompt("Deselected " + polygon + ".\nPlease select a destination building.");
+				fadeInText();
+				setShowPathLine(false);
+				fadeOutStartButton();
+			}
 		}
 
 		// No building is saved yet, so save first building
 		else if (building1 == "" && building2 == "") {
-			//slideFromBottom();
+			slideFromBottom();
+			setNavigating(false);
 
 			setBuilding1(polygon);
 
 			setPrompt("Starting at " + polygon + ".\nPlease select the destination building.");
-			//fadeInText();
+			fadeInText();
 
 			setShowPathLine(false);
 		}
@@ -182,9 +211,10 @@ export default function TunnelsScreen(content, { navigation }) {
 		// First building is saved, so save the 2nd building
 		else if (building1 != "" && building2 == "") {
 			setBuilding2(polygon);
+			setNavigating(false);
 
 			setPrompt("Your path is from " + building1 + " to " + polygon + ".\nTap Start to begin navigation.");
-			//fadeInText();
+			fadeInText();
 
 			loadCenterGraphNodes();
 			console.log(centerGraph);
@@ -196,7 +226,7 @@ export default function TunnelsScreen(content, { navigation }) {
 			console.log(resultPath);
 			setFinalPath(resultPath);
 			setShowPathLine(true);
-			//fadeInStartButton();
+			fadeInStartButton();
 		}
 	}
 
@@ -241,6 +271,90 @@ export default function TunnelsScreen(content, { navigation }) {
 	const selectedFillKnox = building1 == "Knox Hall" || building2 == "Knox Hall" ? selectedColor : unselectedColor;
 	const selectedFillCommons = building1 == "UB Commons" || building2 == "UB Commons" ? selectedColor : unselectedColor;
 
+	const fadeAnim = useRef(new Animated.Value(0.0)).current;
+	const fadeAnimText = useRef(new Animated.Value(1.1)).current;
+	const bounceValue = useRef(new Animated.Value(700)).current;
+	const fadeAnimExitButton = useRef(new Animated.Value(0.0)).current;
+	const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+	const fadeInStartButton = () => {
+		Animated.timing(fadeAnim, {
+			toValue: 1,
+			duration: 300,
+			useNativeDriver: true,
+		}).start();
+	};
+
+	const fadeOutStartButton = () => {
+		Animated.timing(fadeAnim, {
+			toValue: 0,
+			duration: 300,
+			useNativeDriver: true,
+		}).start();
+	};
+
+	const fadeOutStartFadeInNext = async () => {
+		Animated.timing(fadeAnim, {
+			toValue: 0,
+			duration: 500,
+			useNativeDriver: true,
+		}).start();
+		await delay(300);
+
+		fadeInStartButton();
+	};
+
+	const fadeInExitNavButton = async () => {
+		Animated.timing(fadeAnimExitButton, {
+			toValue: 1,
+			duration: 300,
+			useNativeDriver: true,
+		}).start();
+	};
+
+	const fadeOutExitNavButton = async () => {
+		Animated.timing(fadeAnimExitButton, {
+			toValue: 0,
+			duration: 300,
+			useNativeDriver: true,
+		}).start();
+	};
+
+	const fadeInText = async () => {
+		fadeOutText();
+		await delay(300);
+		Animated.timing(fadeAnimText, {
+			toValue: 1,
+			duration: 300,
+			useNativeDriver: true,
+		}).start();
+	};
+
+	const fadeOutText = () => {
+		Animated.timing(fadeAnimText, {
+			toValue: 0,
+			duration: 400,
+			useNativeDriver: true,
+		}).start();
+	};
+
+	const slideFromBottom = () => {
+		Animated.spring(bounceValue, {
+			toValue: 0,
+			velocity: 3,
+			tension: 2,
+			friction: 8,
+			useNativeDriver: true,
+		}).start();
+	};
+	slideFromBottom();
+
+	if (navigating) {
+		fadeInExitNavButton();
+	} else {
+		fadeOutExitNavButton();
+	}
+
 	return (
 		<View style={styles.container}>
 			<MapView
@@ -263,9 +377,12 @@ export default function TunnelsScreen(content, { navigation }) {
 			>
 				{/* #####/////////                     Polygon Content Starts Here                     /////////#####  */}
 
+				{/* The entire path */}
 				{showPathLine && pathLine !== undefined && (
 					<Polyline coordinates={pathLine.coordinates} strokeColor="#8f0000" strokeWidth={2}></Polyline>
 				)}
+
+				{/* Destination marker for building 2 */}
 				<Marker
 					coordinate={
 						pathLine.coordinates != undefined
@@ -275,9 +392,12 @@ export default function TunnelsScreen(content, { navigation }) {
 					opacity={building2 != "" ? 1.0 : 0.0}
 				></Marker>
 
+				{/* Current path to follow  */}
 				{showCurrentPathLine && currentPathLine !== undefined && (
 					<Polyline coordinates={currentPathLine.coordinates} strokeColor="#8f0000" strokeWidth={2}></Polyline>
 				)}
+
+				{/* Marker where the user must currently travel to */}
 				<Marker
 					coordinate={
 						currentPathLine.coordinates != undefined
@@ -747,33 +867,88 @@ export default function TunnelsScreen(content, { navigation }) {
 
 				{/* #####/////////                     Polygon Content ENDS Here                     /////////#####  */}
 			</MapView>
-			<Animatable.View
-				style={styles.promptViewStyle}
-				animation="fadeInUpBig"
-				useNativeDriver={true}
-				duration={500}
-				delay={0}
-			>
-				<View style={styles.promptTextArea}>
-					<Animatable.Text style={styles.promptText} animation="flash">
-						{prompt}
-					</Animatable.Text>
+			<Animated.View style={[styles.promptViewStyle, { transform: [{ translateY: bounceValue }] }]}>
+				<View style={styles.item}>
+					<View style={styles.promptTextArea}>
+						<Animated.View
+							style={[
+								styles.promptText,
+								{
+									opacity: fadeAnimText,
+								},
+							]}
+						>
+							<Text style={styles.promptText}>{prompt}</Text>
+						</Animated.View>
+					</View>
 				</View>
-				<View style={styles.promptButtonArea}>
+				{!navigating && (
+					<View style={styles.promptButtonArea}>
+						{pathLine.length != 0 && (
+							<Animated.View style={[styles.fadingContainer, { opacity: fadeAnim }]}>
+								<TouchableOpacity
+									style={styles.startButton}
+									title="Start"
+									disabled={building2 != "" ? false : true}
+									onPress={() => {
+										setNavigating(true);
+										onTapStart();
+										fadeOutStartFadeInNext();
+									}}
+								>
+									<Text style={styles.buttons}>Start</Text>
+								</TouchableOpacity>
+							</Animated.View>
+						)}
+					</View>
+				)}
+				{navigating && (
+					<View style={styles.promptButtonArea}>
+						{current < finalPath.length && (
+							<Animated.View style={[styles.fadingContainer, { opacity: fadeAnim }]}>
+								<TouchableOpacity
+									style={[styles.startButton, { backgroundColor: "purple" }]}
+									title="Next"
+									disabled={building2 != "" ? false : true}
+									onPress={() => {
+										setNavigating(true);
+										onTapStart();
+									}}
+								>
+									<Text style={styles.buttons}>Next</Text>
+								</TouchableOpacity>
+							</Animated.View>
+						)}
+						{current == finalPath.length && (
+							<Animated.View style={[styles.fadingContainer, { opacity: fadeAnim }]}>
+								<TouchableOpacity
+									style={[styles.startButton, { backgroundColor: "#00308f" }]}
+									title="Done"
+									disabled={building2 != "" ? false : true}
+									onPress={() => {
+										stopNavigating("Done");
+									}}
+								>
+									<Text style={styles.buttons}>Done</Text>
+								</TouchableOpacity>
+							</Animated.View>
+						)}
+					</View>
+				)}
+			</Animated.View>
+
+			{navigating && (
+				<Animated.View style={[styles.exitNavigationView, { opacity: fadeAnimExitButton }]}>
 					<TouchableOpacity
-						style={styles.startButton}
-						title="Start"
-						disabled={building2 != "" ? false : true}
+						style={styles.exitNavigationButton}
 						onPress={() => {
-							setNavigating(true);
-							console.log("pressed start");
-							onTapStart();
+							stopNavigating("Cancel");
 						}}
 					>
-						<Text style={styles.buttons}>Start</Text>
+						<Text style={styles.exitNavigationButtonText}>X</Text>
 					</TouchableOpacity>
-				</View>
-			</Animatable.View>
+				</Animated.View>
+			)}
 		</View>
 	);
 }
@@ -805,6 +980,20 @@ const styles = StyleSheet.create({
 		gap: 0,
 		borderRadius: 30,
 		justifyContent: "flex-end",
+	},
+
+	exitNavigationView: {
+		position: "absolute",
+		flex: 1,
+		flexDirection: "row",
+		flexWrap: "wrap",
+		alignItems: "center",
+		marginBottom: 0,
+		height: 55,
+		width: 55,
+		bottom: "6.5%",
+		justifyContent: "center",
+		backgroundColor: "transparent",
 	},
 
 	promptTextArea: {
@@ -841,6 +1030,26 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		color: "white",
 	},
+
+	exitNavigationButton: {
+		flex: 1,
+		borderRadius: 100,
+		backgroundColor: "darkred",
+		width: 55,
+		height: 55,
+		alignItems: "center",
+		textAlign: "center",
+		textAlignVertical: "center",
+	},
+
+	exitNavigationButtonText: {
+		fontSize: 22,
+		color: "#FFFF",
+		textAlignVertical: "center",
+		top: "25%",
+		bottom: "25%",
+	},
+
 	startButton: {
 		marginRight: 8,
 		color: "green",
