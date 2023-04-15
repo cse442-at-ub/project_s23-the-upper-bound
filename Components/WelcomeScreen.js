@@ -20,18 +20,12 @@ export default function WelcomeScreen({ navigation }) {
 				></ImageBackground>
 				<Pressable
 					style={styles.loginBtn}
-					title="LOGIN"
-					onPress={() => navigation.navigate("login")}
+					title="home"
+					onPress={() => navigation.navigate("home")}
 				>
-					<Text style={styles.buttons}>LOGIN </Text>
+					<Text style={styles.buttons}>Home </Text>
 				</Pressable>
-				<Pressable
-					style={styles.signupBtn}
-					title="SIGNUP"
-					onPress={() => navigation.navigate("signup")}
-				>
-					<Text style={styles.buttons}>SIGNUP</Text>
-				</Pressable>
+			
 				<ImageBackground
 					source={require("../assets/WelBot.png")}
 					style={styles.welcomeDown}
@@ -89,5 +83,6 @@ const styles = StyleSheet.create({
 		marginTop: 30,
 		height: 400,
 		width: 400,
+		bottom:"-10%"
 	},
 });
