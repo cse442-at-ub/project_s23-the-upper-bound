@@ -1,8 +1,53 @@
-// GRAPH DEFINITIONS START
+// LEFT TREE ----------------------------------------------------------------
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+//
+export let cookeHallNodes = {
+	nodes: [
+		{
+			building: "Cooke Hall",
+			number: 0,
+			floor: 0,
+			tree: "left",
+			transition: false,
+			latitude: 42.99994901297165,
+			longitude: -78.79121365649245,
+		},
+	],
+};
 
-import { oBrianHall } from "./TunnelConstants";
+export let cookeHochMidpoint = {
+	nodes: [
+		{
+			building: "Cooke-Hochestter Midpoint",
+			number: 0,
+			floor: 0,
+			tree: "left",
+			transition: false,
+			latitude: 42.99995539489815,
+			longitude: -78.79109323526531,
+		},
+	],
+};
 
+export let hochstetterHallNodes = {
+	nodes: [
+		{
+			building: "Hochstetter Hall",
+			number: 0,
+			floor: 0,
+			tree: "left",
+			transition: false,
+			latitude: 42.99994979236497,
+			longitude: -78.7909246989685,
+		},
+	],
+};
 // CENTER TREE --------------------------------------------------------------
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
 export let jarvisNodes = {
 	nodes: [
 		{
@@ -489,7 +534,7 @@ export let nortonHallNodes = {
 			number: 2,
 			floor: 2,
 			tree: "center",
-			transition: false,
+			transition: true,
 			latitude: 43.00105390188252,
 			longitude: -78.78830761801163,
 		},
@@ -661,18 +706,29 @@ export class Graph {
 	}
 }
 
-// Not finished, but will probably be one of the last steps
-function GiveUserPath(path) {
-	for (var i; i < path.length; i++) {
-		for (var j; i < path.length; i++) {}
-	}
-}
-
 export function CreatePath(building1, building2) {
 	var ret = [undefined, undefined];
 	console.log(building1, building2);
 
 	switch (building1) {
+		// LEFT GRAPH BUILDINGS ------------------------------------------------------------
+		case "Cooke Hall":
+			ret[0] = cookeHallNodes.nodes[0];
+
+			if (building2 == "Hochstetter Hall") {
+				ret[1] = hochstetterHallNodes.nodes[0];
+			}
+			break;
+
+		case "Hochstetter Hall":
+			ret[0] = hochstetterHallNodes.nodes[0];
+
+			if (building2 == "Cooke Hall") {
+				ret[1] = cookeHallNodes.nodes[0];
+			}
+			break;
+
+		// CENTER GRAPH BUILDINGS ----------------------------------------------------------
 		case "Jarvis Hall":
 			ret[0] = jarvisNodes.nodes[0];
 
@@ -1150,7 +1206,29 @@ export function CreatePath(building1, building2) {
 			break;
 		default:
 	}
-	return centerGraph.findPath(ret[0], ret[1]);
+
+	// Execute if the first building is in the CENTER tree
+	if (
+		building1 == "Jarvis Hall" ||
+		building1 == "Furnas Hall" ||
+		building1 == "Bell Hall" ||
+		building1 == "Student Union" || //////////
+		building1 == "UB Commons" ||
+		building1 == "Lockwood Library" ||
+		building1 == "Clemens Hall" ||
+		building1 == "Baird Hall" ||
+		building1 == "Slee Hall" ||
+		building1 == "Baldy Hall" ||
+		building1 == "O'Brian Hall" ||
+		building1 == "Norton Hall" || ///////////
+		building1 == "Bonner Hall" ||
+		building1 == "Park Hall" ||
+		building1 == "Jacobs Management Center"
+	) {
+		return centerGraph.findPath(ret[0], ret[1]);
+	} else {
+		return leftGraph.findPath(ret[0], ret[1]);
+	}
 }
 
 // Using the above implemented graph class
@@ -1213,8 +1291,6 @@ export function loadCenterGraphNodes() {
 }
 
 export function loadCenterGraphEdges() {
-	// Adding Edges to the direct Center Tree
-	// This is really ugly right now and should be in a function, but this out here for testing
 	centerGraph.addEdge(jarvisNodes.nodes[0], furnasNodes.nodes[2], "Travel through Furnas-Jarvis tunnel.");
 	centerGraph.addEdge(furnasNodes.nodes[2], jarvisNodes.nodes[0], "Travel through Furnas-Jarvis tunnel.");
 
@@ -1498,7 +1574,44 @@ export function loadCenterGraphEdges() {
 	centerGraph.addEdge(nortonHallNodes.nodes[4], bonnerHallNodes.nodes[0], "TBA-NORTON to BONNER");
 	centerGraph.addEdge(bonnerHallNodes.nodes[0], nortonHallNodes.nodes[4], "TBA-BONNER to NORTON");
 }
+// ###################################################################################################
+// ###################################################################################################
+// ###################################################################################################
+// ###################################################################################################
+// ###################################################################################################
 
+// Left Graph creation
+export var leftGraph = new Graph(3);
+
+export function loadLeftGraphNodes() {
+	// These loops are adding nodes to graph
+	// This should be handled by a function.
+	for (var i = 0; i < cookeHallNodes.nodes.length; i++) {
+		leftGraph.addNode(cookeHallNodes.nodes[i]);
+	}
+	for (var i = 0; i < cookeHochMidpoint.nodes.length; i++) {
+		leftGraph.addNode(cookeHochMidpoint.nodes[i]);
+	}
+	for (var i = 0; i < hochstetterHallNodes.nodes.length; i++) {
+		leftGraph.addNode(hochstetterHallNodes.nodes[i]);
+	}
+}
+
+export function loadLeftGraphEdges() {
+	// Cooke Hall Edges -----------------------------------------------------------------------
+	leftGraph.addEdge(cookeHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
+	leftGraph.addEdge(cookeHochMidpoint.nodes[0], cookeHallNodes.nodes[0], "TBA-");
+
+	// Hochstetter Hall Edges
+	leftGraph.addEdge(hochstetterHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
+	leftGraph.addEdge(cookeHochMidpoint.nodes[0], hochstetterHallNodes.nodes[0], "TBA-");
+}
+
+// ###################################################################################################
+// ###################################################################################################
+// ###################################################################################################
+// ###################################################################################################
+// ###################################################################################################
 export function calculatePathLine(path) {
 	var ret = {
 		coordinates: [],

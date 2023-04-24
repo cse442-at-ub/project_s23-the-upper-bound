@@ -75,7 +75,9 @@ import {
 	baldyHallNodes,
 	oBrianHallNodes,
 	nortonHallNodes,
-	bonnerHallNodes
+	bonnerHallNodes,
+	loadLeftGraphEdges,
+	loadLeftGraphNodes
 } from "../Constants/PathFindingAlgo";
 
 export default function TunnelsScreen(content, { navigation }) {
@@ -225,8 +227,11 @@ export default function TunnelsScreen(content, { navigation }) {
 			fadeInText();
 
 			loadCenterGraphNodes();
-			console.log(centerGraph);
+			loadLeftGraphNodes();
+			//console.log(centerGraph);
 			loadCenterGraphEdges();
+			loadLeftGraphEdges();
+
 
 			var resultPath = CreatePath(building1, polygon);
 
@@ -252,7 +257,7 @@ export default function TunnelsScreen(content, { navigation }) {
 	const selectedFillSlee = building1 == "Slee Hall" || building2 == "Slee Hall" ? selectedColor : unselectedColor;
 	const selectedFillPark = building1 == "Park Hall" || building2 == "Park Hall" ? selectedColor : unselectedColor;
 	const selectedFillJacobs =
-		building1 == "Jacobs Management Building" || building2 == "Jacobs Management Building"
+		building1 == "Jacobs Management Center" || building2 == "Jacobs Management Center"
 			? selectedColor
 			: unselectedColor;
 	const selectedFillUnion =
@@ -550,11 +555,11 @@ export default function TunnelsScreen(content, { navigation }) {
 					}}
 				></Polygon>
 
-				{/* Jacobs Management Building */}
+				{/* Jacobs Management Center */}
 				<Marker
 					coordinate={jacobsManagementMarker}
 					onPress={() => {
-						onTapPolygon("Jacobs Management Building");
+						onTapPolygon("Jacobs Management Center");
 					}}
 				>
 					<Text style={styles.markerStyle}>{"Jacobs\nManagement\nCenter"}</Text>
@@ -565,7 +570,7 @@ export default function TunnelsScreen(content, { navigation }) {
 					coordinates={jacobsManagement.coordinates}
 					tappable={true}
 					onPress={() => {
-						onTapPolygon("Jacobs Management Building");
+						onTapPolygon("Jacobs Management Center");
 					}}
 				></Polygon>
 
