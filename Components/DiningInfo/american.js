@@ -72,7 +72,7 @@ export default function American() {
           </View>
           <View>
             <Text style={styles.Text}>
-              {"Options: Fried Chickem, French Fries\n"}
+              {"Options: Fried Chicken, French Fries\n"}
               {"Meat: Chicken\n"}
               {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
               {"Location: Student Union - Union Marketplace\n"}
@@ -88,7 +88,7 @@ export default function American() {
               {"Options: Sandwhiches, soups, baked goods\n"}
               {"Meats: Ham, Turkey, Bacon, Sausage\n"}
               {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
-              {"Location: Student Union\n"}
+              {"Location: Student Union, Alfiero Center\n"}
             </Text>
           </View>
   

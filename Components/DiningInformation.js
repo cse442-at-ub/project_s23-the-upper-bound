@@ -33,7 +33,25 @@ export default function DiningInfo({navigation}) {
         >
         <Text style={styles.buttonTXT}>American</Text>
         </Pressable>
+        <Pressable 
+        style={styles.international}
+        title="internat"
+        onPress={() => navigation.navigate("international")}
+        >
+        <Text style={styles.buttonTXT}>Global</Text>
+        </Pressable>
 
+        <Pressable 
+        style={styles.drinks}
+        title="drink"
+        onPress={() => navigation.navigate("drinks")}
+        >
+        <Text style={styles.buttonTXT}>Drinks</Text>
+        </Pressable>
+
+        </View>
+        <View>
+          <Text style={styles.txt}>{"Please press a button above to view dining options in that food style"}</Text>
         </View>
 
 
@@ -70,41 +88,60 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   taco:{
-    height: 100,
-    width: 100,
+    height: 150,
+    width: 150,
     justifyContent: "center",
     alignItems: "center",
     top: -30,
-    left: -80,
+    left: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
   },
   american:{
-    height: 100,
-    width: 100,
+    height: 150,
+    width: 150,
     justifyContent: "center",
     alignItems: "center",
-    top: 0,
-    left: -80,
+    top: -0,
+    left: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
   },
 
   //planned styles to add
-  smoothies:{},
-  chicken:{},
-  burgers:{},
+  drinks:{
+    height: 150,
+    width: 150,
+    justifyContent: "center",
+    alignItems: "center",
+    top: -300,
+    right: -100,
+    backgroundColor: "#3265CB",
+    borderRadius: 30,
   
-  greek:{},
-  indian:{},
-  pasta:{},
-  noodles:{},
-  chinese:{},
-  sandwiches:{},
-  salads:{},
+
+  },
+  international:{
+    height: 150,
+    width: 150,
+    justifyContent: "center",
+    alignItems: "center",
+    top: -330,
+    right: -100,
+    backgroundColor: "#3265CB",
+    borderRadius: 30,
+  
+  },
+ 
   buttonTXT: {
     fontSize: 20,
     color: "white",
     borderRadius: 10,
   },
+  txt:{
+    fontSize:36, 
+    color:"white",
+    top:-250
+
+  }
 });
