@@ -523,6 +523,21 @@ export let nortonHallNodes = {
 	],
 };
 
+//
+export let bonnerHallNodes = {
+	nodes: [
+		{
+			building: "Bonner Hall",
+			number: 0,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00139003223863,
+			longitude: -78.78848093502111,
+		},
+	],
+};
+
 // ClASS DEFINITIONS START ----------------------------------------------------------
 export class Queue {
 	constructor() {
@@ -683,6 +698,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
 				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
 			}
 
 			break;
@@ -714,6 +731,8 @@ export function CreatePath(building1, building2) {
 					ret[1] = oBrianHallNodes.nodes[1];
 				} else if (building2 == "Norton Hall") {
 					ret[1] = nortonHallNodes.nodes[0];
+				} else if (building2 == "Bonner Hall") {
+					ret[1] = bonnerHallNodes.nodes[0];
 				}
 			}
 			break;
@@ -747,6 +766,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
 				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
 			}
 
 			break;
@@ -782,6 +803,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
 				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
 			}
 			break;
 
@@ -810,6 +833,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
 				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
 			}
 			break;
 
@@ -850,6 +875,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
 				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
 			}
 
 			break;
@@ -883,6 +910,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
 				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
 			}
 
 			break;
@@ -916,6 +945,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
 				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
 			}
 			break;
 
@@ -944,6 +975,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
 				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
 			}
 			break;
 
@@ -986,6 +1019,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
 				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
 			}
 			break;
 
@@ -1031,11 +1066,13 @@ export function CreatePath(building1, building2) {
 				ret[1] = baldyHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
 				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
 			}
 			break;
 
 		case "Norton Hall":
-			if (building2 == "Bonner Hall" ) {
+			if (building2 == "Bonner Hall") {
 				ret[0] = nortonHallNodes.nodes[4];
 			} else if (
 				building2 == "Jarvis Hall" ||
@@ -1077,7 +1114,38 @@ export function CreatePath(building1, building2) {
 				ret[1] = baldyHallNodes.nodes[1];
 			} else if (building2 == "O'Brian Hall") {
 				ret[1] = oBrianHallNodes.nodes[4];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
+			}
+			break;
 
+		case "Bonner Hall":
+			ret[0] = bonnerHallNodes.nodes[0];
+
+			if (building2 == "Jarvis Hall") {
+				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0];
+			} else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[0];
+			} else if (building2 == "Student Union") {
+				ret[1] = studentUnionNodes.nodes[0];
+			} else if (building2 == "UB Commons") {
+				ret[1] = ubCommonsNodes.nodes[0];
+			} else if (building2 == "Lockwood Library") {
+				ret[1] = lockwoodNodes.nodes[5];
+			} else if (building2 == "Clemens Hall") {
+				ret[1] = clemensHallNodes.nodes[0];
+			} else if (building2 == "Baird Hall") {
+				ret[1] = bairdHallNodes.nodes[0];
+			} else if (building2 == "Slee Hall") {
+				ret[1] = sleeHallNodes.nodes[0];
+			} else if (building2 == "Baldy Hall") {
+				ret[1] = baldyHallNodes.nodes[1];
+			} else if (building2 == "O'Brian Hall") {
+				ret[1] = oBrianHallNodes.nodes[4];
+			} else if (building2 == "Norton Hall") {
+				ret[1] = nortonHallNodes.nodes[4];
 			}
 			break;
 		default:
@@ -1137,6 +1205,10 @@ export function loadCenterGraphNodes() {
 
 	for (var i = 0; i < nortonHallNodes.nodes.length; i++) {
 		centerGraph.addNode(nortonHallNodes.nodes[i]);
+	}
+
+	for (var i = 0; i < bonnerHallNodes.nodes.length; i++) {
+		centerGraph.addNode(bonnerHallNodes.nodes[i]);
 	}
 }
 
@@ -1421,6 +1493,10 @@ export function loadCenterGraphEdges() {
 
 	centerGraph.addEdge(nortonHallNodes.nodes[3], nortonHallNodes.nodes[5], "TBA-");
 	centerGraph.addEdge(nortonHallNodes.nodes[5], nortonHallNodes.nodes[3], "TBA-");
+
+	// Bonner Hall Edges -----------------------------------------------------------------------
+	centerGraph.addEdge(nortonHallNodes.nodes[4], bonnerHallNodes.nodes[0], "TBA-NORTON to BONNER");
+	centerGraph.addEdge(bonnerHallNodes.nodes[0], nortonHallNodes.nodes[4], "TBA-BONNER to NORTON");
 }
 
 export function calculatePathLine(path) {
