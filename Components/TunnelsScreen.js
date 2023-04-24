@@ -70,7 +70,8 @@ import {
 	calculatePathLine,
 	lockwoodNodes,
 	clemensHallNodes,
-	bairdHallNodes
+	bairdHallNodes,
+	sleeHallNodes
 } from "../Constants/PathFindingAlgo";
 
 export default function TunnelsScreen(content, { navigation }) {
