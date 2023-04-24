@@ -18,7 +18,7 @@ export default function Drinks() {
           </View>
           <View>
             <Text style={styles.Text}>
-              {"Options: Smoothies, Oatmeal, Acai Bowls"}
+              {"Options: Smoothies, Oatmeal, Acai Bowls\n"}
               {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
               {"Location: Student Union\n"}
             </Text>
@@ -58,6 +58,19 @@ export default function Drinks() {
           <View>
             <Text style={styles.Text}>
               {"Options: Coffee, Tea, Milkshakes\n"}
+              {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
+              {"Location: Ellicot Food Court\n"}
+            </Text>
+          </View>
+
+          <View>
+        <Text style={styles.Name}>
+          {"Kung Fu Tea"}      
+          </Text>
+          </View>
+          <View>
+            <Text style={styles.Text}>
+              {"Options: Milk Tea, Fruit Tea, Slush, Seasonal Specials\n"}
               {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
               {"Location: Ellicot Food Court\n"}
             </Text>

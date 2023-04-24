@@ -59,7 +59,7 @@ export default function American() {
           </View>
           <View>
             <Text style={styles.Text}>
-              {"Options: Sub Sandwiches\n"}
+              {"Options: Sub Sandwiches, Flatbread\n"}
               {"Meats: Ham, Turkey, Roast Beef, Salami, Chicken\n"}
               {"Takes Dining Dollars/Meal Swipes? : No\n"}
               {"Location: Commons\n"}

@@ -38,7 +38,7 @@ export default function DiningInfo({navigation}) {
         title="internat"
         onPress={() => navigation.navigate("international")}
         >
-        <Text style={styles.buttonTXT}>Global</Text>
+        <Text style={styles.buttonTXT}>International</Text>
         </Pressable>
 
         <Pressable 
@@ -68,8 +68,9 @@ const styles = StyleSheet.create({
   userTxt: {
     color: "#FFFFFF",
     marginLeft: 10,
-    fontSize: 40,
-    top: -120,
+    fontSize: 44,
+    top: -80,
+    fontWeight:"bold"
   },
   welcomeUp: {
     height: 200,
@@ -108,7 +109,6 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
 
-  //planned styles to add
   drinks:{
     height: 150,
     width: 150,
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   txt:{
-    fontSize:36, 
+    fontSize:30, 
     color:"white",
     top:-250
 

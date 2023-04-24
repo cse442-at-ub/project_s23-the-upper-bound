@@ -18,7 +18,7 @@ export default function International() {
           </View>
           <View>
             <Text style={styles.Text}>
-              {"Options: Pho, Ramen, Monthly Special\n"}
+              {"Options: Pho, Ramen, Rotating Monthly Special\n"}
               {"Meats: Beef, Pork, Chicken\n"}
               {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
               {"Location: One World Cafe\n"}
