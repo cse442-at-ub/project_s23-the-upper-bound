@@ -76,6 +76,10 @@ import {
 	oBrianHallNodes,
 	nortonHallNodes,
 	bonnerHallNodes,
+	mathBuildingNodes,
+	nscNodes,
+	cookeHallNodes,
+	hochstetterHallNodes,
 	loadLeftGraphEdges,
 	loadLeftGraphNodes
 } from "../Constants/PathFindingAlgo";

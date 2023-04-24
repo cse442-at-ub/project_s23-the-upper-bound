@@ -44,6 +44,81 @@ export let hochstetterHallNodes = {
 		},
 	],
 };
+
+//
+export let nscNodes = {
+	nodes: [
+		{
+			building: "Natural Science Complex",
+			number: 0,
+			floor: 2,
+			tree: "left",
+			transition: false,
+			latitude: 43.000574438622124,
+			longitude: -78.7911176685672,
+		},
+		{
+			building: "Natural Science Complex",
+			number: 1,
+			floor: 2,
+			tree: "left",
+			transition: false,
+			latitude: 43.000702884509664,
+			longitude: -78.79112306469695,
+		},
+		{
+			building: "Natural Science Complex",
+			number: 2,
+			floor: 2,
+			tree: "left",
+			transition: false,
+			latitude: 43.000709750182835,
+			longitude: -78.79084947940471,
+		},
+		{
+			building: "Natural Science Complex",
+			number: 3,
+			floor: 2,
+			tree: "left",
+			transition: false,
+			latitude: 43.000714667921564,
+			longitude: -78.79187143652851,
+		},
+		{
+			building: "Natural Science Complex",
+			number: 4,
+			floor: 2,
+			tree: "left",
+			transition: false,
+			latitude: 43.00093636092861,
+			longitude: -78.79188481133173,
+		},
+		{
+			building: "Natural Science Complex",
+			number: 5,
+			floor: 2,
+			tree: "left",
+			transition: false,
+			latitude: 43.00094228303703,
+			longitude: -78.79261704327601,
+		},
+	],
+};
+
+export let mathBuildingNodes = {
+	nodes: [
+		{
+			building: "Mathematics Building",
+			number: 0,
+			floor: 2,
+			tree: "left",
+			transition: false,
+			latitude: 43.00111391207729,
+			longitude: -78.79262370903223,
+		},
+	],
+};
+
 // CENTER TREE --------------------------------------------------------------
 // --------------------------------------------------------------------------
 // --------------------------------------------------------------------------
@@ -717,6 +792,10 @@ export function CreatePath(building1, building2) {
 
 			if (building2 == "Hochstetter Hall") {
 				ret[1] = hochstetterHallNodes.nodes[0];
+			} else if (building2 == "Natural Science Complex") {
+				ret[1] = nscNodes.nodes[0];
+			} else if (building2 == "Mathematics Building") {
+				ret[1] = mathBuildingNodes.nodes[0];
 			}
 			break;
 
@@ -725,6 +804,36 @@ export function CreatePath(building1, building2) {
 
 			if (building2 == "Cooke Hall") {
 				ret[1] = cookeHallNodes.nodes[0];
+			} else if (building2 == "Natural Science Complex") {
+				ret[1] = nscNodes.nodes[0];
+			} else if (building2 == "Mathematics Building") {
+				ret[1] = mathBuildingNodes.nodes[0];
+			}
+			break;
+
+		case "Natural Science Complex":
+			if (building2 == "Cooke Hall" || building2 == "Hochstetter Hall") {
+				ret[0] = nscNodes.nodes[0];
+			} else if (building2 == "Mathematics Building") {
+				ret[0] = nscNodes.nodes[5];
+			}
+
+			if (building2 == "Cooke Hall") {
+				ret[1] = cookeHallNodes.nodes[0];
+			} else if (building2 == "Hochstetter Hall") {
+				ret[1] = hochstetterHallNodes.nodes[0];
+			}
+			break;
+
+		case "Mathematics Building":
+			ret[0] = mathBuildingNodes.nodes[0];
+
+			if (building2 == "Cooke Hall") {
+				ret[1] = cookeHallNodes.nodes[0];
+			} else if (building2 == "Hochstetter Hall") {
+				ret[1] = hochstetterHallNodes.nodes[0];
+			} else if (building2 == "Natural Science Complex") {
+				ret[1] = nscNodes.nodes[5];
 			}
 			break;
 
@@ -1595,6 +1704,12 @@ export function loadLeftGraphNodes() {
 	for (var i = 0; i < hochstetterHallNodes.nodes.length; i++) {
 		leftGraph.addNode(hochstetterHallNodes.nodes[i]);
 	}
+	for (var i = 0; i < nscNodes.nodes.length; i++) {
+		leftGraph.addNode(nscNodes.nodes[i]);
+	}
+	for (var i = 0; i < mathBuildingNodes.nodes.length; i++) {
+		leftGraph.addNode(mathBuildingNodes.nodes[i]);
+	}
 }
 
 export function loadLeftGraphEdges() {
@@ -1602,9 +1717,32 @@ export function loadLeftGraphEdges() {
 	leftGraph.addEdge(cookeHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
 	leftGraph.addEdge(cookeHochMidpoint.nodes[0], cookeHallNodes.nodes[0], "TBA-");
 
-	// Hochstetter Hall Edges
+	// Hochstetter Hall Edges -----------------------------------------------------------------
 	leftGraph.addEdge(hochstetterHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
 	leftGraph.addEdge(cookeHochMidpoint.nodes[0], hochstetterHallNodes.nodes[0], "TBA-");
+
+	// NSC Edges ------------------------------------------------------------------------------
+	leftGraph.addEdge(cookeHochMidpoint.nodes[0], nscNodes.nodes[0], "TBA-");
+	leftGraph.addEdge(nscNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
+
+	leftGraph.addEdge(nscNodes.nodes[0], nscNodes.nodes[1], "TBA-");
+	leftGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[0], "TBA-");
+
+	leftGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[2], "TBA-");
+	leftGraph.addEdge(nscNodes.nodes[2], nscNodes.nodes[1], "TBA-");
+
+	leftGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[3], "TBA-");
+	leftGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[1], "TBA-");
+
+	leftGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[4], "TBA-");
+	leftGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[3], "TBA-");
+
+	leftGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[5], "TBA-");
+	leftGraph.addEdge(nscNodes.nodes[5], nscNodes.nodes[4], "TBA-");
+
+	// Mathematics Building Edges ----------------------------------------------------------------
+	leftGraph.addEdge(nscNodes.nodes[5], mathBuildingNodes.nodes[0], "TBA-");
+	leftGraph.addEdge(mathBuildingNodes.nodes[0], nscNodes.nodes[5], "TBA-");
 }
 
 // ###################################################################################################
