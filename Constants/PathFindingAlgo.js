@@ -1126,7 +1126,7 @@ export function CreatePath(building1, building2) {
 			break;
 
 		case "Baird Hall":
-			if (building2 == "Slee") {
+			if (building2 == "Slee Hall") {
 				ret[0] = bairdHallNodes.nodes[3];
 			} else {
 				ret[0] = bairdHallNodes.nodes[0];
