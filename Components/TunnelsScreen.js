@@ -5,7 +5,6 @@ import * as Location from "expo-location";
 import { Marker, Polygon, Polyline } from "react-native-maps";
 import { mapStyle } from "../Constants/MapConstants";
 import {
-	
 	baldyHall,
 	baldyHallMarker,
 	oBrianHall,
@@ -53,7 +52,7 @@ import {
 	knoxHallMarker,
 	knoxHall,
 	commonsMarker,
-	commons
+	commons,
 } from "../Constants/TunnelConstants";
 import {
 	jarvisNodes,
@@ -82,7 +81,7 @@ import {
 	hochstetterHallNodes,
 	fronczakHallNodes,
 	loadLeftGraphEdges,
-	loadLeftGraphNodes
+	loadLeftGraphNodes,
 } from "../Constants/PathFindingAlgo";
 
 export default function TunnelsScreen(content, { navigation }) {
@@ -237,7 +236,6 @@ export default function TunnelsScreen(content, { navigation }) {
 			loadCenterGraphEdges();
 			loadLeftGraphEdges();
 
-
 			var resultPath = CreatePath(building1, polygon);
 
 			setPathLine(calculatePathLine(resultPath));
@@ -280,8 +278,6 @@ export default function TunnelsScreen(content, { navigation }) {
 		building1 == "Natural Science Complex" || building2 == "Natural Science Complex" ? selectedColor : unselectedColor;
 	const selectedFillFronczak =
 		building1 == "Fronczak Hall" || building2 == "Fronczak Hall" ? selectedColor : unselectedColor;
-	const selectedFillComputing =
-		building1 == "Computing Center" || building2 == "Computing Center" ? selectedColor : unselectedColor;
 	const selectedFillCapen = building1 == "Capen Hall" || building2 == "Capen Hall" ? selectedColor : unselectedColor;
 	const selectedFillNorton = building1 == "Norton Hall" || building2 == "Norton Hall" ? selectedColor : unselectedColor;
 	const selectedFillTalbert =
@@ -766,25 +762,6 @@ export default function TunnelsScreen(content, { navigation }) {
 					tappable={true}
 					onPress={() => {
 						onTapPolygon("Fronczak Hall");
-					}}
-				></Polygon>
-
-				{/* Computing Center */}
-				<Marker
-					coordinate={computingCenterMarker}
-					onPress={() => {
-						onTapPolygon("Computing Center");
-					}}
-				>
-					<Text style={styles.markerStyle}>{"Computing\nCenter"}</Text>
-				</Marker>
-				<Polygon
-					strokeColor="black"
-					fillColor={selectedFillComputing}
-					coordinates={computingCenter.coordinates}
-					tappable={true}
-					onPress={() => {
-						onTapPolygon("Computing Center");
 					}}
 				></Polygon>
 
