@@ -232,6 +232,107 @@ export let ubCommonsNodes = {
 	],
 };
 
+export let lockwoodNodes = {
+	nodes: [
+		{
+			building: "Lockwood Library",
+			number: 0,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00058689572455,
+			longitude: -78.78573525744704,
+		},
+		{
+			building: "Lockwood Library",
+			number: 1,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.000508430685834,
+			longitude: -78.78574062186453,
+		},
+		{
+			building: "Lockwood Library",
+			number: 2,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00037896315283,
+			longitude: -78.78587741451065,
+		},
+		{
+			building: "Lockwood Library",
+			number: 3,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00034561541075,
+			longitude: -78.78587205009316,
+		},
+		{
+			building: "Lockwood Library",
+			number: 4,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.000349538675486,
+			longitude: -78.78616441084662,
+		},
+		{
+			building: "Lockwood Library",
+			number: 5,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00029068967847,
+			longitude: -78.78634411883269,
+		},
+	],
+};
+
+export let clemensHallNodes = {
+	nodes: [
+		{
+			building: "Clemens Hall",
+			number: 0,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00035438014923,
+			longitude:  -78.78508709451977
+		},
+		{
+			building: "Clemens Hall",
+			number: 1,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.0002707655133,
+			longitude: -78.78504082637792,
+		},
+		{
+			building: "Clemens Hall",
+			number: 2,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.000261938156086,
+			longitude: -78.78499187606833,
+		},
+		{
+			building: "Clemens Hall",
+			number: 3,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00012609477589,
+			longitude: -78.78498785275521,
+		},
+	],
+};
+
+
 // ClASS DEFINITIONS START ----------------------------------------------------------
 export class Queue {
 	constructor() {
@@ -364,7 +465,7 @@ function GiveUserPath(path) {
 
 export function CreatePath(building1, building2) {
 	var ret = [undefined, undefined];
-	console.log(building1, building2)
+	console.log(building1, building2);
 
 	switch (building1) {
 		case "Jarvis Hall":
@@ -378,6 +479,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = studentUnionNodes.nodes[10];
 			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
+			} else if (building2 == "Lockwood Library") {
+				ret[1] = lockwoodNodes.nodes[0];
+			} else if (building2 == "Clemens Hall") {
+				ret[1] = clemensHallNodes.nodes[0];
 			}
 			break;
 
@@ -394,6 +499,10 @@ export function CreatePath(building1, building2) {
 					ret[1] = studentUnionNodes.nodes[10];
 				} else if (building2 == "UB Commons") {
 					ret[1] = ubCommonsNodes.nodes[0];
+				} else if (building2 == "Lockwood Library") {
+					ret[1] = lockwoodNodes.nodes[0];
+				} else if (building2 == "Clemens Hall") {
+					ret[1] = clemensHallNodes.nodes[0];
 				}
 			}
 			break;
@@ -403,7 +512,7 @@ export function CreatePath(building1, building2) {
 				ret[0] = bellNodes.nodes[5];
 			} else {
 				ret[0] = bellNodes.nodes[0];
-			}
+			} 
 
 			if (building2 == "Jarvis Hall") {
 				ret[1] = jarvisNodes.nodes[0];
@@ -411,9 +520,12 @@ export function CreatePath(building1, building2) {
 				ret[1] = furnasNodes.nodes[0];
 			} else if (building2 == "Student Union") {
 				ret[1] = studentUnionNodes.nodes[10];
-			}
-			else if (building2 == "UB Commons") {
+			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
+			} else if (building2 == "Lockwood Library") {
+				ret[1] = lockwoodNodes.nodes[0];
+			} else if (building2 == "Clemens Hall") {
+				ret[1] = clemensHallNodes.nodes[0];
 			}
 
 			break;
@@ -424,6 +536,7 @@ export function CreatePath(building1, building2) {
 			} else if (building2 == "UB Commons") {
 				ret[0] = studentUnionNodes.nodes[6];
 			} else {
+				ret[0] = studentUnionNodes[0];
 			}
 
 			if (building2 == "Jarvis Hall") {
@@ -434,6 +547,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = bellNodes.nodes[0];
 			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
+			} else if (building2 == "Lockwood Library") {
+				ret[1] = lockwoodNodes.nodes[0];
+			} else if (building2 == "Clemens Hall") {
+				ret[1] = clemensHallNodes.nodes[0];
 			}
 			break;
 
@@ -448,16 +565,73 @@ export function CreatePath(building1, building2) {
 				ret[1] = bellNodes.nodes[0];
 			} else if (building2 == "Student Union") {
 				ret[1] = studentUnionNodes.nodes[6];
+			} else if (building2 == "Lockwood Library") {
+				ret[1] = lockwoodNodes.nodes[0];
+			} else if (building2 == "Clemens Hall") {
+				ret[1] = clemensHallNodes.nodes[0];
 			}
 			break;
 
+		case "Lockwood Library":
+			if (
+				building2 == "Jarvis Hall" ||
+				building2 == "Furnas Hall" ||
+				building2 == "Bell Hall" ||
+				building2 == "Student Union" ||
+				building2 == "UB Commons"
+			) {
+				ret[0] = lockwoodNodes.nodes[0];
+			} else if (building2 == "Clemens Hall" || building2 == "Baird Hall" || building2 == "Slee Hall") {
+				ret[0] = lockwoodNodes.nodes[3];
+			} else {
+				ret[0] = lockwoodNodes.nodes[5];
+			}
+
+			if (building2 == "Jarvis Hall") {
+				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0];
+			} else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[0];
+			} else if (building2 == "Student Union") {
+				ret[1] = studentUnionNodes.nodes[0];
+			} else if (building2 == "UB Commons") {
+				ret[1] = ubCommonsNodes.nodes[0];
+			} else if (building2 == "Clemens Hall") {
+				ret[1] = clemensHallNodes.nodes[0];
+			}
+			break;
+
+		case "Clemens Hall":
+			if (building2 == "Baird Hall" || building2 == "Slee Hall") {
+				ret[0] = clemensHallNodes.nodes[3];
+			}
+			else {
+				ret[0] = clemensHallNodes.nodes[0]
+			}
+
+			if (building2 == "Jarvis Hall") {
+				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0];
+			} else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[0];
+			} else if (building2 == "Student Union") {
+				ret[1] = studentUnionNodes.nodes[0];
+			} else if (building2 == "UB Commons") {
+				ret[1] = ubCommonsNodes.nodes[0];
+			} else if (building2 == "Lockwood Library") {
+				ret[1] = lockwoodNodes.nodes[3];
+			}
+
+			break
 		default:
 	}
 	return centerGraph.findPath(ret[0], ret[1]);
 }
 
 // Using the above implemented graph class
-export var centerGraph = new Graph(21);
+export var centerGraph = new Graph(27);
 
 export function loadCenterGraphNodes() {
 	// These loops are adding nodes to graph
@@ -480,6 +654,14 @@ export function loadCenterGraphNodes() {
 
 	for (var i = 0; i < ubCommonsNodes.nodes.length; i++) {
 		centerGraph.addNode(ubCommonsNodes.nodes[i]);
+	}
+
+	for (var i = 0; i < lockwoodNodes.nodes.length; i++) {
+		centerGraph.addNode(lockwoodNodes.nodes[i]);
+	}
+
+	for (var i = 0; i < clemensHallNodes.nodes.length; i++) {
+		centerGraph.addNode(clemensHallNodes.nodes[i]);
 	}
 }
 
@@ -673,6 +855,38 @@ export function loadCenterGraphEdges() {
 		ubCommonsNodes.nodes[0],
 		"Travel through the Student Union and UB Commons tunnel."
 	);
+
+	// Lockwood Edges ----------------------------------------------------------------------
+	centerGraph.addEdge(lockwoodNodes.nodes[0], studentUnionNodes.nodes[0], "TBA-SU to LOCKWOOD to get into SU");
+	centerGraph.addEdge(studentUnionNodes.nodes[0], lockwoodNodes.nodes[0], "TBA-SU to LOCKWOOD to get into Lockwood");
+
+	centerGraph.addEdge(lockwoodNodes.nodes[0], lockwoodNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(lockwoodNodes.nodes[1], lockwoodNodes.nodes[0], "TBA-");
+
+	centerGraph.addEdge(lockwoodNodes.nodes[1], lockwoodNodes.nodes[2], "TBA-");
+	centerGraph.addEdge(lockwoodNodes.nodes[2], lockwoodNodes.nodes[1], "TBA-");
+
+	centerGraph.addEdge(lockwoodNodes.nodes[2], lockwoodNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(lockwoodNodes.nodes[3], lockwoodNodes.nodes[2], "TBA-");
+
+	centerGraph.addEdge(lockwoodNodes.nodes[3], lockwoodNodes.nodes[4], "TBA-");
+	centerGraph.addEdge(lockwoodNodes.nodes[4], lockwoodNodes.nodes[3], "TBA-");
+
+	centerGraph.addEdge(lockwoodNodes.nodes[4], lockwoodNodes.nodes[5], "TBA-");
+	centerGraph.addEdge(lockwoodNodes.nodes[5], lockwoodNodes.nodes[4], "TBA-");
+
+	// Clemens Hall Edges ----------------------------------------------------------------------
+	centerGraph.addEdge(clemensHallNodes.nodes[0], lockwoodNodes.nodes[3], "TBA-CLEMENS to LOCKWOOD");
+	centerGraph.addEdge(lockwoodNodes.nodes[3], clemensHallNodes.nodes[0], "TBA-LOCKWOOD to CLEMENS");
+
+	centerGraph.addEdge(clemensHallNodes.nodes[0], clemensHallNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(clemensHallNodes.nodes[1], clemensHallNodes.nodes[0], "TBA-");
+
+	centerGraph.addEdge(clemensHallNodes.nodes[1], clemensHallNodes.nodes[2], "TBA-");
+	centerGraph.addEdge(clemensHallNodes.nodes[2], clemensHallNodes.nodes[1], "TBA-");
+
+	centerGraph.addEdge(clemensHallNodes.nodes[3], clemensHallNodes.nodes[2], "TBA-");
+	centerGraph.addEdge(clemensHallNodes.nodes[2], clemensHallNodes.nodes[3], "TBA-");
 }
 
 export function calculatePathLine(path) {

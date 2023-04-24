@@ -4,8 +4,8 @@ import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import * as Location from "expo-location";
 import { Marker, Polygon, Polyline } from "react-native-maps";
 import { mapStyle } from "../Constants/MapConstants";
-
 import {
+	
 	baldyHall,
 	baldyHallMarker,
 	oBrianHall,
@@ -53,7 +53,7 @@ import {
 	knoxHallMarker,
 	knoxHall,
 	commonsMarker,
-	commons,
+	commons
 } from "../Constants/TunnelConstants";
 import {
 	jarvisNodes,
@@ -68,6 +68,8 @@ import {
 	loadCenterGraphNodes,
 	loadCenterGraphEdges,
 	calculatePathLine,
+	lockwoodNodes,
+	clemensHallNodes
 } from "../Constants/PathFindingAlgo";
 
 export default function TunnelsScreen(content, { navigation }) {
