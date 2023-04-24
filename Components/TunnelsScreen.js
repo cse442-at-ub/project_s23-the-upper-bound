@@ -69,7 +69,8 @@ import {
 	loadCenterGraphEdges,
 	calculatePathLine,
 	lockwoodNodes,
-	clemensHallNodes
+	clemensHallNodes,
+	bairdHallNodes
 } from "../Constants/PathFindingAlgo";
 
 export default function TunnelsScreen(content, { navigation }) {

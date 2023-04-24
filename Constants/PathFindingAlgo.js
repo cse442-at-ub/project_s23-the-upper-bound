@@ -300,7 +300,7 @@ export let clemensHallNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00035438014923,
-			longitude:  -78.78508709451977
+			longitude: -78.78508709451977,
 		},
 		{
 			building: "Clemens Hall",
@@ -332,6 +332,46 @@ export let clemensHallNodes = {
 	],
 };
 
+export let bairdHallNodes = {
+	nodes: [
+		{
+			building: "Baird Hall",
+			number: 0,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.0001271992965,
+			longitude: -78.78457234319515,
+		},
+		{
+			building: "Baird Hall",
+			number: 1,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.000139949958594,
+			longitude: -78.78453211002032,
+		},
+		{
+			building: "Baird Hall",
+			number: 2,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.00013896913909,
+			longitude: -78.7841566007957,
+		},
+		{
+			building: "Baird Hall",
+			number: 3,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 43.000182125182285,
+			longitude: -78.7841552596913,
+		},
+	],
+};
 
 // ClASS DEFINITIONS START ----------------------------------------------------------
 export class Queue {
@@ -483,6 +523,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = lockwoodNodes.nodes[0];
 			} else if (building2 == "Clemens Hall") {
 				ret[1] = clemensHallNodes.nodes[0];
+			} else if (building2 == "Baird Hall") {
+				ret[1] = bairdHallNodes.nodes[0];
 			}
 			break;
 
@@ -503,6 +545,8 @@ export function CreatePath(building1, building2) {
 					ret[1] = lockwoodNodes.nodes[0];
 				} else if (building2 == "Clemens Hall") {
 					ret[1] = clemensHallNodes.nodes[0];
+				} else if (building2 == "Baird Hall") {
+					ret[1] = bairdHallNodes.nodes[0];
 				}
 			}
 			break;
@@ -512,7 +556,7 @@ export function CreatePath(building1, building2) {
 				ret[0] = bellNodes.nodes[5];
 			} else {
 				ret[0] = bellNodes.nodes[0];
-			} 
+			}
 
 			if (building2 == "Jarvis Hall") {
 				ret[1] = jarvisNodes.nodes[0];
@@ -526,6 +570,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = lockwoodNodes.nodes[0];
 			} else if (building2 == "Clemens Hall") {
 				ret[1] = clemensHallNodes.nodes[0];
+			} else if (building2 == "Baird Hall") {
+				ret[1] = bairdHallNodes.nodes[0];
 			}
 
 			break;
@@ -551,6 +597,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = lockwoodNodes.nodes[0];
 			} else if (building2 == "Clemens Hall") {
 				ret[1] = clemensHallNodes.nodes[0];
+			} else if (building2 == "Baird Hall") {
+				ret[1] = bairdHallNodes.nodes[0];
 			}
 			break;
 
@@ -569,6 +617,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = lockwoodNodes.nodes[0];
 			} else if (building2 == "Clemens Hall") {
 				ret[1] = clemensHallNodes.nodes[0];
+			} else if (building2 == "Baird Hall") {
+				ret[1] = bairdHallNodes.nodes[0];
 			}
 			break;
 
@@ -599,15 +649,17 @@ export function CreatePath(building1, building2) {
 				ret[1] = ubCommonsNodes.nodes[0];
 			} else if (building2 == "Clemens Hall") {
 				ret[1] = clemensHallNodes.nodes[0];
+			} else if (building2 == "Baird Hall") {
+				ret[1] = bairdHallNodes.nodes[0];
 			}
+
 			break;
 
 		case "Clemens Hall":
 			if (building2 == "Baird Hall" || building2 == "Slee Hall") {
 				ret[0] = clemensHallNodes.nodes[3];
-			}
-			else {
-				ret[0] = clemensHallNodes.nodes[0]
+			} else {
+				ret[0] = clemensHallNodes.nodes[0];
 			}
 
 			if (building2 == "Jarvis Hall") {
@@ -624,7 +676,31 @@ export function CreatePath(building1, building2) {
 				ret[1] = lockwoodNodes.nodes[3];
 			}
 
-			break
+			break;
+
+		case "Baird Hall":
+			if (building2 == "Slee") {
+				ret[0] = bairdHallNodes.nodes[3];
+			} else {
+				ret[0] = bairdHallNodes.nodes[0];
+			}
+
+			if (building2 == "Jarvis Hall") {
+				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0];
+			} else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[0];
+			} else if (building2 == "Student Union") {
+				ret[1] = studentUnionNodes.nodes[0];
+			} else if (building2 == "UB Commons") {
+				ret[1] = ubCommonsNodes.nodes[0];
+			} else if (building2 == "Lockwood Library") {
+				ret[1] = lockwoodNodes.nodes[3];
+			} else if (building2 == "Clemens Hall") {
+				ret[1] = clemensHallNodes.nodes[3];
+			}
+			break;
 		default:
 	}
 	return centerGraph.findPath(ret[0], ret[1]);
@@ -662,6 +738,10 @@ export function loadCenterGraphNodes() {
 
 	for (var i = 0; i < clemensHallNodes.nodes.length; i++) {
 		centerGraph.addNode(clemensHallNodes.nodes[i]);
+	}
+
+	for (var i = 0; i < bairdHallNodes.nodes.length; i++) {
+		centerGraph.addNode(bairdHallNodes.nodes[i]);
 	}
 }
 
@@ -887,6 +967,19 @@ export function loadCenterGraphEdges() {
 
 	centerGraph.addEdge(clemensHallNodes.nodes[3], clemensHallNodes.nodes[2], "TBA-");
 	centerGraph.addEdge(clemensHallNodes.nodes[2], clemensHallNodes.nodes[3], "TBA-");
+
+	// Baird Hall Edges -----------------------------------------------------------------------
+	centerGraph.addEdge(clemensHallNodes.nodes[3], bairdHallNodes.nodes[0], "TBA-CLEMENS to BAIRD");
+	centerGraph.addEdge(bairdHallNodes.nodes[0], clemensHallNodes.nodes[3], "TBA-BAIRD to CLEMENS");
+
+	centerGraph.addEdge(bairdHallNodes.nodes[0], bairdHallNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(bairdHallNodes.nodes[1], bairdHallNodes.nodes[0], "TBA-");
+
+	centerGraph.addEdge(bairdHallNodes.nodes[1], bairdHallNodes.nodes[2], "TBA-");
+	centerGraph.addEdge(bairdHallNodes.nodes[2], bairdHallNodes.nodes[1], "TBA-");
+
+	centerGraph.addEdge(bairdHallNodes.nodes[2], bairdHallNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(bairdHallNodes.nodes[3], bairdHallNodes.nodes[2], "TBA-");
 }
 
 export function calculatePathLine(path) {
