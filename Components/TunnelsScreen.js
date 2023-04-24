@@ -72,7 +72,9 @@ import {
 	clemensHallNodes,
 	bairdHallNodes,
 	sleeHallNodes,
-	baldyHallNodes
+	baldyHallNodes,
+	oBrianHallNodes,
+	nortonHallNodes
 } from "../Constants/PathFindingAlgo";
 
 export default function TunnelsScreen(content, { navigation }) {
