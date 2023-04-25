@@ -772,6 +772,25 @@ export let nortonHallNodes = {
 			latitude: 43.001060484534165,
 			longitude: -78.78906780825761,
 		},
+		{
+			building: "Norton Hall",
+			number: 6,
+			floor: 1,
+			tree: "left",
+			transition: false,
+			latitude: 43.001060484534165,
+			longitude: -78.78906780825761,
+		},
+		{
+			building: "Norton Hall",
+			number: 7,
+			floor: 1,
+			tree: "left",
+			transition: false,
+			latitude: 43.001060484534165,
+			longitude: -78.78906780825761,
+		},
+		
 	],
 };
 
