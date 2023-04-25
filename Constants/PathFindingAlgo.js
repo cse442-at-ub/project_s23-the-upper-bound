@@ -164,7 +164,7 @@ export let jarvisNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.002167664036634,
-			longitude: -78.7868925926461,
+			longitude: -78.78685874662789,
 		},
 	],
 };
@@ -178,7 +178,7 @@ export let furnasNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00187808303488,
-			longitude: -78.78677291594136,
+			longitude: -78.78678229993056,
 		},
 		{
 			building: "Furnas Hall",
@@ -186,8 +186,8 @@ export let furnasNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.00188200620176,
-			longitude: -78.78684667668549,
+			latitude: 43.00187808303488,
+			longitude:  -78.78685874662789,
 		},
 		{
 			building: "Furnas Hall",
@@ -313,8 +313,8 @@ export let studentUnionNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.001269696220575,
-			longitude: -78.78610630405433,
+			latitude: 43.00124518956232,
+			longitude: -78.78609789342877,
 		},
 		{
 			building: "Student Union",
@@ -551,7 +551,7 @@ export let baldyHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.000280697398765,
+			latitude: 43.00029068967847,
 			longitude: -78.7866738538686,
 		},
 		{
@@ -560,7 +560,7 @@ export let baldyHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.00027088922525,
+			latitude: 43.00029068967847,
 			longitude: -78.78730685518836,
 		},
 	],
@@ -583,7 +583,7 @@ export let oBrianHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.00029895846054,
+			latitude: 43.00029068967847,
 			longitude: -78.78760927076054,
 		},
 		{
@@ -602,7 +602,7 @@ export let oBrianHallNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00059322319906,
-			longitude: -78.78770347546993,
+			longitude: -78.78767900476547,
 		},
 		{
 			building: "O'Brian Hall",
@@ -610,7 +610,7 @@ export let oBrianHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.00060842579048,
+			latitude: 43.00059322319906,
 			longitude: -78.78837268656994,
 		},
 	],
@@ -625,7 +625,7 @@ export let nortonHallNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.000966203921315,
-			longitude: -78.78836915272083,
+			longitude: -78.78837268656994,
 		},
 		{
 			building: "Norton Hall",
@@ -634,7 +634,7 @@ export let nortonHallNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00107121067585,
-			longitude: -78.78836441928166,
+			longitude:  -78.78837268656994,
 		},
 		{
 			building: "Norton Hall",
@@ -642,7 +642,7 @@ export let nortonHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: true,
-			latitude: 43.00105390188252,
+			latitude: 43.00107121067585,
 			longitude: -78.78830761801163,
 		},
 		{
@@ -651,7 +651,7 @@ export let nortonHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.0010562097219,
+			latitude: 43.00107121067585,
 			longitude: -78.78847644400868,
 		},
 		{
