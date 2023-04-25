@@ -82,7 +82,7 @@ export let nscNodes = {
 			tree: "left",
 			transition: false,
 			latitude: 43.000702884509664,
-			longitude: -78.79191801339101
+			longitude: -78.79191801339101,
 		},
 		{
 			building: "Natural Science Complex",
@@ -90,8 +90,8 @@ export let nscNodes = {
 			floor: 2,
 			tree: "left",
 			transition: false,
-			latitude: 43.000918638646766, 
-			longitude: -78.79191801339101
+			latitude: 43.000918638646766,
+			longitude: -78.79191801339101,
 		},
 		{
 			building: "Natural Science Complex",
@@ -108,7 +108,7 @@ export let nscNodes = {
 			floor: 2,
 			tree: "left",
 			transition: false,
-			latitude: 43.00092402463219, 
+			latitude: 43.00092402463219,
 			longitude: -78.79112306469695,
 		},
 		{
@@ -121,7 +121,7 @@ export let nscNodes = {
 			longitude: -78.79091921684065,
 		},
 	],
-};// , 
+}; // ,
 
 export let fronczakHallNodes = {
 	nodes: [
@@ -132,7 +132,7 @@ export let fronczakHallNodes = {
 			tree: "left",
 			transition: false,
 			latitude: 43.001150135957225,
-			longitude: -78.79098357329791
+			longitude: -78.79098357329791,
 		},
 	],
 };
@@ -187,7 +187,7 @@ export let furnasNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00187808303488,
-			longitude:  -78.78685874662789,
+			longitude: -78.78685874662789,
 		},
 		{
 			building: "Furnas Hall",
@@ -496,7 +496,7 @@ export let bairdHallNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00012911116275,
-			longitude: -78.78456772927993
+			longitude: -78.78456772927993,
 		},
 		{
 			building: "Baird Hall",
@@ -505,7 +505,7 @@ export let bairdHallNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00011536671945,
-			longitude:  -78.78450600936625
+			longitude: -78.78450600936625,
 		},
 		{
 			building: "Baird Hall",
@@ -514,7 +514,7 @@ export let bairdHallNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00011536671945,
-			longitude: -78.78410836268758
+			longitude: -78.78410836268758,
 		},
 		{
 			building: "Baird Hall",
@@ -522,8 +522,8 @@ export let bairdHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.000150240572, 
-			longitude: -78.78410836268758
+			latitude: 43.000150240572,
+			longitude: -78.78410836268758,
 		},
 	],
 };
@@ -538,7 +538,7 @@ export let sleeHallNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00030520983115,
-			longitude:  -78.78410836268758
+			longitude: -78.78410836268758,
 		},
 	],
 };
@@ -634,7 +634,7 @@ export let nortonHallNodes = {
 			tree: "center",
 			transition: false,
 			latitude: 43.00107121067585,
-			longitude:  -78.78837268656994,
+			longitude: -78.78837268656994,
 		},
 		{
 			building: "Norton Hall",
@@ -852,7 +852,7 @@ export function CreatePath(building1, building2) {
 				ret[0] = nscNodes.nodes[0];
 			} else if (building2 == "Mathematics Building") {
 				ret[0] = nscNodes.nodes[5];
-			}  else if (building2 == "Fronczak Hall") {
+			} else if (building2 == "Fronczak Hall") {
 				ret[0] = nscNodes.nodes[7];
 			}
 
@@ -878,6 +878,20 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[5];
 			} else if (building2 == "Fronczak Hall") {
 				ret[1] = fronczakHallNodes.nodes[0];
+			}
+			break;
+
+		case "Fronczak Hall":
+			ret[0] = fronczakHallNodes.nodes[0];
+
+			if (building2 == "Cooke Hall") {
+				ret[1] = cookeHallNodes.nodes[0];
+			} else if (building2 == "Hochstetter Hall") {
+				ret[1] = hochstetterHallNodes.nodes[0];
+			} else if (building2 == "Natural Science Complex") {
+				ret[1] = nscNodes.nodes[7];
+			} else if (building2 == "Mathematics Building") {
+				ret[1] = mathBuildingNodes.nodes[0];
 			}
 			break;
 
