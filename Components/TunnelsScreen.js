@@ -81,8 +81,8 @@ import {
 	hochstetterHallNodes,
 	fronczakHallNodes,
 	talbertHallNodes,
-	loadLeftGraphEdges,
-	loadLeftGraphNodes,
+	//loadLeftGraphEdges,
+	//loadLeftGraphNodes,
 } from "../Constants/PathFindingAlgo";
 
 export default function TunnelsScreen(content, { navigation }) {
@@ -232,10 +232,10 @@ export default function TunnelsScreen(content, { navigation }) {
 			fadeInText();
 
 			loadCenterGraphNodes();
-			loadLeftGraphNodes();
+			//loadLeftGraphNodes();
 			//console.log(centerGraph);
 			loadCenterGraphEdges();
-			loadLeftGraphEdges();
+			//loadLeftGraphEdges();
 
 			var resultPath = CreatePath(building1, polygon);
 

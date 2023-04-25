@@ -181,7 +181,7 @@ export let talbertHallNodes = {
 			tree: "left",
 			transition: false,
 			latitude: 43.000749278573494,
-			longitude: -78.79047156640985
+			longitude: -78.79047156640985,
 		},
 		{
 			// 43.000749278573494, -78.79047294127825
@@ -191,7 +191,7 @@ export let talbertHallNodes = {
 			tree: "left",
 			transition: false,
 			latitude: 43.000749278573494,
-			longitude:-78.79047156640985
+			longitude: -78.79047156640985,
 		},
 		{
 			building: "Talbert Hall",
@@ -790,7 +790,6 @@ export let nortonHallNodes = {
 			latitude: 43.001060484534165,
 			longitude: -78.78906780825761,
 		},
-		
 	],
 };
 
@@ -1572,28 +1571,7 @@ export function CreatePath(building1, building2) {
 		default:
 	}
 
-	// Execute if the first building is in the CENTER tree
-	if (
-		building1 == "Jarvis Hall" ||
-		building1 == "Furnas Hall" ||
-		building1 == "Bell Hall" ||
-		building1 == "Student Union" || //////////
-		building1 == "UB Commons" ||
-		building1 == "Lockwood Library" ||
-		building1 == "Clemens Hall" ||
-		building1 == "Baird Hall" ||
-		building1 == "Slee Hall" ||
-		building1 == "Baldy Hall" ||
-		building1 == "O'Brian Hall" ||
-		building1 == "Norton Hall" || ///////////
-		building1 == "Bonner Hall" ||
-		building1 == "Park Hall" ||
-		building1 == "Jacobs Management Center"
-	) {
-		return centerGraph.findPath(ret[0], ret[1]);
-	} else {
-		return leftGraph.findPath(ret[0], ret[1]);
-	}
+	return centerGraph.findPath(ret[0], ret[1]);
 }
 
 // Using the above implemented graph class
@@ -1653,6 +1631,7 @@ export function loadCenterGraphNodes() {
 	for (var i = 0; i < bonnerHallNodes.nodes.length; i++) {
 		centerGraph.addNode(bonnerHallNodes.nodes[i]);
 	}
+	loadLeftGraphNodes();
 }
 
 export function loadCenterGraphEdges() {
@@ -1938,6 +1917,8 @@ export function loadCenterGraphEdges() {
 	// Bonner Hall Edges -----------------------------------------------------------------------
 	centerGraph.addEdge(nortonHallNodes.nodes[4], bonnerHallNodes.nodes[0], "TBA-NORTON to BONNER");
 	centerGraph.addEdge(bonnerHallNodes.nodes[0], nortonHallNodes.nodes[4], "TBA-BONNER to NORTON");
+
+	loadLeftGraphEdges();
 }
 // ###################################################################################################
 // ###################################################################################################
@@ -1952,114 +1933,117 @@ export function loadLeftGraphNodes() {
 	// These loops are adding nodes to graph
 	// This should be handled by a function.
 	for (var i = 0; i < cookeHallNodes.nodes.length; i++) {
-		leftGraph.addNode(cookeHallNodes.nodes[i]);
+		centerGraph.addNode(cookeHallNodes.nodes[i]);
 	}
 	for (var i = 0; i < cookeHochMidpoint.nodes.length; i++) {
-		leftGraph.addNode(cookeHochMidpoint.nodes[i]);
+		centerGraph.addNode(cookeHochMidpoint.nodes[i]);
 	}
 	for (var i = 0; i < hochstetterHallNodes.nodes.length; i++) {
-		leftGraph.addNode(hochstetterHallNodes.nodes[i]);
+		centerGraph.addNode(hochstetterHallNodes.nodes[i]);
 	}
 	for (var i = 0; i < nscNodes.nodes.length; i++) {
-		leftGraph.addNode(nscNodes.nodes[i]);
+		centerGraph.addNode(nscNodes.nodes[i]);
 	}
 	for (var i = 0; i < mathBuildingNodes.nodes.length; i++) {
-		leftGraph.addNode(mathBuildingNodes.nodes[i]);
+		centerGraph.addNode(mathBuildingNodes.nodes[i]);
 	}
 	for (var i = 0; i < fronczakHallNodes.nodes.length; i++) {
-		leftGraph.addNode(fronczakHallNodes.nodes[i]);
+		centerGraph.addNode(fronczakHallNodes.nodes[i]);
 	}
 	for (var i = 0; i < talbertHallNodes.nodes.length; i++) {
-		leftGraph.addNode(talbertHallNodes.nodes[i]);
+		centerGraph.addNode(talbertHallNodes.nodes[i]);
 	}
 	for (var i = 0; i < capenHallNodes.nodes.length; i++) {
-		leftGraph.addNode(capenHallNodes.nodes[i]);
+		centerGraph.addNode(capenHallNodes.nodes[i]);
 	}
 }
 
 export function loadLeftGraphEdges() {
 	// Cooke Hall Edges -----------------------------------------------------------------------
-	leftGraph.addEdge(cookeHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
-	leftGraph.addEdge(cookeHochMidpoint.nodes[0], cookeHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(cookeHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
+	centerGraph.addEdge(cookeHochMidpoint.nodes[0], cookeHallNodes.nodes[0], "TBA-");
 
 	// Hochstetter Hall Edges -----------------------------------------------------------------
-	leftGraph.addEdge(hochstetterHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
-	leftGraph.addEdge(cookeHochMidpoint.nodes[0], hochstetterHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(hochstetterHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
+	centerGraph.addEdge(cookeHochMidpoint.nodes[0], hochstetterHallNodes.nodes[0], "TBA-");
 
 	// NSC Edges ------------------------------------------------------------------------------
-	leftGraph.addEdge(cookeHochMidpoint.nodes[0], nscNodes.nodes[0], "TBA-");
-	leftGraph.addEdge(nscNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
+	centerGraph.addEdge(cookeHochMidpoint.nodes[0], nscNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
 
-	leftGraph.addEdge(nscNodes.nodes[0], nscNodes.nodes[1], "TBA-");
-	leftGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[0], nscNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[0], "TBA-");
 
-	leftGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[2], "TBA-");
-	leftGraph.addEdge(nscNodes.nodes[2], nscNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[2], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[2], nscNodes.nodes[1], "TBA-");
 
-	leftGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[3], "TBA-");
-	leftGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[1], "TBA-");
 
-	leftGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[4], "TBA-");
-	leftGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[4], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[3], "TBA-");
 
-	leftGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[5], "TBA-");
-	leftGraph.addEdge(nscNodes.nodes[5], nscNodes.nodes[4], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[5], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[5], nscNodes.nodes[4], "TBA-");
 
-	leftGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[6], "TBA-");
-	leftGraph.addEdge(nscNodes.nodes[6], nscNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[6], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[6], nscNodes.nodes[1], "TBA-");
 
-	leftGraph.addEdge(nscNodes.nodes[6], nscNodes.nodes[7], "TBA-");
-	leftGraph.addEdge(nscNodes.nodes[7], nscNodes.nodes[6], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[6], nscNodes.nodes[7], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[7], nscNodes.nodes[6], "TBA-");
 
 	// Mathematics Building Edges ----------------------------------------------------------------
-	leftGraph.addEdge(nscNodes.nodes[5], mathBuildingNodes.nodes[0], "TBA-");
-	leftGraph.addEdge(mathBuildingNodes.nodes[0], nscNodes.nodes[5], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[5], mathBuildingNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(mathBuildingNodes.nodes[0], nscNodes.nodes[5], "TBA-");
 
 	// Fronczak Hall Edges ------------------------------------------------------------------------
-	leftGraph.addEdge(nscNodes.nodes[7], fronczakHallNodes.nodes[0], "TBA-");
-	leftGraph.addEdge(fronczakHallNodes.nodes[0], nscNodes.nodes[7], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[7], fronczakHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(fronczakHallNodes.nodes[0], nscNodes.nodes[7], "TBA-");
 
 	// Talbert Hall Edges ------------------------------------------------------------------------
-	leftGraph.addEdge(nscNodes.nodes[2], talbertHallNodes.nodes[0], "TBA-NSC TO TALBERT");
-	leftGraph.addEdge(talbertHallNodes.nodes[0], nscNodes.nodes[2], "TBA-TALBERT TO NSC");
+	centerGraph.addEdge(nscNodes.nodes[2], talbertHallNodes.nodes[0], "TBA-NSC TO TALBERT");
+	centerGraph.addEdge(talbertHallNodes.nodes[0], nscNodes.nodes[2], "TBA-TALBERT TO NSC");
 
-	leftGraph.addEdge(talbertHallNodes.nodes[0], talbertHallNodes.nodes[1], "TBA-");
-	leftGraph.addEdge(talbertHallNodes.nodes[1], talbertHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(talbertHallNodes.nodes[0], talbertHallNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(talbertHallNodes.nodes[1], talbertHallNodes.nodes[0], "TBA-");
 
-	leftGraph.addEdge(talbertHallNodes.nodes[1], talbertHallNodes.nodes[2], "TBA-turn left and enter the elevator");
-	leftGraph.addEdge(
+	centerGraph.addEdge(talbertHallNodes.nodes[1], talbertHallNodes.nodes[2], "TBA-turn left and enter the elevator");
+	centerGraph.addEdge(
 		talbertHallNodes.nodes[2],
 		talbertHallNodes.nodes[1],
 		"TBA-Exit the elevator, turn left, and move into hallway directly in front of you."
 	);
 
-	leftGraph.addEdge(talbertHallNodes.nodes[2], talbertHallNodes.nodes[3], "TBA-Take the elevator up to the 1st floor.");
-	leftGraph.addEdge(
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[2],
+		talbertHallNodes.nodes[3],
+		"TBA-Take the elevator up to the 1st floor."
+	);
+	centerGraph.addEdge(
 		talbertHallNodes.nodes[3],
 		talbertHallNodes.nodes[2],
 		"TBA-Take the elevator down to the ground floor."
 	);
 
-	leftGraph.addEdge(
+	centerGraph.addEdge(
 		talbertHallNodes.nodes[3],
 		talbertHallNodes.nodes[4],
 		"TBA-Exit the elevator, turn left, and move into hallway directly in front of you."
 	);
-	leftGraph.addEdge(talbertHallNodes.nodes[4], talbertHallNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(talbertHallNodes.nodes[4], talbertHallNodes.nodes[3], "TBA-");
 
-	leftGraph.addEdge(talbertHallNodes.nodes[4], talbertHallNodes.nodes[5], "TBA-");
-	leftGraph.addEdge(talbertHallNodes.nodes[5], talbertHallNodes.nodes[4], "TBA-");
+	centerGraph.addEdge(talbertHallNodes.nodes[4], talbertHallNodes.nodes[5], "TBA-");
+	centerGraph.addEdge(talbertHallNodes.nodes[5], talbertHallNodes.nodes[4], "TBA-");
 
 	// Capen Hall Edges ------------------------------------------------------------------------
-	leftGraph.addEdge(talbertHallNodes.nodes[5], capenHallNodes.nodes[0], "TBA-TALBERT TO CAPEN");
-	leftGraph.addEdge(capenHallNodes.nodes[0], talbertHallNodes.nodes[5], "TBA-CAPEN TO TALBERT");
+	centerGraph.addEdge(talbertHallNodes.nodes[5], capenHallNodes.nodes[0], "TBA-TALBERT TO CAPEN");
+	centerGraph.addEdge(capenHallNodes.nodes[0], talbertHallNodes.nodes[5], "TBA-CAPEN TO TALBERT");
 
-	leftGraph.addEdge(capenHallNodes.nodes[0], capenHallNodes.nodes[1], "TBA-");
-	leftGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(capenHallNodes.nodes[0], capenHallNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[0], "TBA-");
 
-	leftGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[2], "TBA-");
-	leftGraph.addEdge(capenHallNodes.nodes[2], capenHallNodes.nodes[1], "TBA-");
-
+	centerGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[2], "TBA-");
+	centerGraph.addEdge(capenHallNodes.nodes[2], capenHallNodes.nodes[1], "TBA-");
 }
 
 // ###################################################################################################
