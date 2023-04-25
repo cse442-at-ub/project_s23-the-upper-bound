@@ -80,6 +80,7 @@ import {
 	cookeHallNodes,
 	hochstetterHallNodes,
 	fronczakHallNodes,
+	talbertHallNodes,
 	loadLeftGraphEdges,
 	loadLeftGraphNodes,
 } from "../Constants/PathFindingAlgo";
