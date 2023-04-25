@@ -11,7 +11,7 @@ export let cookeHallNodes = {
 			floor: 0,
 			tree: "left",
 			transition: false,
-			latitude: 42.99994901297165,
+			latitude: 42.99995539489815,
 			longitude: -78.79121365649245,
 		},
 	],
@@ -39,7 +39,7 @@ export let hochstetterHallNodes = {
 			floor: 0,
 			tree: "left",
 			transition: false,
-			latitude: 42.99994979236497,
+			latitude: 42.99995539489815,
 			longitude: -78.7909246989685,
 		},
 	],
@@ -81,8 +81,8 @@ export let nscNodes = {
 			floor: 2,
 			tree: "left",
 			transition: false,
-			latitude: 43.000714667921564,
-			longitude: -78.79187143652851,
+			latitude: 43.000702884509664,
+			longitude: -78.79191801339101
 		},
 		{
 			building: "Natural Science Complex",
@@ -90,8 +90,8 @@ export let nscNodes = {
 			floor: 2,
 			tree: "left",
 			transition: false,
-			latitude: 43.00093636092861,
-			longitude: -78.79188481133173,
+			latitude: 43.000918638646766, 
+			longitude: -78.79191801339101
 		},
 		{
 			building: "Natural Science Complex",
@@ -99,7 +99,7 @@ export let nscNodes = {
 			floor: 2,
 			tree: "left",
 			transition: false,
-			latitude: 43.00094228303703,
+			latitude: 43.000918638646766,
 			longitude: -78.79261704327601,
 		},
 		{
@@ -108,8 +108,8 @@ export let nscNodes = {
 			floor: 2,
 			tree: "left",
 			transition: false,
-			latitude: 43.0009461116737,
-			longitude: -78.7911177391171,
+			latitude: 43.00092402463219, 
+			longitude: -78.79112306469695,
 		},
 		{
 			building: "Natural Science Complex",
@@ -117,7 +117,7 @@ export let nscNodes = {
 			floor: 2,
 			tree: "left",
 			transition: false,
-			latitude: 43.00095786787502,
+			latitude: 43.00092402463219,
 			longitude: -78.79091921684065,
 		},
 	],
