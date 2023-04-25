@@ -72,7 +72,7 @@ export let nscNodes = {
 			floor: 2,
 			tree: "left",
 			transition: false,
-			latitude: 43.000709750182835,
+			latitude: 43.000702884509664,
 			longitude: -78.79084947940471,
 		},
 		{
@@ -160,7 +160,7 @@ export let talbertHallNodes = {
 			floor: 1,
 			tree: "left",
 			transition: false,
-			latitude: 43.000712488525096,
+			latitude: 43.000702884509664,
 			longitude: -78.79060971601612,
 		},
 		{
@@ -170,7 +170,7 @@ export let talbertHallNodes = {
 			floor: 1,
 			tree: "left",
 			transition: false,
-			latitude: 43.000712488525096,
+			latitude: 43.000702884509664,
 			longitude: -78.79047156640985,
 		},
 		{
@@ -181,7 +181,7 @@ export let talbertHallNodes = {
 			tree: "left",
 			transition: false,
 			latitude: 43.000749278573494,
-			longitude: -78.79047294127825,
+			longitude: -78.79047156640985
 		},
 		{
 			// 43.000749278573494, -78.79047294127825
@@ -191,7 +191,7 @@ export let talbertHallNodes = {
 			tree: "left",
 			transition: false,
 			latitude: 43.000749278573494,
-			longitude: -78.79047294127825,
+			longitude:-78.79047156640985
 		},
 		{
 			building: "Talbert Hall",
@@ -199,7 +199,7 @@ export let talbertHallNodes = {
 			floor: 0,
 			tree: "left",
 			transition: false,
-			latitude: 43.000712488525096,
+			latitude: 43.000702884509664,
 			longitude: -78.79047156640985,
 		},
 		{
@@ -209,7 +209,7 @@ export let talbertHallNodes = {
 			floor: 0,
 			tree: "left",
 			transition: false,
-			latitude: 43.000711026981314,
+			latitude: 43.000702884509664,
 			longitude: -78.78996868598404,
 		},
 	],
@@ -224,7 +224,7 @@ export let capenHallNodes = {
 			floor: 0,
 			tree: "left",
 			transition: false,
-			latitude: 43.00069925725567,
+			latitude: 43.000702884509664,
 			longitude: -78.7899217473261,
 		},
 
@@ -236,7 +236,7 @@ export let capenHallNodes = {
 			tree: "left",
 			transition: false,
 			latitude: 43.00114458457854,
-			longitude: -78.78991633575575,
+			longitude: -78.7899217473261,
 		},
 		{
 			// 43.00114459819635, -78.78919746817665
@@ -245,7 +245,7 @@ export let capenHallNodes = {
 			floor: 0,
 			tree: "left",
 			transition: false,
-			latitude: 43.00114459819635,
+			latitude: 43.00114458457854,
 			longitude: -78.78919746817665,
 		},
 	],
