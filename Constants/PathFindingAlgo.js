@@ -1735,7 +1735,7 @@ export function CreatePath(building1, building2) {
 			} else if (building2 == "Clemens Hall") {
 				ret[1] = clemensHallNodes.nodes[3];
 			} else if (building2 == "Baird Hall") {
-				ret[1] = bairdHallNodes.nodes[0];
+				ret[1] = bairdHallNodes.nodes[3];
 			} else if (building2 == "Baldy Hall") {
 				ret[1] = baldyHallNodes.nodes[0];
 			} else if (building2 == "O'Brian Hall") {
@@ -1804,6 +1804,23 @@ export function CreatePath(building1, building2) {
 				ret[1] = nortonHallNodes.nodes[0];
 			} else if (building2 == "Bonner Hall") {
 				ret[1] = bonnerHallNodes.nodes[0];
+			}
+
+			// Transitioning to Left Graph
+			if (building2 == "Cooke Hall") {
+				ret[1] = cookeHallNodes.nodes[0];
+			} else if (building2 == "Hochstetter Hall") {
+				ret[1] = hochstetterHallNodes.nodes[0];
+			} else if (building2 == "Capen Hall") {
+				ret[1] = capenHallNodes.nodes[2];
+			} else if (building2 == "Mathematics Building") {
+				ret[1] = mathBuildingNodes.nodes[0];
+			} else if (building2 == "Fronczak Hall") {
+				ret[1] = fronczakHallNodes.nodes[0];
+			} else if (building2 == "Natural Science Complex") {
+				ret[1] = nscNodes.nodes[2];
+			} else if (building2 == "Talbert Hall") {
+				ret[1] = talbertHallNodes.nodes[5];
 			}
 			break;
 
