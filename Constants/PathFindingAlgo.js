@@ -495,8 +495,8 @@ export let bairdHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.0001271992965,
-			longitude: -78.78457234319515,
+			latitude: 43.00012911116275,
+			longitude: -78.78456772927993
 		},
 		{
 			building: "Baird Hall",
@@ -504,8 +504,8 @@ export let bairdHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.000139949958594,
-			longitude: -78.78453211002032,
+			latitude: 43.00011536671945,
+			longitude:  -78.78450600936625
 		},
 		{
 			building: "Baird Hall",
@@ -513,8 +513,8 @@ export let bairdHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.00013896913909,
-			longitude: -78.7841566007957,
+			latitude: 43.00011536671945,
+			longitude: -78.78410836268758
 		},
 		{
 			building: "Baird Hall",
@@ -522,8 +522,8 @@ export let bairdHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.000182125182285,
-			longitude: -78.7841552596913,
+			latitude: 43.000150240572, 
+			longitude: -78.78410836268758
 		},
 	],
 };
@@ -537,8 +537,8 @@ export let sleeHallNodes = {
 			floor: 2,
 			tree: "center",
 			transition: false,
-			latitude: 43.00033219027975,
-			longitude: -78.7841579418651,
+			latitude: 43.00030520983115,
+			longitude:  -78.78410836268758
 		},
 	],
 };
