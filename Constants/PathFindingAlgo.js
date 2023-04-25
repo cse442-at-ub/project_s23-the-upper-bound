@@ -215,6 +215,42 @@ export let talbertHallNodes = {
 	],
 };
 
+export let capenHallNodes = {
+	nodes: [
+		{
+			// 43.00069925725567, -78.7899217473261
+			building: "Capen Hall",
+			number: 0,
+			floor: 0,
+			tree: "left",
+			transition: false,
+			latitude: 43.00069925725567,
+			longitude: -78.7899217473261,
+		},
+
+		{
+			// 43.00114458457854, -78.78991633575575
+			building: "Capen Hall",
+			number: 1,
+			floor: 0,
+			tree: "left",
+			transition: false,
+			latitude: 43.00114458457854,
+			longitude: -78.78991633575575,
+		},
+		{
+			// 43.00114459819635, -78.78919746817665
+			building: "Capen Hall",
+			number: 2,
+			floor: 0,
+			tree: "left",
+			transition: false,
+			latitude: 43.00114459819635,
+			longitude: -78.78919746817665,
+		},
+	],
+};
+
 // CENTER TREE --------------------------------------------------------------
 // --------------------------------------------------------------------------
 // --------------------------------------------------------------------------
@@ -896,6 +932,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = fronczakHallNodes.nodes[0];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[0];
+			} else if (building2 == "Capen Hall") {
+				ret[1] = capenHallNodes.nodes[0];
 			}
 			break;
 
@@ -912,6 +950,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = fronczakHallNodes.nodes[0];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[0];
+			} else if (building2 == "Capen Hall") {
+				ret[1] = capenHallNodes.nodes[0];
 			}
 			break;
 
@@ -936,6 +976,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = fronczakHallNodes.nodes[0];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[0];
+			} else if (building2 == "Capen Hall") {
+				ret[1] = capenHallNodes.nodes[0];
 			}
 			break;
 
@@ -952,6 +994,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = fronczakHallNodes.nodes[0];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[0];
+			} else if (building2 == "Capen Hall") {
+				ret[1] = capenHallNodes.nodes[0];
 			}
 			break;
 
@@ -968,6 +1012,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = mathBuildingNodes.nodes[0];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[0];
+			} else if (building2 == "Capen Hall") {
+				ret[1] = capenHallNodes.nodes[0];
 			}
 			break;
 
@@ -994,6 +1040,37 @@ export function CreatePath(building1, building2) {
 				ret[1] = fronczakHallNodes.nodes[0];
 			} else if (building2 == "Natural Science Complex") {
 				ret[1] = nscNodes.nodes[2];
+			} else if (building2 == "Capen Hall") {
+				ret[1] = capenHallNodes.nodes[0];
+			}
+			break;
+
+		case "Capen Hall":
+			if (
+				building2 == "Cooke Hall" ||
+				building2 == "Hochstetter Hall" ||
+				building2 == "Natural Science Complex" ||
+				building2 == "Mathematics Building" ||
+				building2 == "Fronczak Hall" ||
+				building2 == "Talbert Hall"
+			) {
+				ret[0] = capenHallNodes.nodes[0];
+			} else {
+				ret[0] = capenHallNodes.nodes[2];
+			}
+
+			if (building2 == "Cooke Hall") {
+				ret[1] = cookeHallNodes.nodes[0];
+			} else if (building2 == "Hochstetter Hall") {
+				ret[1] = hochstetterHallNodes.nodes[0];
+			} else if (building2 == "Mathematics Building") {
+				ret[1] = mathBuildingNodes.nodes[0];
+			} else if (building2 == "Fronczak Hall") {
+				ret[1] = fronczakHallNodes.nodes[0];
+			} else if (building2 == "Natural Science Complex") {
+				ret[1] = nscNodes.nodes[2];
+			} else if (building2 == "Talbert Hall") {
+				ret[1] = talbertHallNodes.nodes[5];
 			}
 			break;
 
@@ -1876,6 +1953,9 @@ export function loadLeftGraphNodes() {
 	for (var i = 0; i < talbertHallNodes.nodes.length; i++) {
 		leftGraph.addNode(talbertHallNodes.nodes[i]);
 	}
+	for (var i = 0; i < capenHallNodes.nodes.length; i++) {
+		leftGraph.addNode(capenHallNodes.nodes[i]);
+	}
 }
 
 export function loadLeftGraphEdges() {
@@ -1950,6 +2030,17 @@ export function loadLeftGraphEdges() {
 
 	leftGraph.addEdge(talbertHallNodes.nodes[4], talbertHallNodes.nodes[5], "TBA-");
 	leftGraph.addEdge(talbertHallNodes.nodes[5], talbertHallNodes.nodes[4], "TBA-");
+
+	// Capen Hall Edges ------------------------------------------------------------------------
+	leftGraph.addEdge(talbertHallNodes.nodes[5], capenHallNodes.nodes[0], "TBA-TALBERT TO CAPEN");
+	leftGraph.addEdge(capenHallNodes.nodes[0], talbertHallNodes.nodes[5], "TBA-CAPEN TO TALBERT");
+
+	leftGraph.addEdge(capenHallNodes.nodes[0], capenHallNodes.nodes[1], "TBA-");
+	leftGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[0], "TBA-");
+
+	leftGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[2], "TBA-");
+	leftGraph.addEdge(capenHallNodes.nodes[2], capenHallNodes.nodes[1], "TBA-");
+
 }
 
 // ###################################################################################################
