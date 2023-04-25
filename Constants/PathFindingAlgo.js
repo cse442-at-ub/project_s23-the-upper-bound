@@ -1217,6 +1217,37 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Capen Hall") {
 				ret[1] = capenHallNodes.nodes[0];
+			} 			// Transitioning to "Center Graph"
+			else if (building2 == "Norton Hall") {
+				ret[1] = nortonHallNodes.nodes[6];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
+			} else if (building2 == "O'Brian Hall") {
+				ret[1] = oBrianHallNodes.nodes[4];
+			} else if (building2 == "Baldy Hall") {
+				ret[1] = baldyHallNodes.nodes[1];
+			} else if (building2 == "Lockwood Library") {
+				ret[1] = lockwoodNodes.nodes[5];
+			} else if (building2 == "Clemens Hall") {
+				ret[1] = clemensHallNodes.nodes[0];
+			} else if (building2 == "Baird Hall") {
+				ret[1] = bairdHallNodes.nodes[0];
+			} else if (building2 == "Slee Hall") {
+				ret[1] = sleeHallNodes.nodes[0];
+			}
+			// SU WILL NEED TO CHANGE
+			else if (building2 == "Student Union") {
+				ret[1] = studentUnionNodes.nodes[0];
+			} else if (building2 == "UB Commons") {
+				ret[1] = ubCommonsNodes.nodes[0];
+			} else if (building2 == "Slee Hall") {
+				ret[1] = sleeHallNodes.nodes[0];
+			} else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[0];
+			} else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0];
+			} else if (building2 == "Jarvis Hall") {
+				ret[1] = jarvisNodes.nodes[0];
 			}
 			break;
 
