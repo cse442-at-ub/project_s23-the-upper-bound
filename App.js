@@ -73,7 +73,7 @@ export default function App() {
 						headerTitleStyle: {
 							fontWeight: "normal",
 						},
-						headerRight: () => <Button onPress={() => alert("This is a button!")} title="Info" color="#fff" />,
+						headerRight: () => <Button onPress={() => alert("To start, click on a red icon to view information about it!")} title="Info" color="#fff" />,
 					}}
 				></Stack.Screen>
 
