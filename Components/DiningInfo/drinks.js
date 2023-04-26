@@ -59,7 +59,7 @@ export default function Drinks() {
             <Text style={styles.Text}>
               {"Options: Coffee, Tea, Milkshakes\n"}
               {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
-              {"Location: Ellicot Food Court\n"}
+              {"Location: Ellicott Food Court\n"}
             </Text>
           </View>
 
@@ -72,7 +72,7 @@ export default function Drinks() {
             <Text style={styles.Text}>
               {"Options: Milk Tea, Fruit Tea, Slush, Seasonal Specials\n"}
               {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
-              {"Location: Ellicot Food Court\n"}
+              {"Location: Ellicott Food Court\n"}
             </Text>
           </View>
   

@@ -37,7 +37,7 @@ export default function Mexican() {
             {"Options: Burritos, Bowls\n"}
             {"Meats: Chicken, Steak, Fish \n"}
             {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
-            {"Location: Ellicot Food Court\n"}
+            {"Location: Ellicott Food Court\n"}
           </Text>
         </View>
 
