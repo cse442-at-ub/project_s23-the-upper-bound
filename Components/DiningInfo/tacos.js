@@ -49,7 +49,6 @@ export default function Mexican() {
         <View>
           <Text style={styles.MoText}>
             {"Options: Tacos, Burritos, Burgers, Steaks, Fried Chicken, Seafood\n"}
-            {"Phone: 555-555-5555\n"}
             {"Takes Dining Dollars/Meal Swipes? : No\n"}
             {"Location: Commons\n"}
           </Text>
