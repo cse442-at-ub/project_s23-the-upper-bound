@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { Pressable, StyleSheet, Text, View, ImageBackground, Animated } from "react-native";
+import { Pressable, StyleSheet, Text, View, ImageBackground, Animated, Image } from "react-native";
 import React, { useEffect, useState, useRef } from "react";
 
 export default function HomeScreen({ navigation }) {
@@ -41,24 +41,24 @@ export default function HomeScreen({ navigation }) {
 				<LoadAnimation>
 				<View style={styles.topButtonRow}>
 					<View style={styles.buttonAndTextView}>
-						<Pressable style={styles.mapButtons} title="Tunnels" onPress={() => onPressMapButton("tunnels")}>
-							<Text style={styles.buttons}>🌉</Text>
+						<Pressable style={styles.buttonBackground} title="Tunnels" onPress={() => onPressMapButton("tunnels")}>
+						<Image style={styles.buttons} source={require("../assets/tunnel-button.png")}></Image>
 						</Pressable>
 						<Text style={styles.underButtonText}>Tunnels</Text>
 					</View>
 
 					<View style={styles.buttonAndTextView}>
-						<Pressable style={styles.buildingsButton} title="Buildings" onPress={() => onPressMapButton("buildings")}>
-							<Text style={styles.buttons}>🏫</Text>
+						<Pressable style={styles.buttonBackground} title="Buildings" onPress={() => onPressMapButton("buildings")}>
+							<Image style={styles.buttons} source={require("../assets/buildings-button.png")}></Image>
 						</Pressable>
 						<Text style={styles.underButtonText}>{"Buildings"}</Text>
 					</View>
 
 					<View style={styles.buttonAndTextView}>
-							<Pressable style={styles.mapButtons} title="Blue Lights" onPress={() => onPressMapButton("blue Lights")}>
-								<Text style={styles.buttons}>🚔</Text>
-							</Pressable>
-							<Text style={styles.underButtonText}>Blue Lights</Text>
+						<Pressable style={styles.buttonBackground} title="Blue Lights" onPress={() => onPressMapButton("blue Lights")}>
+							<Image style={styles.buttons} source={require("../assets/bluelights-button.png")}></Image>
+						</Pressable>
+						<Text style={styles.underButtonText}>Blue Lights</Text>
 					</View>
 
 				</View>
@@ -67,26 +67,22 @@ export default function HomeScreen({ navigation }) {
 				<LoadAnimation>
 				<View style={styles.secondButtonRow}>
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable
-							style={styles.DiningButton}
-							title="Dining Information"
-							onPress={() => navigation.navigate("dining")}
-						>
-							<Text style={styles.buttons}>🍽️</Text>
+						<Pressable style={styles.buttonBackground} title="Dining Information" onPress={() => navigation.navigate("dining")}>
+							<Image style={styles.buttons} source={require("../assets/dining-button.png")}></Image>
 						</Pressable>
 						<Text style={styles.underButtonText}>{"   Dining Info"}</Text>
 					</View>
 
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable style={styles.closerMapButtons} title="Food" onPress={() => onPressMapButton("food")}>
-							<Text style={styles.buttons}>🍔</Text>
+						<Pressable style={styles.buttonBackground} title="Food" onPress={() => onPressMapButton("food")}>
+							<Image style={styles.buttons} source={require("../assets/food-button.png")}></Image>
 						</Pressable>
 						<Text style={styles.underButtonText}>Food</Text>
 					</View>
 
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable style={styles.closerMapButtons} title="Food" onPress={() => navigation.navigate("events")}>
-							<Text style={styles.buttons}>📰</Text>
+						<Pressable style={styles.buttonBackground} title="Food" onPress={() => navigation.navigate("events")}>
+							<Image style={styles.buttons} source={require("../assets/event-button.png")}></Image>
 						</Pressable>
 						<Text style={styles.underButtonText}>Events</Text>
 					</View>
@@ -99,26 +95,22 @@ export default function HomeScreen({ navigation }) {
 				<View style={styles.thirdButtonRow}>
 
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable style={styles.closerMapButtons} title="printers" onPress={() => onPressMapButton("printers")}>
-							<Text style={styles.buttons}>🖨</Text>
+						<Pressable style={styles.buttonBackground} title="printers" onPress={() => onPressMapButton("printers")}>
+							<Image style={styles.buttons} source={require("../assets/printer-button.png")}></Image>
 						</Pressable>
 						<Text style={styles.underButtonText}>Printers</Text>
 					</View>
 
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable style={styles.closerMapButtons} title="Apps" onPress={() => navigation.navigate("apps")}>
-							<Text style={styles.buttons}>📱</Text>
+						<Pressable style={styles.buttonBackground} title="Apps" onPress={() => navigation.navigate("apps")}>
+							<Image style={styles.buttons} source={require("../assets/apps-button.png")}></Image>
 						</Pressable>
 						<Text style={styles.underButtonText}>Apps</Text>
 					</View>
 
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable
-							style={styles.closerMapButtons}
-							title="Resource"
-							onPress={() => navigation.navigate("resources")}
-						>
-							<Text style={styles.buttons}>📖</Text>
+						<Pressable style={styles.buttonBackground} title="Resource" onPress={() => navigation.navigate("resources")}>
+							<Image style={styles.buttons} source={require("../assets/resources-button.png")}></Image>
 						</Pressable>
 						<Text style={styles.underButtonText}>Resources</Text>
 					</View>
@@ -174,8 +166,8 @@ const styles = StyleSheet.create({
 		marginTop: 125,
 	},
 
-	buildingsButton: {
-		borderRadius: 100,
+	buttonBackground: {
+		borderRadius: 25,
 		height: 80,
 		width: 80,
 		alignItems: "center",
@@ -210,35 +202,10 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 
-	mapButtons: {
-		borderRadius: 100,
-		height: 80,
-		width: 80,
-		alignItems: "center",
-		justifyContent: "center",
-		backgroundColor: "#3265CB",
-	},
-
-	closerMapButtons: {
-		borderRadius: 100,
-		height: 80,
-		width: 80,
-		alignItems: "center",
-		justifyContent: "center",
-		backgroundColor: "#3265CB",
-	},
-
-	newMapButtons: {
-		borderRadius: 100,
-		height: 80,
-		width: 80,
-		alignItems: "center",
-		justifyContent: "center",
-		backgroundColor: "#3265CB",
-	},
-
 	buttons: {
 		fontSize: 50,
+		width: 60,
+		height: 60,
 		color: "white",
 		alignContent: "center",
 		justifyContent: "center",
@@ -267,13 +234,5 @@ const styles = StyleSheet.create({
 		marginBottom: 0,
 		height: 400,
 		width: 400,
-	},
-	DiningButton: {
-		borderRadius: 100,
-		height: 80,
-		width: 80,
-		alignItems: "center",
-		justifyContent: "center",
-		backgroundColor: "#3265CB",
 	},
 });
