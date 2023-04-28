@@ -1,10 +1,10 @@
 import { StatusBar } from "expo-status-bar";
-import { Pressable, StyleSheet, Text, View, ImageBackground, Animated, Image } from "react-native";
+import { Pressable, StyleSheet, Text, View, ImageBackground, Animated, Image, TouchableHighlight } from "react-native";
 import React, { useEffect, useState, useRef } from "react";
 
 export default function HomeScreen({ navigation }) {
 	const hide = false;
-	function onPressMapButton(content) {
+	function onPressMapButton(content, ) {
 		switch (content) {
 			case "buildings":
 				navigation.navigate("maps", { content: content });
@@ -41,23 +41,23 @@ export default function HomeScreen({ navigation }) {
 				<LoadAnimation>
 				<View style={styles.topButtonRow}>
 					<View style={styles.buttonAndTextView}>
-						<Pressable style={styles.buttonBackground} title="Tunnels" onPress={() => onPressMapButton("tunnels")}>
+						<TouchableHighlight style={styles.buttonBackground} underlayColor={"#122f6e"} title="Tunnels" onPress={() => onPressMapButton("tunnels")}>
 						<Image style={styles.buttons} source={require("../assets/tunnel-button.png")}></Image>
-						</Pressable>
+						</TouchableHighlight>
 						<Text style={styles.underButtonText}>Tunnels</Text>
 					</View>
 
 					<View style={styles.buttonAndTextView}>
-						<Pressable style={styles.buttonBackground} title="Buildings" onPress={() => onPressMapButton("buildings")}>
+						<TouchableHighlight style={styles.buttonBackground} underlayColor={"#122f6e"} title="Buildings" onPress={() => onPressMapButton("buildings")}>
 							<Image style={styles.buttons} source={require("../assets/buildings-button.png")}></Image>
-						</Pressable>
+						</TouchableHighlight>
 						<Text style={styles.underButtonText}>{"Buildings"}</Text>
 					</View>
 
 					<View style={styles.buttonAndTextView}>
-						<Pressable style={styles.buttonBackground} title="Blue Lights" onPress={() => onPressMapButton("blue Lights")}>
+						<TouchableHighlight style={styles.buttonBackground} underlayColor={"#122f6e"} title="Blue Lights" onPress={() => onPressMapButton("blue Lights")}>
 							<Image style={styles.buttons} source={require("../assets/bluelights-button.png")}></Image>
-						</Pressable>
+						</TouchableHighlight>
 						<Text style={styles.underButtonText}>Blue Lights</Text>
 					</View>
 
@@ -67,23 +67,23 @@ export default function HomeScreen({ navigation }) {
 				<LoadAnimation>
 				<View style={styles.secondButtonRow}>
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable style={styles.buttonBackground} title="Dining Information" onPress={() => navigation.navigate("dining")}>
+						<TouchableHighlight style={styles.buttonBackground} underlayColor={"#122f6e"} title="Dining Information" onPress={() => navigation.navigate("dining")}>
 							<Image style={styles.buttons} source={require("../assets/dining-button.png")}></Image>
-						</Pressable>
+						</TouchableHighlight>
 						<Text style={styles.underButtonText}>{"   Dining Info"}</Text>
 					</View>
 
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable style={styles.buttonBackground} title="Food" onPress={() => onPressMapButton("food")}>
+						<TouchableHighlight style={styles.buttonBackground} underlayColor={"#122f6e"} title="Food" onPress={() => onPressMapButton("food")}>
 							<Image style={styles.buttons} source={require("../assets/food-button.png")}></Image>
-						</Pressable>
+						</TouchableHighlight>
 						<Text style={styles.underButtonText}>Food</Text>
 					</View>
 
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable style={styles.buttonBackground} title="Food" onPress={() => navigation.navigate("events")}>
+						<TouchableHighlight style={styles.buttonBackground} underlayColor={"#122f6e"} title="Food" onPress={() => navigation.navigate("events")}>
 							<Image style={styles.buttons} source={require("../assets/event-button.png")}></Image>
-						</Pressable>
+						</TouchableHighlight>
 						<Text style={styles.underButtonText}>Events</Text>
 					</View>
 				</View>
@@ -95,23 +95,23 @@ export default function HomeScreen({ navigation }) {
 				<View style={styles.thirdButtonRow}>
 
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable style={styles.buttonBackground} title="printers" onPress={() => onPressMapButton("printers")}>
+						<TouchableHighlight style={styles.buttonBackground} underlayColor={"#122f6e"} title="printers" onPress={() => onPressMapButton("printers")}>
 							<Image style={styles.buttons} source={require("../assets/printer-button.png")}></Image>
-						</Pressable>
+						</TouchableHighlight>
 						<Text style={styles.underButtonText}>Printers</Text>
 					</View>
 
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable style={styles.buttonBackground} title="Apps" onPress={() => navigation.navigate("apps")}>
+						<TouchableHighlight style={styles.buttonBackground} underlayColor={"#122f6e"} title="Apps" onPress={() => navigation.navigate("apps")}>
 							<Image style={styles.buttons} source={require("../assets/apps-button.png")}></Image>
-						</Pressable>
+						</TouchableHighlight>
 						<Text style={styles.underButtonText}>Apps</Text>
 					</View>
 
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable style={styles.buttonBackground} title="Resource" onPress={() => navigation.navigate("resources")}>
+						<TouchableHighlight style={styles.buttonBackground} underlayColor={"#122f6e"} title="Resource" onPress={() => navigation.navigate("resources")}>
 							<Image style={styles.buttons} source={require("../assets/resources-button.png")}></Image>
-						</Pressable>
+						</TouchableHighlight>
 						<Text style={styles.underButtonText}>Resources</Text>
 					</View>
 				</View>
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
 
 	buttonBackground: {
 		borderRadius: 25,
-		height: 80,
+		height: 85,
 		width: 80,
 		alignItems: "center",
 		justifyContent: "center",
@@ -213,6 +213,7 @@ const styles = StyleSheet.create({
 
 	underButtonText: {
 		fontSize: 12,
+		fontWeight: "bold",
 		color: "#d9d9d9",
 		marginTop: 5,
 	},
