@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import { Pressable, StyleSheet, Text, View, ImageBackground } from "react-native";
-import React, { useEffect, useState } from "react";
+import { Pressable, StyleSheet, Text, View, ImageBackground, Animated } from "react-native";
+import React, { useEffect, useState, useRef } from "react";
 
 export default function HomeScreen({ navigation }) {
 	const hide = false;
@@ -37,8 +37,16 @@ export default function HomeScreen({ navigation }) {
 		<View style={styles.container}>
 			<ImageBackground source={require("../assets/path_icon.png")} style={styles.logo}>
 				<ImageBackground source={require("../assets/BlueTri.png")} style={styles.welcomeUp}></ImageBackground>
-
+				
+				<LoadAnimation>
 				<View style={styles.topButtonRow}>
+					<View style={styles.buttonAndTextView}>
+						<Pressable style={styles.mapButtons} title="Tunnels" onPress={() => onPressMapButton("tunnels")}>
+							<Text style={styles.buttons}>🌉</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Tunnels</Text>
+					</View>
+
 					<View style={styles.buttonAndTextView}>
 						<Pressable style={styles.buildingsButton} title="Buildings" onPress={() => onPressMapButton("buildings")}>
 							<Text style={styles.buttons}>🏫</Text>
@@ -46,7 +54,19 @@ export default function HomeScreen({ navigation }) {
 						<Text style={styles.underButtonText}>{"Buildings"}</Text>
 					</View>
 
-					<View>
+					<View style={styles.buttonAndTextView}>
+							<Pressable style={styles.mapButtons} title="Blue Lights" onPress={() => onPressMapButton("blue Lights")}>
+								<Text style={styles.buttons}>🚔</Text>
+							</Pressable>
+							<Text style={styles.underButtonText}>Blue Lights</Text>
+					</View>
+
+				</View>
+				</LoadAnimation>
+
+				<LoadAnimation>
+				<View style={styles.secondButtonRow}>
+					<View style={styles.buttonAndTextViewRow3}>
 						<Pressable
 							style={styles.DiningButton}
 							title="Dining Information"
@@ -56,27 +76,7 @@ export default function HomeScreen({ navigation }) {
 						</Pressable>
 						<Text style={styles.underButtonText}>{"   Dining Info"}</Text>
 					</View>
-				</View>
 
-				<View style={styles.secondButtonRow}>
-					<View style={styles.buttonAndTextView}>
-						<Pressable style={styles.mapButtons} title="Tunnels" onPress={() => onPressMapButton("tunnels")}>
-							<Text style={styles.buttons}>🌉</Text>
-						</Pressable>
-						<Text style={styles.underButtonText}>Tunnels</Text>
-					</View>
-
-						<View style={styles.buttonAndTextView}>
-							<Pressable style={styles.mapButtons} title="Blue Lights" onPress={() => onPressMapButton("blue Lights")}>
-								<Text style={styles.buttons}>🚔</Text>
-							</Pressable>
-							<Text style={styles.underButtonText}>Blue Lights</Text>
-						</View>
-				</View>
-
-				<View style={styles.underButtonTextRow}></View>
-
-				<View style={styles.thirdButtonRow}>
 					<View style={styles.buttonAndTextViewRow3}>
 						<Pressable style={styles.closerMapButtons} title="Food" onPress={() => onPressMapButton("food")}>
 							<Text style={styles.buttons}>🍔</Text>
@@ -85,19 +85,24 @@ export default function HomeScreen({ navigation }) {
 					</View>
 
 					<View style={styles.buttonAndTextViewRow3}>
-						<Pressable style={styles.closerMapButtons} title="printers" onPress={() => onPressMapButton("printers")}>
-							<Text style={styles.buttons}>🖨</Text>
-						</Pressable>
-						<Text style={styles.underButtonText}>Printers</Text>
-					</View>
-				</View>
-
-				<View style={styles.thirdButtonRow}>
-					<View style={styles.buttonAndTextViewRow3}>
 						<Pressable style={styles.closerMapButtons} title="Food" onPress={() => navigation.navigate("events")}>
 							<Text style={styles.buttons}>📰</Text>
 						</Pressable>
 						<Text style={styles.underButtonText}>Events</Text>
+					</View>
+				</View>
+				</LoadAnimation>
+			
+				<View style={styles.underButtonTextRow}></View>
+
+				<LoadAnimation>
+				<View style={styles.thirdButtonRow}>
+
+					<View style={styles.buttonAndTextViewRow3}>
+						<Pressable style={styles.closerMapButtons} title="printers" onPress={() => onPressMapButton("printers")}>
+							<Text style={styles.buttons}>🖨</Text>
+						</Pressable>
+						<Text style={styles.underButtonText}>Printers</Text>
 					</View>
 
 					<View style={styles.buttonAndTextViewRow3}>
@@ -106,6 +111,7 @@ export default function HomeScreen({ navigation }) {
 						</Pressable>
 						<Text style={styles.underButtonText}>Apps</Text>
 					</View>
+
 					<View style={styles.buttonAndTextViewRow3}>
 						<Pressable
 							style={styles.closerMapButtons}
@@ -117,11 +123,35 @@ export default function HomeScreen({ navigation }) {
 						<Text style={styles.underButtonText}>Resources</Text>
 					</View>
 				</View>
+				</LoadAnimation>
+
 
 				<ImageBackground source={require("../assets/WelBot.png")} style={styles.welcomeDown}></ImageBackground>
 			</ImageBackground>
 		</View>
 	);
+}
+
+const LoadAnimation = props => {
+	const buttonAnim = useRef(new Animated.Value(0)).current;
+
+	useEffect(() => {
+		Animated.timing(buttonAnim, {
+			toValue: 1,
+			duration: 1000,
+			useNativeDriver: true
+		}).start();
+	}, [buttonAnim]);
+
+	return (
+		<Animated.View
+			style={{
+				...props.style,
+				opacity: buttonAnim,
+			}}>
+			{props.children}
+		</Animated.View>
+	)
 }
 
 // Everything below is used to style this screen
@@ -141,7 +171,7 @@ const styles = StyleSheet.create({
 	topButtonRow: {
 		flexDirection: "row",
 		alignItems: "center",
-		marginTop: 100,
+		marginTop: 125,
 	},
 
 	buildingsButton: {
@@ -157,13 +187,12 @@ const styles = StyleSheet.create({
 	secondButtonRow: {
 		flexDirection: "row",
 		alignItems: "center",
-		justifyContent: "space-between",
-		marginTop: 10,
+		marginTop: 20,
 	},
 
 	buttonAndTextView: {
-		marginLeft: 25.5,
-		marginRight: 25.5,
+		marginLeft: 15,
+		marginRight: 10,
 		alignItems: "center",
 		justifyContent: "center",
 	},
@@ -171,12 +200,11 @@ const styles = StyleSheet.create({
 	thirdButtonRow: {
 		flexDirection: "row",
 		alignItems: "center",
-		justifyContent: "space-between",
-		marginTop: 10,
+		marginTop: 20,
 	},
 
 	buttonAndTextViewRow3: {
-		marginLeft: 10,
+		marginLeft: 15,
 		marginRight: 10,
 		alignItems: "center",
 		justifyContent: "center",
@@ -239,19 +267,6 @@ const styles = StyleSheet.create({
 		marginBottom: 0,
 		height: 400,
 		width: 400,
-	},
-
-	buttonAndTextViewRow4: {
-		marginLeft: 10,
-		marginRight: 10,
-		alignItems: "center",
-		justifyContent: "center",
-	},
-	fourthButtonRow: {
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-between",
-		marginTop: 10,
 	},
 	DiningButton: {
 		borderRadius: 100,
