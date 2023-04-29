@@ -32,9 +32,9 @@ export default function WelcomeScreen({ navigation }) {
 				source={require("../assets/WelBot.png")}
 					style={styles.welcomeDown}
 				>
-					<Text style={styles.mappic}>{"🗺️"}</Text>
+					<ImageBackground source={require("../assets/world-map.png")} style={styles.mappic}></ImageBackground>
 					
-				<Text style={styles.feattxt}>{"Featuring real time navigation"}</Text>
+				<Text style={styles.feattxt}>{"Featuring indoor navigation"}</Text>
 				<Text style={styles.smlltxt}>{"Never has it been so easy \n  to get around campus!"}</Text>
 			
 				
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "#393939",
 		paddingHorizontal: 0,
 		marginTop: 100,
+		top:-20,
 	},
 
 	signupBtn: {
@@ -105,19 +106,20 @@ const styles = StyleSheet.create({
 	},
 	feattxt:{
 		fontWeight:"bold",
-		top:-90,
+		top:-100,
 		color:"white",
 		fontSize:18,
 		alignContent:"center"
 	},
 	smlltxt:{
-		top:-90,
+		top:-100,
 		color:"white", 
 		fontSize:16,
 	},
 
 	mappic:{
-		top:-70,
-		fontSize:150,
+		top:-90,
+		height:150,
+		width:150,
 	},
 });
