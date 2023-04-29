@@ -26,17 +26,15 @@ export default function WelcomeScreen({ navigation }) {
 				>
 					<Text style={styles.buttons}>{"Homepage"} </Text>
 				</Pressable>
+				
 				<ImageBackground
 
 				source={require("../assets/WelBot.png")}
 					style={styles.welcomeDown}
 				>
-					<ImageBackground
-				style={styles.mark}
-				source={require("../assets/marker.png")}
-				>
-				</ImageBackground>
-				<Text style={styles.feattxt}>{"Featuring: real time navigation"}</Text>
+					<Text style={styles.mappic}>{"🗺️"}</Text>
+					
+				<Text style={styles.feattxt}>{"Featuring real time navigation"}</Text>
 				<Text style={styles.smlltxt}>{"Never has it been so easy \n  to get around campus!"}</Text>
 			
 				
@@ -99,27 +97,27 @@ const styles = StyleSheet.create({
 		alignItems:"center"
 	},
 	name:{
-		fontSize:70,
+		fontSize:60,
 		color:"#b8b8b8", //"#1132f0",
 		fontStyle:"italic",
 		top:60,
 		fontWeight:"bold"
 	},
-	mark:{
-		top:-30,
-		height:200, 
-		width:200,
-	},
 	feattxt:{
 		fontWeight:"bold",
-		top:-34,
+		top:-90,
 		color:"white",
 		fontSize:18,
 		alignContent:"center"
 	},
 	smlltxt:{
-		top:-34,
+		top:-90,
 		color:"white", 
 		fontSize:16,
+	},
+
+	mappic:{
+		top:-70,
+		fontSize:150,
 	},
 });
