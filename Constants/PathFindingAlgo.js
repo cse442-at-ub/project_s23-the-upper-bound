@@ -2296,21 +2296,21 @@ export function loadCenterGraphEdges() {
 	centerGraph.addEdge(baldyHallNodes.nodes[1], oBrianHallNodes.nodes[1], "Travel through the short Baldy Hall and O'Brian Hall tunnel.");
 	centerGraph.addEdge(oBrianHallNodes.nodes[1], baldyHallNodes.nodes[1], "Travel through the short Baldy Hall and O'Brian Hall tunnel.");
 
-	centerGraph.addEdge(oBrianHallNodes.nodes[1], oBrianHallNodes.nodes[2], "TBA-");
-	centerGraph.addEdge(oBrianHallNodes.nodes[2], oBrianHallNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(oBrianHallNodes.nodes[1], oBrianHallNodes.nodes[2], "Go straight ahead to find room 201 directly in front of you.");
+	centerGraph.addEdge(oBrianHallNodes.nodes[2], oBrianHallNodes.nodes[1], "Turn left and continue until the entrance to a lounge area is on your left and the doorway to Park Hall is on the right.");
 
-	centerGraph.addEdge(oBrianHallNodes.nodes[1], oBrianHallNodes.nodes[0], "TBA-");
-	centerGraph.addEdge(oBrianHallNodes.nodes[0], oBrianHallNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(oBrianHallNodes.nodes[1], oBrianHallNodes.nodes[0], "Turn to the doorway for the O'Brian Hall and Park Hall tunnel. Reach the doorway and stop.");
+	centerGraph.addEdge(oBrianHallNodes.nodes[0], oBrianHallNodes.nodes[1], "Move ahead until there is a doorway to Baldy Hall on the right, and you can see a hall on the left.");
 
-	centerGraph.addEdge(oBrianHallNodes.nodes[2], oBrianHallNodes.nodes[3], "TBA-");
-	centerGraph.addEdge(oBrianHallNodes.nodes[3], oBrianHallNodes.nodes[2], "TBA-");
+	centerGraph.addEdge(oBrianHallNodes.nodes[2], oBrianHallNodes.nodes[3], "Turn right and continue straight down the hall until room 206 is on your right.");
+	centerGraph.addEdge(oBrianHallNodes.nodes[3], oBrianHallNodes.nodes[2], "Turn right and continue straight down the hall until room 201 is on your right.");
 
-	centerGraph.addEdge(oBrianHallNodes.nodes[3], oBrianHallNodes.nodes[4], "TBA-");
-	centerGraph.addEdge(oBrianHallNodes.nodes[4], oBrianHallNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(oBrianHallNodes.nodes[3], oBrianHallNodes.nodes[4], "Turn left and continue straight down the hall until you reach the doorway to the O'Brian Hall and Norton Hall tunnel on the right.");
+	centerGraph.addEdge(oBrianHallNodes.nodes[4], oBrianHallNodes.nodes[3], "Take the long hall on your left. Continue until room 206 is in front of you.");
 
 	// Norton Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(oBrianHallNodes.nodes[4], nortonHallNodes.nodes[0], "TBA-O'BRIAN to NORTON");
-	centerGraph.addEdge(nortonHallNodes.nodes[0], oBrianHallNodes.nodes[4], "TBA-NORTON to O'BRIAN");
+	centerGraph.addEdge(oBrianHallNodes.nodes[4], nortonHallNodes.nodes[0], "Travel through the O'Brian Hall and Norton Hall tunnel.");
+	centerGraph.addEdge(nortonHallNodes.nodes[0], oBrianHallNodes.nodes[4], "Travel through the O'Brian Hall and Norton Hall tunnel.");
 
 	centerGraph.addEdge(nortonHallNodes.nodes[0], nortonHallNodes.nodes[1], "TBA-");
 	centerGraph.addEdge(nortonHallNodes.nodes[1], nortonHallNodes.nodes[0], "TBA-");
