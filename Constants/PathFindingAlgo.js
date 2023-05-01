@@ -2286,15 +2286,15 @@ export function loadCenterGraphEdges() {
 	centerGraph.addEdge(sleeHallNodes.nodes[0], bairdHallNodes.nodes[3], "Travel through the Baird Hall and Slee Hall tunnel.");
 
 	// Baldy Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(lockwoodNodes.nodes[5], baldyHallNodes.nodes[0], "TBA-LOCKWOOD to BALDY");
-	centerGraph.addEdge(baldyHallNodes.nodes[0], lockwoodNodes.nodes[5], "TBA-BALDY to LOCKWOOD");
+	centerGraph.addEdge(lockwoodNodes.nodes[5], baldyHallNodes.nodes[0], "Travel through the short Lockwood Library and Baldy Hall tunnel.");
+	centerGraph.addEdge(baldyHallNodes.nodes[0], lockwoodNodes.nodes[5], "Travel through the short Lockwood Library and Baldy Hall tunnel.");
 
-	centerGraph.addEdge(baldyHallNodes.nodes[0], baldyHallNodes.nodes[1], "TBA-");
-	centerGraph.addEdge(baldyHallNodes.nodes[1], baldyHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(baldyHallNodes.nodes[0], baldyHallNodes.nodes[1], "Go straight down the long hall until a sign is overhead, which is giving directions to the Math Place and the English Language Institute.");
+	centerGraph.addEdge(baldyHallNodes.nodes[1], baldyHallNodes.nodes[0], "Go straight down the long hall until you arrive at the doorway for the Lockwood Library and Baldy Hall tunnel. Elevators will be on your left.");
 
 	// O'Brain Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(baldyHallNodes.nodes[1], oBrianHallNodes.nodes[1], "TBA-BALDY to O'BRIAN");
-	centerGraph.addEdge(oBrianHallNodes.nodes[1], baldyHallNodes.nodes[1], "TBA-O'BRIAN to BALDY");
+	centerGraph.addEdge(baldyHallNodes.nodes[1], oBrianHallNodes.nodes[1], "Travel through the short Baldy Hall and O'Brian Hall tunnel.");
+	centerGraph.addEdge(oBrianHallNodes.nodes[1], baldyHallNodes.nodes[1], "Travel through the short Baldy Hall and O'Brian Hall tunnel.");
 
 	centerGraph.addEdge(oBrianHallNodes.nodes[1], oBrianHallNodes.nodes[2], "TBA-");
 	centerGraph.addEdge(oBrianHallNodes.nodes[2], oBrianHallNodes.nodes[1], "TBA-");
