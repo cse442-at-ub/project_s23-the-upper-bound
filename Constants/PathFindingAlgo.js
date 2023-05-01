@@ -2373,37 +2373,37 @@ export function loadLeftGraphNodes() {
 
 export function loadLeftGraphEdges() {
 	// Cooke Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(cookeHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
-	centerGraph.addEdge(cookeHochMidpoint.nodes[0], cookeHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(cookeHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "With room 114 on your right, go straight ahead until an exit sign is directly above you.");
+	centerGraph.addEdge(cookeHochMidpoint.nodes[0], cookeHallNodes.nodes[0], "Facing the the tunnel to Natural Science Complex, go left and stop once room 114 is on your left.");
 
 	// Hochstetter Hall Edges -----------------------------------------------------------------
-	centerGraph.addEdge(hochstetterHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
-	centerGraph.addEdge(cookeHochMidpoint.nodes[0], hochstetterHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(hochstetterHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "With room H117 on your right, go straight ahead until an exit sign is directly above you.");
+	centerGraph.addEdge(cookeHochMidpoint.nodes[0], hochstetterHallNodes.nodes[0], "Facing the the tunnel to Natural Science Complex, go right and stop once room H117 is on your left.");
 
 	// NSC Edges ------------------------------------------------------------------------------
-	centerGraph.addEdge(cookeHochMidpoint.nodes[0], nscNodes.nodes[0], "TBA-");
-	centerGraph.addEdge(nscNodes.nodes[0], cookeHochMidpoint.nodes[0], "TBA-");
+	centerGraph.addEdge(cookeHochMidpoint.nodes[0], nscNodes.nodes[0], "Travel through the Cooke/Hochstetter Hall and Natural Science Complex tunnel.");
+	centerGraph.addEdge(nscNodes.nodes[0], cookeHochMidpoint.nodes[0], "Travel through the Cooke/Hochstetter Hall and Natural Science Complex tunnel.");
 
-	centerGraph.addEdge(nscNodes.nodes[0], nscNodes.nodes[1], "TBA-");
-	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[0], nscNodes.nodes[1], "Go straight ahead until an exit sign is directly above. Pivot right for Talbert Hall. Pivot left for Mathematics Building.");
+	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[0], "Go to the doorway of the Cooke/Hochstetter Hall and Natural Science Complex tunnel. Restrooms will be on yor left.");
 
-	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[2], "TBA-");
-	centerGraph.addEdge(nscNodes.nodes[2], nscNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[2], "Reach the doorway to the Talbert Hall and Natural Science Complex tunnel.");
+	centerGraph.addEdge(nscNodes.nodes[2], nscNodes.nodes[1], "Continue straight ahead until your are directly underneath an exit sign. Pivot right for Fronczak Hall. Pivot left for Cooke or Hochstetter Hall.");
 
-	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[3], "TBA-");
-	centerGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[3], "Continue until an exit sign is directly above you.");
+	centerGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[1], "Go straight until an exit sign is directly above you. Pivot Right for Cooke and Hochstetter Halls. Pivot left for Fronczac Hall.");
 
-	centerGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[4], "TBA-");
-	centerGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[4], "Take the doorway on the right. Continue straight. A safety rail should be directly in front of you.");
+	centerGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[3], "Take the hall on the right. After passing the doorway, stop underneath the exit sign on the ceiling.");
 
-	centerGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[5], "TBA-");
-	centerGraph.addEdge(nscNodes.nodes[5], nscNodes.nodes[4], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[5], "Turn left and continue straight down the hall until the entry to the Natural Science Complex and Mathematics Building tunnel is on the right.");
+	centerGraph.addEdge(nscNodes.nodes[5], nscNodes.nodes[4], "Take the hall on your left straight down until there is another hall on your right.");
 
-	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[6], "TBA-");
-	centerGraph.addEdge(nscNodes.nodes[6], nscNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[6], "Take the hall towards Fronczak Hall, and stop underneath the second exit sign you see. Another hall will be on the right.");
+	centerGraph.addEdge(nscNodes.nodes[6], nscNodes.nodes[1], "Take the hall on the left and stop at the intersection of halls. Pivot right for the Math Building. Pivot Left for Talbert Hall.");
 
-	centerGraph.addEdge(nscNodes.nodes[6], nscNodes.nodes[7], "TBA-");
-	centerGraph.addEdge(nscNodes.nodes[7], nscNodes.nodes[6], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[6], nscNodes.nodes[7], "Take the hall on the right, and stop at the doorway.");
+	centerGraph.addEdge(nscNodes.nodes[7], nscNodes.nodes[6], "Move forward and stop underneath the exit sign on the ceiling. A hall will be on your left.");
 
 	// Mathematics Building Edges ----------------------------------------------------------------
 	centerGraph.addEdge(nscNodes.nodes[5], mathBuildingNodes.nodes[0], "Travel through the Natural Science Complex and Mathematics Building tunnel.");
