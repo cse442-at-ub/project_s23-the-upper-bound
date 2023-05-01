@@ -2406,71 +2406,51 @@ export function loadLeftGraphEdges() {
 	centerGraph.addEdge(nscNodes.nodes[7], nscNodes.nodes[6], "TBA-");
 
 	// Mathematics Building Edges ----------------------------------------------------------------
-	centerGraph.addEdge(nscNodes.nodes[5], mathBuildingNodes.nodes[0], "TBA-");
-	centerGraph.addEdge(mathBuildingNodes.nodes[0], nscNodes.nodes[5], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[5], mathBuildingNodes.nodes[0], "Travel through the Natural Science Complex and Mathematics Building tunnel.");
+	centerGraph.addEdge(mathBuildingNodes.nodes[0], nscNodes.nodes[5], "Travel through the Natural Science Complex and Mathematics Building tunnel.");
 
 	// Fronczak Hall Edges ------------------------------------------------------------------------
-	centerGraph.addEdge(nscNodes.nodes[7], fronczakHallNodes.nodes[0], "TBA-");
-	centerGraph.addEdge(fronczakHallNodes.nodes[0], nscNodes.nodes[7], "TBA-");
+	centerGraph.addEdge(nscNodes.nodes[7], fronczakHallNodes.nodes[0], "Travel through the Natural Science Complex and Fronczak Hall tunnel.");
+	centerGraph.addEdge(fronczakHallNodes.nodes[0], nscNodes.nodes[7], "Travel through the Natural Science Complex and Fronczak Hall tunnel.");
 
 	// Talbert Hall Edges ------------------------------------------------------------------------
-	centerGraph.addEdge(nscNodes.nodes[2], talbertHallNodes.nodes[0], "TBA-NSC TO TALBERT");
-	centerGraph.addEdge(talbertHallNodes.nodes[0], nscNodes.nodes[2], "TBA-TALBERT TO NSC");
+	centerGraph.addEdge(nscNodes.nodes[2], talbertHallNodes.nodes[0], "Travel through the Talbert Hall and Natural Science Complex tunnel.");
+	centerGraph.addEdge(talbertHallNodes.nodes[0], nscNodes.nodes[2], "Travel through the Talbert Hall and Natural Science Complex tunnel.");
 
-	centerGraph.addEdge(talbertHallNodes.nodes[0], talbertHallNodes.nodes[1], "TBA-");
-	centerGraph.addEdge(talbertHallNodes.nodes[1], talbertHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(talbertHallNodes.nodes[0], talbertHallNodes.nodes[1], "Go down the long hall ahead until a small entryway with an elevator is on your left.");
+	centerGraph.addEdge(talbertHallNodes.nodes[1], talbertHallNodes.nodes[0], "Take the long hall on the right and continue until stairs S114 are on your right.");
 
-	centerGraph.addEdge(talbertHallNodes.nodes[1], talbertHallNodes.nodes[2], "TBA-turn left and enter the elevator");
-	centerGraph.addEdge(
-		talbertHallNodes.nodes[2],
-		talbertHallNodes.nodes[1],
-		"TBA-Exit the elevator, turn left, and move into hallway directly in front of you."
-	);
+	centerGraph.addEdge(talbertHallNodes.nodes[1], talbertHallNodes.nodes[2], "Go into the entryway on the left. Enter the elevator.");
+	centerGraph.addEdge(talbertHallNodes.nodes[2], talbertHallNodes.nodes[1], "Exit the elevator, turn left, and move into hallway directly in front of you.");
 
-	centerGraph.addEdge(
-		talbertHallNodes.nodes[2],
-		talbertHallNodes.nodes[3],
-		"TBA-Take the elevator up to the 1st floor."
-	);
-	centerGraph.addEdge(
-		talbertHallNodes.nodes[3],
-		talbertHallNodes.nodes[2],
-		"TBA-Take the elevator down to the ground floor."
-	);
+	centerGraph.addEdge(talbertHallNodes.nodes[2], talbertHallNodes.nodes[3], "Take the elevator down to the ground floor.");
+	centerGraph.addEdge(talbertHallNodes.nodes[3], talbertHallNodes.nodes[2], "Take the elevator up to the first floor.");
 
-	centerGraph.addEdge(
-		talbertHallNodes.nodes[3],
-		talbertHallNodes.nodes[4],
-		"TBA-Exit the elevator, turn left, and move into hallway directly in front of you."
-	);
-	centerGraph.addEdge(talbertHallNodes.nodes[4], talbertHallNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(talbertHallNodes.nodes[3], talbertHallNodes.nodes[4], "Exit the elevator, turn left, and move into hallway directly in front of you.");
+	centerGraph.addEdge(talbertHallNodes.nodes[4], talbertHallNodes.nodes[3], "Go into the entryway on the right. Enter the elevator.");
 
-	centerGraph.addEdge(talbertHallNodes.nodes[4], talbertHallNodes.nodes[5], "TBA-");
-	centerGraph.addEdge(talbertHallNodes.nodes[5], talbertHallNodes.nodes[4], "TBA-");
+	centerGraph.addEdge(talbertHallNodes.nodes[4], talbertHallNodes.nodes[5], "Turn left and continue down the hall until room 50 is on your right.");
+	centerGraph.addEdge(talbertHallNodes.nodes[5], talbertHallNodes.nodes[4], "Continue going straight down the hall until there is a small entryway with an elevator on your right.");
 
 	// Capen Hall Edges ------------------------------------------------------------------------
-	centerGraph.addEdge(talbertHallNodes.nodes[5], capenHallNodes.nodes[0], "TBA-TALBERT TO CAPEN");
-	centerGraph.addEdge(capenHallNodes.nodes[0], talbertHallNodes.nodes[5], "TBA-CAPEN TO TALBERT");
+	centerGraph.addEdge(talbertHallNodes.nodes[5], capenHallNodes.nodes[0], "Continue going straight down the hall until you see the \"Talbert Bullpen\" on the right wall. You are now in Capen Hall.");
+	centerGraph.addEdge(capenHallNodes.nodes[0], talbertHallNodes.nodes[5], "Turn right and stop once room 50 is on your left. You are now in Talbert Hall.");
 
-	centerGraph.addEdge(capenHallNodes.nodes[0], capenHallNodes.nodes[1], "TBA-");
-	centerGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(capenHallNodes.nodes[0], capenHallNodes.nodes[1], "Turn left and go straight down the long hall. Stop after passing \"1Capen\" on your right.");
+	centerGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[0], "Turn left and continue down the long hall. Stop once you see the \"Talbert Bullpen\" at the end of the hall.");
 
-	centerGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[2], "TBA-");
-	centerGraph.addEdge(capenHallNodes.nodes[2], capenHallNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[2], "Turn right and continue straight down until \"The Buffalo Room\" is on your right.");
+	centerGraph.addEdge(capenHallNodes.nodes[2], capenHallNodes.nodes[1], "Go straight and stop before an exit sign is almost above you. There will be a hall on your left.");
 
 	// Norton Hall Ground Floor Edges
-	centerGraph.addEdge(capenHallNodes.nodes[2], nortonHallNodes.nodes[6], "TBA-CAPEN TO NORTON GROUND FLOOR");
-	centerGraph.addEdge(nortonHallNodes.nodes[6], capenHallNodes.nodes[2], "TBA-NORTON GROUND FLOOR TO CAPEN");
+	centerGraph.addEdge(capenHallNodes.nodes[2], nortonHallNodes.nodes[6], "Continue going straight until the room 05 is on your left.");
+	centerGraph.addEdge(nortonHallNodes.nodes[6], capenHallNodes.nodes[2], "Continue going straight until \"The Buffalo Room\" is on your left.");
 
-	centerGraph.addEdge(nortonHallNodes.nodes[6], nortonHallNodes.nodes[7], "TBA-");
-	centerGraph.addEdge(nortonHallNodes.nodes[7], nortonHallNodes.nodes[6], "TBA-");
+	centerGraph.addEdge(nortonHallNodes.nodes[6], nortonHallNodes.nodes[7], "Continue down the long hall until there is an elevator on your right. Knox Hall will be directly ahead.");
+	centerGraph.addEdge(nortonHallNodes.nodes[7], nortonHallNodes.nodes[6], "Take the long hall down until room 05 is on your right.");
 
-	centerGraph.addEdge(nortonHallNodes.nodes[7], nortonHallNodes.nodes[2], "TBA-Take the elevator up to the 2nd floor.");
-	centerGraph.addEdge(
-		nortonHallNodes.nodes[2],
-		nortonHallNodes.nodes[7],
-		"TBA-Take the elevator down to the ground floor."
-	);
+	centerGraph.addEdge(nortonHallNodes.nodes[7], nortonHallNodes.nodes[2], "Take the elevator up to the 2nd floor.");
+	centerGraph.addEdge(nortonHallNodes.nodes[2], nortonHallNodes.nodes[7], "Take the elevator down to the ground floor. Once you exit, the women's restroom will be in front of you.");
 }
 
 // ###################################################################################################
