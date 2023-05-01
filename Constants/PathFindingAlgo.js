@@ -2237,53 +2237,53 @@ export function loadCenterGraphEdges() {
 	);
 
 	// Lockwood Edges ----------------------------------------------------------------------
-	centerGraph.addEdge(lockwoodNodes.nodes[0], studentUnionNodes.nodes[0], "TBA-SU to LOCKWOOD to get into SU");
-	centerGraph.addEdge(studentUnionNodes.nodes[0], lockwoodNodes.nodes[0], "TBA-SU to LOCKWOOD to get into Lockwood");
+	centerGraph.addEdge(lockwoodNodes.nodes[0], studentUnionNodes.nodes[0], "Travel through the Student Union and Lockwood Library tunnel.");
+	centerGraph.addEdge(studentUnionNodes.nodes[0], lockwoodNodes.nodes[0], "Travel through the Student Union and Lockwood Library tunnel.");
 
-	centerGraph.addEdge(lockwoodNodes.nodes[0], lockwoodNodes.nodes[1], "TBA-");
-	centerGraph.addEdge(lockwoodNodes.nodes[1], lockwoodNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(lockwoodNodes.nodes[0], lockwoodNodes.nodes[1], "Continue down the hall until room 215 is on your right.");
+	centerGraph.addEdge(lockwoodNodes.nodes[1], lockwoodNodes.nodes[0], "Go straight down the hall until you reach the doorway to the Student Union and Lockwood Library tunnel");
 
-	centerGraph.addEdge(lockwoodNodes.nodes[1], lockwoodNodes.nodes[2], "TBA-");
-	centerGraph.addEdge(lockwoodNodes.nodes[2], lockwoodNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(lockwoodNodes.nodes[1], lockwoodNodes.nodes[2], "Continue through the hall until you can see the windows of Level Up on your right.");
+	centerGraph.addEdge(lockwoodNodes.nodes[2], lockwoodNodes.nodes[1], "Go down the hall until room 215 is on your left.");
 
-	centerGraph.addEdge(lockwoodNodes.nodes[2], lockwoodNodes.nodes[3], "TBA-");
-	centerGraph.addEdge(lockwoodNodes.nodes[3], lockwoodNodes.nodes[2], "TBA-");
+	centerGraph.addEdge(lockwoodNodes.nodes[2], lockwoodNodes.nodes[3], "Approach the doorway for the Lockwood library and Clemens Hall tunnel on ahead on your left.");
+	centerGraph.addEdge(lockwoodNodes.nodes[3], lockwoodNodes.nodes[2], "If coming from Clemens Hall turn right and continue until Level Up windows are on your left. Otherwise, turn left and do the same.");
 
-	centerGraph.addEdge(lockwoodNodes.nodes[3], lockwoodNodes.nodes[4], "TBA-");
-	centerGraph.addEdge(lockwoodNodes.nodes[4], lockwoodNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(lockwoodNodes.nodes[3], lockwoodNodes.nodes[4], "Go straight down the hall until the entrance to Level Up is on your right.");
+	centerGraph.addEdge(lockwoodNodes.nodes[4], lockwoodNodes.nodes[3], "Go straight down the hall until you reach the doorway to the Lockwood Library and Clemens Hall tunnel.");
 
-	centerGraph.addEdge(lockwoodNodes.nodes[4], lockwoodNodes.nodes[5], "TBA-");
-	centerGraph.addEdge(lockwoodNodes.nodes[5], lockwoodNodes.nodes[4], "TBA-");
+	centerGraph.addEdge(lockwoodNodes.nodes[4], lockwoodNodes.nodes[5], "Continue down the hallway on your left until you reach the Lockwood Library and Baldy Hall tunnel doorway.");
+	centerGraph.addEdge(lockwoodNodes.nodes[5], lockwoodNodes.nodes[4], "Continue down the hallway until Level up is directly ahead and there is a hallway on your right.");
 
 	// Clemens Hall Edges ----------------------------------------------------------------------
-	centerGraph.addEdge(clemensHallNodes.nodes[0], lockwoodNodes.nodes[3], "TBA-CLEMENS to LOCKWOOD");
-	centerGraph.addEdge(lockwoodNodes.nodes[3], clemensHallNodes.nodes[0], "TBA-LOCKWOOD to CLEMENS");
+	centerGraph.addEdge(clemensHallNodes.nodes[0], lockwoodNodes.nodes[3], "Travel through the Lockwood Library and Clemens Hall tunnel.");
+	centerGraph.addEdge(lockwoodNodes.nodes[3], clemensHallNodes.nodes[0], "Travel through the Lockwood Library and Clemens Hall tunnel.");
 
-	centerGraph.addEdge(clemensHallNodes.nodes[0], clemensHallNodes.nodes[1], "TBA-");
-	centerGraph.addEdge(clemensHallNodes.nodes[1], clemensHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(clemensHallNodes.nodes[0], clemensHallNodes.nodes[1], "Take the hallway on the right and stop once you are in front UB Campus Mail mailbox.");
+	centerGraph.addEdge(clemensHallNodes.nodes[1], clemensHallNodes.nodes[0], "Turn right and continue until the Lockwood Library and Clemens Hall tunnel doorway is on your left.");
 
-	centerGraph.addEdge(clemensHallNodes.nodes[1], clemensHallNodes.nodes[2], "TBA-");
-	centerGraph.addEdge(clemensHallNodes.nodes[2], clemensHallNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(clemensHallNodes.nodes[1], clemensHallNodes.nodes[2], "Continue going down the hall until room 206 is on your left.");
+	centerGraph.addEdge(clemensHallNodes.nodes[2], clemensHallNodes.nodes[1], "Continue going down the hall until the UB Campus Mail mailbox is on your left.");
 
-	centerGraph.addEdge(clemensHallNodes.nodes[3], clemensHallNodes.nodes[2], "TBA-");
-	centerGraph.addEdge(clemensHallNodes.nodes[2], clemensHallNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(clemensHallNodes.nodes[3], clemensHallNodes.nodes[2], "Go down the hall on the right until room 206 is on your right.");
+	centerGraph.addEdge(clemensHallNodes.nodes[2], clemensHallNodes.nodes[3], "Go straight down the hall and turn left to reach blue double doors. This is Clemens Hall and Baird Hall tunnel entrance.");
 
 	// Baird Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(clemensHallNodes.nodes[3], bairdHallNodes.nodes[0], "TBA-CLEMENS to BAIRD");
-	centerGraph.addEdge(bairdHallNodes.nodes[0], clemensHallNodes.nodes[3], "TBA-BAIRD to CLEMENS");
+	centerGraph.addEdge(clemensHallNodes.nodes[3], bairdHallNodes.nodes[0], "Travel through the Clemens Hall and Baird Hall tunnel.");
+	centerGraph.addEdge(bairdHallNodes.nodes[0], clemensHallNodes.nodes[3], "Travel through the Clemens Hall and Baird Hall tunnel.");
 
-	centerGraph.addEdge(bairdHallNodes.nodes[0], bairdHallNodes.nodes[1], "TBA-");
-	centerGraph.addEdge(bairdHallNodes.nodes[1], bairdHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(bairdHallNodes.nodes[0], bairdHallNodes.nodes[1], "Approach the long hallway that is straight ahead. An exit sign will be directly above you.");
+	centerGraph.addEdge(bairdHallNodes.nodes[1], bairdHallNodes.nodes[0], "Approach the blue double doors ahead. This is the entrance to the Clemens Hall and Baird Hall tunnel.");
 
-	centerGraph.addEdge(bairdHallNodes.nodes[1], bairdHallNodes.nodes[2], "TBA-");
-	centerGraph.addEdge(bairdHallNodes.nodes[2], bairdHallNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(bairdHallNodes.nodes[1], bairdHallNodes.nodes[2], "Go down the hall until a shorter hall is on your left.");
+	centerGraph.addEdge(bairdHallNodes.nodes[2], bairdHallNodes.nodes[1], "Go down the long hall until there is an exit sign directly above you.");
 
-	centerGraph.addEdge(bairdHallNodes.nodes[2], bairdHallNodes.nodes[3], "TBA-");
-	centerGraph.addEdge(bairdHallNodes.nodes[3], bairdHallNodes.nodes[2], "TBA-");
+	centerGraph.addEdge(bairdHallNodes.nodes[2], bairdHallNodes.nodes[3], "Turn left and approach the blue double doors. This is the entrance to the Baird Hall and Slee Hall tunnel.");
+	centerGraph.addEdge(bairdHallNodes.nodes[3], bairdHallNodes.nodes[2], "Move into the long hall ahead and turn to the right.");
 
 	// Slee Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(bairdHallNodes.nodes[3], sleeHallNodes.nodes[0], "TBA-BAIRD to SLEE");
-	centerGraph.addEdge(sleeHallNodes.nodes[0], bairdHallNodes.nodes[3], "TBA-SLEE to BAIRD");
+	centerGraph.addEdge(bairdHallNodes.nodes[3], sleeHallNodes.nodes[0], "Travel through the Baird Hall and Slee Hall tunnel.");
+	centerGraph.addEdge(sleeHallNodes.nodes[0], bairdHallNodes.nodes[3], "Travel through the Baird Hall and Slee Hall tunnel.");
 
 	// Baldy Hall Edges -----------------------------------------------------------------------
 	centerGraph.addEdge(lockwoodNodes.nodes[5], baldyHallNodes.nodes[0], "TBA-LOCKWOOD to BALDY");
