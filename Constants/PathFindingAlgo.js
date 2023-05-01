@@ -2433,8 +2433,8 @@ export function loadLeftGraphEdges() {
 	centerGraph.addEdge(talbertHallNodes.nodes[5], talbertHallNodes.nodes[4], "Continue going straight down the hall until there is a small entryway with an elevator on your right.");
 
 	// Capen Hall Edges ------------------------------------------------------------------------
-	centerGraph.addEdge(talbertHallNodes.nodes[5], capenHallNodes.nodes[0], "Continue going straight down the hall until you see the \"Talbert Bullpen\" on the right wall. You are now in Capen Hall.");
-	centerGraph.addEdge(capenHallNodes.nodes[0], talbertHallNodes.nodes[5], "Turn right and stop once room 50 is on your left. You are now in Talbert Hall.");
+	centerGraph.addEdge(talbertHallNodes.nodes[5], capenHallNodes.nodes[0], "From Talbert's ground floor with room 50 on your right, go straight until the \"Talbert Bullpen\" is on the right wall. You are now in Capen Hall.");
+	centerGraph.addEdge(capenHallNodes.nodes[0], talbertHallNodes.nodes[5], "From Capen's ground floor with the \"Talbert Bullpen\" in front, turn right and stop once room 50 is on your left. You are now in Talbert Hall.");
 
 	centerGraph.addEdge(capenHallNodes.nodes[0], capenHallNodes.nodes[1], "Turn left and go straight down the long hall. Stop after passing \"1Capen\" on your right.");
 	centerGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[0], "Turn left and continue down the long hall. Stop once you see the \"Talbert Bullpen\" at the end of the hall.");
@@ -2443,8 +2443,8 @@ export function loadLeftGraphEdges() {
 	centerGraph.addEdge(capenHallNodes.nodes[2], capenHallNodes.nodes[1], "Go straight and stop before an exit sign is almost above you. There will be a hall on your left.");
 
 	// Norton Hall Ground Floor Edges
-	centerGraph.addEdge(capenHallNodes.nodes[2], nortonHallNodes.nodes[6], "Continue going straight until the room 05 is on your left.");
-	centerGraph.addEdge(nortonHallNodes.nodes[6], capenHallNodes.nodes[2], "Continue going straight until \"The Buffalo Room\" is on your left.");
+	centerGraph.addEdge(capenHallNodes.nodes[2], nortonHallNodes.nodes[6], "From Capen's ground floor with \"The Buffalo Room\" on your right, go straight until room 05 is on your left. You are now in Norton Hall.");
+	centerGraph.addEdge(nortonHallNodes.nodes[6], capenHallNodes.nodes[2], "From Norton Hall's ground floor with room 05 on your right, go straight until \"The Buffalo Room\" is on your left. You are now in Capen Hall.");
 
 	centerGraph.addEdge(nortonHallNodes.nodes[6], nortonHallNodes.nodes[7], "Continue down the long hall until there is an elevator on your right. Knox Hall will be directly ahead.");
 	centerGraph.addEdge(nortonHallNodes.nodes[7], nortonHallNodes.nodes[6], "Take the long hall down until room 05 is on your right.");
