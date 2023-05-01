@@ -2312,24 +2312,24 @@ export function loadCenterGraphEdges() {
 	centerGraph.addEdge(oBrianHallNodes.nodes[4], nortonHallNodes.nodes[0], "Travel through the O'Brian Hall and Norton Hall tunnel.");
 	centerGraph.addEdge(nortonHallNodes.nodes[0], oBrianHallNodes.nodes[4], "Travel through the O'Brian Hall and Norton Hall tunnel.");
 
-	centerGraph.addEdge(nortonHallNodes.nodes[0], nortonHallNodes.nodes[1], "TBA-");
-	centerGraph.addEdge(nortonHallNodes.nodes[1], nortonHallNodes.nodes[0], "TBA-");
+	centerGraph.addEdge(nortonHallNodes.nodes[0], nortonHallNodes.nodes[1], "Continue straight until the men's restroom is in front of you.");
+	centerGraph.addEdge(nortonHallNodes.nodes[1], nortonHallNodes.nodes[0], "Go down the hall on the right to reach the doorway to the O'Brian Hall and Norton Hall tunnel.");
 
-	centerGraph.addEdge(nortonHallNodes.nodes[1], nortonHallNodes.nodes[2], "TBA-");
-	centerGraph.addEdge(nortonHallNodes.nodes[2], nortonHallNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(nortonHallNodes.nodes[1], nortonHallNodes.nodes[2], "Turn right and go into the elevator on the right.");
+	centerGraph.addEdge(nortonHallNodes.nodes[2], nortonHallNodes.nodes[1], "Exit the elevator and turn left. Continue until the men's restroom is directly on your right.");
 
-	centerGraph.addEdge(nortonHallNodes.nodes[1], nortonHallNodes.nodes[3], "TBA-");
-	centerGraph.addEdge(nortonHallNodes.nodes[3], nortonHallNodes.nodes[1], "TBA-");
+	centerGraph.addEdge(nortonHallNodes.nodes[1], nortonHallNodes.nodes[3], "Turn left and continue down the hall until there is another hallway on your right.");
+	centerGraph.addEdge(nortonHallNodes.nodes[3], nortonHallNodes.nodes[1], "Continue going down the hall until the men's restroom is directly on your left.");
 
-	centerGraph.addEdge(nortonHallNodes.nodes[3], nortonHallNodes.nodes[4], "TBA-");
-	centerGraph.addEdge(nortonHallNodes.nodes[4], nortonHallNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(nortonHallNodes.nodes[3], nortonHallNodes.nodes[4], "Turn into the hall on your side, and approach the doorway to the Norton Hall and Bonner Hall tunnel.");
+	centerGraph.addEdge(nortonHallNodes.nodes[4], nortonHallNodes.nodes[3], "Move into the long hall ahead. Pivot right to continue to Capen Hall. Otherwise pivot left.");
 
-	centerGraph.addEdge(nortonHallNodes.nodes[3], nortonHallNodes.nodes[5], "TBA-");
-	centerGraph.addEdge(nortonHallNodes.nodes[5], nortonHallNodes.nodes[3], "TBA-");
+	centerGraph.addEdge(nortonHallNodes.nodes[3], nortonHallNodes.nodes[5], "Continue straight down until there is an elevator on your left.");
+	centerGraph.addEdge(nortonHallNodes.nodes[5], nortonHallNodes.nodes[3], "Go straight down the long hall ahead until a shorter hall is on your left.");
 
 	// Bonner Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(nortonHallNodes.nodes[4], bonnerHallNodes.nodes[0], "TBA-NORTON to BONNER");
-	centerGraph.addEdge(bonnerHallNodes.nodes[0], nortonHallNodes.nodes[4], "TBA-BONNER to NORTON");
+	centerGraph.addEdge(nortonHallNodes.nodes[4], bonnerHallNodes.nodes[0], "Travel through the Norton Hall and Bonner Hall tunnel.");
+	centerGraph.addEdge(bonnerHallNodes.nodes[0], nortonHallNodes.nodes[4], "Travel through the Norton Hall and Bonner Hall tunnel.");
 
 	loadLeftGraphEdges();
 }
