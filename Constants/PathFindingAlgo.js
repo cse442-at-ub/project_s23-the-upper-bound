@@ -2729,19 +2729,19 @@ export function loadCenterGraphEdges() {
 		"Take the elevator up to the 2nd floor."
 	);
 	centerGraph.addEdge(
-		studentUnionNodes.nodes[2],
+		studentUnionNodes.nodes[3],
 		studentUnionNodes.nodes[11],
 		"Take the elevator down to the 1st floor."
 	);
 
-	centerGraph.addEdge(studentUnionNodes.nodes[11], studentUnionNodes.nodes[12], "");
-	centerGraph.addEdge(studentUnionNodes.nodes[12], studentUnionNodes.nodes[11], "");
-	centerGraph.addEdge(studentUnionNodes.nodes[12], studentUnionNodes.nodes[13], "");
-	centerGraph.addEdge(studentUnionNodes.nodes[13], studentUnionNodes.nodes[12], "");
-	centerGraph.addEdge(studentUnionNodes.nodes[13], studentUnionNodes.nodes[14], "");
-	centerGraph.addEdge(studentUnionNodes.nodes[14], studentUnionNodes.nodes[13], "");
-	centerGraph.addEdge(studentUnionNodes.nodes[14], studentUnionNodes.nodes[15], "");
-	centerGraph.addEdge(studentUnionNodes.nodes[15], studentUnionNodes.nodes[14], "");
+	centerGraph.addEdge(studentUnionNodes.nodes[11], studentUnionNodes.nodes[12], "Exit the elevator and move straight ahead. Stop once there is a hall to your left.");
+	centerGraph.addEdge(studentUnionNodes.nodes[12], studentUnionNodes.nodes[11], "Turn right and enter the elevator straight ahead.");
+	centerGraph.addEdge(studentUnionNodes.nodes[12], studentUnionNodes.nodes[13], "Turn into the hall on the left. Continue until you are underneath the exit sign at the end of the hall.");
+	centerGraph.addEdge(studentUnionNodes.nodes[13], studentUnionNodes.nodes[12], "Turn into the hall on the right and continue until you are out of the hall.");
+	centerGraph.addEdge(studentUnionNodes.nodes[13], studentUnionNodes.nodes[14], "Turn left and continue until you are underneath the next exit sign at the end of this hall. There should be a hall on your right.");
+	centerGraph.addEdge(studentUnionNodes.nodes[14], studentUnionNodes.nodes[13], "Turn left and continue moving until there is a hall on your right.");
+	centerGraph.addEdge(studentUnionNodes.nodes[14], studentUnionNodes.nodes[15], "Turn right and continue straight until you reach the blue double doors that lead to Knox Hall.");
+	centerGraph.addEdge(studentUnionNodes.nodes[15], studentUnionNodes.nodes[14], "Go into the hall directly ahead. At the end of the hall, there should be an exit sign on the ceiling. Stop underneath this sign.");
 
 	// Lockwood Edges ----------------------------------------------------------------------
 	centerGraph.addEdge(
@@ -3155,10 +3155,10 @@ export function loadCenterGraphEdges() {
 	centerGraph.addEdge(
 		knoxNodes.nodes[2],
 		knoxNodes.nodes[1],
-		"Move straight ahead, unitl lecture hall K20 is on your left."
+		"Move straight ahead until lecture hall K20 is on your left."
 	);
-	centerGraph.addEdge(studentUnionNodes.nodes[15], knoxNodes.nodes[2], "");
-	centerGraph.addEdge(knoxNodes.nodes[2], studentUnionNodes.nodes[15], "");
+	centerGraph.addEdge(studentUnionNodes.nodes[15], knoxNodes.nodes[2], "Travel through the Student Union and Knox Hall tunnel.");
+	centerGraph.addEdge(knoxNodes.nodes[2], studentUnionNodes.nodes[15], "Travel through the Student Union and Knox Hall tunnel.");
 	loadLeftGraphEdges();
 }
 // ###################################################################################################
