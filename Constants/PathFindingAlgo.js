@@ -461,15 +461,55 @@ export let studentUnionNodes = {
 			latitude: 43.00147960075578,
 			longitude: -78.78664559753724,
 		},
-		// {
-		// 	building: "Student Union",
-		// 	number: 11,
-		// 	floor: 1,
-		// 	tree: "center",
-		// 	transition: true,
-		// 	latitude: 43.00096493594164,
-		// 	longitude: -78.78604693146022,
-		// },
+		{
+			building: "Student Union",
+			number: 11,
+			floor: 1,
+			tree: "center",
+			transition: false,
+			latitude: 43.00096493594164,
+			longitude: -78.78604693146022,
+		},
+		// 43.001051672443744, -78.78605360905651
+		{
+			building: "Student Union",
+			number: 12,
+			floor: 1,
+			tree: "center",
+			transition: false,
+			latitude: 43.001051672443744,
+			longitude: -78.78605360905651,
+		},
+		// 43.00103992853626, -78.78634596102253
+		{
+			building: "Student Union",
+			number: 13,
+			floor: 1,
+			tree: "center",
+			transition: false,
+			latitude: 43.00103992853626,
+			longitude: -78.78634596102253,
+		},
+		// 43.00087904594539, -78.78633258924422
+		{
+			building: "Student Union",
+			number: 14,
+			floor: 1,
+			tree: "center",
+			transition: false,
+			latitude: 43.00087904594539,
+			longitude: -78.78633258924422,
+		},
+		// 43.0008829214273, -78.78678321135754
+		{
+			building: "Student Union",
+			number: 15,
+			floor: 1,
+			tree: "center",
+			transition: false,
+			latitude: 43.0008829214273,
+			longitude: -78.78678321135754,
+		},
 	],
 };
 
@@ -787,7 +827,7 @@ export let nortonHallNodes = {
 			floor: 1,
 			tree: "left",
 			transition: true,
-			latitude: 43.001126943731634,
+			latitude: 43.00114459819635,
 			longitude: -78.7883123392043,
 		}, // 43.001126943731634, -78.7883123392043
 	],
@@ -869,6 +909,41 @@ export let jacobsNodes = {
 			transition: false,
 			latitude: 42.99965235351364,
 			longitude: -78.78734772419459,
+		},
+	],
+};
+
+// 43.00111753658893, -78.78808704077308
+export let knoxNodes = {
+	nodes: [
+		{
+			building: "Knox Hall",
+			number: 0,
+			floor: 0,
+			tree: "left",
+			transition: false,
+			latitude: 43.00114459819635,
+			longitude: -78.78808704077308,
+		},
+		{
+			// 43.001137238343176, -78.78777992425381
+			building: "Knox Hall",
+			number: 1,
+			floor: 0,
+			tree: "left",
+			transition: false,
+			latitude: 43.001137238343176,
+			longitude: -78.78777992425381,
+		},
+		//43.001121505337494, -78.78755727696193
+		{
+			building: "Knox Hall",
+			number: 2,
+			floor: 0,
+			tree: "left",
+			transition: false,
+			latitude: 43.001121505337494,
+			longitude: -78.78755727696193,
 		},
 	],
 };
@@ -1038,7 +1113,7 @@ export function CreatePath(building1, building2) {
 			}
 			// SU WILL NEED TO CHANGE
 			else if (building2 == "Student Union") {
-				ret[1] = studentUnionNodes.nodes[0];
+				ret[1] = studentUnionNodes.nodes[15];
 			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
 			} else if (building2 == "Slee Hall") {
@@ -1053,6 +1128,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 
 			break;
@@ -1092,7 +1169,7 @@ export function CreatePath(building1, building2) {
 			}
 			// SU WILL NEED TO CHANGE
 			else if (building2 == "Student Union") {
-				ret[1] = studentUnionNodes.nodes[0];
+				ret[1] = studentUnionNodes.nodes[15];
 			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
 			} else if (building2 == "Slee Hall") {
@@ -1107,6 +1184,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 
@@ -1153,7 +1232,7 @@ export function CreatePath(building1, building2) {
 			}
 			// SU WILL NEED TO CHANGE
 			else if (building2 == "Student Union") {
-				ret[1] = studentUnionNodes.nodes[0];
+				ret[1] = studentUnionNodes.nodes[15];
 			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
 			} else if (building2 == "Slee Hall") {
@@ -1168,6 +1247,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 
@@ -1206,7 +1287,7 @@ export function CreatePath(building1, building2) {
 			}
 			// SU WILL NEED TO CHANGE
 			else if (building2 == "Student Union") {
-				ret[1] = studentUnionNodes.nodes[0];
+				ret[1] = studentUnionNodes.nodes[15];
 			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
 			} else if (building2 == "Slee Hall") {
@@ -1221,6 +1302,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 
@@ -1259,7 +1342,7 @@ export function CreatePath(building1, building2) {
 			}
 			// SU WILL NEED TO CHANGE
 			else if (building2 == "Student Union") {
-				ret[1] = studentUnionNodes.nodes[0];
+				ret[1] = studentUnionNodes.nodes[15];
 			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
 			} else if (building2 == "Slee Hall") {
@@ -1274,6 +1357,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 
@@ -1322,7 +1407,7 @@ export function CreatePath(building1, building2) {
 			}
 			// SU WILL NEED TO CHANGE
 			else if (building2 == "Student Union") {
-				ret[1] = studentUnionNodes.nodes[0];
+				ret[1] = studentUnionNodes.nodes[15];
 			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
 			} else if (building2 == "Slee Hall") {
@@ -1337,6 +1422,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 
@@ -1386,7 +1473,7 @@ export function CreatePath(building1, building2) {
 			}
 			// SU WILL NEED TO CHANGE
 			else if (building2 == "Student Union") {
-				ret[1] = studentUnionNodes.nodes[0];
+				ret[1] = studentUnionNodes.nodes[15];
 			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
 			} else if (building2 == "Slee Hall") {
@@ -1401,6 +1488,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 
@@ -1429,7 +1518,7 @@ export function CreatePath(building1, building2) {
 			} else if (building2 == "O'Brian Hall") {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
-				ret[1] = nortonHallNodes.nodes[0];
+				ret[1] = nortonHallNodes.nodes[7];
 			} else if (building2 == "Bonner Hall") {
 				ret[1] = bonnerHallNodes.nodes[0];
 			}
@@ -1482,7 +1571,7 @@ export function CreatePath(building1, building2) {
 				} else if (building2 == "O'Brian Hall") {
 					ret[1] = oBrianHallNodes.nodes[1];
 				} else if (building2 == "Norton Hall") {
-					ret[1] = nortonHallNodes.nodes[0];
+					ret[1] = nortonHallNodes.nodes[7];
 				} else if (building2 == "Bonner Hall") {
 					ret[1] = bonnerHallNodes.nodes[0];
 				}
@@ -1537,7 +1626,7 @@ export function CreatePath(building1, building2) {
 			} else if (building2 == "O'Brian Hall") {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
-				ret[1] = nortonHallNodes.nodes[0];
+				ret[1] = nortonHallNodes.nodes[7];
 			} else if (building2 == "Bonner Hall") {
 				ret[1] = bonnerHallNodes.nodes[0];
 			}
@@ -1569,8 +1658,20 @@ export function CreatePath(building1, building2) {
 				ret[0] = studentUnionNodes.nodes[10];
 			} else if (building2 == "UB Commons") {
 				ret[0] = studentUnionNodes.nodes[6];
-			} else {
+			} else if (
+				building2 == "UB Commons" ||
+				building2 == "Lockwood Library" ||
+				building2 == "Clemens Hall" ||
+				building2 == "Baird Hall" ||
+				building2 == "Slee Hall" ||
+				building2 == "Baldy Hall" ||
+				building2 == "O'Brian Hall" ||
+				building2 == "Park Hall" ||
+				building2 == "Jacobs Management Center"
+			) {
 				ret[0] = studentUnionNodes.nodes[0];
+			} else {
+				ret[0] = studentUnionNodes.nodes[15];
 			}
 
 			if (building2 == "Jarvis Hall") {
@@ -1594,7 +1695,7 @@ export function CreatePath(building1, building2) {
 			} else if (building2 == "O'Brian Hall") {
 				ret[1] = oBrianHallNodes.nodes[1];
 			} else if (building2 == "Norton Hall") {
-				ret[1] = nortonHallNodes.nodes[0];
+				ret[1] = nortonHallNodes.nodes[7];
 			} else if (building2 == "Bonner Hall") {
 				ret[1] = bonnerHallNodes.nodes[0];
 			}
@@ -1617,6 +1718,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[2];
 			}
 			break;
 
@@ -1667,6 +1770,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[2];
 			}
 			break;
 
@@ -1729,6 +1834,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 
 			break;
@@ -1784,6 +1891,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 
 			break;
@@ -1839,6 +1948,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 
@@ -1889,6 +2000,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 
@@ -1954,6 +2067,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 
@@ -2021,6 +2136,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 
@@ -2033,12 +2150,18 @@ export function CreatePath(building1, building2) {
 				building2 == "Bell Hall" ||
 				building2 == "Student Union" ||
 				building2 == "UB Commons" ||
+				building2 == "Knox Hall"
+			) {
+				ret[0] = nortonHallNodes.nodes[7];
+			} else if (
 				building2 == "Lockwood Library" ||
 				building2 == "Clemens Hall" ||
 				building2 == "Baird Hall" ||
 				building2 == "Slee Hall" ||
 				building2 == "Baldy Hall" ||
-				building2 == "O'Brian Hall"
+				building2 == "O'Brian Hall" ||
+				building2 == "Park Hall" ||
+				building2 == "Jacobs Management Center"
 			) {
 				ret[0] = nortonHallNodes.nodes[0];
 			} else {
@@ -2052,7 +2175,7 @@ export function CreatePath(building1, building2) {
 			} else if (building2 == "Bell Hall") {
 				ret[1] = bellNodes.nodes[0];
 			} else if (building2 == "Student Union") {
-				ret[1] = studentUnionNodes.nodes[0];
+				ret[1] = studentUnionNodes.nodes[15];
 			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
 			} else if (building2 == "Lockwood Library") {
@@ -2089,6 +2212,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 
 			break;
@@ -2103,7 +2228,7 @@ export function CreatePath(building1, building2) {
 			} else if (building2 == "Bell Hall") {
 				ret[1] = bellNodes.nodes[0];
 			} else if (building2 == "Student Union") {
-				ret[1] = studentUnionNodes.nodes[0];
+				ret[1] = studentUnionNodes.nodes[15];
 			} else if (building2 == "UB Commons") {
 				ret[1] = ubCommonsNodes.nodes[0];
 			} else if (building2 == "Lockwood Library") {
@@ -2144,6 +2269,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = parkHallNodes.nodes[0];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 
@@ -2198,6 +2325,8 @@ export function CreatePath(building1, building2) {
 				ret[1] = talbertHallNodes.nodes[5];
 			} else if (building2 == "Jacobs Management Center") {
 				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
 			}
 			break;
 		case "Jacobs Management Center":
@@ -2247,7 +2376,72 @@ export function CreatePath(building1, building2) {
 				ret[1] = talbertHallNodes.nodes[5];
 			} else if (building2 == "Park Hall") {
 				ret[1] = parkHallNodes.nodes[1];
-			} 
+			} else if (building2 == "Knox Hall") {
+				ret[1] = knoxNodes.nodes[0];
+			}
+			break;
+
+		case "Knox Hall":
+			if (building2 == "Jarvis Hall" ||
+				building2 == "Furnas Hall" ||
+				building2 == "Bell Hall" ||
+				building2 == "Student Union" ||
+				building2 == "UB Commons"
+			) {
+				ret[0] = knoxNodes.nodes[2]
+			}
+			else {
+				ret[0] = knoxNodes.nodes[0]
+			}
+
+			if (building2 == "Jarvis Hall") {
+				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0];
+			} else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[0];
+			} else if (building2 == "Student Union") {
+				ret[1] = studentUnionNodes.nodes[15];
+			} else if (building2 == "UB Commons") {
+				ret[1] = ubCommonsNodes.nodes[0];
+			} else if (building2 == "Lockwood Library") {
+				ret[1] = lockwoodNodes.nodes[5];
+			} else if (building2 == "Clemens Hall") {
+				ret[1] = clemensHallNodes.nodes[0];
+			} else if (building2 == "Baird Hall") {
+				ret[1] = bairdHallNodes.nodes[0];
+			} else if (building2 == "Slee Hall") {
+				ret[1] = sleeHallNodes.nodes[0];
+			} else if (building2 == "Baldy Hall") {
+				ret[1] = baldyHallNodes.nodes[1];
+			} else if (building2 == "O'Brian Hall") {
+				ret[1] = oBrianHallNodes.nodes[4];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
+			}
+			// Transitioning to Left Graph
+			if (building2 == "Cooke Hall") {
+				ret[1] = cookeHallNodes.nodes[0];
+			} else if (building2 == "Hochstetter Hall") {
+				ret[1] = hochstetterHallNodes.nodes[0];
+			} else if (building2 == "Capen Hall") {
+				ret[1] = capenHallNodes.nodes[2];
+			} else if (building2 == "Mathematics Building") {
+				ret[1] = mathBuildingNodes.nodes[0];
+			} else if (building2 == "Fronczak Hall") {
+				ret[1] = fronczakHallNodes.nodes[0];
+			} else if (building2 == "Natural Science Complex") {
+				ret[1] = nscNodes.nodes[2];
+			} else if (building2 == "Talbert Hall") {
+				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
+			} else if (building2 == "Norton Hall") {
+				ret[1] = nortonHallNodes.nodes[7];
+			}
+
 			break;
 		default:
 	}
@@ -2321,6 +2515,10 @@ export function loadCenterGraphNodes() {
 	for (var i = 0; i < jacobsNodes.nodes.length; i++) {
 		centerGraph.addNode(jacobsNodes.nodes[i]);
 	}
+	for (var i = 0; i < knoxNodes.nodes.length; i++) {
+		centerGraph.addNode(knoxNodes.nodes[i]);
+	}
+
 	loadLeftGraphNodes();
 }
 
@@ -2512,6 +2710,38 @@ export function loadCenterGraphEdges() {
 		ubCommonsNodes.nodes[0],
 		"Travel through the Student Union and UB Commons tunnel."
 	);
+
+	// SU elevators ---------------------
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[11],
+		studentUnionNodes.nodes[2],
+		"Take the elevator up to the 3rd floor."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[2],
+		studentUnionNodes.nodes[11],
+		"Take the elevator down to the 1st floor."
+	);
+
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[11],
+		studentUnionNodes.nodes[3],
+		"Take the elevator up to the 2nd floor."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[2],
+		studentUnionNodes.nodes[11],
+		"Take the elevator down to the 1st floor."
+	);
+
+	centerGraph.addEdge(studentUnionNodes.nodes[11], studentUnionNodes.nodes[12], "");
+	centerGraph.addEdge(studentUnionNodes.nodes[12], studentUnionNodes.nodes[11], "");
+	centerGraph.addEdge(studentUnionNodes.nodes[12], studentUnionNodes.nodes[13], "");
+	centerGraph.addEdge(studentUnionNodes.nodes[13], studentUnionNodes.nodes[12], "");
+	centerGraph.addEdge(studentUnionNodes.nodes[13], studentUnionNodes.nodes[14], "");
+	centerGraph.addEdge(studentUnionNodes.nodes[14], studentUnionNodes.nodes[13], "");
+	centerGraph.addEdge(studentUnionNodes.nodes[14], studentUnionNodes.nodes[15], "");
+	centerGraph.addEdge(studentUnionNodes.nodes[15], studentUnionNodes.nodes[14], "");
 
 	// Lockwood Edges ----------------------------------------------------------------------
 	centerGraph.addEdge(
@@ -2896,6 +3126,39 @@ export function loadCenterGraphEdges() {
 		"From Jacobs Management Center's 2nd floor, use the double doors across from room 202B. Go through the tunnel and go through the next set of double doors."
 	);
 
+	// Knox Hall Edges -----------------------------------------------------------------------
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[7],
+		knoxNodes.nodes[0],
+		"From Norton Hall's ground floor, cross into Knox Hall. Stop after passing through the double doors."
+	);
+	centerGraph.addEdge(
+		knoxNodes.nodes[0],
+		nortonHallNodes.nodes[7],
+		"From Knox Hall's ground floor, cross into Norton Hall. An elevator will be on your left and the women's restroom on the right."
+	);
+	centerGraph.addEdge(
+		knoxNodes.nodes[0],
+		knoxNodes.nodes[1],
+		"Move straight ahead, passing the UB Snackin' vending machines on your right. Continue until lecture hall K20 is on your right."
+	);
+	centerGraph.addEdge(
+		knoxNodes.nodes[1],
+		knoxNodes.nodes[0],
+		"Move straight ahead, passing the UB Snackin' vending machines on your left. Stop in front of the double doors to Norton Hall."
+	);
+	centerGraph.addEdge(
+		knoxNodes.nodes[1],
+		knoxNodes.nodes[2],
+		"Continue moving straight, and stop once you are in front of the blue double doors that lead to the Student Union."
+	);
+	centerGraph.addEdge(
+		knoxNodes.nodes[2],
+		knoxNodes.nodes[1],
+		"Move straight ahead, unitl lecture hall K20 is on your left."
+	);
+	centerGraph.addEdge(studentUnionNodes.nodes[15], knoxNodes.nodes[2], "");
+	centerGraph.addEdge(knoxNodes.nodes[2], studentUnionNodes.nodes[15], "");
 	loadLeftGraphEdges();
 }
 // ###################################################################################################
