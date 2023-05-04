@@ -7,6 +7,7 @@ import {
   ImageBackground,
 } from "react-native";
 import React, { useEffect, useState } from "react";
+import {Header} from "react-native-elements";
 
 
 
@@ -14,11 +15,16 @@ export default function Mexican() {
   return (
     <View style={styles.container}>
     <View>
+    <Header
+          backgroundColor="#3265CB"
+          centerComponent={{ text: 'Mexican Options', style: { color: '#fff', fontSize: 20 } }}
+        />
       <Text style={styles.MoName}>
         {"Moe's"}      
         </Text>
         </View>
         <View>
+
           <Text style={styles.MoText}>
             {"Options: Tacos, Burritos, Salads, Bowls, Quesadillas\n"}
             {"Meats: Chicken, Steak, Ground Beef, Tofu \n"}
@@ -26,6 +32,7 @@ export default function Mexican() {
             {"Location: Student Union\n"}
           </Text>
         </View>
+        <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
 
         <View>
       <Text style={styles.MoName}>
@@ -33,6 +40,7 @@ export default function Mexican() {
         </Text>
         </View>
         <View>
+        
           <Text style={styles.MoText}>
             {"Options: Burritos, Bowls\n"}
             {"Meats: Chicken, Steak, Fish \n"}
@@ -40,20 +48,23 @@ export default function Mexican() {
             {"Location: Ellicott Food Court\n"}
           </Text>
         </View>
-
+        <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
+       
         <View>
       <Text style={styles.MoName}>
         {"Chick-Mex Grill"}      
         </Text>
         </View>
+        
         <View>
+
           <Text style={styles.MoText}>
             {"Options: Tacos, Burritos, Burgers, Steaks, Fried Chicken, Seafood\n"}
             {"Takes Dining Dollars/Meal Swipes? : No\n"}
             {"Location: Commons\n"}
           </Text>
         </View>
-
+        
     </View>
   );
 }
@@ -74,12 +85,12 @@ const styles = StyleSheet.create({
     color:"white",
     fontSize:30,
 
-    top:60,
+    //top:60,
     fontWeight:"bold",
    },
    MoText:{
     color:"white",
-    top:60,
+    //top:60,
     fontSize:15,
    },
 });
