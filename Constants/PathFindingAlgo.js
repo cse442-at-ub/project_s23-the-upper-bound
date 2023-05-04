@@ -808,6 +808,71 @@ export let bonnerHallNodes = {
 	],
 };
 
+export let parkJacobsTunnelNodes = {
+	nodes: [
+		{
+			//42.99990587481953, -78.7876173269394
+			building: "Park/Jacobs Tunnel",
+			number: 0,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 42.99990587481953,
+			longitude: -78.78760515651533,
+		},
+		{
+			//42.999656745214224, -78.78761196252138
+			building: "Park/Jacobs Tunnel",
+			number: 1,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 42.99965235351364,
+			longitude: -78.78760515651533,
+		},
+	],
+};
+
+export let parkHallNodes = {
+	nodes: [
+		{
+			//42.99989555962159, -78.78768303560598
+			building: "Park Hall",
+			number: 0,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 42.99990587481953,
+			longitude: -78.78768303560598,
+		},
+		{
+			//42.99965235351364, -78.78766690703553
+			building: "Park Hall",
+			number: 1,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 42.99965235351364,
+			longitude: -78.78766690703553,
+		},
+	],
+};
+
+export let jacobsNodes = {
+	nodes: [
+		{
+			//42.999664123439835, -78.78734772419459
+			building: "Jacobs Management Center",
+			number: 0,
+			floor: 2,
+			tree: "center",
+			transition: false,
+			latitude: 42.99965235351364,
+			longitude: -78.78734772419459,
+		},
+	],
+};
+
 // ClASS DEFINITIONS START ----------------------------------------------------------
 export class Queue {
 	constructor() {
@@ -984,6 +1049,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = furnasNodes.nodes[0];
 			} else if (building2 == "Jarvis Hall") {
 				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 
 			break;
@@ -1034,6 +1103,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = furnasNodes.nodes[0];
 			} else if (building2 == "Jarvis Hall") {
 				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1091,6 +1164,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = furnasNodes.nodes[0];
 			} else if (building2 == "Jarvis Hall") {
 				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1140,6 +1217,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = furnasNodes.nodes[0];
 			} else if (building2 == "Jarvis Hall") {
 				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1189,6 +1270,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = furnasNodes.nodes[0];
 			} else if (building2 == "Jarvis Hall") {
 				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1248,6 +1333,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = furnasNodes.nodes[0];
 			} else if (building2 == "Jarvis Hall") {
 				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1308,6 +1397,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = furnasNodes.nodes[0];
 			} else if (building2 == "Jarvis Hall") {
 				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1355,6 +1448,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 
 			break;
@@ -1404,6 +1501,10 @@ export function CreatePath(building1, building2) {
 					ret[1] = nscNodes.nodes[2];
 				} else if (building2 == "Talbert Hall") {
 					ret[1] = talbertHallNodes.nodes[5];
+				} else if (building2 == "Park Hall") {
+					ret[1] = parkHallNodes.nodes[0];
+				} else if (building2 == "Jacobs Management Center") {
+					ret[1] = jacobsNodes.nodes[0];
 				}
 			}
 			break;
@@ -1455,6 +1556,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 
 			break;
@@ -1508,6 +1613,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1554,6 +1663,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1612,6 +1725,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 
 			break;
@@ -1663,6 +1780,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 
 			break;
@@ -1714,6 +1835,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1760,6 +1885,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1821,6 +1950,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1838,7 +1971,7 @@ export function CreatePath(building1, building2) {
 				building2 == "Baldy Hall"
 			) {
 				ret[0] = oBrianHallNodes.nodes[1];
-			} else if (building2 == "Park Hall" || building2 == "Jacobs Management Building") {
+			} else if (building2 == "Park Hall" || building2 == "Jacobs Management Center") {
 				ret[0] = oBrianHallNodes.nodes[0];
 			} else {
 				ret[0] = oBrianHallNodes.nodes[4];
@@ -1884,6 +2017,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 			break;
 
@@ -1948,6 +2085,10 @@ export function CreatePath(building1, building2) {
 				ret[1] = nscNodes.nodes[2];
 			} else if (building2 == "Talbert Hall") {
 				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
 
 			break;
@@ -1979,7 +2120,134 @@ export function CreatePath(building1, building2) {
 				ret[1] = oBrianHallNodes.nodes[4];
 			} else if (building2 == "Norton Hall") {
 				ret[1] = nortonHallNodes.nodes[4];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
 			}
+			// Transitioning to Left Graph
+			if (building2 == "Cooke Hall") {
+				ret[1] = cookeHallNodes.nodes[0];
+			} else if (building2 == "Hochstetter Hall") {
+				ret[1] = hochstetterHallNodes.nodes[0];
+			} else if (building2 == "Capen Hall") {
+				ret[1] = capenHallNodes.nodes[2];
+			} else if (building2 == "Mathematics Building") {
+				ret[1] = mathBuildingNodes.nodes[0];
+			} else if (building2 == "Fronczak Hall") {
+				ret[1] = fronczakHallNodes.nodes[0];
+			} else if (building2 == "Natural Science Complex") {
+				ret[1] = nscNodes.nodes[2];
+			} else if (building2 == "Talbert Hall") {
+				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[0];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
+			}
+			break;
+
+		case "Park Hall":
+			if (building2 == "Jacobs Management Center") {
+				ret[0] = parkHallNodes.nodes[1];
+			} else {
+				ret[0] = parkHallNodes.nodes[0];
+			}
+
+			if (building2 == "Jarvis Hall") {
+				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0];
+			} else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[0];
+			} else if (building2 == "Student Union") {
+				ret[1] = studentUnionNodes.nodes[0];
+			} else if (building2 == "UB Commons") {
+				ret[1] = ubCommonsNodes.nodes[0];
+			} else if (building2 == "Lockwood Library") {
+				ret[1] = lockwoodNodes.nodes[5];
+			} else if (building2 == "Clemens Hall") {
+				ret[1] = clemensHallNodes.nodes[0];
+			} else if (building2 == "Baird Hall") {
+				ret[1] = bairdHallNodes.nodes[0];
+			} else if (building2 == "Slee Hall") {
+				ret[1] = sleeHallNodes.nodes[0];
+			} else if (building2 == "Baldy Hall") {
+				ret[1] = baldyHallNodes.nodes[1];
+			} else if (building2 == "O'Brian Hall") {
+				ret[1] = oBrianHallNodes.nodes[0];
+			} else if (building2 == "Norton Hall") {
+				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
+			}
+			// Transitioning to Left Graph
+			if (building2 == "Cooke Hall") {
+				ret[1] = cookeHallNodes.nodes[0];
+			} else if (building2 == "Hochstetter Hall") {
+				ret[1] = hochstetterHallNodes.nodes[0];
+			} else if (building2 == "Capen Hall") {
+				ret[1] = capenHallNodes.nodes[2];
+			} else if (building2 == "Mathematics Building") {
+				ret[1] = mathBuildingNodes.nodes[0];
+			} else if (building2 == "Fronczak Hall") {
+				ret[1] = fronczakHallNodes.nodes[0];
+			} else if (building2 == "Natural Science Complex") {
+				ret[1] = nscNodes.nodes[2];
+			} else if (building2 == "Talbert Hall") {
+				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Jacobs Management Center") {
+				ret[1] = jacobsNodes.nodes[0];
+			}
+			break;
+		case "Jacobs Management Center":
+			ret[0] = jacobsNodes.nodes[0];
+
+			if (building2 == "Jarvis Hall") {
+				ret[1] = jarvisNodes.nodes[0];
+			} else if (building2 == "Furnas Hall") {
+				ret[1] = furnasNodes.nodes[0];
+			} else if (building2 == "Bell Hall") {
+				ret[1] = bellNodes.nodes[0];
+			} else if (building2 == "Student Union") {
+				ret[1] = studentUnionNodes.nodes[0];
+			} else if (building2 == "UB Commons") {
+				ret[1] = ubCommonsNodes.nodes[0];
+			} else if (building2 == "Lockwood Library") {
+				ret[1] = lockwoodNodes.nodes[5];
+			} else if (building2 == "Clemens Hall") {
+				ret[1] = clemensHallNodes.nodes[0];
+			} else if (building2 == "Baird Hall") {
+				ret[1] = bairdHallNodes.nodes[0];
+			} else if (building2 == "Slee Hall") {
+				ret[1] = sleeHallNodes.nodes[0];
+			} else if (building2 == "Baldy Hall") {
+				ret[1] = baldyHallNodes.nodes[1];
+			} else if (building2 == "O'Brian Hall") {
+				ret[1] = oBrianHallNodes.nodes[0];
+			} else if (building2 == "Norton Hall") {
+				ret[1] = nortonHallNodes.nodes[0];
+			} else if (building2 == "Bonner Hall") {
+				ret[1] = bonnerHallNodes.nodes[0];
+			}
+			// Transitioning to Left Graph
+			if (building2 == "Cooke Hall") {
+				ret[1] = cookeHallNodes.nodes[0];
+			} else if (building2 == "Hochstetter Hall") {
+				ret[1] = hochstetterHallNodes.nodes[0];
+			} else if (building2 == "Capen Hall") {
+				ret[1] = capenHallNodes.nodes[2];
+			} else if (building2 == "Mathematics Building") {
+				ret[1] = mathBuildingNodes.nodes[0];
+			} else if (building2 == "Fronczak Hall") {
+				ret[1] = fronczakHallNodes.nodes[0];
+			} else if (building2 == "Natural Science Complex") {
+				ret[1] = nscNodes.nodes[2];
+			} else if (building2 == "Talbert Hall") {
+				ret[1] = talbertHallNodes.nodes[5];
+			} else if (building2 == "Park Hall") {
+				ret[1] = parkHallNodes.nodes[1];
+			} 
 			break;
 		default:
 	}
@@ -2043,6 +2311,15 @@ export function loadCenterGraphNodes() {
 
 	for (var i = 0; i < bonnerHallNodes.nodes.length; i++) {
 		centerGraph.addNode(bonnerHallNodes.nodes[i]);
+	}
+	for (var i = 0; i < parkJacobsTunnelNodes.nodes.length; i++) {
+		centerGraph.addNode(parkJacobsTunnelNodes.nodes[i]);
+	}
+	for (var i = 0; i < parkHallNodes.nodes.length; i++) {
+		centerGraph.addNode(parkHallNodes.nodes[i]);
+	}
+	for (var i = 0; i < jacobsNodes.nodes.length; i++) {
+		centerGraph.addNode(jacobsNodes.nodes[i]);
 	}
 	loadLeftGraphNodes();
 }
@@ -2237,99 +2514,387 @@ export function loadCenterGraphEdges() {
 	);
 
 	// Lockwood Edges ----------------------------------------------------------------------
-	centerGraph.addEdge(lockwoodNodes.nodes[0], studentUnionNodes.nodes[0], "Travel through the Student Union and Lockwood Library tunnel.");
-	centerGraph.addEdge(studentUnionNodes.nodes[0], lockwoodNodes.nodes[0], "Travel through the Student Union and Lockwood Library tunnel.");
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[0],
+		studentUnionNodes.nodes[0],
+		"Travel through the Student Union and Lockwood Library tunnel."
+	);
+	centerGraph.addEdge(
+		studentUnionNodes.nodes[0],
+		lockwoodNodes.nodes[0],
+		"Travel through the Student Union and Lockwood Library tunnel."
+	);
 
-	centerGraph.addEdge(lockwoodNodes.nodes[0], lockwoodNodes.nodes[1], "Continue down the hall until room 215 is on your right.");
-	centerGraph.addEdge(lockwoodNodes.nodes[1], lockwoodNodes.nodes[0], "Go straight down the hall until you reach the doorway to the Student Union and Lockwood Library tunnel");
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[0],
+		lockwoodNodes.nodes[1],
+		"Continue down the hall until room 215 is on your right."
+	);
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[1],
+		lockwoodNodes.nodes[0],
+		"Go straight down the hall until you reach the doorway to the Student Union and Lockwood Library tunnel"
+	);
 
-	centerGraph.addEdge(lockwoodNodes.nodes[1], lockwoodNodes.nodes[2], "Continue through the hall until you can see the windows of Level Up on your right.");
-	centerGraph.addEdge(lockwoodNodes.nodes[2], lockwoodNodes.nodes[1], "Go down the hall until room 215 is on your left.");
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[1],
+		lockwoodNodes.nodes[2],
+		"Continue through the hall until you can see the windows of Level Up on your right."
+	);
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[2],
+		lockwoodNodes.nodes[1],
+		"Go down the hall until room 215 is on your left."
+	);
 
-	centerGraph.addEdge(lockwoodNodes.nodes[2], lockwoodNodes.nodes[3], "Approach the doorway for the Lockwood library and Clemens Hall tunnel on ahead on your left.");
-	centerGraph.addEdge(lockwoodNodes.nodes[3], lockwoodNodes.nodes[2], "If coming from Clemens Hall turn right and continue until Level Up windows are on your left. Otherwise, turn left and do the same.");
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[2],
+		lockwoodNodes.nodes[3],
+		"Approach the doorway for the Lockwood library and Clemens Hall tunnel on ahead on your left."
+	);
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[3],
+		lockwoodNodes.nodes[2],
+		"If coming from Clemens Hall turn right and continue until Level Up windows are on your left. Otherwise, turn left and do the same."
+	);
 
-	centerGraph.addEdge(lockwoodNodes.nodes[3], lockwoodNodes.nodes[4], "Go straight down the hall until the entrance to Level Up is on your right.");
-	centerGraph.addEdge(lockwoodNodes.nodes[4], lockwoodNodes.nodes[3], "Go straight down the hall until you reach the doorway to the Lockwood Library and Clemens Hall tunnel.");
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[3],
+		lockwoodNodes.nodes[4],
+		"Go straight down the hall until the entrance to Level Up is on your right."
+	);
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[4],
+		lockwoodNodes.nodes[3],
+		"Go straight down the hall until you reach the doorway to the Lockwood Library and Clemens Hall tunnel."
+	);
 
-	centerGraph.addEdge(lockwoodNodes.nodes[4], lockwoodNodes.nodes[5], "Continue down the hallway on your left until you reach the Lockwood Library and Baldy Hall tunnel doorway.");
-	centerGraph.addEdge(lockwoodNodes.nodes[5], lockwoodNodes.nodes[4], "Continue down the hallway until Level up is directly ahead and there is a hallway on your right.");
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[4],
+		lockwoodNodes.nodes[5],
+		"Continue down the hallway on your left until you reach the Lockwood Library and Baldy Hall tunnel doorway."
+	);
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[5],
+		lockwoodNodes.nodes[4],
+		"Continue down the hallway until Level up is directly ahead and there is a hallway on your right."
+	);
 
 	// Clemens Hall Edges ----------------------------------------------------------------------
-	centerGraph.addEdge(clemensHallNodes.nodes[0], lockwoodNodes.nodes[3], "Travel through the Lockwood Library and Clemens Hall tunnel.");
-	centerGraph.addEdge(lockwoodNodes.nodes[3], clemensHallNodes.nodes[0], "Travel through the Lockwood Library and Clemens Hall tunnel.");
+	centerGraph.addEdge(
+		clemensHallNodes.nodes[0],
+		lockwoodNodes.nodes[3],
+		"Travel through the Lockwood Library and Clemens Hall tunnel."
+	);
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[3],
+		clemensHallNodes.nodes[0],
+		"Travel through the Lockwood Library and Clemens Hall tunnel."
+	);
 
-	centerGraph.addEdge(clemensHallNodes.nodes[0], clemensHallNodes.nodes[1], "Take the hallway on the right and stop once you are in front UB Campus Mail mailbox.");
-	centerGraph.addEdge(clemensHallNodes.nodes[1], clemensHallNodes.nodes[0], "Turn right and continue until the Lockwood Library and Clemens Hall tunnel doorway is on your left.");
+	centerGraph.addEdge(
+		clemensHallNodes.nodes[0],
+		clemensHallNodes.nodes[1],
+		"Take the hallway on the right and stop once you are in front UB Campus Mail mailbox."
+	);
+	centerGraph.addEdge(
+		clemensHallNodes.nodes[1],
+		clemensHallNodes.nodes[0],
+		"Turn right and continue until the Lockwood Library and Clemens Hall tunnel doorway is on your left."
+	);
 
-	centerGraph.addEdge(clemensHallNodes.nodes[1], clemensHallNodes.nodes[2], "Continue going down the hall until room 206 is on your left.");
-	centerGraph.addEdge(clemensHallNodes.nodes[2], clemensHallNodes.nodes[1], "Continue going down the hall until the UB Campus Mail mailbox is on your left.");
+	centerGraph.addEdge(
+		clemensHallNodes.nodes[1],
+		clemensHallNodes.nodes[2],
+		"Continue going down the hall until room 206 is on your left."
+	);
+	centerGraph.addEdge(
+		clemensHallNodes.nodes[2],
+		clemensHallNodes.nodes[1],
+		"Continue going down the hall until the UB Campus Mail mailbox is on your left."
+	);
 
-	centerGraph.addEdge(clemensHallNodes.nodes[3], clemensHallNodes.nodes[2], "Go down the hall on the right until room 206 is on your right.");
-	centerGraph.addEdge(clemensHallNodes.nodes[2], clemensHallNodes.nodes[3], "Go straight down the hall and turn left to reach blue double doors. This is Clemens Hall and Baird Hall tunnel entrance.");
+	centerGraph.addEdge(
+		clemensHallNodes.nodes[3],
+		clemensHallNodes.nodes[2],
+		"Go down the hall on the right until room 206 is on your right."
+	);
+	centerGraph.addEdge(
+		clemensHallNodes.nodes[2],
+		clemensHallNodes.nodes[3],
+		"Go straight down the hall and turn left to reach blue double doors. This is Clemens Hall and Baird Hall tunnel entrance."
+	);
 
 	// Baird Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(clemensHallNodes.nodes[3], bairdHallNodes.nodes[0], "Travel through the Clemens Hall and Baird Hall tunnel.");
-	centerGraph.addEdge(bairdHallNodes.nodes[0], clemensHallNodes.nodes[3], "Travel through the Clemens Hall and Baird Hall tunnel.");
+	centerGraph.addEdge(
+		clemensHallNodes.nodes[3],
+		bairdHallNodes.nodes[0],
+		"Travel through the Clemens Hall and Baird Hall tunnel."
+	);
+	centerGraph.addEdge(
+		bairdHallNodes.nodes[0],
+		clemensHallNodes.nodes[3],
+		"Travel through the Clemens Hall and Baird Hall tunnel."
+	);
 
-	centerGraph.addEdge(bairdHallNodes.nodes[0], bairdHallNodes.nodes[1], "Approach the long hallway that is straight ahead. An exit sign will be directly above you.");
-	centerGraph.addEdge(bairdHallNodes.nodes[1], bairdHallNodes.nodes[0], "Approach the blue double doors ahead. This is the entrance to the Clemens Hall and Baird Hall tunnel.");
+	centerGraph.addEdge(
+		bairdHallNodes.nodes[0],
+		bairdHallNodes.nodes[1],
+		"Approach the long hallway that is straight ahead. An exit sign will be directly above you."
+	);
+	centerGraph.addEdge(
+		bairdHallNodes.nodes[1],
+		bairdHallNodes.nodes[0],
+		"Approach the blue double doors ahead. This is the entrance to the Clemens Hall and Baird Hall tunnel."
+	);
 
-	centerGraph.addEdge(bairdHallNodes.nodes[1], bairdHallNodes.nodes[2], "Go down the hall until a shorter hall is on your left.");
-	centerGraph.addEdge(bairdHallNodes.nodes[2], bairdHallNodes.nodes[1], "Go down the long hall until there is an exit sign directly above you.");
+	centerGraph.addEdge(
+		bairdHallNodes.nodes[1],
+		bairdHallNodes.nodes[2],
+		"Go down the hall until a shorter hall is on your left."
+	);
+	centerGraph.addEdge(
+		bairdHallNodes.nodes[2],
+		bairdHallNodes.nodes[1],
+		"Go down the long hall until there is an exit sign directly above you."
+	);
 
-	centerGraph.addEdge(bairdHallNodes.nodes[2], bairdHallNodes.nodes[3], "Turn left and approach the blue double doors. This is the entrance to the Baird Hall and Slee Hall tunnel.");
-	centerGraph.addEdge(bairdHallNodes.nodes[3], bairdHallNodes.nodes[2], "Move into the long hall ahead and turn to the right.");
+	centerGraph.addEdge(
+		bairdHallNodes.nodes[2],
+		bairdHallNodes.nodes[3],
+		"Turn left and approach the blue double doors. This is the entrance to the Baird Hall and Slee Hall tunnel."
+	);
+	centerGraph.addEdge(
+		bairdHallNodes.nodes[3],
+		bairdHallNodes.nodes[2],
+		"Move into the long hall ahead and turn to the right."
+	);
 
 	// Slee Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(bairdHallNodes.nodes[3], sleeHallNodes.nodes[0], "Travel through the Baird Hall and Slee Hall tunnel.");
-	centerGraph.addEdge(sleeHallNodes.nodes[0], bairdHallNodes.nodes[3], "Travel through the Baird Hall and Slee Hall tunnel.");
+	centerGraph.addEdge(
+		bairdHallNodes.nodes[3],
+		sleeHallNodes.nodes[0],
+		"Travel through the Baird Hall and Slee Hall tunnel."
+	);
+	centerGraph.addEdge(
+		sleeHallNodes.nodes[0],
+		bairdHallNodes.nodes[3],
+		"Travel through the Baird Hall and Slee Hall tunnel."
+	);
 
 	// Baldy Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(lockwoodNodes.nodes[5], baldyHallNodes.nodes[0], "Travel through the short Lockwood Library and Baldy Hall tunnel.");
-	centerGraph.addEdge(baldyHallNodes.nodes[0], lockwoodNodes.nodes[5], "Travel through the short Lockwood Library and Baldy Hall tunnel.");
+	centerGraph.addEdge(
+		lockwoodNodes.nodes[5],
+		baldyHallNodes.nodes[0],
+		"Travel through the short Lockwood Library and Baldy Hall tunnel."
+	);
+	centerGraph.addEdge(
+		baldyHallNodes.nodes[0],
+		lockwoodNodes.nodes[5],
+		"Travel through the short Lockwood Library and Baldy Hall tunnel."
+	);
 
-	centerGraph.addEdge(baldyHallNodes.nodes[0], baldyHallNodes.nodes[1], "Go straight down the long hall until a sign is overhead, which is giving directions to the Math Place and the English Language Institute.");
-	centerGraph.addEdge(baldyHallNodes.nodes[1], baldyHallNodes.nodes[0], "Go straight down the long hall until you arrive at the doorway for the Lockwood Library and Baldy Hall tunnel. Elevators will be on your left.");
+	centerGraph.addEdge(
+		baldyHallNodes.nodes[0],
+		baldyHallNodes.nodes[1],
+		"Go straight down the long hall until a sign is overhead, which is giving directions to the Math Place and the English Language Institute."
+	);
+	centerGraph.addEdge(
+		baldyHallNodes.nodes[1],
+		baldyHallNodes.nodes[0],
+		"Go straight down the long hall until you arrive at the doorway for the Lockwood Library and Baldy Hall tunnel. Elevators will be on your left."
+	);
 
 	// O'Brain Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(baldyHallNodes.nodes[1], oBrianHallNodes.nodes[1], "Travel through the short Baldy Hall and O'Brian Hall tunnel.");
-	centerGraph.addEdge(oBrianHallNodes.nodes[1], baldyHallNodes.nodes[1], "Travel through the short Baldy Hall and O'Brian Hall tunnel.");
+	centerGraph.addEdge(
+		baldyHallNodes.nodes[1],
+		oBrianHallNodes.nodes[1],
+		"Travel through the short Baldy Hall and O'Brian Hall tunnel."
+	);
+	centerGraph.addEdge(
+		oBrianHallNodes.nodes[1],
+		baldyHallNodes.nodes[1],
+		"Travel through the short Baldy Hall and O'Brian Hall tunnel."
+	);
 
-	centerGraph.addEdge(oBrianHallNodes.nodes[1], oBrianHallNodes.nodes[2], "Go straight ahead to find room 201 directly in front of you.");
-	centerGraph.addEdge(oBrianHallNodes.nodes[2], oBrianHallNodes.nodes[1], "Turn left and continue until the entrance to a lounge area is on your left and the doorway to Park Hall is on the right.");
+	centerGraph.addEdge(
+		oBrianHallNodes.nodes[1],
+		oBrianHallNodes.nodes[2],
+		"Go straight ahead to find room 201 directly in front of you."
+	);
+	centerGraph.addEdge(
+		oBrianHallNodes.nodes[2],
+		oBrianHallNodes.nodes[1],
+		"Turn left and continue until the entrance to a lounge area is on your left and the doorway to Park Hall is on the right."
+	);
 
-	centerGraph.addEdge(oBrianHallNodes.nodes[1], oBrianHallNodes.nodes[0], "Turn to the doorway for the O'Brian Hall and Park Hall tunnel. Reach the doorway and stop.");
-	centerGraph.addEdge(oBrianHallNodes.nodes[0], oBrianHallNodes.nodes[1], "Move ahead until there is a doorway to Baldy Hall on the right, and you can see a hall on the left.");
+	centerGraph.addEdge(
+		oBrianHallNodes.nodes[1],
+		oBrianHallNodes.nodes[0],
+		"Turn to the doorway for the O'Brian Hall and Park Hall tunnel. Reach the doorway and stop."
+	);
+	centerGraph.addEdge(
+		oBrianHallNodes.nodes[0],
+		oBrianHallNodes.nodes[1],
+		"Move ahead until there is a doorway to Baldy Hall on the right, and you can see a hall on the left."
+	);
 
-	centerGraph.addEdge(oBrianHallNodes.nodes[2], oBrianHallNodes.nodes[3], "Turn right and continue straight down the hall until room 206 is on your right.");
-	centerGraph.addEdge(oBrianHallNodes.nodes[3], oBrianHallNodes.nodes[2], "Turn right and continue straight down the hall until room 201 is on your right.");
+	centerGraph.addEdge(
+		oBrianHallNodes.nodes[2],
+		oBrianHallNodes.nodes[3],
+		"Turn right and continue straight down the hall until room 206 is on your right."
+	);
+	centerGraph.addEdge(
+		oBrianHallNodes.nodes[3],
+		oBrianHallNodes.nodes[2],
+		"Turn right and continue straight down the hall until room 201 is on your right."
+	);
 
-	centerGraph.addEdge(oBrianHallNodes.nodes[3], oBrianHallNodes.nodes[4], "Turn left and continue straight down the hall until you reach the doorway to the O'Brian Hall and Norton Hall tunnel on the right.");
-	centerGraph.addEdge(oBrianHallNodes.nodes[4], oBrianHallNodes.nodes[3], "Take the long hall on your left. Continue until room 206 is in front of you.");
+	centerGraph.addEdge(
+		oBrianHallNodes.nodes[3],
+		oBrianHallNodes.nodes[4],
+		"Turn left and continue straight down the hall until you reach the doorway to the O'Brian Hall and Norton Hall tunnel on the right."
+	);
+	centerGraph.addEdge(
+		oBrianHallNodes.nodes[4],
+		oBrianHallNodes.nodes[3],
+		"Take the long hall on your left. Continue until room 206 is in front of you."
+	);
 
 	// Norton Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(oBrianHallNodes.nodes[4], nortonHallNodes.nodes[0], "Travel through the O'Brian Hall and Norton Hall tunnel.");
-	centerGraph.addEdge(nortonHallNodes.nodes[0], oBrianHallNodes.nodes[4], "Travel through the O'Brian Hall and Norton Hall tunnel.");
+	centerGraph.addEdge(
+		oBrianHallNodes.nodes[4],
+		nortonHallNodes.nodes[0],
+		"Travel through the O'Brian Hall and Norton Hall tunnel."
+	);
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[0],
+		oBrianHallNodes.nodes[4],
+		"Travel through the O'Brian Hall and Norton Hall tunnel."
+	);
 
-	centerGraph.addEdge(nortonHallNodes.nodes[0], nortonHallNodes.nodes[1], "Continue straight until the men's restroom is in front of you.");
-	centerGraph.addEdge(nortonHallNodes.nodes[1], nortonHallNodes.nodes[0], "Go down the hall on the right to reach the doorway to the O'Brian Hall and Norton Hall tunnel.");
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[0],
+		nortonHallNodes.nodes[1],
+		"Continue straight until the men's restroom is in front of you."
+	);
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[1],
+		nortonHallNodes.nodes[0],
+		"Go down the hall on the right to reach the doorway to the O'Brian Hall and Norton Hall tunnel."
+	);
 
-	centerGraph.addEdge(nortonHallNodes.nodes[1], nortonHallNodes.nodes[2], "Turn right and go into the elevator on the right.");
-	centerGraph.addEdge(nortonHallNodes.nodes[2], nortonHallNodes.nodes[1], "Exit the elevator and turn left. Continue until the men's restroom is directly on your right.");
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[1],
+		nortonHallNodes.nodes[2],
+		"Turn right and go into the elevator on the right."
+	);
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[2],
+		nortonHallNodes.nodes[1],
+		"Exit the elevator and turn left. Continue until the men's restroom is directly on your right."
+	);
 
-	centerGraph.addEdge(nortonHallNodes.nodes[1], nortonHallNodes.nodes[3], "Turn left and continue down the hall until there is another hallway on your right.");
-	centerGraph.addEdge(nortonHallNodes.nodes[3], nortonHallNodes.nodes[1], "Continue going down the hall until the men's restroom is directly on your left.");
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[1],
+		nortonHallNodes.nodes[3],
+		"Turn left and continue down the hall until there is another hallway on your right."
+	);
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[3],
+		nortonHallNodes.nodes[1],
+		"Continue going down the hall until the men's restroom is directly on your left."
+	);
 
-	centerGraph.addEdge(nortonHallNodes.nodes[3], nortonHallNodes.nodes[4], "Turn into the hall on your side, and approach the doorway to the Norton Hall and Bonner Hall tunnel.");
-	centerGraph.addEdge(nortonHallNodes.nodes[4], nortonHallNodes.nodes[3], "Move into the long hall ahead. Pivot right to continue to Capen Hall. Otherwise pivot left.");
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[3],
+		nortonHallNodes.nodes[4],
+		"Turn into the hall on your side, and approach the doorway to the Norton Hall and Bonner Hall tunnel."
+	);
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[4],
+		nortonHallNodes.nodes[3],
+		"Move into the long hall ahead. Pivot right to continue to Capen Hall. Otherwise pivot left."
+	);
 
-	centerGraph.addEdge(nortonHallNodes.nodes[3], nortonHallNodes.nodes[5], "Continue straight down until there is an elevator on your left.");
-	centerGraph.addEdge(nortonHallNodes.nodes[5], nortonHallNodes.nodes[3], "Go straight down the long hall ahead until a shorter hall is on your left.");
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[3],
+		nortonHallNodes.nodes[5],
+		"Continue straight down until there is an elevator on your left."
+	);
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[5],
+		nortonHallNodes.nodes[3],
+		"Go straight down the long hall ahead until a shorter hall is on your left."
+	);
 
 	// Bonner Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(nortonHallNodes.nodes[4], bonnerHallNodes.nodes[0], "Travel through the Norton Hall and Bonner Hall tunnel.");
-	centerGraph.addEdge(bonnerHallNodes.nodes[0], nortonHallNodes.nodes[4], "Travel through the Norton Hall and Bonner Hall tunnel.");
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[4],
+		bonnerHallNodes.nodes[0],
+		"Travel through the Norton Hall and Bonner Hall tunnel."
+	);
+	centerGraph.addEdge(
+		bonnerHallNodes.nodes[0],
+		nortonHallNodes.nodes[4],
+		"Travel through the Norton Hall and Bonner Hall tunnel."
+	);
+
+	// Park/Jacobs Tunnel Edges -----------------------------------------------------------------------
+	centerGraph.addEdge(
+		oBrianHallNodes.nodes[0],
+		parkJacobsTunnelNodes.nodes[0],
+		"Travel through the O'Brian Hall and Park Hall tunnel."
+	);
+	centerGraph.addEdge(
+		parkJacobsTunnelNodes.nodes[0],
+		oBrianHallNodes.nodes[0],
+		"Travel through the O'Brian Hall and Park Hall tunnel."
+	);
+	centerGraph.addEdge(
+		parkJacobsTunnelNodes.nodes[0],
+		parkJacobsTunnelNodes.nodes[1],
+		"Continue going straight, and go through the doors at the end of the tunnel."
+	);
+	centerGraph.addEdge(
+		parkJacobsTunnelNodes.nodes[1],
+		parkJacobsTunnelNodes.nodes[0],
+		"Find and go through the double doors on your right. Stop at the doors at the end of the tunnel."
+	);
+
+	// Park Hall Edges -----------------------------------------------------------------------
+	centerGraph.addEdge(
+		parkJacobsTunnelNodes.nodes[0],
+		parkHallNodes.nodes[0],
+		"Find the double doors to your right and enter. You are now in Park Hall's 2nd floor."
+	);
+	centerGraph.addEdge(
+		parkHallNodes.nodes[0],
+		parkJacobsTunnelNodes.nodes[0],
+		"Starting on Park Hall's 2nd floor near the double doors by room 281. Enter the double doors and turn to the left to find another set of double doors."
+	);
+	centerGraph.addEdge(
+		parkJacobsTunnelNodes.nodes[1],
+		parkHallNodes.nodes[1],
+		"Find the another set of double doors straight ahead and enter. You are now in Park Hall's 2nd floor."
+	);
+	centerGraph.addEdge(
+		parkHallNodes.nodes[1],
+		parkJacobsTunnelNodes.nodes[1],
+		"Starting on Park Hall's 2nd floor. Go through the double doors across from the Psychology Department's main office entrance."
+	);
+
+	// Jacobs Management Center Edges -----------------------------------------------------------------------
+	centerGraph.addEdge(
+		parkJacobsTunnelNodes.nodes[1],
+		jacobsNodes.nodes[0],
+		"Find the double doors straight ahead and enter. Travel through the short tunnel and enter the next set of double doors ahead."
+	);
+	centerGraph.addEdge(
+		jacobsNodes.nodes[0],
+		parkJacobsTunnelNodes.nodes[1],
+		"From Jacobs Management Center's 2nd floor, use the double doors across from room 202B. Go through the tunnel and go through the next set of double doors."
+	);
 
 	loadLeftGraphEdges();
 }
@@ -2373,84 +2938,260 @@ export function loadLeftGraphNodes() {
 
 export function loadLeftGraphEdges() {
 	// Cooke Hall Edges -----------------------------------------------------------------------
-	centerGraph.addEdge(cookeHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "With room 114 on your right, go straight ahead until an exit sign is directly above you.");
-	centerGraph.addEdge(cookeHochMidpoint.nodes[0], cookeHallNodes.nodes[0], "Facing the the tunnel to Natural Science Complex, go left and stop once room 114 is on your left.");
+	centerGraph.addEdge(
+		cookeHallNodes.nodes[0],
+		cookeHochMidpoint.nodes[0],
+		"With room 114 on your right, go straight ahead until an exit sign is directly above you."
+	);
+	centerGraph.addEdge(
+		cookeHochMidpoint.nodes[0],
+		cookeHallNodes.nodes[0],
+		"Facing the the tunnel to Natural Science Complex, go left and stop once room 114 is on your left."
+	);
 
 	// Hochstetter Hall Edges -----------------------------------------------------------------
-	centerGraph.addEdge(hochstetterHallNodes.nodes[0], cookeHochMidpoint.nodes[0], "With room H117 on your right, go straight ahead until an exit sign is directly above you.");
-	centerGraph.addEdge(cookeHochMidpoint.nodes[0], hochstetterHallNodes.nodes[0], "Facing the the tunnel to Natural Science Complex, go right and stop once room H117 is on your left.");
+	centerGraph.addEdge(
+		hochstetterHallNodes.nodes[0],
+		cookeHochMidpoint.nodes[0],
+		"With room H117 on your right, go straight ahead until an exit sign is directly above you."
+	);
+	centerGraph.addEdge(
+		cookeHochMidpoint.nodes[0],
+		hochstetterHallNodes.nodes[0],
+		"Facing the the tunnel to Natural Science Complex, go right and stop once room H117 is on your left."
+	);
 
 	// NSC Edges ------------------------------------------------------------------------------
-	centerGraph.addEdge(cookeHochMidpoint.nodes[0], nscNodes.nodes[0], "Travel through the Cooke/Hochstetter Hall and Natural Science Complex tunnel.");
-	centerGraph.addEdge(nscNodes.nodes[0], cookeHochMidpoint.nodes[0], "Travel through the Cooke/Hochstetter Hall and Natural Science Complex tunnel.");
+	centerGraph.addEdge(
+		cookeHochMidpoint.nodes[0],
+		nscNodes.nodes[0],
+		"Travel through the Cooke/Hochstetter Hall and Natural Science Complex tunnel."
+	);
+	centerGraph.addEdge(
+		nscNodes.nodes[0],
+		cookeHochMidpoint.nodes[0],
+		"Travel through the Cooke/Hochstetter Hall and Natural Science Complex tunnel."
+	);
 
-	centerGraph.addEdge(nscNodes.nodes[0], nscNodes.nodes[1], "Go straight ahead until an exit sign is directly above. Pivot right for Talbert Hall. Pivot left for Mathematics Building.");
-	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[0], "Go to the doorway of the Cooke/Hochstetter Hall and Natural Science Complex tunnel. Restrooms will be on yor left.");
+	centerGraph.addEdge(
+		nscNodes.nodes[0],
+		nscNodes.nodes[1],
+		"Go straight ahead until an exit sign is directly above. Pivot right for Talbert Hall. Pivot left for Mathematics Building."
+	);
+	centerGraph.addEdge(
+		nscNodes.nodes[1],
+		nscNodes.nodes[0],
+		"Go to the doorway of the Cooke/Hochstetter Hall and Natural Science Complex tunnel. Restrooms will be on yor left."
+	);
 
-	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[2], "Reach the doorway to the Talbert Hall and Natural Science Complex tunnel.");
-	centerGraph.addEdge(nscNodes.nodes[2], nscNodes.nodes[1], "Continue straight ahead until your are directly underneath an exit sign. Pivot right for Fronczak Hall. Pivot left for Cooke or Hochstetter Hall.");
+	centerGraph.addEdge(
+		nscNodes.nodes[1],
+		nscNodes.nodes[2],
+		"Reach the doorway to the Talbert Hall and Natural Science Complex tunnel."
+	);
+	centerGraph.addEdge(
+		nscNodes.nodes[2],
+		nscNodes.nodes[1],
+		"Continue straight ahead until your are directly underneath an exit sign. Pivot right for Fronczak Hall. Pivot left for Cooke or Hochstetter Hall."
+	);
 
 	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[3], "Continue until an exit sign is directly above you.");
-	centerGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[1], "Go straight until an exit sign is directly above you. Pivot Right for Cooke and Hochstetter Halls. Pivot left for Fronczac Hall.");
+	centerGraph.addEdge(
+		nscNodes.nodes[3],
+		nscNodes.nodes[1],
+		"Go straight until an exit sign is directly above you. Pivot Right for Cooke and Hochstetter Halls. Pivot left for Fronczac Hall."
+	);
 
-	centerGraph.addEdge(nscNodes.nodes[3], nscNodes.nodes[4], "Take the doorway on the right. Continue straight. A safety rail should be directly in front of you.");
-	centerGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[3], "Take the hall on the right. After passing the doorway, stop underneath the exit sign on the ceiling.");
+	centerGraph.addEdge(
+		nscNodes.nodes[3],
+		nscNodes.nodes[4],
+		"Take the doorway on the right. Continue straight. A safety rail should be directly in front of you."
+	);
+	centerGraph.addEdge(
+		nscNodes.nodes[4],
+		nscNodes.nodes[3],
+		"Take the hall on the right. After passing the doorway, stop underneath the exit sign on the ceiling."
+	);
 
-	centerGraph.addEdge(nscNodes.nodes[4], nscNodes.nodes[5], "Turn left and continue straight down the hall until the entry to the Natural Science Complex and Mathematics Building tunnel is on the right.");
-	centerGraph.addEdge(nscNodes.nodes[5], nscNodes.nodes[4], "Take the hall on your left straight down until there is another hall on your right.");
+	centerGraph.addEdge(
+		nscNodes.nodes[4],
+		nscNodes.nodes[5],
+		"Turn left and continue straight down the hall until the entry to the Natural Science Complex and Mathematics Building tunnel is on the right."
+	);
+	centerGraph.addEdge(
+		nscNodes.nodes[5],
+		nscNodes.nodes[4],
+		"Take the hall on your left straight down until there is another hall on your right."
+	);
 
-	centerGraph.addEdge(nscNodes.nodes[1], nscNodes.nodes[6], "Take the hall towards Fronczak Hall, and stop underneath the second exit sign you see. Another hall will be on the right.");
-	centerGraph.addEdge(nscNodes.nodes[6], nscNodes.nodes[1], "Take the hall on the left and stop at the intersection of halls. Pivot right for the Math Building. Pivot Left for Talbert Hall.");
+	centerGraph.addEdge(
+		nscNodes.nodes[1],
+		nscNodes.nodes[6],
+		"Take the hall towards Fronczak Hall, and stop underneath the second exit sign you see. Another hall will be on the right."
+	);
+	centerGraph.addEdge(
+		nscNodes.nodes[6],
+		nscNodes.nodes[1],
+		"Take the hall on the left and stop at the intersection of halls. Pivot right for the Math Building. Pivot Left for Talbert Hall."
+	);
 
 	centerGraph.addEdge(nscNodes.nodes[6], nscNodes.nodes[7], "Take the hall on the right, and stop at the doorway.");
-	centerGraph.addEdge(nscNodes.nodes[7], nscNodes.nodes[6], "Move forward and stop underneath the exit sign on the ceiling. A hall will be on your left.");
+	centerGraph.addEdge(
+		nscNodes.nodes[7],
+		nscNodes.nodes[6],
+		"Move forward and stop underneath the exit sign on the ceiling. A hall will be on your left."
+	);
 
 	// Mathematics Building Edges ----------------------------------------------------------------
-	centerGraph.addEdge(nscNodes.nodes[5], mathBuildingNodes.nodes[0], "Travel through the Natural Science Complex and Mathematics Building tunnel.");
-	centerGraph.addEdge(mathBuildingNodes.nodes[0], nscNodes.nodes[5], "Travel through the Natural Science Complex and Mathematics Building tunnel.");
+	centerGraph.addEdge(
+		nscNodes.nodes[5],
+		mathBuildingNodes.nodes[0],
+		"Travel through the Natural Science Complex and Mathematics Building tunnel."
+	);
+	centerGraph.addEdge(
+		mathBuildingNodes.nodes[0],
+		nscNodes.nodes[5],
+		"Travel through the Natural Science Complex and Mathematics Building tunnel."
+	);
 
 	// Fronczak Hall Edges ------------------------------------------------------------------------
-	centerGraph.addEdge(nscNodes.nodes[7], fronczakHallNodes.nodes[0], "Travel through the Natural Science Complex and Fronczak Hall tunnel.");
-	centerGraph.addEdge(fronczakHallNodes.nodes[0], nscNodes.nodes[7], "Travel through the Natural Science Complex and Fronczak Hall tunnel.");
+	centerGraph.addEdge(
+		nscNodes.nodes[7],
+		fronczakHallNodes.nodes[0],
+		"Travel through the Natural Science Complex and Fronczak Hall tunnel."
+	);
+	centerGraph.addEdge(
+		fronczakHallNodes.nodes[0],
+		nscNodes.nodes[7],
+		"Travel through the Natural Science Complex and Fronczak Hall tunnel."
+	);
 
 	// Talbert Hall Edges ------------------------------------------------------------------------
-	centerGraph.addEdge(nscNodes.nodes[2], talbertHallNodes.nodes[0], "Travel through the Talbert Hall and Natural Science Complex tunnel.");
-	centerGraph.addEdge(talbertHallNodes.nodes[0], nscNodes.nodes[2], "Travel through the Talbert Hall and Natural Science Complex tunnel.");
+	centerGraph.addEdge(
+		nscNodes.nodes[2],
+		talbertHallNodes.nodes[0],
+		"Travel through the Talbert Hall and Natural Science Complex tunnel."
+	);
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[0],
+		nscNodes.nodes[2],
+		"Travel through the Talbert Hall and Natural Science Complex tunnel."
+	);
 
-	centerGraph.addEdge(talbertHallNodes.nodes[0], talbertHallNodes.nodes[1], "Go down the long hall ahead until a small entryway with an elevator is on your left.");
-	centerGraph.addEdge(talbertHallNodes.nodes[1], talbertHallNodes.nodes[0], "Take the long hall on the right and continue until stairs S114 are on your right.");
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[0],
+		talbertHallNodes.nodes[1],
+		"Go down the long hall ahead until a small entryway with an elevator is on your left."
+	);
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[1],
+		talbertHallNodes.nodes[0],
+		"Take the long hall on the right and continue until stairs S114 are on your right."
+	);
 
-	centerGraph.addEdge(talbertHallNodes.nodes[1], talbertHallNodes.nodes[2], "Go into the entryway on the left. Enter the elevator.");
-	centerGraph.addEdge(talbertHallNodes.nodes[2], talbertHallNodes.nodes[1], "Exit the elevator, turn left, and move into hallway directly in front of you.");
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[1],
+		talbertHallNodes.nodes[2],
+		"Go into the entryway on the left. Enter the elevator."
+	);
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[2],
+		talbertHallNodes.nodes[1],
+		"Exit the elevator, turn left, and move into hallway directly in front of you."
+	);
 
-	centerGraph.addEdge(talbertHallNodes.nodes[2], talbertHallNodes.nodes[3], "Take the elevator down to the ground floor.");
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[2],
+		talbertHallNodes.nodes[3],
+		"Take the elevator down to the ground floor."
+	);
 	centerGraph.addEdge(talbertHallNodes.nodes[3], talbertHallNodes.nodes[2], "Take the elevator up to the first floor.");
 
-	centerGraph.addEdge(talbertHallNodes.nodes[3], talbertHallNodes.nodes[4], "Exit the elevator, turn left, and move into hallway directly in front of you.");
-	centerGraph.addEdge(talbertHallNodes.nodes[4], talbertHallNodes.nodes[3], "Go into the entryway on the right. Enter the elevator.");
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[3],
+		talbertHallNodes.nodes[4],
+		"Exit the elevator, turn left, and move into hallway directly in front of you."
+	);
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[4],
+		talbertHallNodes.nodes[3],
+		"Go into the entryway on the right. Enter the elevator."
+	);
 
-	centerGraph.addEdge(talbertHallNodes.nodes[4], talbertHallNodes.nodes[5], "Turn left and continue down the hall until room 50 is on your right.");
-	centerGraph.addEdge(talbertHallNodes.nodes[5], talbertHallNodes.nodes[4], "Continue going straight down the hall until there is a small entryway with an elevator on your right.");
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[4],
+		talbertHallNodes.nodes[5],
+		"Turn left and continue down the hall until room 50 is on your right."
+	);
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[5],
+		talbertHallNodes.nodes[4],
+		"Continue going straight down the hall until there is a small entryway with an elevator on your right."
+	);
 
 	// Capen Hall Edges ------------------------------------------------------------------------
-	centerGraph.addEdge(talbertHallNodes.nodes[5], capenHallNodes.nodes[0], "From Talbert's ground floor with room 50 on your right, go straight until the \"Talbert Bullpen\" is on the right wall. You are now in Capen Hall.");
-	centerGraph.addEdge(capenHallNodes.nodes[0], talbertHallNodes.nodes[5], "From Capen's ground floor with the \"Talbert Bullpen\" in front, turn right and stop once room 50 is on your left. You are now in Talbert Hall.");
+	centerGraph.addEdge(
+		talbertHallNodes.nodes[5],
+		capenHallNodes.nodes[0],
+		'From Talbert\'s ground floor with room 50 on your right, go straight until the "Talbert Bullpen" is on the right wall. You are now in Capen Hall.'
+	);
+	centerGraph.addEdge(
+		capenHallNodes.nodes[0],
+		talbertHallNodes.nodes[5],
+		'From Capen\'s ground floor with the "Talbert Bullpen" in front, turn right and stop once room 50 is on your left. You are now in Talbert Hall.'
+	);
 
-	centerGraph.addEdge(capenHallNodes.nodes[0], capenHallNodes.nodes[1], "Turn left and go straight down the long hall. Stop after passing \"1Capen\" on your right.");
-	centerGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[0], "Turn left and continue down the long hall. Stop once you see the \"Talbert Bullpen\" at the end of the hall.");
+	centerGraph.addEdge(
+		capenHallNodes.nodes[0],
+		capenHallNodes.nodes[1],
+		'Turn left and go straight down the long hall. Stop after passing "1Capen" on your right.'
+	);
+	centerGraph.addEdge(
+		capenHallNodes.nodes[1],
+		capenHallNodes.nodes[0],
+		'Turn left and continue down the long hall. Stop once you see the "Talbert Bullpen" at the end of the hall.'
+	);
 
-	centerGraph.addEdge(capenHallNodes.nodes[1], capenHallNodes.nodes[2], "Turn right and continue straight down until \"The Buffalo Room\" is on your right.");
-	centerGraph.addEdge(capenHallNodes.nodes[2], capenHallNodes.nodes[1], "Go straight and stop before an exit sign is almost above you. There will be a hall on your left.");
+	centerGraph.addEdge(
+		capenHallNodes.nodes[1],
+		capenHallNodes.nodes[2],
+		'Turn right and continue straight down until "The Buffalo Room" is on your right.'
+	);
+	centerGraph.addEdge(
+		capenHallNodes.nodes[2],
+		capenHallNodes.nodes[1],
+		"Go straight and stop before an exit sign is almost above you. There will be a hall on your left."
+	);
 
 	// Norton Hall Ground Floor Edges
-	centerGraph.addEdge(capenHallNodes.nodes[2], nortonHallNodes.nodes[6], "From Capen's ground floor with \"The Buffalo Room\" on your right, go straight until room 05 is on your left. You are now in Norton Hall.");
-	centerGraph.addEdge(nortonHallNodes.nodes[6], capenHallNodes.nodes[2], "From Norton Hall's ground floor with room 05 on your right, go straight until \"The Buffalo Room\" is on your left. You are now in Capen Hall.");
+	centerGraph.addEdge(
+		capenHallNodes.nodes[2],
+		nortonHallNodes.nodes[6],
+		'From Capen\'s ground floor with "The Buffalo Room" on your right, go straight until room 05 is on your left. You are now in Norton Hall.'
+	);
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[6],
+		capenHallNodes.nodes[2],
+		'From Norton Hall\'s ground floor with room 05 on your right, go straight until "The Buffalo Room" is on your left. You are now in Capen Hall.'
+	);
 
-	centerGraph.addEdge(nortonHallNodes.nodes[6], nortonHallNodes.nodes[7], "Continue down the long hall until there is an elevator on your right. Knox Hall will be directly ahead.");
-	centerGraph.addEdge(nortonHallNodes.nodes[7], nortonHallNodes.nodes[6], "Take the long hall down until room 05 is on your right.");
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[6],
+		nortonHallNodes.nodes[7],
+		"Continue down the long hall until there is an elevator on your right. Knox Hall will be directly ahead."
+	);
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[7],
+		nortonHallNodes.nodes[6],
+		"Take the long hall down until room 05 is on your right."
+	);
 
 	centerGraph.addEdge(nortonHallNodes.nodes[7], nortonHallNodes.nodes[2], "Take the elevator up to the 2nd floor.");
-	centerGraph.addEdge(nortonHallNodes.nodes[2], nortonHallNodes.nodes[7], "Take the elevator down to the ground floor. Once you exit, the women's restroom will be in front of you.");
+	centerGraph.addEdge(
+		nortonHallNodes.nodes[2],
+		nortonHallNodes.nodes[7],
+		"Take the elevator down to the ground floor. Once you exit, the women's restroom will be in front of you."
+	);
 }
 
 // ###################################################################################################
