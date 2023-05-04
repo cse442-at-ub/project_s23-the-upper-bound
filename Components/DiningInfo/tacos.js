@@ -5,6 +5,8 @@ import {
   Text,
   View,
   ImageBackground,
+  SafeAreaView, 
+  ScrollView
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import {Header} from "react-native-elements";
@@ -13,8 +15,9 @@ import {Header} from "react-native-elements";
 
 export default function Mexican() {
   return (
-    <View style={styles.container}>
-    <View>
+    <SafeAreaView style={styles.container}>
+    <ScrollView>
+      <View>
     <Header
           backgroundColor="#3265CB"
           centerComponent={{ text: 'Mexican Options', style: { color: '#fff', fontSize: 20 } }}
@@ -64,8 +67,9 @@ export default function Mexican() {
             {"Location: Commons\n"}
           </Text>
         </View>
+        </ScrollView>
         
-    </View>
+    </SafeAreaView>
   );
 }
 

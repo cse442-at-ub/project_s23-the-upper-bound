@@ -50,9 +50,12 @@ export default function DiningInfo({navigation}) {
         </Pressable>
 
         </View>
-        <View>
-          <Text style={styles.txt}>{"Please press a button above to view dining options in that food style"}</Text>
-        </View>
+        <ImageBackground
+        source={require("../assets/BlueTri.png")}
+        style={styles.welcomeDown}
+
+        ></ImageBackground>
+        
 
 
     </View>
@@ -68,8 +71,8 @@ const styles = StyleSheet.create({
   userTxt: {
     color: "#FFFFFF",
     marginLeft: 10,
-    fontSize: 44,
-    top: -80,
+    fontSize: 40,
+    top: -120,
     fontWeight:"bold"
   },
   welcomeUp: {
@@ -82,8 +85,8 @@ const styles = StyleSheet.create({
   welcomeDown: {
     height: 300,
     width: 150,
-    left: 200,
-    top: -440,
+    left: 110,
+    top: -350,
     justifyContent: "center",
     transform: [{ scaleX: 1 }, { scaleY: -1 }],
     alignItems: "center",
@@ -93,7 +96,7 @@ const styles = StyleSheet.create({
     width: 150,
     justifyContent: "center",
     alignItems: "center",
-    top: -30,
+    top: -80,
     left: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
@@ -103,7 +106,7 @@ const styles = StyleSheet.create({
     width: 150,
     justifyContent: "center",
     alignItems: "center",
-    top: -0,
+    top: -50,
     left: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
@@ -114,7 +117,7 @@ const styles = StyleSheet.create({
     width: 150,
     justifyContent: "center",
     alignItems: "center",
-    top: -300,
+    top: -350,
     right: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
@@ -126,7 +129,7 @@ const styles = StyleSheet.create({
     width: 150,
     justifyContent: "center",
     alignItems: "center",
-    top: -330,
+    top: -380,
     right: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
