@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { Pressable, StyleSheet, Text, View, ImageBackground} from "react-native";
+import { Pressable, StyleSheet, Text, View, ImageBackground, TouchableHighlight} from "react-native";
 import React, { useEffect, useState } from "react";
 import * as Linking from 'expo-linking';
 import * as WebBrowser from 'expo-web-browser';
@@ -13,42 +13,38 @@ export default function EventScreen({navigation}){
 					source={require("../assets/BlueTri.png")}
 					style={styles.welcomeUp}
 				></ImageBackground>
-            <Text style={styles.userTxt}>Upcoming Events</Text> 
-            <Pressable
+            <Text style={styles.userTxt}>Upcoming Events</Text>
+            <TouchableHighlight underlayColor={"#1e2c70"}
             style={styles.signupBtn}
             title="Check out CSE Events"
             onPress={() => Linking.openURL('https://engineering.buffalo.edu/computer-science-engineering/news-and-events/events.html')}
             >
                 <Text style={styles.buttons}>Computer Science events!</Text>
-             </Pressable>
-             <Pressable
+            </TouchableHighlight>
+
+            <TouchableHighlight underlayColor={"#1e2c70"}
             style={styles.signupBtn}
             title="Check out sport events"
             onPress={() => Linking.openURL('https://ubbulls.com/calendar?date=3/6/2023&vtype=list')}
             >
             <Text style={styles.buttons}>See upcoming sport events!</Text>
-             </Pressable>
+            </TouchableHighlight>
 
-             <Pressable
+            <TouchableHighlight underlayColor={"#1e2c70"}
             style={styles.signupBtn}
             title="Student life events"
             onPress={() => Linking.openURL('https://www.buffalo.edu/studentlife/life-on-campus/clubs-and-activities/event-calendars/student-life-events.html')}
             >
             <Text style={styles.buttons}>Student life activities!</Text>
-             </Pressable>
+            </TouchableHighlight>
 
-             <Pressable
+            <TouchableHighlight underlayColor={"#1e2c70"}
             style={styles.signupBtn}
             title="Student life events"
             onPress={() => Linking.openURL('https://buffalo.campuslabs.com/engage/events')}
             >
             <Text style={styles.buttons}>Club activities!</Text>
-             </Pressable>
-
-             <ImageBackground
-				source={require("../assets/path_icon.png")}
-				style={styles.logo}
-			></ImageBackground>
+            </TouchableHighlight>
          </View>
     );
 }
@@ -68,15 +64,17 @@ const styles = StyleSheet.create({
         top:-90,
 	},
     signupBtn: {
-		width: "70%",
+		width: "90%",
 		borderRadius: 20,
-		height: 50,
+		height: 100,
 		alignItems: "center",
 		justifyContent: "center",
-		backgroundColor: "#3265CB",
+		backgroundColor: "#191b26",
 		elevation: 3,
-		marginTop: 60,
-        top:-100,
+		marginTop: 20,
+        top:-30,
+        borderColor: "#3265CB",
+        borderWidth: 2,
 	},
     buttons: {
 		fontSize: 20,
