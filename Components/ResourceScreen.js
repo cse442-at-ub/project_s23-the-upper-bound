@@ -6,21 +6,24 @@ import {
   View,
   ImageBackground,
   Image,
+  ScrollView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import * as Linking from "expo-linking";
 import * as WebBrowser from "expo-web-browser";
+import { Header } from "react-native-elements";
 
 export default function ResourceScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={require("../assets/BlueTri.png")}
-        style={styles.welcomeUp}
-      ></ImageBackground>
 
-      <Text style={styles.userTxt}>Important Resources</Text>
-      <Pressable
+    <View style = {styles.container}>
+      <ScrollView>
+        <Header
+          backgroundColor="#3265CB"
+          centerComponent={{ text: 'Campus Resources', style: { color: '#fff', fontSize: 17 } }}
+        />
+
+        <Pressable
         style={styles.MHbuttons}
         title="Mental Health"
         onPress={() =>
@@ -29,75 +32,102 @@ export default function ResourceScreen({ navigation }) {
           )
         }
       >
+        <ImageBackground
+          source={require("../Components/ResourcesImages/mental-health.jpeg")}
+          style = {{width:120, height:120, marginLeft: -255, top: 57, borderRadius: 30, overflow: "hidden"}}
+        ></ImageBackground>
         <Text style={styles.buttonTXT}>Mental Health</Text>
+        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
+        top: -60, marginLeft: 140}}>Whether you’re worried about grades</Text>
+        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
+        top: -60, marginLeft: 112}}>or a personal crisis, we’re here to</Text>
+        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
+        top: -60, marginLeft: 120}}>support mental wellness through a</Text>
+        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
+        top: -60, marginLeft: 93}}>variety of services to currently</Text>
+        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
+        top: -60, marginLeft: 27}}>registered students.</Text>
       </Pressable>
 
       <Pressable
         style={styles.Mbuttons}
-        title="MEDICAL"
+        title="Mental Health"
         onPress={() =>
           Linking.openURL(
             "https://www.buffalo.edu/studentlife/life-on-campus/health/medical-care.html"
           )
         }
       >
-        <Text style={styles.buttonTXT}>Medical Resources</Text>
+        <ImageBackground
+          source={require("../Components/ResourcesImages/medical-resources.jpeg")}
+          style = {{width:120, height:120, marginLeft: -255, top: 40, borderRadius: 30, overflow: "hidden"}}
+        ></ImageBackground>
+        <Text style={styles.MbuttonTXT}>Medical Resources</Text>
+        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
+        top: -60, marginLeft: 140, marginRight: 10}}>Whether you’re feeling sick, or you want to stay healthy, we're here to
+        take care of you, at your time at UB. </Text>
       </Pressable>
 
       <Pressable
-        style={styles.CLbuttons}
-        title="housing"
+        style={styles.MMbuttons}
+        title="Writing Resources"
         onPress={() =>
-          Linking.openURL("https://www.buffalo.edu/campusliving.html")
+          Linking.openURL(
+            "https://www.buffalo.edu/writing.html"
+          )
         }
       >
-        <Text style={styles.buttonTXT}>Housing Resources</Text>
+        <ImageBackground
+          source={require("../Components/ResourcesImages/writing-resource.jpeg")}
+          style = {{width:120, height:120, marginLeft: -255, top: 55, borderRadius: 30, overflow: "hidden"}}
+        ></ImageBackground>
+        <Text style={styles.MbuttonTXT}>Writing Resources</Text>
+        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
+        top: -60, marginLeft: 150, marginRight: 10}}>Whatever your major or assignment, the Center for Excellence in 
+        Writing is here for you! Take advantage of our individual writing consultation service. </Text>
       </Pressable>
 
       <Pressable
-        style={styles.Wbuttons}
-        title="writing"
-        onPress={() => Linking.openURL("https://www.buffalo.edu/writing.html")}
+        style={styles.MMMbuttons}
+        title="Career Resources"
+        onPress={() =>
+          Linking.openURL(
+            "https://www.buffalo.edu/career.html"
+          )
+        }
       >
-        <Text style={styles.buttonTXT}>Writing Resources</Text>
-      </Pressable>
-      <Pressable
-        style={styles.CRbuttons}
-        title="career"
-        onPress={() => Linking.openURL("https://www.buffalo.edu/career.html")}
-      >
-        <Text style={styles.buttonTXT}>Career Resources</Text>
-      </Pressable>
-
-      <Pressable
-        style={styles.Abuttons}
-        title="career"
-        onPress={() => Linking.openURL("https://advising.buffalo.edu/")}
-      >
-        <Text style={styles.buttonTXT}>Academic Advising</Text>
+        <ImageBackground
+          source={require("../Components/ResourcesImages/career-resources.png")}
+          style = {{width:120, height:120, marginLeft: -255, top: 55, borderRadius: 30, overflow: "hidden"}}
+        ></ImageBackground>
+        <Text style={styles.MbuttonTXT}>Career Resources</Text>
+        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
+        top: -60, marginLeft: 150, marginRight: 10}}>The Career Design Center gives you new ways to think about 
+        designing your next steps, getting the answers you need — and the opportunities you deserve.</Text>
       </Pressable>
 
       <Pressable
-        style={styles.Fbuttons}
-        title="career"
-        onPress={() => Linking.openURL("https://financialaid.buffalo.edu/")}
+        style={styles.MMMMbuttons}
+        title="Advising Resources"
+        onPress={() =>
+          Linking.openURL(
+            "https://advising.buffalo.edu/"
+          )
+        }
       >
-        <Text style={styles.buttonTXT}>{"Financial Aid"}</Text>
+        <ImageBackground
+          source={require("../Components/ResourcesImages/advising-resource.jpeg")}
+          style = {{width:120, height:120, marginLeft: -255, top: 50, borderRadius: 30, overflow: "hidden"}}
+        ></ImageBackground>
+        <Text style={styles.MMbuttonTXT}>Advising Resources</Text>
+        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
+        top: -60, marginLeft: 150, marginRight: 10}}>Advisors offer a personal connection 
+        to the university and assist students with a full range of services, resources and support.</Text>
       </Pressable>
 
-      <Pressable
-        style={styles.Tbuttons}
-        title="career"
-        onPress={() => Linking.openURL("https://www.buffalo.edu/ubit.html")}
-      >
-        <Text style={styles.buttonTXT}>Tech Resources</Text>
-      </Pressable>
-
-      <ImageBackground
-        source={require("../assets/BlueTri.png")}
-        style={styles.welcomeDown}
-      ></ImageBackground>
+      </ScrollView>
     </View>
+
   );
 }
 
@@ -130,24 +160,64 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   MHbuttons: {
-    height: 100,
-    width: 100,
+    height: 150,
+    width: 400,
     justifyContent: "center",
     alignItems: "center",
-    top: -30,
-    left: -80,
-    backgroundColor: "#3265CB",
+    top: 30,
+    left: 10,
+    backgroundColor: "#292e36",
     borderRadius: 30,
+    borderColor: "#3265CB",
+    borderWidth: 2
   },
   Mbuttons: {
-    height: 100,
-    width: 100,
+    height: 150,
+    width: 400,
     justifyContent: "center",
     alignItems: "center",
-    top: -130,
-    left: 80,
-    backgroundColor: "#3265CB",
+    top: 50,
+    left: 10,
+    backgroundColor: "#292e36",
     borderRadius: 30,
+    borderColor: "#3265CB",
+    borderWidth: 2
+  },
+  MMbuttons: {
+    height: 150,
+    width: 400,
+    justifyContent: "center",
+    alignItems: "center",
+    top: 70,
+    left: 10,
+    backgroundColor: "#292e36",
+    borderRadius: 30,
+    borderColor: "#3265CB",
+    borderWidth: 2
+  },
+  MMMbuttons: {
+    height: 150,
+    width: 400,
+    justifyContent: "center",
+    alignItems: "center",
+    top: 90,
+    left: 10,
+    backgroundColor: "#292e36",
+    borderRadius: 30,
+    borderColor: "#3265CB",
+    borderWidth: 2
+  },
+  MMMMbuttons: {
+    height: 150,
+    width: 400,
+    justifyContent: "center",
+    alignItems: "center",
+    top: 110,
+    left: 10,
+    backgroundColor: "#292e36",
+    borderRadius: 30,
+    borderColor: "#3265CB",
+    borderWidth: 2
   },
   CLbuttons: {
     height: 100,
@@ -214,8 +284,42 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   buttonTXT: {
-    fontSize: 20,
+    fontSize: 17,
+    fontWeight: "bold",
     color: "white",
     borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    top: -65,
+    marginLeft: 50
+  },
+  MbuttonTXT: {
+    fontSize: 17,
+    fontWeight: "bold",
+    color: "white",
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    top: -65,
+    marginLeft: 100
+  },
+  MMbuttonTXT: {
+    fontSize: 17,
+    fontWeight: "bold",
+    color: "white",
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    top: -65,
+    marginLeft: 125
+  },
+  buttontxt: {
+    fontSize: 10,
+    color: "white",
+    borderRadius: 10,
+    alignContent: "left",
+    justifyContent: "center",
+    top: -70,
+    marginLeft: 140
   },
 });
