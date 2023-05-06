@@ -26,7 +26,7 @@ export default function AppScreen({navigation}){
                 >
                 <ImageBackground
                 source={require("../Components/AppImages/wepa.png")}
-                style = {{width:140, height:140, borderRadius: 100, overflow: "hidden"}}
+                style = {{width:150, height:150, borderRadius: 100, overflow: "hidden"}}
                 ></ImageBackground>
               </Pressable>
               <Text style={styles.underButtonText}>{"WEPA"}</Text>
@@ -40,7 +40,7 @@ export default function AppScreen({navigation}){
                 >
                 <ImageBackground
                 source={require("../Components/AppImages/navigate.png")}
-                style = {{width:140, height:140, borderRadius: 100, overflow: "hidden"}}
+                style = {{width:150, height:150, borderRadius: 100, overflow: "hidden"}}
                 ></ImageBackground>
               </Pressable>
               <Text style={styles.underButtonText}>{"Navigate"}</Text>
@@ -58,7 +58,7 @@ export default function AppScreen({navigation}){
               >
               <ImageBackground
               source={require("../Components/AppImages/get.png")}
-              style = {{width:145, height:145, borderRadius: 100, overflow: "hidden"}}
+              style = {{width:150, height:150, borderRadius: 100, overflow: "hidden"}}
               ></ImageBackground>
             </Pressable>
             <Text style={styles.underButtonText2}>{"GET"}</Text>
@@ -72,7 +72,7 @@ export default function AppScreen({navigation}){
               >
               <ImageBackground
               source={require("../Components/AppImages/duo.png")}
-              style = {{width:145, height:145, borderRadius: 100, overflow: "hidden"}}
+              style = {{width:150, height:150, borderRadius: 100, overflow: "hidden"}}
               ></ImageBackground>
             </Pressable>
             <Text style={styles.underButtonText2}>{"DUO"}</Text>
@@ -89,10 +89,10 @@ export default function AppScreen({navigation}){
                 >
                 <ImageBackground
                 source={require("../Components/AppImages/rewards.png")}
-                style = {{width:140, height:140, borderRadius: 100, overflow: "hidden"}}
+                style = {{width:150, height:150, borderRadius: 100, overflow: "hidden"}}
                 ></ImageBackground>
               </Pressable>
-              <Text style={styles.underButtonText2}>{"Rewards"}</Text>
+              <Text style={styles.underButtonText3}>{"Rewards"}</Text>
               </View>
 
               <View style={styles.buttonAndTextView}>
@@ -104,10 +104,10 @@ export default function AppScreen({navigation}){
                 >
                 <ImageBackground
                 source={require("../Components/AppImages/blackboard.png")}
-                style = {{width:140, height:140, borderRadius: 100, overflow: "hidden"}}
+                style = {{width:150, height:150, borderRadius: 100, overflow: "hidden"}}
                 ></ImageBackground>
               </Pressable>
-              <Text style={styles.underButtonText2}>{"Blackboard"}</Text>
+              <Text style={styles.underButtonText3}>{"Blackboard"}</Text>
             </View>
             </View>
 
@@ -133,8 +133,8 @@ const styles = StyleSheet.create({
     top:-80,
 	},
   buttonAndTextView: {
-		marginLeft: 10,
-		marginRight: 10,
+		marginLeft: 0,
+		marginRight: 0,
 		alignItems: "center",
 		justifyContent: "center",
 	},
@@ -142,11 +142,8 @@ const styles = StyleSheet.create({
     wepa: {
 	
       height: 150,
-      width: 150,
       justifyContent: "center",
-      alignItems: "center",
       top: 30,
-      left: 0,
       backgroundColor: "#292e36",
       borderRadius: 100,
       borderColor: "#3265CB",
@@ -195,6 +192,13 @@ const styles = StyleSheet.create({
 		color: "#d9d9d9",
 		marginTop: 70,
 	},
+  underButtonText3:{
+    fontSize: 12,
+		color: "#d9d9d9",
+		marginTop: 58,
+    marginBottom: 10,
+
+  },
   navigate: {
 	
     height: 150,
@@ -228,19 +232,20 @@ const styles = StyleSheet.create({
 	},
 
   topButtonRow: {
-		flexDirection: "row",
+   flexDirection: "row",
 		alignItems: "center",
-		marginTop: 30,
-    justifyContent: "space-between",
-    marginLeft: 30,
-    marginRight: 30,
+		justifyContent: "space-between",
+		marginTop: 10,
+    marginLeft: 25,
+    marginRight: 25                          ,
+
 	},
 
   secondButtonRow: {
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "space-between",
-		marginTop: 10,
+		marginTop: 0,
     marginLeft: 30,
     marginRight: 30,
 	},
@@ -248,7 +253,7 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "space-between",
-		marginTop: 10,
+		marginTop: 0,
     marginLeft: 30,
     marginRight: 30,
 	},
