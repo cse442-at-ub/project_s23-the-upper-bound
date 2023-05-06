@@ -9,11 +9,17 @@ import {
   ImageBackground,
   FlatList,
 } from "react-native";
+import { Header } from "react-native-elements";
+
 import React, { useEffect, useState } from "react";
 
 export default function International() {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
+      <Header
+          backgroundColor="#3265CB"
+          centerComponent={{ text: 'International', style: { color: '#fff', fontSize: 17 } }}
+        />
       <ScrollView style={styles.scroll}>
         <Text>{"\n\n\n"}</Text>
         <Text style={styles.Name}>{"Noodle Pavilion"}</Text>
@@ -70,7 +76,7 @@ export default function International() {
           {"Location: Commons\n"}
         </Text>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -95,10 +101,14 @@ const styles = StyleSheet.create({
 
     //top: 60,
     fontWeight: "bold",
+    marginLeft: "3%",
+       marginRight: "3%",
   },
   Text: {
     color: "white",
     //top: 60,
     fontSize: 15,
+    marginLeft: "3%",
+       marginRight: "3%",
   },
 });

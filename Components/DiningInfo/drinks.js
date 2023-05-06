@@ -6,11 +6,17 @@ import {
   View,
   ImageBackground,
 } from "react-native";
+import { Header } from "react-native-elements";
+
 import React, { useEffect, useState } from "react";
 
 export default function Drinks() {
     return (
       <View style={styles.container}>
+        <Header
+          backgroundColor="#3265CB"
+          centerComponent={{ text: 'Drinks', style: { color: '#fff', fontSize: 17 } }}
+        />
       <View>
         <Text style={styles.Name}>
           {"Jamba Juice"}      
@@ -97,11 +103,15 @@ export default function Drinks() {
       fontSize:30,
   
       top:60,
-      fontWeight:"bold",
+       fontWeight: "bold",
+       marginLeft: "3%",
+       marginRight: "3%",
      },
      Text:{
       color:"white",
       top:60,
-      fontSize:15,
+       fontSize: 15,
+       marginLeft: "3%",
+       marginRight: "3%",
      },
   });

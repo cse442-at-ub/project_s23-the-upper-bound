@@ -16,12 +16,13 @@ import { Header } from "react-native-elements";
 export default function ResourceScreen({ navigation }) {
   return (
 
-    <View style = {styles.container}>
-      <ScrollView>
-        <Header
+    <View style={styles.container}>
+      <Header
           backgroundColor="#3265CB"
           centerComponent={{ text: 'Campus Resources', style: { color: '#fff', fontSize: 17 } }}
         />
+      <ScrollView>
+        
 
         <Pressable
         style={styles.MHbuttons}

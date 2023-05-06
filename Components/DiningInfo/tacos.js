@@ -6,6 +6,8 @@ import {
   View,
   ImageBackground,
 } from "react-native";
+import { Header } from "react-native-elements";
+
 import React, { useEffect, useState } from "react";
 
 
@@ -13,6 +15,10 @@ import React, { useEffect, useState } from "react";
 export default function Mexican() {
   return (
     <View style={styles.container}>
+      <Header
+          backgroundColor="#3265CB"
+          centerComponent={{ text: 'Mexican', style: { color: '#fff', fontSize: 17 } }}
+        />
     <View>
       <Text style={styles.MoName}>
         {"Moe's"}      
@@ -76,11 +82,15 @@ const styles = StyleSheet.create({
     fontSize:30,
 
     top:60,
-    fontWeight:"bold",
+     fontWeight: "bold",
+     marginLeft: "3%",
+     marginRight: "3%",
    },
    MoText:{
     color:"white",
     top:60,
-    fontSize:15,
+     fontSize: 15,
+     marginLeft: "3%",
+     marginRight: "3%",
    },
 });

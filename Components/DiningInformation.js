@@ -51,7 +51,12 @@ export default function DiningInfo({navigation}) {
 
         </View>
         <View>
-          <Text style={styles.txt}>{"Please press a button above to view dining options in that food style"}</Text>
+        <Text style={styles.txt}>{"Please press a button above to view dining options in that food style"}</Text>
+        
+        <ImageBackground
+        source={require("../assets/WelBot.png")}
+        style={styles.welcomeDown}
+      ></ImageBackground>
         </View>
 
 
@@ -67,8 +72,10 @@ const styles = StyleSheet.create({
   },
   userTxt: {
     color: "#FFFFFF",
-    marginLeft: 10,
-    fontSize: 44,
+    marginLeft: "5%",
+    marginRight: "5%",
+
+    fontSize: 39,
     top: -80,
     fontWeight:"bold"
   },
@@ -82,11 +89,10 @@ const styles = StyleSheet.create({
   welcomeDown: {
     height: 300,
     width: 150,
-    left: 200,
-    top: -440,
-    justifyContent: "center",
-    transform: [{ scaleX: 1 }, { scaleY: -1 }],
-    alignItems: "center",
+    left: -30,
+    bottom: -50,
+    position: "absolute"
+
   },
   taco:{
     height: 150,
@@ -138,9 +144,12 @@ const styles = StyleSheet.create({
     color: "white",
     borderRadius: 10,
   },
-  txt:{
-    fontSize:30, 
-    color:"white",
+  txt: {
+    marginLeft: "7%",
+    marginRight: "7%",
+    fontSize: 17, 
+    color: "white",
+    textAlign:"center",
     top:-250
 
   }
