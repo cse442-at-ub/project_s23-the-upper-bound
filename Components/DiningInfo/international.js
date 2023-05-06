@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   Text: {
-    color: "white",
+    color: "#FFFFFF",
     //top: 60,
     fontSize: 15,
   },

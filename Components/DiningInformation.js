@@ -38,7 +38,7 @@ export default function DiningInfo({navigation}) {
         title="internat"
         onPress={() => navigation.navigate("international")}
         >
-        <Text style={styles.buttonTXT}>International</Text>
+        <Text style={styles.buttonTXT}>European/Asian</Text>
         </Pressable>
 
         <Pressable 
