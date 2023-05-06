@@ -23,11 +23,10 @@ import SignupScreen from "./Components/SignupScreen";
 import EventScreen from "./Components/EventScreen";
 import AppScreen from "./Components/AppScreen";
 import DiningInfo from "./Components/DiningInformation.js"
-import Mexican from "./Components/DiningInfo/tacos.js";
+import Mexican from "./Components/DiningInfo/mexican.js";
 import American from "./Components/DiningInfo/american.js";
 import International from "./Components/DiningInfo/international.js";
 import Drinks from "./Components/DiningInfo/drinks.js";
-
 import HomeScreen from "./Components/HomeScreen.js";
 import ResourceScreen from "./Components/ResourceScreen.js";
 
