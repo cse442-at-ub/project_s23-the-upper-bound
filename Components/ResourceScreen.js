@@ -31,22 +31,15 @@ export default function ResourceScreen({ navigation }) {
             "https://www.buffalo.edu/studentlife/life-on-campus/health/mental-well-being/counseling.html"
           )
         }
-      >
+        >
+          {/* */}
         <ImageBackground
           source={require("../Components/ResourcesImages/mental-health.jpeg")}
-          style = {{width:120, height:120, marginLeft: -255, top: 57, borderRadius: 30, overflow: "hidden"}}
+          style = {{width:120, height:120, marginLeft: "-58%", top: "28%", borderRadius: 30, overflow: "hidden"}}
         ></ImageBackground>
         <Text style={styles.buttonTXT}>Mental Health</Text>
         <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
-        top: -60, marginLeft: 140}}>Whether you’re worried about grades</Text>
-        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
-        top: -60, marginLeft: 112}}>or a personal crisis, we’re here to</Text>
-        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
-        top: -60, marginLeft: 120}}>support mental wellness through a</Text>
-        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
-        top: -60, marginLeft: 93}}>variety of services to currently</Text>
-        <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
-        top: -60, marginLeft: 27}}>registered students.</Text>
+        top: -60, marginLeft: 149, marginRight: 10}}>Whether you’re worried about grades or a personal crisis, we’re here to support mental wellness through a variety of services to currently registered students.</Text>
       </Pressable>
 
       <Pressable
@@ -60,11 +53,11 @@ export default function ResourceScreen({ navigation }) {
       >
         <ImageBackground
           source={require("../Components/ResourcesImages/medical-resources.jpeg")}
-          style = {{width:120, height:120, marginLeft: -255, top: 40, borderRadius: 30, overflow: "hidden"}}
+          style = {{width:120, height:120, marginLeft: "-58%", top: "20%", borderRadius: 30, overflow: "hidden"}}
         ></ImageBackground>
         <Text style={styles.MbuttonTXT}>Medical Resources</Text>
         <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
-        top: -60, marginLeft: 140, marginRight: 10}}>Whether you’re feeling sick, or you want to stay healthy, we're here to
+        top: -60, marginLeft: 149, marginRight: 10}}>Whether you’re feeling sick, or you want to stay healthy, we're here to
         take care of you, at your time at UB. </Text>
       </Pressable>
 
@@ -79,7 +72,7 @@ export default function ResourceScreen({ navigation }) {
       >
         <ImageBackground
           source={require("../Components/ResourcesImages/writing-resource.jpeg")}
-          style = {{width:120, height:120, marginLeft: -255, top: 55, borderRadius: 30, overflow: "hidden"}}
+          style = {{width:120, height:120, marginLeft: "-58%", top: "24%", borderRadius: 30, overflow: "hidden"}}
         ></ImageBackground>
         <Text style={styles.MbuttonTXT}>Writing Resources</Text>
         <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
@@ -98,7 +91,7 @@ export default function ResourceScreen({ navigation }) {
       >
         <ImageBackground
           source={require("../Components/ResourcesImages/career-resources.png")}
-          style = {{width:120, height:120, marginLeft: -255, top: 55, borderRadius: 30, overflow: "hidden"}}
+          style = {{width:120, height:120, marginLeft: "-58%", top: "28%", borderRadius: 30, overflow: "hidden"}}
         ></ImageBackground>
         <Text style={styles.MbuttonTXT}>Career Resources</Text>
         <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
@@ -117,7 +110,7 @@ export default function ResourceScreen({ navigation }) {
       >
         <ImageBackground
           source={require("../Components/ResourcesImages/advising-resource.jpeg")}
-          style = {{width:120, height:120, marginLeft: -255, top: 50, borderRadius: 30, overflow: "hidden"}}
+          style = {{width:120, height:120, marginLeft: "-58%", top: "23%", borderRadius: 30, overflow: "hidden"}}
         ></ImageBackground>
         <Text style={styles.MMbuttonTXT}>Advising Resources</Text>
         <Text style={{fontSize: 10, color: "white", borderRadius: 10, alignContent: "left", justifyContent: "center", 
@@ -134,6 +127,7 @@ export default function ResourceScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    
     backgroundColor: "#1E1E1E",
     alignItems: "center",
   },
@@ -161,23 +155,25 @@ const styles = StyleSheet.create({
   },
   MHbuttons: {
     height: 150,
-    width: 400,
+    marginLeft: "3%",
+    marginRight:"3%",
+
     justifyContent: "center",
     alignItems: "center",
-    top: 30,
-    left: 10,
+    marginTop: "5%",
     backgroundColor: "#292e36",
     borderRadius: 30,
     borderColor: "#3265CB",
-    borderWidth: 2
+    borderWidth: 2,
+
   },
   Mbuttons: {
     height: 150,
-    width: 400,
+    marginLeft: "3%",
+    marginRight: "3%",
     justifyContent: "center",
     alignItems: "center",
-    top: 50,
-    left: 10,
+    marginTop: "5%",
     backgroundColor: "#292e36",
     borderRadius: 30,
     borderColor: "#3265CB",
@@ -185,11 +181,10 @@ const styles = StyleSheet.create({
   },
   MMbuttons: {
     height: 150,
-    width: 400,
-    justifyContent: "center",
+    marginLeft: "3%",
+    marginRight: "3%",    justifyContent: "center",
     alignItems: "center",
-    top: 70,
-    left: 10,
+    marginTop: "5%",
     backgroundColor: "#292e36",
     borderRadius: 30,
     borderColor: "#3265CB",
@@ -197,11 +192,11 @@ const styles = StyleSheet.create({
   },
   MMMbuttons: {
     height: 150,
-    width: 400,
+    marginLeft: "3%",
+    marginRight: "3%",
     justifyContent: "center",
     alignItems: "center",
-    top: 90,
-    left: 10,
+    marginTop: "5%",
     backgroundColor: "#292e36",
     borderRadius: 30,
     borderColor: "#3265CB",
@@ -209,11 +204,12 @@ const styles = StyleSheet.create({
   },
   MMMMbuttons: {
     height: 150,
-    width: 400,
+    marginLeft: "3%",
+    marginRight: "3%",
     justifyContent: "center",
     alignItems: "center",
-    top: 110,
-    left: 10,
+    marginTop: "5%",
+    marginBottom: 30,
     backgroundColor: "#292e36",
     borderRadius: 30,
     borderColor: "#3265CB",
@@ -261,6 +257,7 @@ const styles = StyleSheet.create({
     left: 80,
     backgroundColor: "#3265CB",
     borderRadius: 30,
+    
   },
 
   Fbuttons: {
@@ -291,7 +288,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     top: -65,
-    marginLeft: 50
+    marginLeft: 68
   },
   MbuttonTXT: {
     fontSize: 17,
@@ -311,7 +308,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     top: -65,
-    marginLeft: 125
+    marginLeft: 113
   },
   buttontxt: {
     fontSize: 10,
