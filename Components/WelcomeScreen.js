@@ -18,18 +18,27 @@ export default function WelcomeScreen({ navigation }) {
 					source={require("../assets/BlueTri.png")}
 					style={styles.welcomeUp}
 				></ImageBackground>
+				<Text style={styles.name}>{"Guidance"}</Text>
 				<Pressable
 					style={styles.loginBtn}
 					title="home"
 					onPress={() => navigation.navigate("home")}
 				>
-					<Text style={styles.buttons}>Home </Text>
+					<Text style={styles.buttons}>{"Homepage"} </Text>
 				</Pressable>
-			
+				
 				<ImageBackground
-					source={require("../assets/WelBot.png")}
+
+				source={require("../assets/WelBot.png")}
 					style={styles.welcomeDown}
-				></ImageBackground>
+				>
+					<ImageBackground source={require("../assets/world-map.png")} style={styles.mappic}></ImageBackground>
+					
+				<Text style={styles.feattxt}>{"Featuring indoor navigation"}</Text>
+				<Text style={styles.smlltxt}>{"Never has it been so easy \n  to get around campus!"}</Text>
+			
+				
+					</ImageBackground>
 			</ImageBackground>
 		</View>
 	);
@@ -58,6 +67,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "#393939",
 		paddingHorizontal: 0,
 		marginTop: 100,
+		top:-20,
 	},
 
 	signupBtn: {
@@ -80,9 +90,36 @@ const styles = StyleSheet.create({
 		marginLeft: 250,
 	},
 	welcomeDown: {
-		marginTop: 30,
+		marginTop: -40,
 		height: 400,
 		width: 400,
-		bottom:"-10%"
+		bottom:"-10%",
+		justifyContent:"center",
+		alignItems:"center"
+	},
+	name:{
+		fontSize:60,
+		color:"#b8b8b8", //"#1132f0",
+		fontStyle:"italic",
+		top:60,
+		fontWeight:"bold"
+	},
+	feattxt:{
+		fontWeight:"bold",
+		top:-100,
+		color:"white",
+		fontSize:18,
+		alignContent:"center"
+	},
+	smlltxt:{
+		top:-100,
+		color:"white", 
+		fontSize:16,
+	},
+
+	mappic:{
+		top:-90,
+		height:150,
+		width:150,
 	},
 });

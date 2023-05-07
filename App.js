@@ -23,8 +23,10 @@ import SignupScreen from "./Components/SignupScreen";
 import EventScreen from "./Components/EventScreen";
 import AppScreen from "./Components/AppScreen";
 import DiningInfo from "./Components/DiningInformation.js"
-import Mexican from "./Components/DiningInfo/tacos.js";
+import Mexican from "./Components/DiningInfo/mexican.js";
 import American from "./Components/DiningInfo/american.js";
+import International from "./Components/DiningInfo/international.js";
+import Drinks from "./Components/DiningInfo/drinks.js";
 
 import HomeScreen from "./Components/HomeScreen.js";
 import ResourceScreen from "./Components/ResourceScreen.js";
@@ -73,7 +75,7 @@ export default function App() {
 						headerTitleStyle: {
 							fontWeight: "normal",
 						},
-						headerRight: () => <Button onPress={() => alert("This is a button!")} title="Info" color="#fff" />,
+						//headerRight: () => <Button onPress={() => alert("This is a button!")} title="Info" color="#fff" />,
 					}}
 				></Stack.Screen>
 
@@ -105,6 +107,9 @@ export default function App() {
 				<Stack.Screen name="dining" component={DiningInfo} options={{ headerShown: false }}></Stack.Screen>
 				<Stack.Screen name="apps" component={AppScreen} options={{ headerShown: false }}></Stack.Screen>
 				<Stack.Screen name="resources" component={ResourceScreen} options={{ headerShown: false }}></Stack.Screen>
+				<Stack.Screen name="drinks" component={Drinks} options={{ headerShown: false }}></Stack.Screen>
+				<Stack.Screen name="international" component={International} options={{ headerShown: false }}></Stack.Screen>
+				
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

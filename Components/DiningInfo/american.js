@@ -5,17 +5,26 @@ import {
   Text,
   View,
   ImageBackground,
+  ScrollView,
+  SafeAreaView
 } from "react-native";
+import { Header } from "react-native-elements";
 import React, { useEffect, useState } from "react";
 
 export default function American() {
     return (
       <View style={styles.container}>
-      <View>
+        <Header
+          backgroundColor="#3265CB"
+          centerComponent={{ text: 'American', style: { color: '#fff', fontSize: 17 } }}
+        />
+      <ScrollView>
+        <Text>{"\n\n\n"}</Text>
+
         <Text style={styles.Name}>
           {"1846 Grill"}      
           </Text>
-          </View>
+
           <View>
             <Text style={styles.Text}>
               {"Options: Burgers, Fries, Breakfast Sandwiches, Bagels\n"}
@@ -47,6 +56,7 @@ export default function American() {
           <View>
             <Text style={styles.Text}>
               {"Options: Burgers, Sandwiches, Pancakes, Daily Specials\n"}
+              {"Meats: Bacon, Chicken, Beef\n"}
               {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
               {"Location: Ellicott Food Court\n"}
             </Text>
@@ -59,7 +69,7 @@ export default function American() {
           </View>
           <View>
             <Text style={styles.Text}>
-              {"Options: Sub Sandwiches\n"}
+              {"Options: Sub Sandwiches, Flatbread\n"}
               {"Meats: Ham, Turkey, Roast Beef, Salami, Chicken\n"}
               {"Takes Dining Dollars/Meal Swipes? : No\n"}
               {"Location: Commons\n"}
@@ -72,7 +82,7 @@ export default function American() {
           </View>
           <View>
             <Text style={styles.Text}>
-              {"Options: Fried Chickem, French Fries\n"}
+              {"Options: Fried Chicken, French Fries\n"}
               {"Meat: Chicken\n"}
               {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
               {"Location: Student Union - Union Marketplace\n"}
@@ -83,14 +93,16 @@ export default function American() {
           {"Tim Hortons"}      
           </Text>
           </View>
+          
           <View>
             <Text style={styles.Text}>
               {"Options: Sandwhiches, soups, baked goods\n"}
               {"Meats: Ham, Turkey, Bacon, Sausage\n"}
               {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
-              {"Location: Student Union\n"}
+              {"Location: Student Union, Alfiero Center\n"}
             </Text>
-          </View>
+            </View>
+          </ScrollView>
   
       </View>
     );
@@ -100,24 +112,30 @@ export default function American() {
   const styles = StyleSheet.create({
       container: {
         flex: 1,
-        backgroundColor: "#1E1E1E",
+      backgroundColor: "#1E1E1E",
+        
   
       },
       lineStyle:{
           borderWidth: 0.5,
           borderColor:'white',
-          margin:10,
+          //margin:10,
      },
      Name:{
       color:"white",
-      fontSize:30,
+       fontSize: 30,
+       marginLeft: "3%",
+       marginRight: "3%",
   
-      top:60,
+      //top:60,
       fontWeight:"bold",
      },
      Text:{
       color:"white",
-      top:60,
-      fontSize:15,
+      //top:60,
+       fontSize: 15,
+       marginLeft: "3%",
+       marginRight: "3%",
+
      },
   });

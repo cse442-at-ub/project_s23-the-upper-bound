@@ -33,7 +33,30 @@ export default function DiningInfo({navigation}) {
         >
         <Text style={styles.buttonTXT}>American</Text>
         </Pressable>
+        <Pressable 
+        style={styles.international}
+        title="internat"
+        onPress={() => navigation.navigate("international")}
+        >
+        <Text style={styles.buttonTXT}>International</Text>
+        </Pressable>
 
+        <Pressable 
+        style={styles.drinks}
+        title="drink"
+        onPress={() => navigation.navigate("drinks")}
+        >
+        <Text style={styles.buttonTXT}>Drinks</Text>
+        </Pressable>
+
+        </View>
+        <View>
+        <Text style={styles.txt}>{"Please press a button above to view dining options in that food style"}</Text>
+        
+        <ImageBackground
+        source={require("../assets/WelBot.png")}
+        style={styles.welcomeDown}
+      ></ImageBackground>
         </View>
 
 
@@ -49,9 +72,12 @@ const styles = StyleSheet.create({
   },
   userTxt: {
     color: "#FFFFFF",
-    marginLeft: 10,
-    fontSize: 40,
-    top: -120,
+    marginLeft: "5%",
+    marginRight: "5%",
+
+    fontSize: 39,
+    top: -80,
+    fontWeight:"bold"
   },
   welcomeUp: {
     height: 200,
@@ -63,48 +89,68 @@ const styles = StyleSheet.create({
   welcomeDown: {
     height: 300,
     width: 150,
-    left: 200,
-    top: -440,
-    justifyContent: "center",
-    transform: [{ scaleX: 1 }, { scaleY: -1 }],
-    alignItems: "center",
+    left: -30,
+    bottom: -50,
+    position: "absolute"
+
   },
   taco:{
-    height: 100,
-    width: 100,
+    height: 150,
+    width: 150,
     justifyContent: "center",
     alignItems: "center",
     top: -30,
-    left: -80,
+    left: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
   },
   american:{
-    height: 100,
-    width: 100,
+    height: 150,
+    width: 150,
     justifyContent: "center",
     alignItems: "center",
-    top: 0,
-    left: -80,
+    top: -0,
+    left: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
   },
 
-  //planned styles to add
-  smoothies:{},
-  chicken:{},
-  burgers:{},
+  drinks:{
+    height: 150,
+    width: 150,
+    justifyContent: "center",
+    alignItems: "center",
+    top: -300,
+    right: -100,
+    backgroundColor: "#3265CB",
+    borderRadius: 30,
   
-  greek:{},
-  indian:{},
-  pasta:{},
-  noodles:{},
-  chinese:{},
-  sandwiches:{},
-  salads:{},
+
+  },
+  international:{
+    height: 150,
+    width: 150,
+    justifyContent: "center",
+    alignItems: "center",
+    top: -330,
+    right: -100,
+    backgroundColor: "#3265CB",
+    borderRadius: 30,
+  
+  },
+ 
   buttonTXT: {
     fontSize: 20,
     color: "white",
     borderRadius: 10,
   },
+  txt: {
+    marginLeft: "7%",
+    marginRight: "7%",
+    fontSize: 17, 
+    color: "white",
+    textAlign:"center",
+    top:-250
+
+  }
 });
