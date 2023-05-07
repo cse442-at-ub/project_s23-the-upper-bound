@@ -23,7 +23,7 @@ import SignupScreen from "./Components/SignupScreen";
 import EventScreen from "./Components/EventScreen";
 import AppScreen from "./Components/AppScreen";
 import DiningInfo from "./Components/DiningInformation.js"
-import Mexican from "./Components/DiningInfo/tacos.js";
+import Mexican from "./Components/DiningInfo/mexican.js";
 import American from "./Components/DiningInfo/american.js";
 import International from "./Components/DiningInfo/international.js";
 import Drinks from "./Components/DiningInfo/drinks.js";
@@ -75,7 +75,7 @@ export default function App() {
 						headerTitleStyle: {
 							fontWeight: "normal",
 						},
-						headerRight: () => <Button onPress={() => alert("This is a button!")} title="Info" color="#fff" />,
+						//headerRight: () => <Button onPress={() => alert("This is a button!")} title="Info" color="#fff" />,
 					}}
 				></Stack.Screen>
 

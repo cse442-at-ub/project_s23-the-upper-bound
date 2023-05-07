@@ -22,6 +22,7 @@ export default function International() {
         />
       <ScrollView style={styles.scroll}>
         <Text>{"\n\n\n"}</Text>
+
         <Text style={styles.Name}>{"Noodle Pavilion"}</Text>
 
         <Text style={styles.Text}>
@@ -30,6 +31,7 @@ export default function International() {
           {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
           {"Location: One World Cafe\n"}
         </Text>
+
 
         <Text style={styles.Name}>{"Kali Orexi"}</Text>
 
@@ -66,6 +68,7 @@ export default function International() {
           {"Takes Dining Dollars/Meal Swipes? : No\n"}
           {"Location: Commons\n"}
         </Text>
+
 
         <Text style={styles.Name}>{"Bollywood Bistro"}</Text>
 
@@ -110,5 +113,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginLeft: "3%",
        marginRight: "3%",
+
   },
 });

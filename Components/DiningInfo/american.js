@@ -9,7 +9,6 @@ import {
   SafeAreaView
 } from "react-native";
 import { Header } from "react-native-elements";
-
 import React, { useEffect, useState } from "react";
 
 export default function American() {
@@ -21,6 +20,7 @@ export default function American() {
         />
       <ScrollView>
         <Text>{"\n\n\n"}</Text>
+
         <Text style={styles.Name}>
           {"1846 Grill"}      
           </Text>
@@ -33,6 +33,7 @@ export default function American() {
               {"Location: One World Cafe\n"}
             </Text>
           </View>
+          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
   
           <View>
         <Text style={styles.Name}>
@@ -47,6 +48,7 @@ export default function American() {
               {"Location: Student Union - Union Marketplace\n"}
             </Text>
           </View>
+          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
   
           <View>
         <Text style={styles.Name}>
@@ -56,10 +58,12 @@ export default function American() {
           <View>
             <Text style={styles.Text}>
               {"Options: Burgers, Sandwiches, Pancakes, Daily Specials\n"}
+              {"Meats: Bacon, Chicken, Beef\n"}
               {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
               {"Location: Ellicott Food Court\n"}
             </Text>
           </View>
+          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
 
           <View>
         <Text style={styles.Name}>
@@ -74,6 +78,7 @@ export default function American() {
               {"Location: Commons\n"}
             </Text>
           </View>
+          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
           <View>
         <Text style={styles.Name}>
           {"Fowl Play"}      
@@ -87,11 +92,13 @@ export default function American() {
               {"Location: Student Union - Union Marketplace\n"}
             </Text>
           </View>
+          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
           <View>
         <Text style={styles.Name}>
           {"Tim Hortons"}      
           </Text>
           </View>
+          
           <View>
             <Text style={styles.Text}>
               {"Options: Sandwhiches, soups, baked goods\n"}
@@ -116,9 +123,7 @@ export default function American() {
       },
       lineStyle:{
           borderWidth: 0.5,
-        borderColor: 'white',
-          
-          
+          borderColor:'white',
           //margin:10,
      },
      Name:{
@@ -136,5 +141,6 @@ export default function American() {
        fontSize: 15,
        marginLeft: "3%",
        marginRight: "3%",
+
      },
   });
