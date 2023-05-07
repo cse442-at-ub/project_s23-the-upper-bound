@@ -9,17 +9,19 @@ import {
   ImageBackground,
   FlatList,
 } from "react-native";
-import React, { useEffect, useState } from "react";
 import { Header } from "react-native-elements";
+
+import React, { useEffect, useState } from "react";
 
 export default function International() {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scroll}>
+    <View style={styles.container}>
       <Header
           backgroundColor="#3265CB"
-          centerComponent={{ text: 'European/Asian Options', style: { color: '#fff', fontSize: 20 } }}
+          centerComponent={{ text: 'International', style: { color: '#fff', fontSize: 17 } }}
         />
+      <ScrollView style={styles.scroll}>
+        <Text>{"\n\n\n"}</Text>
 
         <Text style={styles.Name}>{"Noodle Pavilion"}</Text>
 
@@ -29,7 +31,7 @@ export default function International() {
           {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
           {"Location: One World Cafe\n"}
         </Text>
-        <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
+
 
         <Text style={styles.Name}>{"Kali Orexi"}</Text>
 
@@ -39,7 +41,6 @@ export default function International() {
           {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
           {"Location: One World Cafe\n"}
         </Text>
-        <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
 
         <Text style={styles.Name}>{"Champa Sushi"}</Text>
 
@@ -49,7 +50,6 @@ export default function International() {
           {"Takes Dining Dollars/Meal Swipes? : Yes\n"}
           {"Location: Student Union\n"}
         </Text>
-        <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
 
         <Text style={styles.Name}>{"Dancing Chopsticks"}</Text>
 
@@ -59,7 +59,6 @@ export default function International() {
           {"Takes Dining Dollars/Meal Swipes? : No\n"}
           {"Location: Commons\n"}
         </Text>
-        <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
 
         <Text style={styles.Name}>{"Austin's Kitchen"}</Text>
 
@@ -69,7 +68,7 @@ export default function International() {
           {"Takes Dining Dollars/Meal Swipes? : No\n"}
           {"Location: Commons\n"}
         </Text>
-        <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
+
 
         <Text style={styles.Name}>{"Bollywood Bistro"}</Text>
 
@@ -80,7 +79,7 @@ export default function International() {
           {"Location: Commons\n"}
         </Text>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -105,10 +104,15 @@ const styles = StyleSheet.create({
 
     //top: 60,
     fontWeight: "bold",
+    marginLeft: "3%",
+       marginRight: "3%",
   },
   Text: {
-    color: "#FFFFFF",
+    color: "white",
     //top: 60,
     fontSize: 15,
+    marginLeft: "3%",
+       marginRight: "3%",
+
   },
 });

@@ -27,6 +27,7 @@ import Mexican from "./Components/DiningInfo/mexican.js";
 import American from "./Components/DiningInfo/american.js";
 import International from "./Components/DiningInfo/international.js";
 import Drinks from "./Components/DiningInfo/drinks.js";
+
 import HomeScreen from "./Components/HomeScreen.js";
 import ResourceScreen from "./Components/ResourceScreen.js";
 
@@ -74,7 +75,7 @@ export default function App() {
 						headerTitleStyle: {
 							fontWeight: "normal",
 						},
-						headerRight: () => <Button onPress={() => alert("This is a button!")} title="Info" color="#fff" />,
+						//headerRight: () => <Button onPress={() => alert("This is a button!")} title="Info" color="#fff" />,
 					}}
 				></Stack.Screen>
 

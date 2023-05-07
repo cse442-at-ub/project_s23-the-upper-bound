@@ -38,7 +38,7 @@ export default function DiningInfo({navigation}) {
         title="internat"
         onPress={() => navigation.navigate("international")}
         >
-        <Text style={styles.buttonTXT}>European/Asian</Text>
+        <Text style={styles.buttonTXT}>International</Text>
         </Pressable>
 
         <Pressable 
@@ -50,12 +50,14 @@ export default function DiningInfo({navigation}) {
         </Pressable>
 
         </View>
-        <ImageBackground
-        source={require("../assets/BlueTri.png")}
-        style={styles.welcomeDown}
-
-        ></ImageBackground>
+        <View>
+        <Text style={styles.txt}>{"Please press a button above to view dining options in that food style"}</Text>
         
+        <ImageBackground
+        source={require("../assets/WelBot.png")}
+        style={styles.welcomeDown}
+      ></ImageBackground>
+        </View>
 
 
     </View>
@@ -70,9 +72,11 @@ const styles = StyleSheet.create({
   },
   userTxt: {
     color: "#FFFFFF",
-    marginLeft: 10,
-    fontSize: 40,
-    top: -120,
+    marginLeft: "5%",
+    marginRight: "5%",
+
+    fontSize: 39,
+    top: -80,
     fontWeight:"bold"
   },
   welcomeUp: {
@@ -85,18 +89,17 @@ const styles = StyleSheet.create({
   welcomeDown: {
     height: 300,
     width: 150,
-    left: 110,
-    top: -350,
-    justifyContent: "center",
-    transform: [{ scaleX: 1 }, { scaleY: -1 }],
-    alignItems: "center",
+    left: -30,
+    bottom: -50,
+    position: "absolute"
+
   },
   taco:{
     height: 150,
     width: 150,
     justifyContent: "center",
     alignItems: "center",
-    top: -80,
+    top: -30,
     left: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
@@ -106,7 +109,7 @@ const styles = StyleSheet.create({
     width: 150,
     justifyContent: "center",
     alignItems: "center",
-    top: -50,
+    top: -0,
     left: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
@@ -117,7 +120,7 @@ const styles = StyleSheet.create({
     width: 150,
     justifyContent: "center",
     alignItems: "center",
-    top: -350,
+    top: -300,
     right: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
@@ -129,7 +132,7 @@ const styles = StyleSheet.create({
     width: 150,
     justifyContent: "center",
     alignItems: "center",
-    top: -380,
+    top: -330,
     right: -100,
     backgroundColor: "#3265CB",
     borderRadius: 30,
@@ -141,9 +144,12 @@ const styles = StyleSheet.create({
     color: "white",
     borderRadius: 10,
   },
-  txt:{
-    fontSize:30, 
-    color:"white",
+  txt: {
+    marginLeft: "7%",
+    marginRight: "7%",
+    fontSize: 17, 
+    color: "white",
+    textAlign:"center",
     top:-250
 
   }

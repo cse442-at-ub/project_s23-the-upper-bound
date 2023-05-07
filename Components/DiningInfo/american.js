@@ -9,19 +9,17 @@ import {
   SafeAreaView
 } from "react-native";
 import { Header } from "react-native-elements";
-
-
-
 import React, { useEffect, useState } from "react";
 
 export default function American() {
     return (
-      <SafeAreaView style={styles.container}>
-      <ScrollView>
-      <Header
+      <View style={styles.container}>
+        <Header
           backgroundColor="#3265CB"
-          centerComponent={{ text: 'American Options', style: { color: '#fff', fontSize: 20 } }}
+          centerComponent={{ text: 'American', style: { color: '#fff', fontSize: 17 } }}
         />
+      <ScrollView>
+        <Text>{"\n\n\n"}</Text>
 
         <Text style={styles.Name}>
           {"1846 Grill"}      
@@ -35,7 +33,6 @@ export default function American() {
               {"Location: One World Cafe\n"}
             </Text>
           </View>
-          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
   
           <View>
         <Text style={styles.Name}>
@@ -50,7 +47,6 @@ export default function American() {
               {"Location: Student Union - Union Marketplace\n"}
             </Text>
           </View>
-          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
   
           <View>
         <Text style={styles.Name}>
@@ -65,7 +61,6 @@ export default function American() {
               {"Location: Ellicott Food Court\n"}
             </Text>
           </View>
-          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
 
           <View>
         <Text style={styles.Name}>
@@ -80,7 +75,6 @@ export default function American() {
               {"Location: Commons\n"}
             </Text>
           </View>
-          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
           <View>
         <Text style={styles.Name}>
           {"Fowl Play"}      
@@ -94,7 +88,6 @@ export default function American() {
               {"Location: Student Union - Union Marketplace\n"}
             </Text>
           </View>
-          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
           <View>
         <Text style={styles.Name}>
           {"Tim Hortons"}      
@@ -111,7 +104,7 @@ export default function American() {
             </View>
           </ScrollView>
   
-      </SafeAreaView>
+      </View>
     );
   }
   
@@ -119,7 +112,8 @@ export default function American() {
   const styles = StyleSheet.create({
       container: {
         flex: 1,
-        backgroundColor: "#1E1E1E",
+      backgroundColor: "#1E1E1E",
+        
   
       },
       lineStyle:{
@@ -129,7 +123,9 @@ export default function American() {
      },
      Name:{
       color:"white",
-      fontSize:30,
+       fontSize: 30,
+       marginLeft: "3%",
+       marginRight: "3%",
   
       //top:60,
       fontWeight:"bold",
@@ -137,6 +133,9 @@ export default function American() {
      Text:{
       color:"white",
       //top:60,
-      fontSize:15,
+       fontSize: 15,
+       marginLeft: "3%",
+       marginRight: "3%",
+
      },
   });
