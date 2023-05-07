@@ -33,7 +33,6 @@ export default function American() {
               {"Location: One World Cafe\n"}
             </Text>
           </View>
-          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
   
           <View>
         <Text style={styles.Name}>
@@ -48,7 +47,6 @@ export default function American() {
               {"Location: Student Union - Union Marketplace\n"}
             </Text>
           </View>
-          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
   
           <View>
         <Text style={styles.Name}>
@@ -63,7 +61,6 @@ export default function American() {
               {"Location: Ellicott Food Court\n"}
             </Text>
           </View>
-          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
 
           <View>
         <Text style={styles.Name}>
@@ -78,7 +75,6 @@ export default function American() {
               {"Location: Commons\n"}
             </Text>
           </View>
-          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
           <View>
         <Text style={styles.Name}>
           {"Fowl Play"}      
@@ -92,7 +88,6 @@ export default function American() {
               {"Location: Student Union - Union Marketplace\n"}
             </Text>
           </View>
-          <View style={{borderBottomColor:'white', borderBottomWidth:3}}></View>
           <View>
         <Text style={styles.Name}>
           {"Tim Hortons"}      
